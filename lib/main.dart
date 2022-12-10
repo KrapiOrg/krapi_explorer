@@ -4,30 +4,14 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:krapi_explorer/models/peer_message/peer_message.dart';
-import 'package:krapi_explorer/models/peer_models/peer_state.dart';
-import 'package:flutter_hooks/flutter_hooks.dart';
-
-import 'node_manager.dart';
-
-final managerProvider = Provider<NodeManager>(
-  (ref) {
-    throw UnimplementedError('Singaling Provider not initialized');
-  },
-);
+import 'package:krapi_explorer/node_manager.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  final manager = NodeManager();
-  await manager.init();
-
   runApp(
-    ProviderScope(
-      overrides: [
-        managerProvider.overrideWithValue(manager),
-      ],
-      child: const MyApp(),
+    const ProviderScope(
+      child: MyApp(),
     ),
   );
 }
@@ -53,7 +37,7 @@ class MyHomePage extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final peers = useValueNotifier(<int>[]);
+    final manager = ref.watch(managerProvider);
 
     return Scaffold(
       appBar: AppBar(
@@ -62,36 +46,7 @@ class MyHomePage extends HookConsumerWidget {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            ElevatedButton(
-              onPressed: () async {
-                final manager = ref.read(managerProvider);
-                peers.value = await manager.availablePeers();
-              },
-              child: const Text('Available Peers'),
-            ),
-            ElevatedButton(
-              onPressed: () async {
-                final manager = ref.read(managerProvider);
-                await manager.connect_to_peers(peers.value);
-              },
-              child: const Text('Connect To Peers'),
-            ),
-            ElevatedButton(
-              onPressed: () async {
-                final manager = ref.read(managerProvider);
-
-                manager.broadcast(
-                  PeerMessage(
-                    PeerMessageType.peerStateUpdate,
-                    content: PeerState.initialBlockDownload.toJson(),
-                  ),
-                );
-              },
-              child: const Text('Update'),
-            ),
-            Text('peers: ${useValueListenable(peers)}'),
-          ],
+          children: const <Widget>[],
         ),
       ),
     );

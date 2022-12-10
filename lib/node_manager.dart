@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:convert';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -17,13 +18,12 @@ class NodeManager {
   final rtcConfiguration = {'iceServers': []};
   final signalingClient = SignalingClient();
   final peerMessageController = BehaviorSubject<PeerMessage>();
-  final peerTypeMap = BehaviorSubject<Map<int, PeerType>>.seeded({});
-  final peerStateMap = BehaviorSubject<Map<int, PeerState>>.seeded({});
+  final peerTypeMap = <int, PeerType>{};
+  final peerStateMap = <int, PeerState>{};
   PeerState state = PeerState.open;
   late final int my_id;
 
   void send(int id, PeerMessage message) {
-    print('sending ${jsonEncode(message.toJson())} to $id');
     channelMap[id]?.send(
       RTCDataChannelMessage(
         jsonEncode(message.toJson()),
@@ -82,19 +82,14 @@ class NodeManager {
           send(
             message.peer_id!,
             PeerMessage(
-              PeerMessageType.peerTypeResponse,
+              PeerMessageType.peerStateResponse,
               peer_id: my_id,
               tag: message.tag,
               content: state,
             ),
           );
         } else if (message.type == PeerMessageType.peerStateUpdate) {
-          peerStateMap.add(
-            {
-              ...peerStateMap.value,
-              message.peer_id!: PeerState.fromString(message.content),
-            },
-          );
+          peerStateMap[message.peer_id!] = PeerState.fromString(message.content);
         }
       },
     );
@@ -108,9 +103,31 @@ class NodeManager {
         pc = connectionMap[id]!;
       } else if (type == 'offer') {
         pc = await createPeerConnection(rtcConfiguration);
-        pc.onSignalingState = print;
-        pc.onConnectionState = print;
-        pc.onIceGatheringState = print;
+        pc.onConnectionState = (state) {
+          switch (state) {
+            case RTCPeerConnectionState.RTCPeerConnectionStateClosed:
+            case RTCPeerConnectionState.RTCPeerConnectionStateFailed:
+            case RTCPeerConnectionState.RTCPeerConnectionStateDisconnected:
+              connectionMap.remove(id);
+              break;
+            default:
+              break;
+          }
+        };
+        pc.onDataChannel = (dc) async {
+          dc.onMessage = (message) => peerMessageController.add(PeerMessage.fromJson(jsonDecode(message.text)));
+          channelMap[id] = dc;
+          final openCompleter = Completer();
+          dc.onDataChannelState = (state) {
+            if (state == RTCDataChannelState.RTCDataChannelOpen) {
+              openCompleter.complete();
+            } else if (state == RTCDataChannelState.RTCDataChannelClosed) {
+              channelMap.remove(id);
+            }
+          };
+
+          await openCompleter.future;
+        };
       } else {
         return;
       }
@@ -149,47 +166,40 @@ class NodeManager {
   }
 
   Future<PeerState> requestPeerState(int id) async {
-    final currentState = peerStateMap.value[id];
-    if (currentState != null) {
+    final currentState = peerStateMap[id];
+    if (currentState == null) {
       final response = await send_async(
         id,
         const PeerMessage(PeerMessageType.peerStateRequest),
       );
-      final receivedState = PeerState.fromString(response.content);
-      peerStateMap.add(
-        {
-          ...peerStateMap.value,
-          id: receivedState,
-        },
-      );
-      return receivedState;
+
+      return peerStateMap[id] = PeerState.fromString(response.content);
     } else {
-      return currentState!;
+      return currentState;
     }
   }
 
   Future<PeerType> requestPeerType(int id) async {
-    final currentType = peerTypeMap.value[id];
-    if (currentType != null) {
+    final currentType = peerTypeMap[id];
+    if (currentType == null) {
       final response = await send_async(
         id,
         const PeerMessage(PeerMessageType.peerTypeRequest),
       );
-      final receivedType = PeerType.fromString(response.content);
-      peerTypeMap.add(
-        {
-          ...peerTypeMap.value,
-          id: receivedType,
-        },
-      );
-      return receivedType;
+
+      return peerTypeMap[id] = PeerType.fromJson(response.content);
     } else {
-      return currentType!;
+      return currentType;
     }
   }
 
   Future<void> init() async {
     my_id = await signalingClient.init();
+    final peers = await availablePeers();
+    await connect_to_peers(peers);
+    broadcast(
+      PeerMessage(PeerMessageType.peerStateUpdate, content: PeerState.open.toJson()),
+    );
   }
 
   Future<RTCPeerConnection> _createConnection(int id) async {
@@ -216,7 +226,6 @@ class NodeManager {
         ),
       );
     };
-
     pc.onIceCandidate = (candidate) {
       signalingClient.send(
         SignalingMessage(
@@ -231,12 +240,17 @@ class NodeManager {
         ),
       );
     };
-
-    pc.onDataChannel = (channel) {
-      channel.onMessage = (message) => peerMessageController.add(PeerMessage.fromJson(jsonDecode(message.text)));
-      channelMap[id] = channel;
+    pc.onConnectionState = (state) {
+      switch (state) {
+        case RTCPeerConnectionState.RTCPeerConnectionStateClosed:
+        case RTCPeerConnectionState.RTCPeerConnectionStateFailed:
+        case RTCPeerConnectionState.RTCPeerConnectionStateDisconnected:
+          connectionMap.remove(id);
+          break;
+        default:
+          break;
+      }
     };
-    connectionMap[id] = pc;
     return pc;
   }
 
@@ -253,10 +267,21 @@ class NodeManager {
   Future<void> connect_to_peers(List<int> peers) async {
     for (final peer in peers) {
       final pc = await _createConnection(peer);
+
       final dc = await pc.createDataChannel('krapi', RTCDataChannelInit());
+
       connectionMap[peer] = pc;
       channelMap[peer] = dc;
       dc.onMessage = (message) => peerMessageController.add(PeerMessage.fromJson(jsonDecode(message.text)));
+      final openCompleter = Completer();
+      dc.onDataChannelState = (state) {
+        if (state == RTCDataChannelState.RTCDataChannelOpen) {
+          openCompleter.complete();
+        } else if (state == RTCDataChannelState.RTCDataChannelClosed) {
+          channelMap.remove(peer);
+        }
+      };
+      await openCompleter.future;
     }
   }
 }
@@ -275,7 +300,7 @@ class MyRTCSessionDescription extends RTCSessionDescription {
   }
 }
 
-final nodeManagerProvider = FutureProvider<NodeManager>(
+final managerProvider = FutureProvider<NodeManager>(
   (ref) async {
     final manager = NodeManager();
     await manager.init();

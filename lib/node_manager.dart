@@ -20,6 +20,13 @@ class NodeManager {
   final peerMessageController = BehaviorSubject<PeerMessage>();
   final peerTypeMap = <int, PeerType>{};
   final peerStateMap = <int, PeerState>{};
+  static const Map<String, dynamic> _sdpConstraints = {
+    'mandatory': {
+      'OfferToReceiveAudio': false,
+      'OfferToReceiveVideo': false,
+    },
+    'optional': [],
+  };
   PeerState state = PeerState.open;
   late final int my_id;
 
@@ -135,7 +142,7 @@ class NodeManager {
       if (type == 'offer') {
         final sdp = description['description']!;
         await pc.setRemoteDescription(MyRTCSessionDescription(id, sdp, type));
-        final answer = await pc.createAnswer();
+        final answer = await pc.createAnswer(_sdpConstraints);
         await pc.setLocalDescription(
           MyRTCSessionDescription(
             id,
@@ -205,7 +212,7 @@ class NodeManager {
   Future<RTCPeerConnection> _createConnection(int id) async {
     final pc = await createPeerConnection(rtcConfiguration);
     pc.onRenegotiationNeeded = () async {
-      final offer = await pc.createOffer();
+      final offer = await pc.createOffer(_sdpConstraints);
 
       await pc.setLocalDescription(
         MyRTCSessionDescription(

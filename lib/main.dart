@@ -1,7 +1,35 @@
-import 'package:flutter/material.dart';
+// ignore_for_file: avoid_print
 
-void main() {
-  runApp(const MyApp());
+import 'dart:async';
+
+import 'package:flutter/material.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:krapi_explorer/models/peer_message/peer_message.dart';
+import 'package:krapi_explorer/models/peer_models/peer_state.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
+
+import 'node_manager.dart';
+
+final managerProvider = Provider<NodeManager>(
+  (ref) {
+    throw UnimplementedError('Singaling Provider not initialized');
+  },
+);
+
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  final manager = NodeManager();
+  await manager.init();
+
+  runApp(
+    ProviderScope(
+      overrides: [
+        managerProvider.overrideWithValue(manager),
+      ],
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -18,48 +46,53 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class MyHomePage extends StatefulWidget {
+class MyHomePage extends HookConsumerWidget {
   const MyHomePage({super.key, required this.title});
 
   final String title;
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
+  Widget build(BuildContext context, WidgetRef ref) {
+    final peers = useValueNotifier(<int>[]);
 
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text(title),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
+            ElevatedButton(
+              onPressed: () async {
+                final manager = ref.read(managerProvider);
+                peers.value = await manager.availablePeers();
+              },
+              child: const Text('Available Peers'),
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
+            ElevatedButton(
+              onPressed: () async {
+                final manager = ref.read(managerProvider);
+                await manager.connect_to_peers(peers.value);
+              },
+              child: const Text('Connect To Peers'),
             ),
+            ElevatedButton(
+              onPressed: () async {
+                final manager = ref.read(managerProvider);
+
+                manager.broadcast(
+                  PeerMessage(
+                    PeerMessageType.peerStateUpdate,
+                    content: PeerState.initialBlockDownload.toJson(),
+                  ),
+                );
+              },
+              child: const Text('Update'),
+            ),
+            Text('peers: ${useValueListenable(peers)}'),
           ],
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
       ),
     );
   }

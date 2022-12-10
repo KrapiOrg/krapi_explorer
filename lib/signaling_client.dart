@@ -1,12 +1,12 @@
 import 'dart:async';
 import 'dart:convert';
-import 'dart:io';
 import 'package:uuid/uuid.dart';
+import 'package:web_socket_channel/io.dart';
 
 import 'models/signaling_message/signaling_message.dart';
 
 class SignalingClient {
-  late final WebSocket _socket;
+  late final IOWebSocketChannel _socket;
   late final Stream<SignalingMessage> _RTCSetupMessageStream;
   late final Stream<SignalingMessage> _messageStream;
   bool _isInit = false;
@@ -14,8 +14,9 @@ class SignalingClient {
   Function(dynamic)? onRTCSetup;
 
   Future<int> init() async {
-    _socket = await WebSocket.connect('ws://127.0.0.1:8080');
-    final broadcastStream = _socket.asBroadcastStream();
+    
+    _socket = IOWebSocketChannel.connect('ws://127.0.0.1:8080');
+    final broadcastStream = _socket.stream.asBroadcastStream();
 
     _RTCSetupMessageStream = broadcastStream
         .map(
@@ -36,7 +37,7 @@ class SignalingClient {
         .where((e) => e.type != SignalingMessageType.rtcSetup);
 
     final identityRequestMessage = SignalingMessage(SignalingMessageType.identityRequest, const Uuid().v4());
-    _socket.add(jsonEncode(identityRequestMessage));
+    _socket.sink.add(jsonEncode(identityRequestMessage));
     final identityResponse = await _messageStream.firstWhere((e) => e.tag == identityRequestMessage.tag);
     _isInit = true;
     return identityResponse.content as int;
@@ -44,12 +45,12 @@ class SignalingClient {
 
   void send(SignalingMessage message) {
     assert(_isInit, 'init() not called on instance of SignalingClient');
-    _socket.add(jsonEncode(message));
+    _socket.sink.add(jsonEncode(message));
   }
 
   Future<SignalingMessage> send_async(SignalingMessage message) async {
     assert(_isInit, 'init() not called on instance of SignalingClient');
-    _socket.add(jsonEncode(message));
+    _socket.sink.add(jsonEncode(message));
     return await _messageStream.firstWhere((e) => e.tag == message.tag);
   }
 }

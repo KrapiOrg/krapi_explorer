@@ -28,7 +28,7 @@ class NodeManager {
     'optional': [],
   };
   PeerState state = PeerState.open;
-  late final int my_id;
+  late final int myId;
 
   void send(int id, PeerMessage message) {
     channelMap[id]?.send(
@@ -39,9 +39,8 @@ class NodeManager {
   }
 
   Future<PeerMessage> send_async(int id, PeerMessage message) async {
-    final msg = message.copyWith(peer_id: my_id, tag: const Uuid().v4());
-    await channelMap[id]?.send(RTCDataChannelMessage(jsonEncode(msg.toJson())));
-    return await peerMessageController.firstWhere((element) => element.tag == msg.tag);
+    await channelMap[id]?.send(RTCDataChannelMessage(jsonEncode(message.toJson())));
+    return await peerMessageController.firstWhere((element) => element.tag == message.tag);
   }
 
   Future<List<PeerMessage>> broadcast_async(PeerMessage message) async {
@@ -51,7 +50,7 @@ class NodeManager {
         send_async(
           id,
           message.copyWith(
-            peer_id: my_id,
+            peerId: myId,
             tag: const Uuid().v4(),
           ),
         ),
@@ -65,7 +64,7 @@ class NodeManager {
       send(
         id,
         message.copyWith(
-          peer_id: my_id,
+          peerId: myId,
           tag: const Uuid().v4(),
         ),
       );
@@ -75,29 +74,31 @@ class NodeManager {
   NodeManager() {
     peerMessageController.listen(
       (message) async {
-        if (message.type == PeerMessageType.peerTypeRequest) {
-          send(
-            message.peer_id!,
-            PeerMessage(
-              PeerMessageType.peerTypeResponse,
-              peer_id: my_id,
-              tag: message.tag,
-              content: PeerType.observer,
-            ),
-          );
-        } else if (message.type == PeerMessageType.peerStateRequest) {
-          send(
-            message.peer_id!,
-            PeerMessage(
-              PeerMessageType.peerStateResponse,
-              peer_id: my_id,
-              tag: message.tag,
-              content: state,
-            ),
-          );
-        } else if (message.type == PeerMessageType.peerStateUpdate) {
-          peerStateMap[message.peer_id!] = PeerState.fromString(message.content);
-        }
+        message.whenOrNull(
+          peerTypeRequest: (peerId, tag, type) {
+            send(
+              peerId,
+              PeerMessage.peerTypeResponse(
+                peerId: myId,
+                tag: tag,
+                content: PeerType.observer,
+              ),
+            );
+          },
+          peerStateRequest: (peerId, tag, type) {
+            send(
+              peerId,
+              PeerMessage.peerStateResponse(
+                peerId: myId,
+                tag: message.tag,
+                content: state,
+              ),
+            );
+          },
+          peerStateUpdate: (content, peerId, tag, type) {
+            peerStateMap[message.peerId] = content;
+          },
+        );
       },
     );
 
@@ -177,10 +178,20 @@ class NodeManager {
     if (currentState == null) {
       final response = await send_async(
         id,
-        const PeerMessage(PeerMessageType.peerStateRequest),
+        PeerMessage.peerStateRequest(
+          tag: const Uuid().v4(),
+          peerId: myId,
+        ),
       );
-
-      return peerStateMap[id] = PeerState.fromString(response.content);
+      final receivedState = response.maybeWhen(
+        peerStateResponse: (content, _, __, ___) {
+          return content;
+        },
+        orElse: () {
+          return PeerState.closed;
+        },
+      );
+      return peerStateMap[id] = receivedState;
     } else {
       return currentState;
     }
@@ -191,21 +202,35 @@ class NodeManager {
     if (currentType == null) {
       final response = await send_async(
         id,
-        const PeerMessage(PeerMessageType.peerTypeRequest),
+        PeerMessage.peerTypeRequest(
+          peerId: myId,
+          tag: const Uuid().v4(),
+        ),
       );
-
-      return peerTypeMap[id] = PeerType.fromJson(response.content);
+      final receviedType = response.maybeWhen(
+        peerTypeResponse: (content, _, __, ___) {
+          return content;
+        },
+        orElse: () {
+          return PeerType.observer;
+        },
+      );
+      return peerTypeMap[id] = receviedType;
     } else {
       return currentType;
     }
   }
 
   Future<void> init() async {
-    my_id = await signalingClient.init();
+    myId = await signalingClient.init();
     final peers = await availablePeers();
     await connect_to_peers(peers);
     broadcast(
-      PeerMessage(PeerMessageType.peerStateUpdate, content: PeerState.open.toJson()),
+      PeerMessage.peerStateUpdate(
+        peerId: myId,
+        tag: const Uuid().v4(),
+        content: PeerState.open,
+      ),
     );
   }
 
@@ -221,14 +246,15 @@ class NodeManager {
           offer.type,
         ),
       );
+      final localDescription = await pc.getLocalDescription();
       signalingClient.send(
         SignalingMessage(
           SignalingMessageType.rtcSetup,
           const Uuid().v4(),
           content: {
             'id': id,
-            'type': (await pc.getLocalDescription())!.type,
-            'description': (await pc.getLocalDescription())!.sdp
+            'type': localDescription!.type,
+            'description': localDescription.sdp
           },
         ),
       );

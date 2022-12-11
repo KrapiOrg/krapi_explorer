@@ -18,7 +18,10 @@ enum SignalingMessageType {
   rtcSetup
 }
 
-@Freezed(toJson: true, unionValueCase: FreezedUnionCase.snake)
+@Freezed(
+  toJson: true,
+  unionValueCase: FreezedUnionCase.snake,
+)
 class SignalingMessage with _$SignalingMessage {
   factory SignalingMessage(
     SignalingMessageType type,

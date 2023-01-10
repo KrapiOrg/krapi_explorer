@@ -9,8 +9,8 @@ part of 'block_header.dart';
 _$_BlockHeader _$$_BlockHeaderFromJson(Map<String, dynamic> json) =>
     _$_BlockHeader(
       json['hash'] as String,
-      json['previousHash'] as String,
-      json['merkleRoot'] as String,
+      json['previous_hash'] as String,
+      json['merkle_root'] as String,
       json['timestamp'] as int,
       json['nonce'] as int,
     );
@@ -18,8 +18,8 @@ _$_BlockHeader _$$_BlockHeaderFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$$_BlockHeaderToJson(_$_BlockHeader instance) =>
     <String, dynamic>{
       'hash': instance.hash,
-      'previousHash': instance.previousHash,
-      'merkleRoot': instance.merkleRoot,
+      'previous_hash': instance.previousHash,
+      'merkle_root': instance.merkleRoot,
       'timestamp': instance.timestamp,
       'nonce': instance.nonce,
     };

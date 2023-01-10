@@ -3,6 +3,8 @@ import 'dart:convert';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_webrtc/flutter_webrtc.dart';
+import 'package:krapi_explorer/models/blockchain/block/block.dart';
+import 'package:krapi_explorer/models/blockchain/block_header/block_header.dart';
 import 'package:krapi_explorer/signaling_client.dart';
 import 'package:rxdart/subjects.dart';
 import 'package:uuid/uuid.dart';
@@ -20,6 +22,15 @@ class NodeManager {
   final peerMessageController = BehaviorSubject<PeerMessage>();
   final peerTypeMap = <int, PeerType>{};
   final peerStateMap = <int, PeerState>{};
+  static const _genesisHeader = BlockHeader(
+    '6FBA8017848885FB34C183BF4B6015D9C53307ABCD1F86505A271ED4B387265A',
+    '0',
+    '0',
+    1668542625,
+    0,
+  );
+  static const _genesisBlock = Block(_genesisHeader, {});
+
   static const Map<String, dynamic> _sdpConstraints = {
     'mandatory': {
       'OfferToReceiveAudio': false,
@@ -117,6 +128,23 @@ class NodeManager {
             case RTCPeerConnectionState.RTCPeerConnectionStateFailed:
             case RTCPeerConnectionState.RTCPeerConnectionStateDisconnected:
               connectionMap.remove(id);
+              channelMap.remove(id);
+              peerStateMap.remove(id);
+              peerTypeMap.remove(id);
+              break;
+            default:
+              break;
+          }
+        };
+        pc.onIceConnectionState = (state) {
+          switch (state) {
+            case RTCIceConnectionState.RTCIceConnectionStateFailed:
+            case RTCIceConnectionState.RTCIceConnectionStateDisconnected:
+            case RTCIceConnectionState.RTCIceConnectionStateClosed:
+              connectionMap.remove(id);
+              channelMap.remove(id);
+              peerStateMap.remove(id);
+              peerTypeMap.remove(id);
               break;
             default:
               break;
@@ -131,6 +159,7 @@ class NodeManager {
               openCompleter.complete();
             } else if (state == RTCDataChannelState.RTCDataChannelClosed) {
               channelMap.remove(id);
+              peerStateMap[id] = PeerState.closed;
             }
           };
 
@@ -251,11 +280,7 @@ class NodeManager {
         SignalingMessage(
           SignalingMessageType.rtcSetup,
           const Uuid().v4(),
-          content: {
-            'id': id,
-            'type': localDescription!.type,
-            'description': localDescription.sdp
-          },
+          content: {'id': id, 'type': localDescription!.type, 'description': localDescription.sdp},
         ),
       );
     };
@@ -273,12 +298,28 @@ class NodeManager {
         ),
       );
     };
+    pc.onIceConnectionState = (state) {
+      switch (state) {
+        case RTCIceConnectionState.RTCIceConnectionStateFailed:
+        case RTCIceConnectionState.RTCIceConnectionStateDisconnected:
+        case RTCIceConnectionState.RTCIceConnectionStateClosed:
+          connectionMap.remove(id);
+          channelMap.remove(id);
+          peerStateMap.remove(id);
+          peerTypeMap.remove(id);
+          break;
+        default:
+          break;
+      }
+    };
     pc.onConnectionState = (state) {
       switch (state) {
         case RTCPeerConnectionState.RTCPeerConnectionStateClosed:
         case RTCPeerConnectionState.RTCPeerConnectionStateFailed:
         case RTCPeerConnectionState.RTCPeerConnectionStateDisconnected:
           connectionMap.remove(id);
+          peerStateMap.remove(id);
+          peerTypeMap.remove(id);
           break;
         default:
           break;
@@ -312,12 +353,89 @@ class NodeManager {
           openCompleter.complete();
         } else if (state == RTCDataChannelState.RTCDataChannelClosed) {
           channelMap.remove(peer);
+          peerStateMap[peer] = PeerState.closed;
         }
       };
       await openCompleter.future;
     }
   }
+
+  Future<List<int>> get_peers({
+    Set<PeerType> types = const {PeerType.full},
+    Set<PeerState> states = const {PeerState.open},
+  }) async {
+    final ans = <int>[];
+    for (final id in channelMap.keys) {
+      final type = await requestPeerType(id);
+      final state = await requestPeerState(id);
+      if (types.contains(type) && states.contains(state)) {
+        ans.add(id);
+      }
+    }
+    return ans;
+  }
+
+  Future<List<Block>> getBlockchain(int id) async {
+    final blocks = <Block>[_genesisBlock];
+
+    final headersResponse = await send_async(
+      id,
+      PeerMessage.blockHeadersRequest(
+        content: _genesisHeader,
+        peerId: myId,
+        tag: const Uuid().v4(),
+      ),
+    );
+    final headers = headersResponse.maybeWhen(
+      blockHeadersResponse: (content, _, __, ___) {
+        return content.headers;
+      },
+      orElse: () => const <BlockHeader>[],
+    );
+    for (final header in headers) {
+      final blockResponse = await send_async(
+        id,
+        PeerMessage.blockRequest(
+          content: header,
+          peerId: myId,
+          tag: const Uuid().v4(),
+        ),
+      );
+      blockResponse.whenOrNull(
+        blockNotFoundResponse: (content, _, __, ___) {
+          print('Block #${content.hash.substring(0, 10)} was not found in peer $id');
+        },
+        blockResponse: (content, _, __, ___) {
+          print('recieved block ${content.header.hash.substring(0, 10)}');
+          blocks.add(content);
+        },
+      );
+    }
+    return blocks;
+  }
 }
+
+final peerListProvider = FutureProvider.autoDispose<List<int>>(
+  (ref) async {
+    return await ref.watch(managerProvider).when(
+          data: (manager) async => await manager.get_peers(),
+          loading: () => const [],
+          error: (_, __) => const [],
+        );
+  },
+  dependencies: [managerProvider],
+);
+
+final blockchainFromPeerProvider = FutureProvider.family.autoDispose<List<Block>, int>(
+  (ref, peerId) async {
+    return await ref.watch(managerProvider).when(
+          data: (manager) async => await manager.getBlockchain(peerId),
+          loading: () => const <Block>[],
+          error: (_, __) => const <Block>[],
+        );
+  },
+  dependencies: [managerProvider],
+);
 
 class MyRTCSessionDescription extends RTCSessionDescription {
   final int id;
@@ -333,8 +451,9 @@ class MyRTCSessionDescription extends RTCSessionDescription {
   }
 }
 
-final managerProvider = FutureProvider<NodeManager>(
+final managerProvider = FutureProvider.autoDispose<NodeManager>(
   (ref) async {
+    ref.keepAlive();
     final manager = NodeManager();
     await manager.init();
     return manager;

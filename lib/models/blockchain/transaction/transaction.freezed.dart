@@ -15,7 +15,7 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 Transaction _$TransactionFromJson(Map<String, dynamic> json) {
-  switch (json['type']) {
+  switch (json['status']) {
     case 'verified':
       return _TransactionVerified.fromJson(json);
     case 'pending':
@@ -24,8 +24,8 @@ Transaction _$TransactionFromJson(Map<String, dynamic> json) {
       return _TransactionRejected.fromJson(json);
 
     default:
-      throw CheckedFromJsonException(
-          json, 'type', 'Transaction', 'Invalid union type "${json['type']}"!');
+      throw CheckedFromJsonException(json, 'status', 'Transaction',
+          'Invalid union type "${json['status']}"!');
   }
 }
 

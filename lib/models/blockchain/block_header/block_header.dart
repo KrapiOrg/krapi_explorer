@@ -1,3 +1,5 @@
+// ignore_for_file: invalid_annotation_target
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'block_header.freezed.dart';
@@ -13,8 +15,8 @@ part 'block_header.g.dart';
 class BlockHeader with _$BlockHeader {
   const factory BlockHeader(
     String hash,
-    String previousHash,
-    String merkleRoot,
+    @JsonKey(name: 'previous_hash') String previousHash,
+    @JsonKey(name: 'merkle_root') String merkleRoot,
     int timestamp,
     int nonce,
   ) = _BlockHeader;

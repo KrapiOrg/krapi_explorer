@@ -23,7 +23,7 @@ enum TransactionStatus {
   fromJson: true,
   toJson: true,
   addImplicitFinal: true,
-  unionKey: 'type',
+  unionKey: 'status',
 )
 class Transaction with _$Transaction {
   @Implements<KrapiTransactionInterface>()

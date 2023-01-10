@@ -21,7 +21,9 @@ BlockHeader _$BlockHeaderFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$BlockHeader {
   String get hash => throw _privateConstructorUsedError;
+  @JsonKey(name: 'previous_hash')
   String get previousHash => throw _privateConstructorUsedError;
+  @JsonKey(name: 'merkle_root')
   String get merkleRoot => throw _privateConstructorUsedError;
   int get timestamp => throw _privateConstructorUsedError;
   int get nonce => throw _privateConstructorUsedError;
@@ -40,8 +42,8 @@ abstract class $BlockHeaderCopyWith<$Res> {
   @useResult
   $Res call(
       {String hash,
-      String previousHash,
-      String merkleRoot,
+      @JsonKey(name: 'previous_hash') String previousHash,
+      @JsonKey(name: 'merkle_root') String merkleRoot,
       int timestamp,
       int nonce});
 }
@@ -100,8 +102,8 @@ abstract class _$$_BlockHeaderCopyWith<$Res>
   @useResult
   $Res call(
       {String hash,
-      String previousHash,
-      String merkleRoot,
+      @JsonKey(name: 'previous_hash') String previousHash,
+      @JsonKey(name: 'merkle_root') String merkleRoot,
       int timestamp,
       int nonce});
 }
@@ -151,8 +153,12 @@ class __$$_BlockHeaderCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_BlockHeader implements _BlockHeader {
-  const _$_BlockHeader(this.hash, this.previousHash, this.merkleRoot,
-      this.timestamp, this.nonce);
+  const _$_BlockHeader(
+      this.hash,
+      @JsonKey(name: 'previous_hash') this.previousHash,
+      @JsonKey(name: 'merkle_root') this.merkleRoot,
+      this.timestamp,
+      this.nonce);
 
   factory _$_BlockHeader.fromJson(Map<String, dynamic> json) =>
       _$$_BlockHeaderFromJson(json);
@@ -160,8 +166,10 @@ class _$_BlockHeader implements _BlockHeader {
   @override
   final String hash;
   @override
+  @JsonKey(name: 'previous_hash')
   final String previousHash;
   @override
+  @JsonKey(name: 'merkle_root')
   final String merkleRoot;
   @override
   final int timestamp;
@@ -210,8 +218,8 @@ class _$_BlockHeader implements _BlockHeader {
 abstract class _BlockHeader implements BlockHeader {
   const factory _BlockHeader(
       final String hash,
-      final String previousHash,
-      final String merkleRoot,
+      @JsonKey(name: 'previous_hash') final String previousHash,
+      @JsonKey(name: 'merkle_root') final String merkleRoot,
       final int timestamp,
       final int nonce) = _$_BlockHeader;
 
@@ -221,8 +229,10 @@ abstract class _BlockHeader implements BlockHeader {
   @override
   String get hash;
   @override
+  @JsonKey(name: 'previous_hash')
   String get previousHash;
   @override
+  @JsonKey(name: 'merkle_root')
   String get merkleRoot;
   @override
   int get timestamp;

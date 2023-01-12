@@ -8,9 +8,10 @@ enum PeerState {
   waitingForPeers,
   closed,
   open,
+  unknown,
   error;
 
-  factory PeerState.fromString(String str) {
+  factory PeerState.fromJson(String str) {
     if (str == 'initial_block_download') {
       return PeerState.initialBlockDownload;
     } else if (str == 'waiting_for_peers') {
@@ -19,6 +20,8 @@ enum PeerState {
       return PeerState.closed;
     } else if (str == 'open') {
       return PeerState.open;
+    } else if (str == 'unknown') {
+      return PeerState.unknown;
     }
     return PeerState.error;
   }
@@ -32,6 +35,8 @@ enum PeerState {
         return 'closed';
       case PeerState.open:
         return 'open';
+      case PeerState.unknown:
+        return 'unknown';
       case PeerState.error:
         return 'error';
     }

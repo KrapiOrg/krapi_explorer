@@ -32,8 +32,8 @@ class Transaction with _$Transaction {
     TransactionStatus status,
     String hash,
     int timestamp,
-    int from,
-    int to,
+    String from,
+    String to,
   ) = _TransactionVerified;
   @Implements<KrapiTransactionInterface>()
   const factory Transaction.pending(
@@ -41,8 +41,8 @@ class Transaction with _$Transaction {
     TransactionStatus status,
     String hash,
     int timestamp,
-    int from,
-    int to,
+    String from,
+    String to,
   ) = _TransactionPending;
   @Implements<KrapiTransactionInterface>()
   const factory Transaction.rejected(
@@ -50,8 +50,8 @@ class Transaction with _$Transaction {
     TransactionStatus status,
     String hash,
     int timestamp,
-    int from,
-    int to,
+    String from,
+    String to,
   ) = _TransactionRejected;
   factory Transaction.fromJson(Map<String, dynamic> json) => _$TransactionFromJson(json);
 }

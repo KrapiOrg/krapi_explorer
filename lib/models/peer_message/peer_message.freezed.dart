@@ -57,208 +57,187 @@ PeerMessage _$PeerMessageFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$PeerMessage {
-  @JsonKey(name: 'peer_id')
-  int get peerId => throw _privateConstructorUsedError;
+  String get senderIdentity => throw _privateConstructorUsedError;
+  String get receiverIdentity => throw _privateConstructorUsedError;
   String get tag => throw _privateConstructorUsedError;
   PeerMessageType get type => throw _privateConstructorUsedError;
+  dynamic get content => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)
+    required TResult Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)
         peerTypeRequest,
-    required TResult Function(
-            PeerType content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(PeerType content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         peerTypeResponse,
-    required TResult Function(
-            Transaction content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(Transaction content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         addTransaction,
-    required TResult Function(
-            BlockHeader content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         blockHeadersRequest,
     required TResult Function(
             BlockHeadersResponseContent content,
-            @JsonKey(name: 'peer_id') int peerId,
+            String senderIdentity,
+            String receiverIdentity,
             String tag,
             PeerMessageType type)
         blockHeadersResponse,
-    required TResult Function(
-            BlockHeader content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         blockRequest,
-    required TResult Function(
-            Block content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         blockResponse,
-    required TResult Function(
-            BlockHeader content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         blockNotFoundResponse,
-    required TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)
+    required TResult Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)
         peerStateRequest,
-    required TResult Function(
-            PeerState content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         peerStateResponse,
-    required TResult Function(
-            PeerState content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         peerStateUpdate,
-    required TResult Function(
-            Block content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         addBlock,
     required TResult Function(
             BlockHeader header,
-            @JsonKey(name: 'peer_id') int peerId,
+            String senderIdentity,
+            String receiverIdentity,
             String tag,
-            PeerMessageType type)
+            PeerMessageType type,
+            dynamic content)
         blockRejected,
-    required TResult Function(
-            BlockHeader content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         blockAccepted,
-    required TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)
+    required TResult Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)
         getLastBlockRequest,
-    required TResult Function(
-            Block content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         getLastBlockResponse,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult? Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)?
         peerTypeRequest,
-    TResult? Function(PeerType content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(PeerType content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerTypeResponse,
-    TResult? Function(Transaction content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(Transaction content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         addTransaction,
-    TResult? Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockHeadersRequest,
     TResult? Function(
             BlockHeadersResponseContent content,
-            @JsonKey(name: 'peer_id') int peerId,
+            String senderIdentity,
+            String receiverIdentity,
             String tag,
             PeerMessageType type)?
         blockHeadersResponse,
-    TResult? Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockRequest,
-    TResult? Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockResponse,
-    TResult? Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockNotFoundResponse,
-    TResult? Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult? Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)?
         peerStateRequest,
-    TResult? Function(PeerState content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerStateResponse,
-    TResult? Function(PeerState content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerStateUpdate,
-    TResult? Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         addBlock,
-    TResult? Function(BlockHeader header, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(
+            BlockHeader header,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            dynamic content)?
         blockRejected,
-    TResult? Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockAccepted,
-    TResult? Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult? Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)?
         getLastBlockRequest,
-    TResult? Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         getLastBlockResponse,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult Function(String senderIdentity, String receiverIdentity, String tag,
+            PeerMessageType type, dynamic content)?
         peerTypeRequest,
-    TResult Function(PeerType content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(PeerType content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerTypeResponse,
-    TResult Function(Transaction content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(Transaction content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         addTransaction,
-    TResult Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockHeadersRequest,
-    TResult Function(
-            BlockHeadersResponseContent content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)?
+    TResult Function(BlockHeadersResponseContent content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockHeadersResponse,
-    TResult Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockRequest,
-    TResult Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockResponse,
-    TResult Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockNotFoundResponse,
-    TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult Function(String senderIdentity, String receiverIdentity, String tag,
+            PeerMessageType type, dynamic content)?
         peerStateRequest,
-    TResult Function(PeerState content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerStateResponse,
-    TResult Function(PeerState content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerStateUpdate,
-    TResult Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         addBlock,
-    TResult Function(BlockHeader header, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeader header,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            dynamic content)?
         blockRejected,
-    TResult Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockAccepted,
-    TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult Function(String senderIdentity, String receiverIdentity, String tag,
+            PeerMessageType type, dynamic content)?
         getLastBlockRequest,
-    TResult Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         getLastBlockResponse,
     required TResult orElse(),
   }) =>
@@ -357,7 +336,10 @@ abstract class $PeerMessageCopyWith<$Res> {
       _$PeerMessageCopyWithImpl<$Res, PeerMessage>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'peer_id') int peerId, String tag, PeerMessageType type});
+      {String senderIdentity,
+      String receiverIdentity,
+      String tag,
+      PeerMessageType type});
 }
 
 /// @nodoc
@@ -373,15 +355,20 @@ class _$PeerMessageCopyWithImpl<$Res, $Val extends PeerMessage>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? peerId = null,
+    Object? senderIdentity = null,
+    Object? receiverIdentity = null,
     Object? tag = null,
     Object? type = null,
   }) {
     return _then(_value.copyWith(
-      peerId: null == peerId
-          ? _value.peerId
-          : peerId // ignore: cast_nullable_to_non_nullable
-              as int,
+      senderIdentity: null == senderIdentity
+          ? _value.senderIdentity
+          : senderIdentity // ignore: cast_nullable_to_non_nullable
+              as String,
+      receiverIdentity: null == receiverIdentity
+          ? _value.receiverIdentity
+          : receiverIdentity // ignore: cast_nullable_to_non_nullable
+              as String,
       tag: null == tag
           ? _value.tag
           : tag // ignore: cast_nullable_to_non_nullable
@@ -404,7 +391,11 @@ abstract class _$$_PeerMessagePeerTypeRequestCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'peer_id') int peerId, String tag, PeerMessageType type});
+      {String senderIdentity,
+      String receiverIdentity,
+      String tag,
+      PeerMessageType type,
+      dynamic content});
 }
 
 /// @nodoc
@@ -419,15 +410,21 @@ class __$$_PeerMessagePeerTypeRequestCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? peerId = null,
+    Object? senderIdentity = null,
+    Object? receiverIdentity = null,
     Object? tag = null,
     Object? type = null,
+    Object? content = freezed,
   }) {
     return _then(_$_PeerMessagePeerTypeRequest(
-      peerId: null == peerId
-          ? _value.peerId
-          : peerId // ignore: cast_nullable_to_non_nullable
-              as int,
+      senderIdentity: null == senderIdentity
+          ? _value.senderIdentity
+          : senderIdentity // ignore: cast_nullable_to_non_nullable
+              as String,
+      receiverIdentity: null == receiverIdentity
+          ? _value.receiverIdentity
+          : receiverIdentity // ignore: cast_nullable_to_non_nullable
+              as String,
       tag: null == tag
           ? _value.tag
           : tag // ignore: cast_nullable_to_non_nullable
@@ -436,6 +433,10 @@ class __$$_PeerMessagePeerTypeRequestCopyWithImpl<$Res>
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as PeerMessageType,
+      content: freezed == content
+          ? _value.content
+          : content // ignore: cast_nullable_to_non_nullable
+              as dynamic,
     ));
   }
 }
@@ -444,25 +445,30 @@ class __$$_PeerMessagePeerTypeRequestCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_PeerMessagePeerTypeRequest implements _PeerMessagePeerTypeRequest {
   const _$_PeerMessagePeerTypeRequest(
-      {@JsonKey(name: 'peer_id') required this.peerId,
+      {required this.senderIdentity,
+      required this.receiverIdentity,
       required this.tag,
-      this.type = PeerMessageType.peerTypeRequest});
+      this.type = PeerMessageType.peerTypeRequest,
+      this.content});
 
   factory _$_PeerMessagePeerTypeRequest.fromJson(Map<String, dynamic> json) =>
       _$$_PeerMessagePeerTypeRequestFromJson(json);
 
   @override
-  @JsonKey(name: 'peer_id')
-  final int peerId;
+  final String senderIdentity;
+  @override
+  final String receiverIdentity;
   @override
   final String tag;
   @override
   @JsonKey()
   final PeerMessageType type;
+  @override
+  final dynamic content;
 
   @override
   String toString() {
-    return 'PeerMessage.peerTypeRequest(peerId: $peerId, tag: $tag, type: $type)';
+    return 'PeerMessage.peerTypeRequest(senderIdentity: $senderIdentity, receiverIdentity: $receiverIdentity, tag: $tag, type: $type, content: $content)';
   }
 
   @override
@@ -470,14 +476,19 @@ class _$_PeerMessagePeerTypeRequest implements _PeerMessagePeerTypeRequest {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_PeerMessagePeerTypeRequest &&
-            (identical(other.peerId, peerId) || other.peerId == peerId) &&
+            (identical(other.senderIdentity, senderIdentity) ||
+                other.senderIdentity == senderIdentity) &&
+            (identical(other.receiverIdentity, receiverIdentity) ||
+                other.receiverIdentity == receiverIdentity) &&
             (identical(other.tag, tag) || other.tag == tag) &&
-            (identical(other.type, type) || other.type == type));
+            (identical(other.type, type) || other.type == type) &&
+            const DeepCollectionEquality().equals(other.content, content));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, peerId, tag, type);
+  int get hashCode => Object.hash(runtimeType, senderIdentity, receiverIdentity,
+      tag, type, const DeepCollectionEquality().hash(content));
 
   @JsonKey(ignore: true)
   @override
@@ -489,213 +500,194 @@ class _$_PeerMessagePeerTypeRequest implements _PeerMessagePeerTypeRequest {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)
+    required TResult Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)
         peerTypeRequest,
-    required TResult Function(
-            PeerType content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(PeerType content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         peerTypeResponse,
-    required TResult Function(
-            Transaction content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(Transaction content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         addTransaction,
-    required TResult Function(
-            BlockHeader content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         blockHeadersRequest,
     required TResult Function(
             BlockHeadersResponseContent content,
-            @JsonKey(name: 'peer_id') int peerId,
+            String senderIdentity,
+            String receiverIdentity,
             String tag,
             PeerMessageType type)
         blockHeadersResponse,
-    required TResult Function(
-            BlockHeader content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         blockRequest,
-    required TResult Function(
-            Block content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         blockResponse,
-    required TResult Function(
-            BlockHeader content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         blockNotFoundResponse,
-    required TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)
+    required TResult Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)
         peerStateRequest,
-    required TResult Function(
-            PeerState content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         peerStateResponse,
-    required TResult Function(
-            PeerState content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         peerStateUpdate,
-    required TResult Function(
-            Block content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         addBlock,
     required TResult Function(
             BlockHeader header,
-            @JsonKey(name: 'peer_id') int peerId,
+            String senderIdentity,
+            String receiverIdentity,
             String tag,
-            PeerMessageType type)
+            PeerMessageType type,
+            dynamic content)
         blockRejected,
-    required TResult Function(
-            BlockHeader content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         blockAccepted,
-    required TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)
+    required TResult Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)
         getLastBlockRequest,
-    required TResult Function(
-            Block content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         getLastBlockResponse,
   }) {
-    return peerTypeRequest(peerId, tag, type);
+    return peerTypeRequest(
+        senderIdentity, receiverIdentity, tag, type, content);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult? Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)?
         peerTypeRequest,
-    TResult? Function(PeerType content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(PeerType content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerTypeResponse,
-    TResult? Function(Transaction content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(Transaction content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         addTransaction,
-    TResult? Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockHeadersRequest,
     TResult? Function(
             BlockHeadersResponseContent content,
-            @JsonKey(name: 'peer_id') int peerId,
+            String senderIdentity,
+            String receiverIdentity,
             String tag,
             PeerMessageType type)?
         blockHeadersResponse,
-    TResult? Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockRequest,
-    TResult? Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockResponse,
-    TResult? Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockNotFoundResponse,
-    TResult? Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult? Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)?
         peerStateRequest,
-    TResult? Function(PeerState content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerStateResponse,
-    TResult? Function(PeerState content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerStateUpdate,
-    TResult? Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         addBlock,
-    TResult? Function(BlockHeader header, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(
+            BlockHeader header,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            dynamic content)?
         blockRejected,
-    TResult? Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockAccepted,
-    TResult? Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult? Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)?
         getLastBlockRequest,
-    TResult? Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         getLastBlockResponse,
   }) {
-    return peerTypeRequest?.call(peerId, tag, type);
+    return peerTypeRequest?.call(
+        senderIdentity, receiverIdentity, tag, type, content);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult Function(String senderIdentity, String receiverIdentity, String tag,
+            PeerMessageType type, dynamic content)?
         peerTypeRequest,
-    TResult Function(PeerType content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(PeerType content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerTypeResponse,
-    TResult Function(Transaction content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(Transaction content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         addTransaction,
-    TResult Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockHeadersRequest,
-    TResult Function(
-            BlockHeadersResponseContent content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)?
+    TResult Function(BlockHeadersResponseContent content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockHeadersResponse,
-    TResult Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockRequest,
-    TResult Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockResponse,
-    TResult Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockNotFoundResponse,
-    TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult Function(String senderIdentity, String receiverIdentity, String tag,
+            PeerMessageType type, dynamic content)?
         peerStateRequest,
-    TResult Function(PeerState content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerStateResponse,
-    TResult Function(PeerState content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerStateUpdate,
-    TResult Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         addBlock,
-    TResult Function(BlockHeader header, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeader header,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            dynamic content)?
         blockRejected,
-    TResult Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockAccepted,
-    TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult Function(String senderIdentity, String receiverIdentity, String tag,
+            PeerMessageType type, dynamic content)?
         getLastBlockRequest,
-    TResult Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         getLastBlockResponse,
     required TResult orElse(),
   }) {
     if (peerTypeRequest != null) {
-      return peerTypeRequest(peerId, tag, type);
+      return peerTypeRequest(
+          senderIdentity, receiverIdentity, tag, type, content);
     }
     return orElse();
   }
@@ -804,20 +796,25 @@ class _$_PeerMessagePeerTypeRequest implements _PeerMessagePeerTypeRequest {
 abstract class _PeerMessagePeerTypeRequest
     implements PeerMessage, KrapiMessageInterface {
   const factory _PeerMessagePeerTypeRequest(
-      {@JsonKey(name: 'peer_id') required final int peerId,
+      {required final String senderIdentity,
+      required final String receiverIdentity,
       required final String tag,
-      final PeerMessageType type}) = _$_PeerMessagePeerTypeRequest;
+      final PeerMessageType type,
+      final dynamic content}) = _$_PeerMessagePeerTypeRequest;
 
   factory _PeerMessagePeerTypeRequest.fromJson(Map<String, dynamic> json) =
       _$_PeerMessagePeerTypeRequest.fromJson;
 
   @override
-  @JsonKey(name: 'peer_id')
-  int get peerId;
+  String get senderIdentity;
+  @override
+  String get receiverIdentity;
   @override
   String get tag;
   @override
   PeerMessageType get type;
+  @override
+  dynamic get content;
   @override
   @JsonKey(ignore: true)
   _$$_PeerMessagePeerTypeRequestCopyWith<_$_PeerMessagePeerTypeRequest>
@@ -835,7 +832,8 @@ abstract class _$$_PeerMessagePeerTypeResponseCopyWith<$Res>
   @useResult
   $Res call(
       {PeerType content,
-      @JsonKey(name: 'peer_id') int peerId,
+      String senderIdentity,
+      String receiverIdentity,
       String tag,
       PeerMessageType type});
 }
@@ -853,7 +851,8 @@ class __$$_PeerMessagePeerTypeResponseCopyWithImpl<$Res>
   @override
   $Res call({
     Object? content = null,
-    Object? peerId = null,
+    Object? senderIdentity = null,
+    Object? receiverIdentity = null,
     Object? tag = null,
     Object? type = null,
   }) {
@@ -862,10 +861,14 @@ class __$$_PeerMessagePeerTypeResponseCopyWithImpl<$Res>
           ? _value.content
           : content // ignore: cast_nullable_to_non_nullable
               as PeerType,
-      peerId: null == peerId
-          ? _value.peerId
-          : peerId // ignore: cast_nullable_to_non_nullable
-              as int,
+      senderIdentity: null == senderIdentity
+          ? _value.senderIdentity
+          : senderIdentity // ignore: cast_nullable_to_non_nullable
+              as String,
+      receiverIdentity: null == receiverIdentity
+          ? _value.receiverIdentity
+          : receiverIdentity // ignore: cast_nullable_to_non_nullable
+              as String,
       tag: null == tag
           ? _value.tag
           : tag // ignore: cast_nullable_to_non_nullable
@@ -883,7 +886,8 @@ class __$$_PeerMessagePeerTypeResponseCopyWithImpl<$Res>
 class _$_PeerMessagePeerTypeResponse implements _PeerMessagePeerTypeResponse {
   const _$_PeerMessagePeerTypeResponse(
       {required this.content,
-      @JsonKey(name: 'peer_id') required this.peerId,
+      required this.senderIdentity,
+      required this.receiverIdentity,
       required this.tag,
       this.type = PeerMessageType.peerTypeResponse});
 
@@ -893,8 +897,9 @@ class _$_PeerMessagePeerTypeResponse implements _PeerMessagePeerTypeResponse {
   @override
   final PeerType content;
   @override
-  @JsonKey(name: 'peer_id')
-  final int peerId;
+  final String senderIdentity;
+  @override
+  final String receiverIdentity;
   @override
   final String tag;
   @override
@@ -903,7 +908,7 @@ class _$_PeerMessagePeerTypeResponse implements _PeerMessagePeerTypeResponse {
 
   @override
   String toString() {
-    return 'PeerMessage.peerTypeResponse(content: $content, peerId: $peerId, tag: $tag, type: $type)';
+    return 'PeerMessage.peerTypeResponse(content: $content, senderIdentity: $senderIdentity, receiverIdentity: $receiverIdentity, tag: $tag, type: $type)';
   }
 
   @override
@@ -912,14 +917,18 @@ class _$_PeerMessagePeerTypeResponse implements _PeerMessagePeerTypeResponse {
         (other.runtimeType == runtimeType &&
             other is _$_PeerMessagePeerTypeResponse &&
             (identical(other.content, content) || other.content == content) &&
-            (identical(other.peerId, peerId) || other.peerId == peerId) &&
+            (identical(other.senderIdentity, senderIdentity) ||
+                other.senderIdentity == senderIdentity) &&
+            (identical(other.receiverIdentity, receiverIdentity) ||
+                other.receiverIdentity == receiverIdentity) &&
             (identical(other.tag, tag) || other.tag == tag) &&
             (identical(other.type, type) || other.type == type));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, content, peerId, tag, type);
+  int get hashCode => Object.hash(
+      runtimeType, content, senderIdentity, receiverIdentity, tag, type);
 
   @JsonKey(ignore: true)
   @override
@@ -931,213 +940,194 @@ class _$_PeerMessagePeerTypeResponse implements _PeerMessagePeerTypeResponse {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)
+    required TResult Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)
         peerTypeRequest,
-    required TResult Function(
-            PeerType content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(PeerType content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         peerTypeResponse,
-    required TResult Function(
-            Transaction content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(Transaction content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         addTransaction,
-    required TResult Function(
-            BlockHeader content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         blockHeadersRequest,
     required TResult Function(
             BlockHeadersResponseContent content,
-            @JsonKey(name: 'peer_id') int peerId,
+            String senderIdentity,
+            String receiverIdentity,
             String tag,
             PeerMessageType type)
         blockHeadersResponse,
-    required TResult Function(
-            BlockHeader content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         blockRequest,
-    required TResult Function(
-            Block content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         blockResponse,
-    required TResult Function(
-            BlockHeader content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         blockNotFoundResponse,
-    required TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)
+    required TResult Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)
         peerStateRequest,
-    required TResult Function(
-            PeerState content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         peerStateResponse,
-    required TResult Function(
-            PeerState content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         peerStateUpdate,
-    required TResult Function(
-            Block content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         addBlock,
     required TResult Function(
             BlockHeader header,
-            @JsonKey(name: 'peer_id') int peerId,
+            String senderIdentity,
+            String receiverIdentity,
             String tag,
-            PeerMessageType type)
+            PeerMessageType type,
+            dynamic content)
         blockRejected,
-    required TResult Function(
-            BlockHeader content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         blockAccepted,
-    required TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)
+    required TResult Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)
         getLastBlockRequest,
-    required TResult Function(
-            Block content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         getLastBlockResponse,
   }) {
-    return peerTypeResponse(content, peerId, tag, type);
+    return peerTypeResponse(
+        content, senderIdentity, receiverIdentity, tag, type);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult? Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)?
         peerTypeRequest,
-    TResult? Function(PeerType content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(PeerType content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerTypeResponse,
-    TResult? Function(Transaction content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(Transaction content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         addTransaction,
-    TResult? Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockHeadersRequest,
     TResult? Function(
             BlockHeadersResponseContent content,
-            @JsonKey(name: 'peer_id') int peerId,
+            String senderIdentity,
+            String receiverIdentity,
             String tag,
             PeerMessageType type)?
         blockHeadersResponse,
-    TResult? Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockRequest,
-    TResult? Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockResponse,
-    TResult? Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockNotFoundResponse,
-    TResult? Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult? Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)?
         peerStateRequest,
-    TResult? Function(PeerState content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerStateResponse,
-    TResult? Function(PeerState content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerStateUpdate,
-    TResult? Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         addBlock,
-    TResult? Function(BlockHeader header, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(
+            BlockHeader header,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            dynamic content)?
         blockRejected,
-    TResult? Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockAccepted,
-    TResult? Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult? Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)?
         getLastBlockRequest,
-    TResult? Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         getLastBlockResponse,
   }) {
-    return peerTypeResponse?.call(content, peerId, tag, type);
+    return peerTypeResponse?.call(
+        content, senderIdentity, receiverIdentity, tag, type);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult Function(String senderIdentity, String receiverIdentity, String tag,
+            PeerMessageType type, dynamic content)?
         peerTypeRequest,
-    TResult Function(PeerType content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(PeerType content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerTypeResponse,
-    TResult Function(Transaction content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(Transaction content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         addTransaction,
-    TResult Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockHeadersRequest,
-    TResult Function(
-            BlockHeadersResponseContent content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)?
+    TResult Function(BlockHeadersResponseContent content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockHeadersResponse,
-    TResult Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockRequest,
-    TResult Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockResponse,
-    TResult Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockNotFoundResponse,
-    TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult Function(String senderIdentity, String receiverIdentity, String tag,
+            PeerMessageType type, dynamic content)?
         peerStateRequest,
-    TResult Function(PeerState content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerStateResponse,
-    TResult Function(PeerState content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerStateUpdate,
-    TResult Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         addBlock,
-    TResult Function(BlockHeader header, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeader header,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            dynamic content)?
         blockRejected,
-    TResult Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockAccepted,
-    TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult Function(String senderIdentity, String receiverIdentity, String tag,
+            PeerMessageType type, dynamic content)?
         getLastBlockRequest,
-    TResult Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         getLastBlockResponse,
     required TResult orElse(),
   }) {
     if (peerTypeResponse != null) {
-      return peerTypeResponse(content, peerId, tag, type);
+      return peerTypeResponse(
+          content, senderIdentity, receiverIdentity, tag, type);
     }
     return orElse();
   }
@@ -1247,17 +1237,20 @@ abstract class _PeerMessagePeerTypeResponse
     implements PeerMessage, KrapiMessageInterface {
   const factory _PeerMessagePeerTypeResponse(
       {required final PeerType content,
-      @JsonKey(name: 'peer_id') required final int peerId,
+      required final String senderIdentity,
+      required final String receiverIdentity,
       required final String tag,
       final PeerMessageType type}) = _$_PeerMessagePeerTypeResponse;
 
   factory _PeerMessagePeerTypeResponse.fromJson(Map<String, dynamic> json) =
       _$_PeerMessagePeerTypeResponse.fromJson;
 
+  @override
   PeerType get content;
   @override
-  @JsonKey(name: 'peer_id')
-  int get peerId;
+  String get senderIdentity;
+  @override
+  String get receiverIdentity;
   @override
   String get tag;
   @override
@@ -1279,7 +1272,8 @@ abstract class _$$_PeerMessageAddTransactionCopyWith<$Res>
   @useResult
   $Res call(
       {Transaction content,
-      @JsonKey(name: 'peer_id') int peerId,
+      String senderIdentity,
+      String receiverIdentity,
       String tag,
       PeerMessageType type});
 
@@ -1299,7 +1293,8 @@ class __$$_PeerMessageAddTransactionCopyWithImpl<$Res>
   @override
   $Res call({
     Object? content = null,
-    Object? peerId = null,
+    Object? senderIdentity = null,
+    Object? receiverIdentity = null,
     Object? tag = null,
     Object? type = null,
   }) {
@@ -1308,10 +1303,14 @@ class __$$_PeerMessageAddTransactionCopyWithImpl<$Res>
           ? _value.content
           : content // ignore: cast_nullable_to_non_nullable
               as Transaction,
-      peerId: null == peerId
-          ? _value.peerId
-          : peerId // ignore: cast_nullable_to_non_nullable
-              as int,
+      senderIdentity: null == senderIdentity
+          ? _value.senderIdentity
+          : senderIdentity // ignore: cast_nullable_to_non_nullable
+              as String,
+      receiverIdentity: null == receiverIdentity
+          ? _value.receiverIdentity
+          : receiverIdentity // ignore: cast_nullable_to_non_nullable
+              as String,
       tag: null == tag
           ? _value.tag
           : tag // ignore: cast_nullable_to_non_nullable
@@ -1337,7 +1336,8 @@ class __$$_PeerMessageAddTransactionCopyWithImpl<$Res>
 class _$_PeerMessageAddTransaction implements _PeerMessageAddTransaction {
   const _$_PeerMessageAddTransaction(
       {required this.content,
-      @JsonKey(name: 'peer_id') required this.peerId,
+      required this.senderIdentity,
+      required this.receiverIdentity,
       required this.tag,
       this.type = PeerMessageType.addTransaction});
 
@@ -1347,8 +1347,9 @@ class _$_PeerMessageAddTransaction implements _PeerMessageAddTransaction {
   @override
   final Transaction content;
   @override
-  @JsonKey(name: 'peer_id')
-  final int peerId;
+  final String senderIdentity;
+  @override
+  final String receiverIdentity;
   @override
   final String tag;
   @override
@@ -1357,7 +1358,7 @@ class _$_PeerMessageAddTransaction implements _PeerMessageAddTransaction {
 
   @override
   String toString() {
-    return 'PeerMessage.addTransaction(content: $content, peerId: $peerId, tag: $tag, type: $type)';
+    return 'PeerMessage.addTransaction(content: $content, senderIdentity: $senderIdentity, receiverIdentity: $receiverIdentity, tag: $tag, type: $type)';
   }
 
   @override
@@ -1366,14 +1367,18 @@ class _$_PeerMessageAddTransaction implements _PeerMessageAddTransaction {
         (other.runtimeType == runtimeType &&
             other is _$_PeerMessageAddTransaction &&
             (identical(other.content, content) || other.content == content) &&
-            (identical(other.peerId, peerId) || other.peerId == peerId) &&
+            (identical(other.senderIdentity, senderIdentity) ||
+                other.senderIdentity == senderIdentity) &&
+            (identical(other.receiverIdentity, receiverIdentity) ||
+                other.receiverIdentity == receiverIdentity) &&
             (identical(other.tag, tag) || other.tag == tag) &&
             (identical(other.type, type) || other.type == type));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, content, peerId, tag, type);
+  int get hashCode => Object.hash(
+      runtimeType, content, senderIdentity, receiverIdentity, tag, type);
 
   @JsonKey(ignore: true)
   @override
@@ -1385,213 +1390,193 @@ class _$_PeerMessageAddTransaction implements _PeerMessageAddTransaction {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)
+    required TResult Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)
         peerTypeRequest,
-    required TResult Function(
-            PeerType content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(PeerType content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         peerTypeResponse,
-    required TResult Function(
-            Transaction content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(Transaction content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         addTransaction,
-    required TResult Function(
-            BlockHeader content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         blockHeadersRequest,
     required TResult Function(
             BlockHeadersResponseContent content,
-            @JsonKey(name: 'peer_id') int peerId,
+            String senderIdentity,
+            String receiverIdentity,
             String tag,
             PeerMessageType type)
         blockHeadersResponse,
-    required TResult Function(
-            BlockHeader content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         blockRequest,
-    required TResult Function(
-            Block content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         blockResponse,
-    required TResult Function(
-            BlockHeader content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         blockNotFoundResponse,
-    required TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)
+    required TResult Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)
         peerStateRequest,
-    required TResult Function(
-            PeerState content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         peerStateResponse,
-    required TResult Function(
-            PeerState content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         peerStateUpdate,
-    required TResult Function(
-            Block content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         addBlock,
     required TResult Function(
             BlockHeader header,
-            @JsonKey(name: 'peer_id') int peerId,
+            String senderIdentity,
+            String receiverIdentity,
             String tag,
-            PeerMessageType type)
+            PeerMessageType type,
+            dynamic content)
         blockRejected,
-    required TResult Function(
-            BlockHeader content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         blockAccepted,
-    required TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)
+    required TResult Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)
         getLastBlockRequest,
-    required TResult Function(
-            Block content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         getLastBlockResponse,
   }) {
-    return addTransaction(content, peerId, tag, type);
+    return addTransaction(content, senderIdentity, receiverIdentity, tag, type);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult? Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)?
         peerTypeRequest,
-    TResult? Function(PeerType content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(PeerType content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerTypeResponse,
-    TResult? Function(Transaction content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(Transaction content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         addTransaction,
-    TResult? Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockHeadersRequest,
     TResult? Function(
             BlockHeadersResponseContent content,
-            @JsonKey(name: 'peer_id') int peerId,
+            String senderIdentity,
+            String receiverIdentity,
             String tag,
             PeerMessageType type)?
         blockHeadersResponse,
-    TResult? Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockRequest,
-    TResult? Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockResponse,
-    TResult? Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockNotFoundResponse,
-    TResult? Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult? Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)?
         peerStateRequest,
-    TResult? Function(PeerState content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerStateResponse,
-    TResult? Function(PeerState content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerStateUpdate,
-    TResult? Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         addBlock,
-    TResult? Function(BlockHeader header, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(
+            BlockHeader header,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            dynamic content)?
         blockRejected,
-    TResult? Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockAccepted,
-    TResult? Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult? Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)?
         getLastBlockRequest,
-    TResult? Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         getLastBlockResponse,
   }) {
-    return addTransaction?.call(content, peerId, tag, type);
+    return addTransaction?.call(
+        content, senderIdentity, receiverIdentity, tag, type);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult Function(String senderIdentity, String receiverIdentity, String tag,
+            PeerMessageType type, dynamic content)?
         peerTypeRequest,
-    TResult Function(PeerType content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(PeerType content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerTypeResponse,
-    TResult Function(Transaction content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(Transaction content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         addTransaction,
-    TResult Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockHeadersRequest,
-    TResult Function(
-            BlockHeadersResponseContent content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)?
+    TResult Function(BlockHeadersResponseContent content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockHeadersResponse,
-    TResult Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockRequest,
-    TResult Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockResponse,
-    TResult Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockNotFoundResponse,
-    TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult Function(String senderIdentity, String receiverIdentity, String tag,
+            PeerMessageType type, dynamic content)?
         peerStateRequest,
-    TResult Function(PeerState content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerStateResponse,
-    TResult Function(PeerState content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerStateUpdate,
-    TResult Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         addBlock,
-    TResult Function(BlockHeader header, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeader header,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            dynamic content)?
         blockRejected,
-    TResult Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockAccepted,
-    TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult Function(String senderIdentity, String receiverIdentity, String tag,
+            PeerMessageType type, dynamic content)?
         getLastBlockRequest,
-    TResult Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         getLastBlockResponse,
     required TResult orElse(),
   }) {
     if (addTransaction != null) {
-      return addTransaction(content, peerId, tag, type);
+      return addTransaction(
+          content, senderIdentity, receiverIdentity, tag, type);
     }
     return orElse();
   }
@@ -1701,17 +1686,20 @@ abstract class _PeerMessageAddTransaction
     implements PeerMessage, KrapiMessageInterface {
   const factory _PeerMessageAddTransaction(
       {required final Transaction content,
-      @JsonKey(name: 'peer_id') required final int peerId,
+      required final String senderIdentity,
+      required final String receiverIdentity,
       required final String tag,
       final PeerMessageType type}) = _$_PeerMessageAddTransaction;
 
   factory _PeerMessageAddTransaction.fromJson(Map<String, dynamic> json) =
       _$_PeerMessageAddTransaction.fromJson;
 
+  @override
   Transaction get content;
   @override
-  @JsonKey(name: 'peer_id')
-  int get peerId;
+  String get senderIdentity;
+  @override
+  String get receiverIdentity;
   @override
   String get tag;
   @override
@@ -1733,7 +1721,8 @@ abstract class _$$_PeerMessageBlockHeadersRequestCopyWith<$Res>
   @useResult
   $Res call(
       {BlockHeader content,
-      @JsonKey(name: 'peer_id') int peerId,
+      String senderIdentity,
+      String receiverIdentity,
       String tag,
       PeerMessageType type});
 
@@ -1753,7 +1742,8 @@ class __$$_PeerMessageBlockHeadersRequestCopyWithImpl<$Res>
   @override
   $Res call({
     Object? content = null,
-    Object? peerId = null,
+    Object? senderIdentity = null,
+    Object? receiverIdentity = null,
     Object? tag = null,
     Object? type = null,
   }) {
@@ -1762,10 +1752,14 @@ class __$$_PeerMessageBlockHeadersRequestCopyWithImpl<$Res>
           ? _value.content
           : content // ignore: cast_nullable_to_non_nullable
               as BlockHeader,
-      peerId: null == peerId
-          ? _value.peerId
-          : peerId // ignore: cast_nullable_to_non_nullable
-              as int,
+      senderIdentity: null == senderIdentity
+          ? _value.senderIdentity
+          : senderIdentity // ignore: cast_nullable_to_non_nullable
+              as String,
+      receiverIdentity: null == receiverIdentity
+          ? _value.receiverIdentity
+          : receiverIdentity // ignore: cast_nullable_to_non_nullable
+              as String,
       tag: null == tag
           ? _value.tag
           : tag // ignore: cast_nullable_to_non_nullable
@@ -1792,7 +1786,8 @@ class _$_PeerMessageBlockHeadersRequest
     implements _PeerMessageBlockHeadersRequest {
   const _$_PeerMessageBlockHeadersRequest(
       {required this.content,
-      @JsonKey(name: 'peer_id') required this.peerId,
+      required this.senderIdentity,
+      required this.receiverIdentity,
       required this.tag,
       this.type = PeerMessageType.blockHeadersRequest});
 
@@ -1803,8 +1798,9 @@ class _$_PeerMessageBlockHeadersRequest
   @override
   final BlockHeader content;
   @override
-  @JsonKey(name: 'peer_id')
-  final int peerId;
+  final String senderIdentity;
+  @override
+  final String receiverIdentity;
   @override
   final String tag;
   @override
@@ -1813,7 +1809,7 @@ class _$_PeerMessageBlockHeadersRequest
 
   @override
   String toString() {
-    return 'PeerMessage.blockHeadersRequest(content: $content, peerId: $peerId, tag: $tag, type: $type)';
+    return 'PeerMessage.blockHeadersRequest(content: $content, senderIdentity: $senderIdentity, receiverIdentity: $receiverIdentity, tag: $tag, type: $type)';
   }
 
   @override
@@ -1822,14 +1818,18 @@ class _$_PeerMessageBlockHeadersRequest
         (other.runtimeType == runtimeType &&
             other is _$_PeerMessageBlockHeadersRequest &&
             (identical(other.content, content) || other.content == content) &&
-            (identical(other.peerId, peerId) || other.peerId == peerId) &&
+            (identical(other.senderIdentity, senderIdentity) ||
+                other.senderIdentity == senderIdentity) &&
+            (identical(other.receiverIdentity, receiverIdentity) ||
+                other.receiverIdentity == receiverIdentity) &&
             (identical(other.tag, tag) || other.tag == tag) &&
             (identical(other.type, type) || other.type == type));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, content, peerId, tag, type);
+  int get hashCode => Object.hash(
+      runtimeType, content, senderIdentity, receiverIdentity, tag, type);
 
   @JsonKey(ignore: true)
   @override
@@ -1841,213 +1841,194 @@ class _$_PeerMessageBlockHeadersRequest
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)
+    required TResult Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)
         peerTypeRequest,
-    required TResult Function(
-            PeerType content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(PeerType content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         peerTypeResponse,
-    required TResult Function(
-            Transaction content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(Transaction content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         addTransaction,
-    required TResult Function(
-            BlockHeader content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         blockHeadersRequest,
     required TResult Function(
             BlockHeadersResponseContent content,
-            @JsonKey(name: 'peer_id') int peerId,
+            String senderIdentity,
+            String receiverIdentity,
             String tag,
             PeerMessageType type)
         blockHeadersResponse,
-    required TResult Function(
-            BlockHeader content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         blockRequest,
-    required TResult Function(
-            Block content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         blockResponse,
-    required TResult Function(
-            BlockHeader content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         blockNotFoundResponse,
-    required TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)
+    required TResult Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)
         peerStateRequest,
-    required TResult Function(
-            PeerState content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         peerStateResponse,
-    required TResult Function(
-            PeerState content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         peerStateUpdate,
-    required TResult Function(
-            Block content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         addBlock,
     required TResult Function(
             BlockHeader header,
-            @JsonKey(name: 'peer_id') int peerId,
+            String senderIdentity,
+            String receiverIdentity,
             String tag,
-            PeerMessageType type)
+            PeerMessageType type,
+            dynamic content)
         blockRejected,
-    required TResult Function(
-            BlockHeader content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         blockAccepted,
-    required TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)
+    required TResult Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)
         getLastBlockRequest,
-    required TResult Function(
-            Block content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         getLastBlockResponse,
   }) {
-    return blockHeadersRequest(content, peerId, tag, type);
+    return blockHeadersRequest(
+        content, senderIdentity, receiverIdentity, tag, type);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult? Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)?
         peerTypeRequest,
-    TResult? Function(PeerType content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(PeerType content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerTypeResponse,
-    TResult? Function(Transaction content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(Transaction content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         addTransaction,
-    TResult? Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockHeadersRequest,
     TResult? Function(
             BlockHeadersResponseContent content,
-            @JsonKey(name: 'peer_id') int peerId,
+            String senderIdentity,
+            String receiverIdentity,
             String tag,
             PeerMessageType type)?
         blockHeadersResponse,
-    TResult? Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockRequest,
-    TResult? Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockResponse,
-    TResult? Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockNotFoundResponse,
-    TResult? Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult? Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)?
         peerStateRequest,
-    TResult? Function(PeerState content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerStateResponse,
-    TResult? Function(PeerState content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerStateUpdate,
-    TResult? Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         addBlock,
-    TResult? Function(BlockHeader header, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(
+            BlockHeader header,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            dynamic content)?
         blockRejected,
-    TResult? Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockAccepted,
-    TResult? Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult? Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)?
         getLastBlockRequest,
-    TResult? Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         getLastBlockResponse,
   }) {
-    return blockHeadersRequest?.call(content, peerId, tag, type);
+    return blockHeadersRequest?.call(
+        content, senderIdentity, receiverIdentity, tag, type);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult Function(String senderIdentity, String receiverIdentity, String tag,
+            PeerMessageType type, dynamic content)?
         peerTypeRequest,
-    TResult Function(PeerType content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(PeerType content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerTypeResponse,
-    TResult Function(Transaction content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(Transaction content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         addTransaction,
-    TResult Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockHeadersRequest,
-    TResult Function(
-            BlockHeadersResponseContent content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)?
+    TResult Function(BlockHeadersResponseContent content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockHeadersResponse,
-    TResult Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockRequest,
-    TResult Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockResponse,
-    TResult Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockNotFoundResponse,
-    TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult Function(String senderIdentity, String receiverIdentity, String tag,
+            PeerMessageType type, dynamic content)?
         peerStateRequest,
-    TResult Function(PeerState content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerStateResponse,
-    TResult Function(PeerState content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerStateUpdate,
-    TResult Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         addBlock,
-    TResult Function(BlockHeader header, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeader header,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            dynamic content)?
         blockRejected,
-    TResult Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockAccepted,
-    TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult Function(String senderIdentity, String receiverIdentity, String tag,
+            PeerMessageType type, dynamic content)?
         getLastBlockRequest,
-    TResult Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         getLastBlockResponse,
     required TResult orElse(),
   }) {
     if (blockHeadersRequest != null) {
-      return blockHeadersRequest(content, peerId, tag, type);
+      return blockHeadersRequest(
+          content, senderIdentity, receiverIdentity, tag, type);
     }
     return orElse();
   }
@@ -2157,17 +2138,20 @@ abstract class _PeerMessageBlockHeadersRequest
     implements PeerMessage, KrapiMessageInterface {
   const factory _PeerMessageBlockHeadersRequest(
       {required final BlockHeader content,
-      @JsonKey(name: 'peer_id') required final int peerId,
+      required final String senderIdentity,
+      required final String receiverIdentity,
       required final String tag,
       final PeerMessageType type}) = _$_PeerMessageBlockHeadersRequest;
 
   factory _PeerMessageBlockHeadersRequest.fromJson(Map<String, dynamic> json) =
       _$_PeerMessageBlockHeadersRequest.fromJson;
 
+  @override
   BlockHeader get content;
   @override
-  @JsonKey(name: 'peer_id')
-  int get peerId;
+  String get senderIdentity;
+  @override
+  String get receiverIdentity;
   @override
   String get tag;
   @override
@@ -2189,7 +2173,8 @@ abstract class _$$_PeerMessageBlockHeadersResponseCopyWith<$Res>
   @useResult
   $Res call(
       {BlockHeadersResponseContent content,
-      @JsonKey(name: 'peer_id') int peerId,
+      String senderIdentity,
+      String receiverIdentity,
       String tag,
       PeerMessageType type});
 
@@ -2209,7 +2194,8 @@ class __$$_PeerMessageBlockHeadersResponseCopyWithImpl<$Res>
   @override
   $Res call({
     Object? content = null,
-    Object? peerId = null,
+    Object? senderIdentity = null,
+    Object? receiverIdentity = null,
     Object? tag = null,
     Object? type = null,
   }) {
@@ -2218,10 +2204,14 @@ class __$$_PeerMessageBlockHeadersResponseCopyWithImpl<$Res>
           ? _value.content
           : content // ignore: cast_nullable_to_non_nullable
               as BlockHeadersResponseContent,
-      peerId: null == peerId
-          ? _value.peerId
-          : peerId // ignore: cast_nullable_to_non_nullable
-              as int,
+      senderIdentity: null == senderIdentity
+          ? _value.senderIdentity
+          : senderIdentity // ignore: cast_nullable_to_non_nullable
+              as String,
+      receiverIdentity: null == receiverIdentity
+          ? _value.receiverIdentity
+          : receiverIdentity // ignore: cast_nullable_to_non_nullable
+              as String,
       tag: null == tag
           ? _value.tag
           : tag // ignore: cast_nullable_to_non_nullable
@@ -2248,7 +2238,8 @@ class _$_PeerMessageBlockHeadersResponse
     implements _PeerMessageBlockHeadersResponse {
   const _$_PeerMessageBlockHeadersResponse(
       {required this.content,
-      @JsonKey(name: 'peer_id') required this.peerId,
+      required this.senderIdentity,
+      required this.receiverIdentity,
       required this.tag,
       this.type = PeerMessageType.blockHeadersResponse});
 
@@ -2259,8 +2250,9 @@ class _$_PeerMessageBlockHeadersResponse
   @override
   final BlockHeadersResponseContent content;
   @override
-  @JsonKey(name: 'peer_id')
-  final int peerId;
+  final String senderIdentity;
+  @override
+  final String receiverIdentity;
   @override
   final String tag;
   @override
@@ -2269,7 +2261,7 @@ class _$_PeerMessageBlockHeadersResponse
 
   @override
   String toString() {
-    return 'PeerMessage.blockHeadersResponse(content: $content, peerId: $peerId, tag: $tag, type: $type)';
+    return 'PeerMessage.blockHeadersResponse(content: $content, senderIdentity: $senderIdentity, receiverIdentity: $receiverIdentity, tag: $tag, type: $type)';
   }
 
   @override
@@ -2278,14 +2270,18 @@ class _$_PeerMessageBlockHeadersResponse
         (other.runtimeType == runtimeType &&
             other is _$_PeerMessageBlockHeadersResponse &&
             (identical(other.content, content) || other.content == content) &&
-            (identical(other.peerId, peerId) || other.peerId == peerId) &&
+            (identical(other.senderIdentity, senderIdentity) ||
+                other.senderIdentity == senderIdentity) &&
+            (identical(other.receiverIdentity, receiverIdentity) ||
+                other.receiverIdentity == receiverIdentity) &&
             (identical(other.tag, tag) || other.tag == tag) &&
             (identical(other.type, type) || other.type == type));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, content, peerId, tag, type);
+  int get hashCode => Object.hash(
+      runtimeType, content, senderIdentity, receiverIdentity, tag, type);
 
   @JsonKey(ignore: true)
   @override
@@ -2298,213 +2294,194 @@ class _$_PeerMessageBlockHeadersResponse
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)
+    required TResult Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)
         peerTypeRequest,
-    required TResult Function(
-            PeerType content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(PeerType content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         peerTypeResponse,
-    required TResult Function(
-            Transaction content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(Transaction content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         addTransaction,
-    required TResult Function(
-            BlockHeader content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         blockHeadersRequest,
     required TResult Function(
             BlockHeadersResponseContent content,
-            @JsonKey(name: 'peer_id') int peerId,
+            String senderIdentity,
+            String receiverIdentity,
             String tag,
             PeerMessageType type)
         blockHeadersResponse,
-    required TResult Function(
-            BlockHeader content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         blockRequest,
-    required TResult Function(
-            Block content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         blockResponse,
-    required TResult Function(
-            BlockHeader content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         blockNotFoundResponse,
-    required TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)
+    required TResult Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)
         peerStateRequest,
-    required TResult Function(
-            PeerState content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         peerStateResponse,
-    required TResult Function(
-            PeerState content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         peerStateUpdate,
-    required TResult Function(
-            Block content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         addBlock,
     required TResult Function(
             BlockHeader header,
-            @JsonKey(name: 'peer_id') int peerId,
+            String senderIdentity,
+            String receiverIdentity,
             String tag,
-            PeerMessageType type)
+            PeerMessageType type,
+            dynamic content)
         blockRejected,
-    required TResult Function(
-            BlockHeader content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         blockAccepted,
-    required TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)
+    required TResult Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)
         getLastBlockRequest,
-    required TResult Function(
-            Block content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         getLastBlockResponse,
   }) {
-    return blockHeadersResponse(content, peerId, tag, type);
+    return blockHeadersResponse(
+        content, senderIdentity, receiverIdentity, tag, type);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult? Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)?
         peerTypeRequest,
-    TResult? Function(PeerType content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(PeerType content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerTypeResponse,
-    TResult? Function(Transaction content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(Transaction content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         addTransaction,
-    TResult? Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockHeadersRequest,
     TResult? Function(
             BlockHeadersResponseContent content,
-            @JsonKey(name: 'peer_id') int peerId,
+            String senderIdentity,
+            String receiverIdentity,
             String tag,
             PeerMessageType type)?
         blockHeadersResponse,
-    TResult? Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockRequest,
-    TResult? Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockResponse,
-    TResult? Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockNotFoundResponse,
-    TResult? Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult? Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)?
         peerStateRequest,
-    TResult? Function(PeerState content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerStateResponse,
-    TResult? Function(PeerState content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerStateUpdate,
-    TResult? Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         addBlock,
-    TResult? Function(BlockHeader header, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(
+            BlockHeader header,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            dynamic content)?
         blockRejected,
-    TResult? Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockAccepted,
-    TResult? Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult? Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)?
         getLastBlockRequest,
-    TResult? Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         getLastBlockResponse,
   }) {
-    return blockHeadersResponse?.call(content, peerId, tag, type);
+    return blockHeadersResponse?.call(
+        content, senderIdentity, receiverIdentity, tag, type);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult Function(String senderIdentity, String receiverIdentity, String tag,
+            PeerMessageType type, dynamic content)?
         peerTypeRequest,
-    TResult Function(PeerType content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(PeerType content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerTypeResponse,
-    TResult Function(Transaction content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(Transaction content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         addTransaction,
-    TResult Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockHeadersRequest,
-    TResult Function(
-            BlockHeadersResponseContent content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)?
+    TResult Function(BlockHeadersResponseContent content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockHeadersResponse,
-    TResult Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockRequest,
-    TResult Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockResponse,
-    TResult Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockNotFoundResponse,
-    TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult Function(String senderIdentity, String receiverIdentity, String tag,
+            PeerMessageType type, dynamic content)?
         peerStateRequest,
-    TResult Function(PeerState content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerStateResponse,
-    TResult Function(PeerState content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerStateUpdate,
-    TResult Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         addBlock,
-    TResult Function(BlockHeader header, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeader header,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            dynamic content)?
         blockRejected,
-    TResult Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockAccepted,
-    TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult Function(String senderIdentity, String receiverIdentity, String tag,
+            PeerMessageType type, dynamic content)?
         getLastBlockRequest,
-    TResult Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         getLastBlockResponse,
     required TResult orElse(),
   }) {
     if (blockHeadersResponse != null) {
-      return blockHeadersResponse(content, peerId, tag, type);
+      return blockHeadersResponse(
+          content, senderIdentity, receiverIdentity, tag, type);
     }
     return orElse();
   }
@@ -2614,17 +2591,20 @@ abstract class _PeerMessageBlockHeadersResponse
     implements PeerMessage, KrapiMessageInterface {
   const factory _PeerMessageBlockHeadersResponse(
       {required final BlockHeadersResponseContent content,
-      @JsonKey(name: 'peer_id') required final int peerId,
+      required final String senderIdentity,
+      required final String receiverIdentity,
       required final String tag,
       final PeerMessageType type}) = _$_PeerMessageBlockHeadersResponse;
 
   factory _PeerMessageBlockHeadersResponse.fromJson(Map<String, dynamic> json) =
       _$_PeerMessageBlockHeadersResponse.fromJson;
 
+  @override
   BlockHeadersResponseContent get content;
   @override
-  @JsonKey(name: 'peer_id')
-  int get peerId;
+  String get senderIdentity;
+  @override
+  String get receiverIdentity;
   @override
   String get tag;
   @override
@@ -2646,7 +2626,8 @@ abstract class _$$_PeerMessageBlockRequestCopyWith<$Res>
   @useResult
   $Res call(
       {BlockHeader content,
-      @JsonKey(name: 'peer_id') int peerId,
+      String senderIdentity,
+      String receiverIdentity,
       String tag,
       PeerMessageType type});
 
@@ -2665,7 +2646,8 @@ class __$$_PeerMessageBlockRequestCopyWithImpl<$Res>
   @override
   $Res call({
     Object? content = null,
-    Object? peerId = null,
+    Object? senderIdentity = null,
+    Object? receiverIdentity = null,
     Object? tag = null,
     Object? type = null,
   }) {
@@ -2674,10 +2656,14 @@ class __$$_PeerMessageBlockRequestCopyWithImpl<$Res>
           ? _value.content
           : content // ignore: cast_nullable_to_non_nullable
               as BlockHeader,
-      peerId: null == peerId
-          ? _value.peerId
-          : peerId // ignore: cast_nullable_to_non_nullable
-              as int,
+      senderIdentity: null == senderIdentity
+          ? _value.senderIdentity
+          : senderIdentity // ignore: cast_nullable_to_non_nullable
+              as String,
+      receiverIdentity: null == receiverIdentity
+          ? _value.receiverIdentity
+          : receiverIdentity // ignore: cast_nullable_to_non_nullable
+              as String,
       tag: null == tag
           ? _value.tag
           : tag // ignore: cast_nullable_to_non_nullable
@@ -2703,7 +2689,8 @@ class __$$_PeerMessageBlockRequestCopyWithImpl<$Res>
 class _$_PeerMessageBlockRequest implements _PeerMessageBlockRequest {
   const _$_PeerMessageBlockRequest(
       {required this.content,
-      @JsonKey(name: 'peer_id') required this.peerId,
+      required this.senderIdentity,
+      required this.receiverIdentity,
       required this.tag,
       this.type = PeerMessageType.blockRequest});
 
@@ -2713,8 +2700,9 @@ class _$_PeerMessageBlockRequest implements _PeerMessageBlockRequest {
   @override
   final BlockHeader content;
   @override
-  @JsonKey(name: 'peer_id')
-  final int peerId;
+  final String senderIdentity;
+  @override
+  final String receiverIdentity;
   @override
   final String tag;
   @override
@@ -2723,7 +2711,7 @@ class _$_PeerMessageBlockRequest implements _PeerMessageBlockRequest {
 
   @override
   String toString() {
-    return 'PeerMessage.blockRequest(content: $content, peerId: $peerId, tag: $tag, type: $type)';
+    return 'PeerMessage.blockRequest(content: $content, senderIdentity: $senderIdentity, receiverIdentity: $receiverIdentity, tag: $tag, type: $type)';
   }
 
   @override
@@ -2732,14 +2720,18 @@ class _$_PeerMessageBlockRequest implements _PeerMessageBlockRequest {
         (other.runtimeType == runtimeType &&
             other is _$_PeerMessageBlockRequest &&
             (identical(other.content, content) || other.content == content) &&
-            (identical(other.peerId, peerId) || other.peerId == peerId) &&
+            (identical(other.senderIdentity, senderIdentity) ||
+                other.senderIdentity == senderIdentity) &&
+            (identical(other.receiverIdentity, receiverIdentity) ||
+                other.receiverIdentity == receiverIdentity) &&
             (identical(other.tag, tag) || other.tag == tag) &&
             (identical(other.type, type) || other.type == type));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, content, peerId, tag, type);
+  int get hashCode => Object.hash(
+      runtimeType, content, senderIdentity, receiverIdentity, tag, type);
 
   @JsonKey(ignore: true)
   @override
@@ -2752,213 +2744,192 @@ class _$_PeerMessageBlockRequest implements _PeerMessageBlockRequest {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)
+    required TResult Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)
         peerTypeRequest,
-    required TResult Function(
-            PeerType content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(PeerType content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         peerTypeResponse,
-    required TResult Function(
-            Transaction content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(Transaction content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         addTransaction,
-    required TResult Function(
-            BlockHeader content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         blockHeadersRequest,
     required TResult Function(
             BlockHeadersResponseContent content,
-            @JsonKey(name: 'peer_id') int peerId,
+            String senderIdentity,
+            String receiverIdentity,
             String tag,
             PeerMessageType type)
         blockHeadersResponse,
-    required TResult Function(
-            BlockHeader content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         blockRequest,
-    required TResult Function(
-            Block content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         blockResponse,
-    required TResult Function(
-            BlockHeader content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         blockNotFoundResponse,
-    required TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)
+    required TResult Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)
         peerStateRequest,
-    required TResult Function(
-            PeerState content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         peerStateResponse,
-    required TResult Function(
-            PeerState content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         peerStateUpdate,
-    required TResult Function(
-            Block content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         addBlock,
     required TResult Function(
             BlockHeader header,
-            @JsonKey(name: 'peer_id') int peerId,
+            String senderIdentity,
+            String receiverIdentity,
             String tag,
-            PeerMessageType type)
+            PeerMessageType type,
+            dynamic content)
         blockRejected,
-    required TResult Function(
-            BlockHeader content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         blockAccepted,
-    required TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)
+    required TResult Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)
         getLastBlockRequest,
-    required TResult Function(
-            Block content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         getLastBlockResponse,
   }) {
-    return blockRequest(content, peerId, tag, type);
+    return blockRequest(content, senderIdentity, receiverIdentity, tag, type);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult? Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)?
         peerTypeRequest,
-    TResult? Function(PeerType content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(PeerType content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerTypeResponse,
-    TResult? Function(Transaction content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(Transaction content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         addTransaction,
-    TResult? Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockHeadersRequest,
     TResult? Function(
             BlockHeadersResponseContent content,
-            @JsonKey(name: 'peer_id') int peerId,
+            String senderIdentity,
+            String receiverIdentity,
             String tag,
             PeerMessageType type)?
         blockHeadersResponse,
-    TResult? Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockRequest,
-    TResult? Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockResponse,
-    TResult? Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockNotFoundResponse,
-    TResult? Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult? Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)?
         peerStateRequest,
-    TResult? Function(PeerState content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerStateResponse,
-    TResult? Function(PeerState content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerStateUpdate,
-    TResult? Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         addBlock,
-    TResult? Function(BlockHeader header, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(
+            BlockHeader header,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            dynamic content)?
         blockRejected,
-    TResult? Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockAccepted,
-    TResult? Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult? Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)?
         getLastBlockRequest,
-    TResult? Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         getLastBlockResponse,
   }) {
-    return blockRequest?.call(content, peerId, tag, type);
+    return blockRequest?.call(
+        content, senderIdentity, receiverIdentity, tag, type);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult Function(String senderIdentity, String receiverIdentity, String tag,
+            PeerMessageType type, dynamic content)?
         peerTypeRequest,
-    TResult Function(PeerType content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(PeerType content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerTypeResponse,
-    TResult Function(Transaction content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(Transaction content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         addTransaction,
-    TResult Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockHeadersRequest,
-    TResult Function(
-            BlockHeadersResponseContent content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)?
+    TResult Function(BlockHeadersResponseContent content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockHeadersResponse,
-    TResult Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockRequest,
-    TResult Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockResponse,
-    TResult Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockNotFoundResponse,
-    TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult Function(String senderIdentity, String receiverIdentity, String tag,
+            PeerMessageType type, dynamic content)?
         peerStateRequest,
-    TResult Function(PeerState content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerStateResponse,
-    TResult Function(PeerState content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerStateUpdate,
-    TResult Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         addBlock,
-    TResult Function(BlockHeader header, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeader header,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            dynamic content)?
         blockRejected,
-    TResult Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockAccepted,
-    TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult Function(String senderIdentity, String receiverIdentity, String tag,
+            PeerMessageType type, dynamic content)?
         getLastBlockRequest,
-    TResult Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         getLastBlockResponse,
     required TResult orElse(),
   }) {
     if (blockRequest != null) {
-      return blockRequest(content, peerId, tag, type);
+      return blockRequest(content, senderIdentity, receiverIdentity, tag, type);
     }
     return orElse();
   }
@@ -3068,17 +3039,20 @@ abstract class _PeerMessageBlockRequest
     implements PeerMessage, KrapiMessageInterface {
   const factory _PeerMessageBlockRequest(
       {required final BlockHeader content,
-      @JsonKey(name: 'peer_id') required final int peerId,
+      required final String senderIdentity,
+      required final String receiverIdentity,
       required final String tag,
       final PeerMessageType type}) = _$_PeerMessageBlockRequest;
 
   factory _PeerMessageBlockRequest.fromJson(Map<String, dynamic> json) =
       _$_PeerMessageBlockRequest.fromJson;
 
+  @override
   BlockHeader get content;
   @override
-  @JsonKey(name: 'peer_id')
-  int get peerId;
+  String get senderIdentity;
+  @override
+  String get receiverIdentity;
   @override
   String get tag;
   @override
@@ -3100,7 +3074,8 @@ abstract class _$$_PeerMessageBlockResponseCopyWith<$Res>
   @useResult
   $Res call(
       {Block content,
-      @JsonKey(name: 'peer_id') int peerId,
+      String senderIdentity,
+      String receiverIdentity,
       String tag,
       PeerMessageType type});
 
@@ -3119,7 +3094,8 @@ class __$$_PeerMessageBlockResponseCopyWithImpl<$Res>
   @override
   $Res call({
     Object? content = null,
-    Object? peerId = null,
+    Object? senderIdentity = null,
+    Object? receiverIdentity = null,
     Object? tag = null,
     Object? type = null,
   }) {
@@ -3128,10 +3104,14 @@ class __$$_PeerMessageBlockResponseCopyWithImpl<$Res>
           ? _value.content
           : content // ignore: cast_nullable_to_non_nullable
               as Block,
-      peerId: null == peerId
-          ? _value.peerId
-          : peerId // ignore: cast_nullable_to_non_nullable
-              as int,
+      senderIdentity: null == senderIdentity
+          ? _value.senderIdentity
+          : senderIdentity // ignore: cast_nullable_to_non_nullable
+              as String,
+      receiverIdentity: null == receiverIdentity
+          ? _value.receiverIdentity
+          : receiverIdentity // ignore: cast_nullable_to_non_nullable
+              as String,
       tag: null == tag
           ? _value.tag
           : tag // ignore: cast_nullable_to_non_nullable
@@ -3157,7 +3137,8 @@ class __$$_PeerMessageBlockResponseCopyWithImpl<$Res>
 class _$_PeerMessageBlockResponse implements _PeerMessageBlockResponse {
   const _$_PeerMessageBlockResponse(
       {required this.content,
-      @JsonKey(name: 'peer_id') required this.peerId,
+      required this.senderIdentity,
+      required this.receiverIdentity,
       required this.tag,
       this.type = PeerMessageType.blockResponse});
 
@@ -3167,8 +3148,9 @@ class _$_PeerMessageBlockResponse implements _PeerMessageBlockResponse {
   @override
   final Block content;
   @override
-  @JsonKey(name: 'peer_id')
-  final int peerId;
+  final String senderIdentity;
+  @override
+  final String receiverIdentity;
   @override
   final String tag;
   @override
@@ -3177,7 +3159,7 @@ class _$_PeerMessageBlockResponse implements _PeerMessageBlockResponse {
 
   @override
   String toString() {
-    return 'PeerMessage.blockResponse(content: $content, peerId: $peerId, tag: $tag, type: $type)';
+    return 'PeerMessage.blockResponse(content: $content, senderIdentity: $senderIdentity, receiverIdentity: $receiverIdentity, tag: $tag, type: $type)';
   }
 
   @override
@@ -3186,14 +3168,18 @@ class _$_PeerMessageBlockResponse implements _PeerMessageBlockResponse {
         (other.runtimeType == runtimeType &&
             other is _$_PeerMessageBlockResponse &&
             (identical(other.content, content) || other.content == content) &&
-            (identical(other.peerId, peerId) || other.peerId == peerId) &&
+            (identical(other.senderIdentity, senderIdentity) ||
+                other.senderIdentity == senderIdentity) &&
+            (identical(other.receiverIdentity, receiverIdentity) ||
+                other.receiverIdentity == receiverIdentity) &&
             (identical(other.tag, tag) || other.tag == tag) &&
             (identical(other.type, type) || other.type == type));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, content, peerId, tag, type);
+  int get hashCode => Object.hash(
+      runtimeType, content, senderIdentity, receiverIdentity, tag, type);
 
   @JsonKey(ignore: true)
   @override
@@ -3205,213 +3191,193 @@ class _$_PeerMessageBlockResponse implements _PeerMessageBlockResponse {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)
+    required TResult Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)
         peerTypeRequest,
-    required TResult Function(
-            PeerType content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(PeerType content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         peerTypeResponse,
-    required TResult Function(
-            Transaction content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(Transaction content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         addTransaction,
-    required TResult Function(
-            BlockHeader content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         blockHeadersRequest,
     required TResult Function(
             BlockHeadersResponseContent content,
-            @JsonKey(name: 'peer_id') int peerId,
+            String senderIdentity,
+            String receiverIdentity,
             String tag,
             PeerMessageType type)
         blockHeadersResponse,
-    required TResult Function(
-            BlockHeader content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         blockRequest,
-    required TResult Function(
-            Block content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         blockResponse,
-    required TResult Function(
-            BlockHeader content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         blockNotFoundResponse,
-    required TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)
+    required TResult Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)
         peerStateRequest,
-    required TResult Function(
-            PeerState content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         peerStateResponse,
-    required TResult Function(
-            PeerState content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         peerStateUpdate,
-    required TResult Function(
-            Block content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         addBlock,
     required TResult Function(
             BlockHeader header,
-            @JsonKey(name: 'peer_id') int peerId,
+            String senderIdentity,
+            String receiverIdentity,
             String tag,
-            PeerMessageType type)
+            PeerMessageType type,
+            dynamic content)
         blockRejected,
-    required TResult Function(
-            BlockHeader content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         blockAccepted,
-    required TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)
+    required TResult Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)
         getLastBlockRequest,
-    required TResult Function(
-            Block content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         getLastBlockResponse,
   }) {
-    return blockResponse(content, peerId, tag, type);
+    return blockResponse(content, senderIdentity, receiverIdentity, tag, type);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult? Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)?
         peerTypeRequest,
-    TResult? Function(PeerType content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(PeerType content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerTypeResponse,
-    TResult? Function(Transaction content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(Transaction content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         addTransaction,
-    TResult? Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockHeadersRequest,
     TResult? Function(
             BlockHeadersResponseContent content,
-            @JsonKey(name: 'peer_id') int peerId,
+            String senderIdentity,
+            String receiverIdentity,
             String tag,
             PeerMessageType type)?
         blockHeadersResponse,
-    TResult? Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockRequest,
-    TResult? Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockResponse,
-    TResult? Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockNotFoundResponse,
-    TResult? Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult? Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)?
         peerStateRequest,
-    TResult? Function(PeerState content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerStateResponse,
-    TResult? Function(PeerState content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerStateUpdate,
-    TResult? Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         addBlock,
-    TResult? Function(BlockHeader header, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(
+            BlockHeader header,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            dynamic content)?
         blockRejected,
-    TResult? Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockAccepted,
-    TResult? Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult? Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)?
         getLastBlockRequest,
-    TResult? Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         getLastBlockResponse,
   }) {
-    return blockResponse?.call(content, peerId, tag, type);
+    return blockResponse?.call(
+        content, senderIdentity, receiverIdentity, tag, type);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult Function(String senderIdentity, String receiverIdentity, String tag,
+            PeerMessageType type, dynamic content)?
         peerTypeRequest,
-    TResult Function(PeerType content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(PeerType content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerTypeResponse,
-    TResult Function(Transaction content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(Transaction content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         addTransaction,
-    TResult Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockHeadersRequest,
-    TResult Function(
-            BlockHeadersResponseContent content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)?
+    TResult Function(BlockHeadersResponseContent content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockHeadersResponse,
-    TResult Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockRequest,
-    TResult Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockResponse,
-    TResult Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockNotFoundResponse,
-    TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult Function(String senderIdentity, String receiverIdentity, String tag,
+            PeerMessageType type, dynamic content)?
         peerStateRequest,
-    TResult Function(PeerState content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerStateResponse,
-    TResult Function(PeerState content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerStateUpdate,
-    TResult Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         addBlock,
-    TResult Function(BlockHeader header, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeader header,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            dynamic content)?
         blockRejected,
-    TResult Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockAccepted,
-    TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult Function(String senderIdentity, String receiverIdentity, String tag,
+            PeerMessageType type, dynamic content)?
         getLastBlockRequest,
-    TResult Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         getLastBlockResponse,
     required TResult orElse(),
   }) {
     if (blockResponse != null) {
-      return blockResponse(content, peerId, tag, type);
+      return blockResponse(
+          content, senderIdentity, receiverIdentity, tag, type);
     }
     return orElse();
   }
@@ -3521,17 +3487,20 @@ abstract class _PeerMessageBlockResponse
     implements PeerMessage, KrapiMessageInterface {
   const factory _PeerMessageBlockResponse(
       {required final Block content,
-      @JsonKey(name: 'peer_id') required final int peerId,
+      required final String senderIdentity,
+      required final String receiverIdentity,
       required final String tag,
       final PeerMessageType type}) = _$_PeerMessageBlockResponse;
 
   factory _PeerMessageBlockResponse.fromJson(Map<String, dynamic> json) =
       _$_PeerMessageBlockResponse.fromJson;
 
+  @override
   Block get content;
   @override
-  @JsonKey(name: 'peer_id')
-  int get peerId;
+  String get senderIdentity;
+  @override
+  String get receiverIdentity;
   @override
   String get tag;
   @override
@@ -3553,7 +3522,8 @@ abstract class _$$_PeerMessageBlockNotFoundResponseCopyWith<$Res>
   @useResult
   $Res call(
       {BlockHeader content,
-      @JsonKey(name: 'peer_id') int peerId,
+      String senderIdentity,
+      String receiverIdentity,
       String tag,
       PeerMessageType type});
 
@@ -3573,7 +3543,8 @@ class __$$_PeerMessageBlockNotFoundResponseCopyWithImpl<$Res>
   @override
   $Res call({
     Object? content = null,
-    Object? peerId = null,
+    Object? senderIdentity = null,
+    Object? receiverIdentity = null,
     Object? tag = null,
     Object? type = null,
   }) {
@@ -3582,10 +3553,14 @@ class __$$_PeerMessageBlockNotFoundResponseCopyWithImpl<$Res>
           ? _value.content
           : content // ignore: cast_nullable_to_non_nullable
               as BlockHeader,
-      peerId: null == peerId
-          ? _value.peerId
-          : peerId // ignore: cast_nullable_to_non_nullable
-              as int,
+      senderIdentity: null == senderIdentity
+          ? _value.senderIdentity
+          : senderIdentity // ignore: cast_nullable_to_non_nullable
+              as String,
+      receiverIdentity: null == receiverIdentity
+          ? _value.receiverIdentity
+          : receiverIdentity // ignore: cast_nullable_to_non_nullable
+              as String,
       tag: null == tag
           ? _value.tag
           : tag // ignore: cast_nullable_to_non_nullable
@@ -3612,7 +3587,8 @@ class _$_PeerMessageBlockNotFoundResponse
     implements _PeerMessageBlockNotFoundResponse {
   const _$_PeerMessageBlockNotFoundResponse(
       {required this.content,
-      @JsonKey(name: 'peer_id') required this.peerId,
+      required this.senderIdentity,
+      required this.receiverIdentity,
       required this.tag,
       this.type = PeerMessageType.blockNotFoundResponse});
 
@@ -3623,8 +3599,9 @@ class _$_PeerMessageBlockNotFoundResponse
   @override
   final BlockHeader content;
   @override
-  @JsonKey(name: 'peer_id')
-  final int peerId;
+  final String senderIdentity;
+  @override
+  final String receiverIdentity;
   @override
   final String tag;
   @override
@@ -3633,7 +3610,7 @@ class _$_PeerMessageBlockNotFoundResponse
 
   @override
   String toString() {
-    return 'PeerMessage.blockNotFoundResponse(content: $content, peerId: $peerId, tag: $tag, type: $type)';
+    return 'PeerMessage.blockNotFoundResponse(content: $content, senderIdentity: $senderIdentity, receiverIdentity: $receiverIdentity, tag: $tag, type: $type)';
   }
 
   @override
@@ -3642,14 +3619,18 @@ class _$_PeerMessageBlockNotFoundResponse
         (other.runtimeType == runtimeType &&
             other is _$_PeerMessageBlockNotFoundResponse &&
             (identical(other.content, content) || other.content == content) &&
-            (identical(other.peerId, peerId) || other.peerId == peerId) &&
+            (identical(other.senderIdentity, senderIdentity) ||
+                other.senderIdentity == senderIdentity) &&
+            (identical(other.receiverIdentity, receiverIdentity) ||
+                other.receiverIdentity == receiverIdentity) &&
             (identical(other.tag, tag) || other.tag == tag) &&
             (identical(other.type, type) || other.type == type));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, content, peerId, tag, type);
+  int get hashCode => Object.hash(
+      runtimeType, content, senderIdentity, receiverIdentity, tag, type);
 
   @JsonKey(ignore: true)
   @override
@@ -3662,213 +3643,194 @@ class _$_PeerMessageBlockNotFoundResponse
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)
+    required TResult Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)
         peerTypeRequest,
-    required TResult Function(
-            PeerType content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(PeerType content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         peerTypeResponse,
-    required TResult Function(
-            Transaction content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(Transaction content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         addTransaction,
-    required TResult Function(
-            BlockHeader content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         blockHeadersRequest,
     required TResult Function(
             BlockHeadersResponseContent content,
-            @JsonKey(name: 'peer_id') int peerId,
+            String senderIdentity,
+            String receiverIdentity,
             String tag,
             PeerMessageType type)
         blockHeadersResponse,
-    required TResult Function(
-            BlockHeader content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         blockRequest,
-    required TResult Function(
-            Block content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         blockResponse,
-    required TResult Function(
-            BlockHeader content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         blockNotFoundResponse,
-    required TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)
+    required TResult Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)
         peerStateRequest,
-    required TResult Function(
-            PeerState content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         peerStateResponse,
-    required TResult Function(
-            PeerState content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         peerStateUpdate,
-    required TResult Function(
-            Block content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         addBlock,
     required TResult Function(
             BlockHeader header,
-            @JsonKey(name: 'peer_id') int peerId,
+            String senderIdentity,
+            String receiverIdentity,
             String tag,
-            PeerMessageType type)
+            PeerMessageType type,
+            dynamic content)
         blockRejected,
-    required TResult Function(
-            BlockHeader content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         blockAccepted,
-    required TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)
+    required TResult Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)
         getLastBlockRequest,
-    required TResult Function(
-            Block content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         getLastBlockResponse,
   }) {
-    return blockNotFoundResponse(content, peerId, tag, type);
+    return blockNotFoundResponse(
+        content, senderIdentity, receiverIdentity, tag, type);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult? Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)?
         peerTypeRequest,
-    TResult? Function(PeerType content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(PeerType content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerTypeResponse,
-    TResult? Function(Transaction content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(Transaction content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         addTransaction,
-    TResult? Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockHeadersRequest,
     TResult? Function(
             BlockHeadersResponseContent content,
-            @JsonKey(name: 'peer_id') int peerId,
+            String senderIdentity,
+            String receiverIdentity,
             String tag,
             PeerMessageType type)?
         blockHeadersResponse,
-    TResult? Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockRequest,
-    TResult? Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockResponse,
-    TResult? Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockNotFoundResponse,
-    TResult? Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult? Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)?
         peerStateRequest,
-    TResult? Function(PeerState content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerStateResponse,
-    TResult? Function(PeerState content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerStateUpdate,
-    TResult? Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         addBlock,
-    TResult? Function(BlockHeader header, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(
+            BlockHeader header,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            dynamic content)?
         blockRejected,
-    TResult? Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockAccepted,
-    TResult? Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult? Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)?
         getLastBlockRequest,
-    TResult? Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         getLastBlockResponse,
   }) {
-    return blockNotFoundResponse?.call(content, peerId, tag, type);
+    return blockNotFoundResponse?.call(
+        content, senderIdentity, receiverIdentity, tag, type);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult Function(String senderIdentity, String receiverIdentity, String tag,
+            PeerMessageType type, dynamic content)?
         peerTypeRequest,
-    TResult Function(PeerType content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(PeerType content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerTypeResponse,
-    TResult Function(Transaction content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(Transaction content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         addTransaction,
-    TResult Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockHeadersRequest,
-    TResult Function(
-            BlockHeadersResponseContent content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)?
+    TResult Function(BlockHeadersResponseContent content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockHeadersResponse,
-    TResult Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockRequest,
-    TResult Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockResponse,
-    TResult Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockNotFoundResponse,
-    TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult Function(String senderIdentity, String receiverIdentity, String tag,
+            PeerMessageType type, dynamic content)?
         peerStateRequest,
-    TResult Function(PeerState content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerStateResponse,
-    TResult Function(PeerState content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerStateUpdate,
-    TResult Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         addBlock,
-    TResult Function(BlockHeader header, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeader header,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            dynamic content)?
         blockRejected,
-    TResult Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockAccepted,
-    TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult Function(String senderIdentity, String receiverIdentity, String tag,
+            PeerMessageType type, dynamic content)?
         getLastBlockRequest,
-    TResult Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         getLastBlockResponse,
     required TResult orElse(),
   }) {
     if (blockNotFoundResponse != null) {
-      return blockNotFoundResponse(content, peerId, tag, type);
+      return blockNotFoundResponse(
+          content, senderIdentity, receiverIdentity, tag, type);
     }
     return orElse();
   }
@@ -3978,17 +3940,20 @@ abstract class _PeerMessageBlockNotFoundResponse
     implements PeerMessage, KrapiMessageInterface {
   const factory _PeerMessageBlockNotFoundResponse(
       {required final BlockHeader content,
-      @JsonKey(name: 'peer_id') required final int peerId,
+      required final String senderIdentity,
+      required final String receiverIdentity,
       required final String tag,
       final PeerMessageType type}) = _$_PeerMessageBlockNotFoundResponse;
 
   factory _PeerMessageBlockNotFoundResponse.fromJson(
       Map<String, dynamic> json) = _$_PeerMessageBlockNotFoundResponse.fromJson;
 
+  @override
   BlockHeader get content;
   @override
-  @JsonKey(name: 'peer_id')
-  int get peerId;
+  String get senderIdentity;
+  @override
+  String get receiverIdentity;
   @override
   String get tag;
   @override
@@ -4010,7 +3975,11 @@ abstract class _$$_PeerMessagePeerStateRequestCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'peer_id') int peerId, String tag, PeerMessageType type});
+      {String senderIdentity,
+      String receiverIdentity,
+      String tag,
+      PeerMessageType type,
+      dynamic content});
 }
 
 /// @nodoc
@@ -4025,15 +3994,21 @@ class __$$_PeerMessagePeerStateRequestCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? peerId = null,
+    Object? senderIdentity = null,
+    Object? receiverIdentity = null,
     Object? tag = null,
     Object? type = null,
+    Object? content = freezed,
   }) {
     return _then(_$_PeerMessagePeerStateRequest(
-      peerId: null == peerId
-          ? _value.peerId
-          : peerId // ignore: cast_nullable_to_non_nullable
-              as int,
+      senderIdentity: null == senderIdentity
+          ? _value.senderIdentity
+          : senderIdentity // ignore: cast_nullable_to_non_nullable
+              as String,
+      receiverIdentity: null == receiverIdentity
+          ? _value.receiverIdentity
+          : receiverIdentity // ignore: cast_nullable_to_non_nullable
+              as String,
       tag: null == tag
           ? _value.tag
           : tag // ignore: cast_nullable_to_non_nullable
@@ -4042,6 +4017,10 @@ class __$$_PeerMessagePeerStateRequestCopyWithImpl<$Res>
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as PeerMessageType,
+      content: freezed == content
+          ? _value.content
+          : content // ignore: cast_nullable_to_non_nullable
+              as dynamic,
     ));
   }
 }
@@ -4050,25 +4029,30 @@ class __$$_PeerMessagePeerStateRequestCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_PeerMessagePeerStateRequest implements _PeerMessagePeerStateRequest {
   const _$_PeerMessagePeerStateRequest(
-      {@JsonKey(name: 'peer_id') required this.peerId,
+      {required this.senderIdentity,
+      required this.receiverIdentity,
       required this.tag,
-      this.type = PeerMessageType.peerStateRequest});
+      this.type = PeerMessageType.peerStateRequest,
+      this.content});
 
   factory _$_PeerMessagePeerStateRequest.fromJson(Map<String, dynamic> json) =>
       _$$_PeerMessagePeerStateRequestFromJson(json);
 
   @override
-  @JsonKey(name: 'peer_id')
-  final int peerId;
+  final String senderIdentity;
+  @override
+  final String receiverIdentity;
   @override
   final String tag;
   @override
   @JsonKey()
   final PeerMessageType type;
+  @override
+  final dynamic content;
 
   @override
   String toString() {
-    return 'PeerMessage.peerStateRequest(peerId: $peerId, tag: $tag, type: $type)';
+    return 'PeerMessage.peerStateRequest(senderIdentity: $senderIdentity, receiverIdentity: $receiverIdentity, tag: $tag, type: $type, content: $content)';
   }
 
   @override
@@ -4076,14 +4060,19 @@ class _$_PeerMessagePeerStateRequest implements _PeerMessagePeerStateRequest {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_PeerMessagePeerStateRequest &&
-            (identical(other.peerId, peerId) || other.peerId == peerId) &&
+            (identical(other.senderIdentity, senderIdentity) ||
+                other.senderIdentity == senderIdentity) &&
+            (identical(other.receiverIdentity, receiverIdentity) ||
+                other.receiverIdentity == receiverIdentity) &&
             (identical(other.tag, tag) || other.tag == tag) &&
-            (identical(other.type, type) || other.type == type));
+            (identical(other.type, type) || other.type == type) &&
+            const DeepCollectionEquality().equals(other.content, content));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, peerId, tag, type);
+  int get hashCode => Object.hash(runtimeType, senderIdentity, receiverIdentity,
+      tag, type, const DeepCollectionEquality().hash(content));
 
   @JsonKey(ignore: true)
   @override
@@ -4095,213 +4084,194 @@ class _$_PeerMessagePeerStateRequest implements _PeerMessagePeerStateRequest {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)
+    required TResult Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)
         peerTypeRequest,
-    required TResult Function(
-            PeerType content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(PeerType content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         peerTypeResponse,
-    required TResult Function(
-            Transaction content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(Transaction content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         addTransaction,
-    required TResult Function(
-            BlockHeader content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         blockHeadersRequest,
     required TResult Function(
             BlockHeadersResponseContent content,
-            @JsonKey(name: 'peer_id') int peerId,
+            String senderIdentity,
+            String receiverIdentity,
             String tag,
             PeerMessageType type)
         blockHeadersResponse,
-    required TResult Function(
-            BlockHeader content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         blockRequest,
-    required TResult Function(
-            Block content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         blockResponse,
-    required TResult Function(
-            BlockHeader content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         blockNotFoundResponse,
-    required TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)
+    required TResult Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)
         peerStateRequest,
-    required TResult Function(
-            PeerState content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         peerStateResponse,
-    required TResult Function(
-            PeerState content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         peerStateUpdate,
-    required TResult Function(
-            Block content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         addBlock,
     required TResult Function(
             BlockHeader header,
-            @JsonKey(name: 'peer_id') int peerId,
+            String senderIdentity,
+            String receiverIdentity,
             String tag,
-            PeerMessageType type)
+            PeerMessageType type,
+            dynamic content)
         blockRejected,
-    required TResult Function(
-            BlockHeader content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         blockAccepted,
-    required TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)
+    required TResult Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)
         getLastBlockRequest,
-    required TResult Function(
-            Block content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         getLastBlockResponse,
   }) {
-    return peerStateRequest(peerId, tag, type);
+    return peerStateRequest(
+        senderIdentity, receiverIdentity, tag, type, content);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult? Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)?
         peerTypeRequest,
-    TResult? Function(PeerType content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(PeerType content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerTypeResponse,
-    TResult? Function(Transaction content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(Transaction content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         addTransaction,
-    TResult? Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockHeadersRequest,
     TResult? Function(
             BlockHeadersResponseContent content,
-            @JsonKey(name: 'peer_id') int peerId,
+            String senderIdentity,
+            String receiverIdentity,
             String tag,
             PeerMessageType type)?
         blockHeadersResponse,
-    TResult? Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockRequest,
-    TResult? Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockResponse,
-    TResult? Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockNotFoundResponse,
-    TResult? Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult? Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)?
         peerStateRequest,
-    TResult? Function(PeerState content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerStateResponse,
-    TResult? Function(PeerState content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerStateUpdate,
-    TResult? Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         addBlock,
-    TResult? Function(BlockHeader header, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(
+            BlockHeader header,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            dynamic content)?
         blockRejected,
-    TResult? Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockAccepted,
-    TResult? Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult? Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)?
         getLastBlockRequest,
-    TResult? Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         getLastBlockResponse,
   }) {
-    return peerStateRequest?.call(peerId, tag, type);
+    return peerStateRequest?.call(
+        senderIdentity, receiverIdentity, tag, type, content);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult Function(String senderIdentity, String receiverIdentity, String tag,
+            PeerMessageType type, dynamic content)?
         peerTypeRequest,
-    TResult Function(PeerType content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(PeerType content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerTypeResponse,
-    TResult Function(Transaction content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(Transaction content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         addTransaction,
-    TResult Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockHeadersRequest,
-    TResult Function(
-            BlockHeadersResponseContent content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)?
+    TResult Function(BlockHeadersResponseContent content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockHeadersResponse,
-    TResult Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockRequest,
-    TResult Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockResponse,
-    TResult Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockNotFoundResponse,
-    TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult Function(String senderIdentity, String receiverIdentity, String tag,
+            PeerMessageType type, dynamic content)?
         peerStateRequest,
-    TResult Function(PeerState content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerStateResponse,
-    TResult Function(PeerState content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerStateUpdate,
-    TResult Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         addBlock,
-    TResult Function(BlockHeader header, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeader header,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            dynamic content)?
         blockRejected,
-    TResult Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockAccepted,
-    TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult Function(String senderIdentity, String receiverIdentity, String tag,
+            PeerMessageType type, dynamic content)?
         getLastBlockRequest,
-    TResult Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         getLastBlockResponse,
     required TResult orElse(),
   }) {
     if (peerStateRequest != null) {
-      return peerStateRequest(peerId, tag, type);
+      return peerStateRequest(
+          senderIdentity, receiverIdentity, tag, type, content);
     }
     return orElse();
   }
@@ -4410,20 +4380,25 @@ class _$_PeerMessagePeerStateRequest implements _PeerMessagePeerStateRequest {
 abstract class _PeerMessagePeerStateRequest
     implements PeerMessage, KrapiMessageInterface {
   const factory _PeerMessagePeerStateRequest(
-      {@JsonKey(name: 'peer_id') required final int peerId,
+      {required final String senderIdentity,
+      required final String receiverIdentity,
       required final String tag,
-      final PeerMessageType type}) = _$_PeerMessagePeerStateRequest;
+      final PeerMessageType type,
+      final dynamic content}) = _$_PeerMessagePeerStateRequest;
 
   factory _PeerMessagePeerStateRequest.fromJson(Map<String, dynamic> json) =
       _$_PeerMessagePeerStateRequest.fromJson;
 
   @override
-  @JsonKey(name: 'peer_id')
-  int get peerId;
+  String get senderIdentity;
+  @override
+  String get receiverIdentity;
   @override
   String get tag;
   @override
   PeerMessageType get type;
+  @override
+  dynamic get content;
   @override
   @JsonKey(ignore: true)
   _$$_PeerMessagePeerStateRequestCopyWith<_$_PeerMessagePeerStateRequest>
@@ -4441,7 +4416,8 @@ abstract class _$$_PeerMessagePeerStateResponseCopyWith<$Res>
   @useResult
   $Res call(
       {PeerState content,
-      @JsonKey(name: 'peer_id') int peerId,
+      String senderIdentity,
+      String receiverIdentity,
       String tag,
       PeerMessageType type});
 }
@@ -4459,7 +4435,8 @@ class __$$_PeerMessagePeerStateResponseCopyWithImpl<$Res>
   @override
   $Res call({
     Object? content = null,
-    Object? peerId = null,
+    Object? senderIdentity = null,
+    Object? receiverIdentity = null,
     Object? tag = null,
     Object? type = null,
   }) {
@@ -4468,10 +4445,14 @@ class __$$_PeerMessagePeerStateResponseCopyWithImpl<$Res>
           ? _value.content
           : content // ignore: cast_nullable_to_non_nullable
               as PeerState,
-      peerId: null == peerId
-          ? _value.peerId
-          : peerId // ignore: cast_nullable_to_non_nullable
-              as int,
+      senderIdentity: null == senderIdentity
+          ? _value.senderIdentity
+          : senderIdentity // ignore: cast_nullable_to_non_nullable
+              as String,
+      receiverIdentity: null == receiverIdentity
+          ? _value.receiverIdentity
+          : receiverIdentity // ignore: cast_nullable_to_non_nullable
+              as String,
       tag: null == tag
           ? _value.tag
           : tag // ignore: cast_nullable_to_non_nullable
@@ -4489,7 +4470,8 @@ class __$$_PeerMessagePeerStateResponseCopyWithImpl<$Res>
 class _$_PeerMessagePeerStateResponse implements _PeerMessagePeerStateResponse {
   const _$_PeerMessagePeerStateResponse(
       {required this.content,
-      @JsonKey(name: 'peer_id') required this.peerId,
+      required this.senderIdentity,
+      required this.receiverIdentity,
       required this.tag,
       this.type = PeerMessageType.peerStateResponse});
 
@@ -4499,8 +4481,9 @@ class _$_PeerMessagePeerStateResponse implements _PeerMessagePeerStateResponse {
   @override
   final PeerState content;
   @override
-  @JsonKey(name: 'peer_id')
-  final int peerId;
+  final String senderIdentity;
+  @override
+  final String receiverIdentity;
   @override
   final String tag;
   @override
@@ -4509,7 +4492,7 @@ class _$_PeerMessagePeerStateResponse implements _PeerMessagePeerStateResponse {
 
   @override
   String toString() {
-    return 'PeerMessage.peerStateResponse(content: $content, peerId: $peerId, tag: $tag, type: $type)';
+    return 'PeerMessage.peerStateResponse(content: $content, senderIdentity: $senderIdentity, receiverIdentity: $receiverIdentity, tag: $tag, type: $type)';
   }
 
   @override
@@ -4518,14 +4501,18 @@ class _$_PeerMessagePeerStateResponse implements _PeerMessagePeerStateResponse {
         (other.runtimeType == runtimeType &&
             other is _$_PeerMessagePeerStateResponse &&
             (identical(other.content, content) || other.content == content) &&
-            (identical(other.peerId, peerId) || other.peerId == peerId) &&
+            (identical(other.senderIdentity, senderIdentity) ||
+                other.senderIdentity == senderIdentity) &&
+            (identical(other.receiverIdentity, receiverIdentity) ||
+                other.receiverIdentity == receiverIdentity) &&
             (identical(other.tag, tag) || other.tag == tag) &&
             (identical(other.type, type) || other.type == type));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, content, peerId, tag, type);
+  int get hashCode => Object.hash(
+      runtimeType, content, senderIdentity, receiverIdentity, tag, type);
 
   @JsonKey(ignore: true)
   @override
@@ -4537,213 +4524,194 @@ class _$_PeerMessagePeerStateResponse implements _PeerMessagePeerStateResponse {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)
+    required TResult Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)
         peerTypeRequest,
-    required TResult Function(
-            PeerType content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(PeerType content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         peerTypeResponse,
-    required TResult Function(
-            Transaction content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(Transaction content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         addTransaction,
-    required TResult Function(
-            BlockHeader content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         blockHeadersRequest,
     required TResult Function(
             BlockHeadersResponseContent content,
-            @JsonKey(name: 'peer_id') int peerId,
+            String senderIdentity,
+            String receiverIdentity,
             String tag,
             PeerMessageType type)
         blockHeadersResponse,
-    required TResult Function(
-            BlockHeader content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         blockRequest,
-    required TResult Function(
-            Block content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         blockResponse,
-    required TResult Function(
-            BlockHeader content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         blockNotFoundResponse,
-    required TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)
+    required TResult Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)
         peerStateRequest,
-    required TResult Function(
-            PeerState content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         peerStateResponse,
-    required TResult Function(
-            PeerState content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         peerStateUpdate,
-    required TResult Function(
-            Block content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         addBlock,
     required TResult Function(
             BlockHeader header,
-            @JsonKey(name: 'peer_id') int peerId,
+            String senderIdentity,
+            String receiverIdentity,
             String tag,
-            PeerMessageType type)
+            PeerMessageType type,
+            dynamic content)
         blockRejected,
-    required TResult Function(
-            BlockHeader content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         blockAccepted,
-    required TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)
+    required TResult Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)
         getLastBlockRequest,
-    required TResult Function(
-            Block content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         getLastBlockResponse,
   }) {
-    return peerStateResponse(content, peerId, tag, type);
+    return peerStateResponse(
+        content, senderIdentity, receiverIdentity, tag, type);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult? Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)?
         peerTypeRequest,
-    TResult? Function(PeerType content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(PeerType content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerTypeResponse,
-    TResult? Function(Transaction content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(Transaction content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         addTransaction,
-    TResult? Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockHeadersRequest,
     TResult? Function(
             BlockHeadersResponseContent content,
-            @JsonKey(name: 'peer_id') int peerId,
+            String senderIdentity,
+            String receiverIdentity,
             String tag,
             PeerMessageType type)?
         blockHeadersResponse,
-    TResult? Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockRequest,
-    TResult? Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockResponse,
-    TResult? Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockNotFoundResponse,
-    TResult? Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult? Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)?
         peerStateRequest,
-    TResult? Function(PeerState content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerStateResponse,
-    TResult? Function(PeerState content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerStateUpdate,
-    TResult? Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         addBlock,
-    TResult? Function(BlockHeader header, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(
+            BlockHeader header,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            dynamic content)?
         blockRejected,
-    TResult? Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockAccepted,
-    TResult? Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult? Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)?
         getLastBlockRequest,
-    TResult? Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         getLastBlockResponse,
   }) {
-    return peerStateResponse?.call(content, peerId, tag, type);
+    return peerStateResponse?.call(
+        content, senderIdentity, receiverIdentity, tag, type);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult Function(String senderIdentity, String receiverIdentity, String tag,
+            PeerMessageType type, dynamic content)?
         peerTypeRequest,
-    TResult Function(PeerType content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(PeerType content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerTypeResponse,
-    TResult Function(Transaction content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(Transaction content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         addTransaction,
-    TResult Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockHeadersRequest,
-    TResult Function(
-            BlockHeadersResponseContent content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)?
+    TResult Function(BlockHeadersResponseContent content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockHeadersResponse,
-    TResult Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockRequest,
-    TResult Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockResponse,
-    TResult Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockNotFoundResponse,
-    TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult Function(String senderIdentity, String receiverIdentity, String tag,
+            PeerMessageType type, dynamic content)?
         peerStateRequest,
-    TResult Function(PeerState content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerStateResponse,
-    TResult Function(PeerState content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerStateUpdate,
-    TResult Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         addBlock,
-    TResult Function(BlockHeader header, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeader header,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            dynamic content)?
         blockRejected,
-    TResult Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockAccepted,
-    TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult Function(String senderIdentity, String receiverIdentity, String tag,
+            PeerMessageType type, dynamic content)?
         getLastBlockRequest,
-    TResult Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         getLastBlockResponse,
     required TResult orElse(),
   }) {
     if (peerStateResponse != null) {
-      return peerStateResponse(content, peerId, tag, type);
+      return peerStateResponse(
+          content, senderIdentity, receiverIdentity, tag, type);
     }
     return orElse();
   }
@@ -4853,17 +4821,20 @@ abstract class _PeerMessagePeerStateResponse
     implements PeerMessage, KrapiMessageInterface {
   const factory _PeerMessagePeerStateResponse(
       {required final PeerState content,
-      @JsonKey(name: 'peer_id') required final int peerId,
+      required final String senderIdentity,
+      required final String receiverIdentity,
       required final String tag,
       final PeerMessageType type}) = _$_PeerMessagePeerStateResponse;
 
   factory _PeerMessagePeerStateResponse.fromJson(Map<String, dynamic> json) =
       _$_PeerMessagePeerStateResponse.fromJson;
 
+  @override
   PeerState get content;
   @override
-  @JsonKey(name: 'peer_id')
-  int get peerId;
+  String get senderIdentity;
+  @override
+  String get receiverIdentity;
   @override
   String get tag;
   @override
@@ -4885,7 +4856,8 @@ abstract class _$$_PeerMessagePeerStateUpdateCopyWith<$Res>
   @useResult
   $Res call(
       {PeerState content,
-      @JsonKey(name: 'peer_id') int peerId,
+      String senderIdentity,
+      String receiverIdentity,
       String tag,
       PeerMessageType type});
 }
@@ -4903,7 +4875,8 @@ class __$$_PeerMessagePeerStateUpdateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? content = null,
-    Object? peerId = null,
+    Object? senderIdentity = null,
+    Object? receiverIdentity = null,
     Object? tag = null,
     Object? type = null,
   }) {
@@ -4912,10 +4885,14 @@ class __$$_PeerMessagePeerStateUpdateCopyWithImpl<$Res>
           ? _value.content
           : content // ignore: cast_nullable_to_non_nullable
               as PeerState,
-      peerId: null == peerId
-          ? _value.peerId
-          : peerId // ignore: cast_nullable_to_non_nullable
-              as int,
+      senderIdentity: null == senderIdentity
+          ? _value.senderIdentity
+          : senderIdentity // ignore: cast_nullable_to_non_nullable
+              as String,
+      receiverIdentity: null == receiverIdentity
+          ? _value.receiverIdentity
+          : receiverIdentity // ignore: cast_nullable_to_non_nullable
+              as String,
       tag: null == tag
           ? _value.tag
           : tag // ignore: cast_nullable_to_non_nullable
@@ -4933,7 +4910,8 @@ class __$$_PeerMessagePeerStateUpdateCopyWithImpl<$Res>
 class _$_PeerMessagePeerStateUpdate implements _PeerMessagePeerStateUpdate {
   const _$_PeerMessagePeerStateUpdate(
       {required this.content,
-      @JsonKey(name: 'peer_id') required this.peerId,
+      required this.senderIdentity,
+      required this.receiverIdentity,
       required this.tag,
       this.type = PeerMessageType.peerStateUpdate});
 
@@ -4943,8 +4921,9 @@ class _$_PeerMessagePeerStateUpdate implements _PeerMessagePeerStateUpdate {
   @override
   final PeerState content;
   @override
-  @JsonKey(name: 'peer_id')
-  final int peerId;
+  final String senderIdentity;
+  @override
+  final String receiverIdentity;
   @override
   final String tag;
   @override
@@ -4953,7 +4932,7 @@ class _$_PeerMessagePeerStateUpdate implements _PeerMessagePeerStateUpdate {
 
   @override
   String toString() {
-    return 'PeerMessage.peerStateUpdate(content: $content, peerId: $peerId, tag: $tag, type: $type)';
+    return 'PeerMessage.peerStateUpdate(content: $content, senderIdentity: $senderIdentity, receiverIdentity: $receiverIdentity, tag: $tag, type: $type)';
   }
 
   @override
@@ -4962,14 +4941,18 @@ class _$_PeerMessagePeerStateUpdate implements _PeerMessagePeerStateUpdate {
         (other.runtimeType == runtimeType &&
             other is _$_PeerMessagePeerStateUpdate &&
             (identical(other.content, content) || other.content == content) &&
-            (identical(other.peerId, peerId) || other.peerId == peerId) &&
+            (identical(other.senderIdentity, senderIdentity) ||
+                other.senderIdentity == senderIdentity) &&
+            (identical(other.receiverIdentity, receiverIdentity) ||
+                other.receiverIdentity == receiverIdentity) &&
             (identical(other.tag, tag) || other.tag == tag) &&
             (identical(other.type, type) || other.type == type));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, content, peerId, tag, type);
+  int get hashCode => Object.hash(
+      runtimeType, content, senderIdentity, receiverIdentity, tag, type);
 
   @JsonKey(ignore: true)
   @override
@@ -4981,213 +4964,194 @@ class _$_PeerMessagePeerStateUpdate implements _PeerMessagePeerStateUpdate {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)
+    required TResult Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)
         peerTypeRequest,
-    required TResult Function(
-            PeerType content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(PeerType content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         peerTypeResponse,
-    required TResult Function(
-            Transaction content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(Transaction content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         addTransaction,
-    required TResult Function(
-            BlockHeader content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         blockHeadersRequest,
     required TResult Function(
             BlockHeadersResponseContent content,
-            @JsonKey(name: 'peer_id') int peerId,
+            String senderIdentity,
+            String receiverIdentity,
             String tag,
             PeerMessageType type)
         blockHeadersResponse,
-    required TResult Function(
-            BlockHeader content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         blockRequest,
-    required TResult Function(
-            Block content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         blockResponse,
-    required TResult Function(
-            BlockHeader content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         blockNotFoundResponse,
-    required TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)
+    required TResult Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)
         peerStateRequest,
-    required TResult Function(
-            PeerState content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         peerStateResponse,
-    required TResult Function(
-            PeerState content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         peerStateUpdate,
-    required TResult Function(
-            Block content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         addBlock,
     required TResult Function(
             BlockHeader header,
-            @JsonKey(name: 'peer_id') int peerId,
+            String senderIdentity,
+            String receiverIdentity,
             String tag,
-            PeerMessageType type)
+            PeerMessageType type,
+            dynamic content)
         blockRejected,
-    required TResult Function(
-            BlockHeader content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         blockAccepted,
-    required TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)
+    required TResult Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)
         getLastBlockRequest,
-    required TResult Function(
-            Block content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         getLastBlockResponse,
   }) {
-    return peerStateUpdate(content, peerId, tag, type);
+    return peerStateUpdate(
+        content, senderIdentity, receiverIdentity, tag, type);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult? Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)?
         peerTypeRequest,
-    TResult? Function(PeerType content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(PeerType content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerTypeResponse,
-    TResult? Function(Transaction content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(Transaction content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         addTransaction,
-    TResult? Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockHeadersRequest,
     TResult? Function(
             BlockHeadersResponseContent content,
-            @JsonKey(name: 'peer_id') int peerId,
+            String senderIdentity,
+            String receiverIdentity,
             String tag,
             PeerMessageType type)?
         blockHeadersResponse,
-    TResult? Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockRequest,
-    TResult? Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockResponse,
-    TResult? Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockNotFoundResponse,
-    TResult? Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult? Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)?
         peerStateRequest,
-    TResult? Function(PeerState content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerStateResponse,
-    TResult? Function(PeerState content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerStateUpdate,
-    TResult? Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         addBlock,
-    TResult? Function(BlockHeader header, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(
+            BlockHeader header,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            dynamic content)?
         blockRejected,
-    TResult? Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockAccepted,
-    TResult? Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult? Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)?
         getLastBlockRequest,
-    TResult? Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         getLastBlockResponse,
   }) {
-    return peerStateUpdate?.call(content, peerId, tag, type);
+    return peerStateUpdate?.call(
+        content, senderIdentity, receiverIdentity, tag, type);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult Function(String senderIdentity, String receiverIdentity, String tag,
+            PeerMessageType type, dynamic content)?
         peerTypeRequest,
-    TResult Function(PeerType content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(PeerType content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerTypeResponse,
-    TResult Function(Transaction content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(Transaction content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         addTransaction,
-    TResult Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockHeadersRequest,
-    TResult Function(
-            BlockHeadersResponseContent content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)?
+    TResult Function(BlockHeadersResponseContent content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockHeadersResponse,
-    TResult Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockRequest,
-    TResult Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockResponse,
-    TResult Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockNotFoundResponse,
-    TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult Function(String senderIdentity, String receiverIdentity, String tag,
+            PeerMessageType type, dynamic content)?
         peerStateRequest,
-    TResult Function(PeerState content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerStateResponse,
-    TResult Function(PeerState content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerStateUpdate,
-    TResult Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         addBlock,
-    TResult Function(BlockHeader header, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeader header,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            dynamic content)?
         blockRejected,
-    TResult Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockAccepted,
-    TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult Function(String senderIdentity, String receiverIdentity, String tag,
+            PeerMessageType type, dynamic content)?
         getLastBlockRequest,
-    TResult Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         getLastBlockResponse,
     required TResult orElse(),
   }) {
     if (peerStateUpdate != null) {
-      return peerStateUpdate(content, peerId, tag, type);
+      return peerStateUpdate(
+          content, senderIdentity, receiverIdentity, tag, type);
     }
     return orElse();
   }
@@ -5297,17 +5261,20 @@ abstract class _PeerMessagePeerStateUpdate
     implements PeerMessage, KrapiMessageInterface {
   const factory _PeerMessagePeerStateUpdate(
       {required final PeerState content,
-      @JsonKey(name: 'peer_id') required final int peerId,
+      required final String senderIdentity,
+      required final String receiverIdentity,
       required final String tag,
       final PeerMessageType type}) = _$_PeerMessagePeerStateUpdate;
 
   factory _PeerMessagePeerStateUpdate.fromJson(Map<String, dynamic> json) =
       _$_PeerMessagePeerStateUpdate.fromJson;
 
+  @override
   PeerState get content;
   @override
-  @JsonKey(name: 'peer_id')
-  int get peerId;
+  String get senderIdentity;
+  @override
+  String get receiverIdentity;
   @override
   String get tag;
   @override
@@ -5328,7 +5295,8 @@ abstract class _$$_PeerMessageAddBlockCopyWith<$Res>
   @useResult
   $Res call(
       {Block content,
-      @JsonKey(name: 'peer_id') int peerId,
+      String senderIdentity,
+      String receiverIdentity,
       String tag,
       PeerMessageType type});
 
@@ -5347,7 +5315,8 @@ class __$$_PeerMessageAddBlockCopyWithImpl<$Res>
   @override
   $Res call({
     Object? content = null,
-    Object? peerId = null,
+    Object? senderIdentity = null,
+    Object? receiverIdentity = null,
     Object? tag = null,
     Object? type = null,
   }) {
@@ -5356,10 +5325,14 @@ class __$$_PeerMessageAddBlockCopyWithImpl<$Res>
           ? _value.content
           : content // ignore: cast_nullable_to_non_nullable
               as Block,
-      peerId: null == peerId
-          ? _value.peerId
-          : peerId // ignore: cast_nullable_to_non_nullable
-              as int,
+      senderIdentity: null == senderIdentity
+          ? _value.senderIdentity
+          : senderIdentity // ignore: cast_nullable_to_non_nullable
+              as String,
+      receiverIdentity: null == receiverIdentity
+          ? _value.receiverIdentity
+          : receiverIdentity // ignore: cast_nullable_to_non_nullable
+              as String,
       tag: null == tag
           ? _value.tag
           : tag // ignore: cast_nullable_to_non_nullable
@@ -5385,7 +5358,8 @@ class __$$_PeerMessageAddBlockCopyWithImpl<$Res>
 class _$_PeerMessageAddBlock implements _PeerMessageAddBlock {
   const _$_PeerMessageAddBlock(
       {required this.content,
-      @JsonKey(name: 'peer_id') required this.peerId,
+      required this.senderIdentity,
+      required this.receiverIdentity,
       required this.tag,
       this.type = PeerMessageType.addBlock});
 
@@ -5395,8 +5369,9 @@ class _$_PeerMessageAddBlock implements _PeerMessageAddBlock {
   @override
   final Block content;
   @override
-  @JsonKey(name: 'peer_id')
-  final int peerId;
+  final String senderIdentity;
+  @override
+  final String receiverIdentity;
   @override
   final String tag;
   @override
@@ -5405,7 +5380,7 @@ class _$_PeerMessageAddBlock implements _PeerMessageAddBlock {
 
   @override
   String toString() {
-    return 'PeerMessage.addBlock(content: $content, peerId: $peerId, tag: $tag, type: $type)';
+    return 'PeerMessage.addBlock(content: $content, senderIdentity: $senderIdentity, receiverIdentity: $receiverIdentity, tag: $tag, type: $type)';
   }
 
   @override
@@ -5414,14 +5389,18 @@ class _$_PeerMessageAddBlock implements _PeerMessageAddBlock {
         (other.runtimeType == runtimeType &&
             other is _$_PeerMessageAddBlock &&
             (identical(other.content, content) || other.content == content) &&
-            (identical(other.peerId, peerId) || other.peerId == peerId) &&
+            (identical(other.senderIdentity, senderIdentity) ||
+                other.senderIdentity == senderIdentity) &&
+            (identical(other.receiverIdentity, receiverIdentity) ||
+                other.receiverIdentity == receiverIdentity) &&
             (identical(other.tag, tag) || other.tag == tag) &&
             (identical(other.type, type) || other.type == type));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, content, peerId, tag, type);
+  int get hashCode => Object.hash(
+      runtimeType, content, senderIdentity, receiverIdentity, tag, type);
 
   @JsonKey(ignore: true)
   @override
@@ -5433,213 +5412,191 @@ class _$_PeerMessageAddBlock implements _PeerMessageAddBlock {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)
+    required TResult Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)
         peerTypeRequest,
-    required TResult Function(
-            PeerType content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(PeerType content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         peerTypeResponse,
-    required TResult Function(
-            Transaction content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(Transaction content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         addTransaction,
-    required TResult Function(
-            BlockHeader content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         blockHeadersRequest,
     required TResult Function(
             BlockHeadersResponseContent content,
-            @JsonKey(name: 'peer_id') int peerId,
+            String senderIdentity,
+            String receiverIdentity,
             String tag,
             PeerMessageType type)
         blockHeadersResponse,
-    required TResult Function(
-            BlockHeader content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         blockRequest,
-    required TResult Function(
-            Block content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         blockResponse,
-    required TResult Function(
-            BlockHeader content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         blockNotFoundResponse,
-    required TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)
+    required TResult Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)
         peerStateRequest,
-    required TResult Function(
-            PeerState content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         peerStateResponse,
-    required TResult Function(
-            PeerState content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         peerStateUpdate,
-    required TResult Function(
-            Block content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         addBlock,
     required TResult Function(
             BlockHeader header,
-            @JsonKey(name: 'peer_id') int peerId,
+            String senderIdentity,
+            String receiverIdentity,
             String tag,
-            PeerMessageType type)
+            PeerMessageType type,
+            dynamic content)
         blockRejected,
-    required TResult Function(
-            BlockHeader content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         blockAccepted,
-    required TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)
+    required TResult Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)
         getLastBlockRequest,
-    required TResult Function(
-            Block content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         getLastBlockResponse,
   }) {
-    return addBlock(content, peerId, tag, type);
+    return addBlock(content, senderIdentity, receiverIdentity, tag, type);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult? Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)?
         peerTypeRequest,
-    TResult? Function(PeerType content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(PeerType content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerTypeResponse,
-    TResult? Function(Transaction content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(Transaction content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         addTransaction,
-    TResult? Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockHeadersRequest,
     TResult? Function(
             BlockHeadersResponseContent content,
-            @JsonKey(name: 'peer_id') int peerId,
+            String senderIdentity,
+            String receiverIdentity,
             String tag,
             PeerMessageType type)?
         blockHeadersResponse,
-    TResult? Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockRequest,
-    TResult? Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockResponse,
-    TResult? Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockNotFoundResponse,
-    TResult? Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult? Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)?
         peerStateRequest,
-    TResult? Function(PeerState content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerStateResponse,
-    TResult? Function(PeerState content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerStateUpdate,
-    TResult? Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         addBlock,
-    TResult? Function(BlockHeader header, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(
+            BlockHeader header,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            dynamic content)?
         blockRejected,
-    TResult? Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockAccepted,
-    TResult? Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult? Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)?
         getLastBlockRequest,
-    TResult? Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         getLastBlockResponse,
   }) {
-    return addBlock?.call(content, peerId, tag, type);
+    return addBlock?.call(content, senderIdentity, receiverIdentity, tag, type);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult Function(String senderIdentity, String receiverIdentity, String tag,
+            PeerMessageType type, dynamic content)?
         peerTypeRequest,
-    TResult Function(PeerType content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(PeerType content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerTypeResponse,
-    TResult Function(Transaction content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(Transaction content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         addTransaction,
-    TResult Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockHeadersRequest,
-    TResult Function(
-            BlockHeadersResponseContent content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)?
+    TResult Function(BlockHeadersResponseContent content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockHeadersResponse,
-    TResult Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockRequest,
-    TResult Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockResponse,
-    TResult Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockNotFoundResponse,
-    TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult Function(String senderIdentity, String receiverIdentity, String tag,
+            PeerMessageType type, dynamic content)?
         peerStateRequest,
-    TResult Function(PeerState content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerStateResponse,
-    TResult Function(PeerState content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerStateUpdate,
-    TResult Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         addBlock,
-    TResult Function(BlockHeader header, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeader header,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            dynamic content)?
         blockRejected,
-    TResult Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockAccepted,
-    TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult Function(String senderIdentity, String receiverIdentity, String tag,
+            PeerMessageType type, dynamic content)?
         getLastBlockRequest,
-    TResult Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         getLastBlockResponse,
     required TResult orElse(),
   }) {
     if (addBlock != null) {
-      return addBlock(content, peerId, tag, type);
+      return addBlock(content, senderIdentity, receiverIdentity, tag, type);
     }
     return orElse();
   }
@@ -5749,17 +5706,20 @@ abstract class _PeerMessageAddBlock
     implements PeerMessage, KrapiMessageInterface {
   const factory _PeerMessageAddBlock(
       {required final Block content,
-      @JsonKey(name: 'peer_id') required final int peerId,
+      required final String senderIdentity,
+      required final String receiverIdentity,
       required final String tag,
       final PeerMessageType type}) = _$_PeerMessageAddBlock;
 
   factory _PeerMessageAddBlock.fromJson(Map<String, dynamic> json) =
       _$_PeerMessageAddBlock.fromJson;
 
+  @override
   Block get content;
   @override
-  @JsonKey(name: 'peer_id')
-  int get peerId;
+  String get senderIdentity;
+  @override
+  String get receiverIdentity;
   @override
   String get tag;
   @override
@@ -5781,9 +5741,11 @@ abstract class _$$_PeerMessageBlockRejectedCopyWith<$Res>
   @useResult
   $Res call(
       {BlockHeader header,
-      @JsonKey(name: 'peer_id') int peerId,
+      String senderIdentity,
+      String receiverIdentity,
       String tag,
-      PeerMessageType type});
+      PeerMessageType type,
+      dynamic content});
 
   $BlockHeaderCopyWith<$Res> get header;
 }
@@ -5800,19 +5762,25 @@ class __$$_PeerMessageBlockRejectedCopyWithImpl<$Res>
   @override
   $Res call({
     Object? header = null,
-    Object? peerId = null,
+    Object? senderIdentity = null,
+    Object? receiverIdentity = null,
     Object? tag = null,
     Object? type = null,
+    Object? content = freezed,
   }) {
     return _then(_$_PeerMessageBlockRejected(
       null == header
           ? _value.header
           : header // ignore: cast_nullable_to_non_nullable
               as BlockHeader,
-      peerId: null == peerId
-          ? _value.peerId
-          : peerId // ignore: cast_nullable_to_non_nullable
-              as int,
+      senderIdentity: null == senderIdentity
+          ? _value.senderIdentity
+          : senderIdentity // ignore: cast_nullable_to_non_nullable
+              as String,
+      receiverIdentity: null == receiverIdentity
+          ? _value.receiverIdentity
+          : receiverIdentity // ignore: cast_nullable_to_non_nullable
+              as String,
       tag: null == tag
           ? _value.tag
           : tag // ignore: cast_nullable_to_non_nullable
@@ -5821,6 +5789,10 @@ class __$$_PeerMessageBlockRejectedCopyWithImpl<$Res>
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as PeerMessageType,
+      content: freezed == content
+          ? _value.content
+          : content // ignore: cast_nullable_to_non_nullable
+              as dynamic,
     ));
   }
 
@@ -5837,9 +5809,11 @@ class __$$_PeerMessageBlockRejectedCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_PeerMessageBlockRejected implements _PeerMessageBlockRejected {
   const _$_PeerMessageBlockRejected(this.header,
-      {@JsonKey(name: 'peer_id') required this.peerId,
+      {required this.senderIdentity,
+      required this.receiverIdentity,
       required this.tag,
-      this.type = PeerMessageType.blockRejected});
+      this.type = PeerMessageType.blockRejected,
+      this.content});
 
   factory _$_PeerMessageBlockRejected.fromJson(Map<String, dynamic> json) =>
       _$$_PeerMessageBlockRejectedFromJson(json);
@@ -5847,17 +5821,20 @@ class _$_PeerMessageBlockRejected implements _PeerMessageBlockRejected {
   @override
   final BlockHeader header;
   @override
-  @JsonKey(name: 'peer_id')
-  final int peerId;
+  final String senderIdentity;
+  @override
+  final String receiverIdentity;
   @override
   final String tag;
   @override
   @JsonKey()
   final PeerMessageType type;
+  @override
+  final dynamic content;
 
   @override
   String toString() {
-    return 'PeerMessage.blockRejected(header: $header, peerId: $peerId, tag: $tag, type: $type)';
+    return 'PeerMessage.blockRejected(header: $header, senderIdentity: $senderIdentity, receiverIdentity: $receiverIdentity, tag: $tag, type: $type, content: $content)';
   }
 
   @override
@@ -5866,14 +5843,25 @@ class _$_PeerMessageBlockRejected implements _PeerMessageBlockRejected {
         (other.runtimeType == runtimeType &&
             other is _$_PeerMessageBlockRejected &&
             (identical(other.header, header) || other.header == header) &&
-            (identical(other.peerId, peerId) || other.peerId == peerId) &&
+            (identical(other.senderIdentity, senderIdentity) ||
+                other.senderIdentity == senderIdentity) &&
+            (identical(other.receiverIdentity, receiverIdentity) ||
+                other.receiverIdentity == receiverIdentity) &&
             (identical(other.tag, tag) || other.tag == tag) &&
-            (identical(other.type, type) || other.type == type));
+            (identical(other.type, type) || other.type == type) &&
+            const DeepCollectionEquality().equals(other.content, content));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, header, peerId, tag, type);
+  int get hashCode => Object.hash(
+      runtimeType,
+      header,
+      senderIdentity,
+      receiverIdentity,
+      tag,
+      type,
+      const DeepCollectionEquality().hash(content));
 
   @JsonKey(ignore: true)
   @override
@@ -5885,213 +5873,194 @@ class _$_PeerMessageBlockRejected implements _PeerMessageBlockRejected {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)
+    required TResult Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)
         peerTypeRequest,
-    required TResult Function(
-            PeerType content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(PeerType content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         peerTypeResponse,
-    required TResult Function(
-            Transaction content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(Transaction content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         addTransaction,
-    required TResult Function(
-            BlockHeader content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         blockHeadersRequest,
     required TResult Function(
             BlockHeadersResponseContent content,
-            @JsonKey(name: 'peer_id') int peerId,
+            String senderIdentity,
+            String receiverIdentity,
             String tag,
             PeerMessageType type)
         blockHeadersResponse,
-    required TResult Function(
-            BlockHeader content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         blockRequest,
-    required TResult Function(
-            Block content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         blockResponse,
-    required TResult Function(
-            BlockHeader content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         blockNotFoundResponse,
-    required TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)
+    required TResult Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)
         peerStateRequest,
-    required TResult Function(
-            PeerState content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         peerStateResponse,
-    required TResult Function(
-            PeerState content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         peerStateUpdate,
-    required TResult Function(
-            Block content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         addBlock,
     required TResult Function(
             BlockHeader header,
-            @JsonKey(name: 'peer_id') int peerId,
+            String senderIdentity,
+            String receiverIdentity,
             String tag,
-            PeerMessageType type)
+            PeerMessageType type,
+            dynamic content)
         blockRejected,
-    required TResult Function(
-            BlockHeader content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         blockAccepted,
-    required TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)
+    required TResult Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)
         getLastBlockRequest,
-    required TResult Function(
-            Block content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         getLastBlockResponse,
   }) {
-    return blockRejected(header, peerId, tag, type);
+    return blockRejected(
+        header, senderIdentity, receiverIdentity, tag, type, content);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult? Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)?
         peerTypeRequest,
-    TResult? Function(PeerType content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(PeerType content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerTypeResponse,
-    TResult? Function(Transaction content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(Transaction content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         addTransaction,
-    TResult? Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockHeadersRequest,
     TResult? Function(
             BlockHeadersResponseContent content,
-            @JsonKey(name: 'peer_id') int peerId,
+            String senderIdentity,
+            String receiverIdentity,
             String tag,
             PeerMessageType type)?
         blockHeadersResponse,
-    TResult? Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockRequest,
-    TResult? Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockResponse,
-    TResult? Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockNotFoundResponse,
-    TResult? Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult? Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)?
         peerStateRequest,
-    TResult? Function(PeerState content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerStateResponse,
-    TResult? Function(PeerState content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerStateUpdate,
-    TResult? Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         addBlock,
-    TResult? Function(BlockHeader header, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(
+            BlockHeader header,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            dynamic content)?
         blockRejected,
-    TResult? Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockAccepted,
-    TResult? Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult? Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)?
         getLastBlockRequest,
-    TResult? Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         getLastBlockResponse,
   }) {
-    return blockRejected?.call(header, peerId, tag, type);
+    return blockRejected?.call(
+        header, senderIdentity, receiverIdentity, tag, type, content);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult Function(String senderIdentity, String receiverIdentity, String tag,
+            PeerMessageType type, dynamic content)?
         peerTypeRequest,
-    TResult Function(PeerType content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(PeerType content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerTypeResponse,
-    TResult Function(Transaction content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(Transaction content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         addTransaction,
-    TResult Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockHeadersRequest,
-    TResult Function(
-            BlockHeadersResponseContent content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)?
+    TResult Function(BlockHeadersResponseContent content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockHeadersResponse,
-    TResult Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockRequest,
-    TResult Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockResponse,
-    TResult Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockNotFoundResponse,
-    TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult Function(String senderIdentity, String receiverIdentity, String tag,
+            PeerMessageType type, dynamic content)?
         peerStateRequest,
-    TResult Function(PeerState content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerStateResponse,
-    TResult Function(PeerState content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerStateUpdate,
-    TResult Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         addBlock,
-    TResult Function(BlockHeader header, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeader header,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            dynamic content)?
         blockRejected,
-    TResult Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockAccepted,
-    TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult Function(String senderIdentity, String receiverIdentity, String tag,
+            PeerMessageType type, dynamic content)?
         getLastBlockRequest,
-    TResult Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         getLastBlockResponse,
     required TResult orElse(),
   }) {
     if (blockRejected != null) {
-      return blockRejected(header, peerId, tag, type);
+      return blockRejected(
+          header, senderIdentity, receiverIdentity, tag, type, content);
     }
     return orElse();
   }
@@ -6200,21 +6169,26 @@ class _$_PeerMessageBlockRejected implements _PeerMessageBlockRejected {
 abstract class _PeerMessageBlockRejected
     implements PeerMessage, KrapiMessageInterface {
   const factory _PeerMessageBlockRejected(final BlockHeader header,
-      {@JsonKey(name: 'peer_id') required final int peerId,
+      {required final String senderIdentity,
+      required final String receiverIdentity,
       required final String tag,
-      final PeerMessageType type}) = _$_PeerMessageBlockRejected;
+      final PeerMessageType type,
+      final dynamic content}) = _$_PeerMessageBlockRejected;
 
   factory _PeerMessageBlockRejected.fromJson(Map<String, dynamic> json) =
       _$_PeerMessageBlockRejected.fromJson;
 
   BlockHeader get header;
   @override
-  @JsonKey(name: 'peer_id')
-  int get peerId;
+  String get senderIdentity;
+  @override
+  String get receiverIdentity;
   @override
   String get tag;
   @override
   PeerMessageType get type;
+  @override
+  dynamic get content;
   @override
   @JsonKey(ignore: true)
   _$$_PeerMessageBlockRejectedCopyWith<_$_PeerMessageBlockRejected>
@@ -6232,7 +6206,8 @@ abstract class _$$_PeerMessageBlockAcceptedCopyWith<$Res>
   @useResult
   $Res call(
       {BlockHeader content,
-      @JsonKey(name: 'peer_id') int peerId,
+      String senderIdentity,
+      String receiverIdentity,
       String tag,
       PeerMessageType type});
 
@@ -6251,7 +6226,8 @@ class __$$_PeerMessageBlockAcceptedCopyWithImpl<$Res>
   @override
   $Res call({
     Object? content = null,
-    Object? peerId = null,
+    Object? senderIdentity = null,
+    Object? receiverIdentity = null,
     Object? tag = null,
     Object? type = null,
   }) {
@@ -6260,10 +6236,14 @@ class __$$_PeerMessageBlockAcceptedCopyWithImpl<$Res>
           ? _value.content
           : content // ignore: cast_nullable_to_non_nullable
               as BlockHeader,
-      peerId: null == peerId
-          ? _value.peerId
-          : peerId // ignore: cast_nullable_to_non_nullable
-              as int,
+      senderIdentity: null == senderIdentity
+          ? _value.senderIdentity
+          : senderIdentity // ignore: cast_nullable_to_non_nullable
+              as String,
+      receiverIdentity: null == receiverIdentity
+          ? _value.receiverIdentity
+          : receiverIdentity // ignore: cast_nullable_to_non_nullable
+              as String,
       tag: null == tag
           ? _value.tag
           : tag // ignore: cast_nullable_to_non_nullable
@@ -6289,7 +6269,8 @@ class __$$_PeerMessageBlockAcceptedCopyWithImpl<$Res>
 class _$_PeerMessageBlockAccepted implements _PeerMessageBlockAccepted {
   const _$_PeerMessageBlockAccepted(
       {required this.content,
-      @JsonKey(name: 'peer_id') required this.peerId,
+      required this.senderIdentity,
+      required this.receiverIdentity,
       required this.tag,
       this.type = PeerMessageType.blockAccepted});
 
@@ -6299,8 +6280,9 @@ class _$_PeerMessageBlockAccepted implements _PeerMessageBlockAccepted {
   @override
   final BlockHeader content;
   @override
-  @JsonKey(name: 'peer_id')
-  final int peerId;
+  final String senderIdentity;
+  @override
+  final String receiverIdentity;
   @override
   final String tag;
   @override
@@ -6309,7 +6291,7 @@ class _$_PeerMessageBlockAccepted implements _PeerMessageBlockAccepted {
 
   @override
   String toString() {
-    return 'PeerMessage.blockAccepted(content: $content, peerId: $peerId, tag: $tag, type: $type)';
+    return 'PeerMessage.blockAccepted(content: $content, senderIdentity: $senderIdentity, receiverIdentity: $receiverIdentity, tag: $tag, type: $type)';
   }
 
   @override
@@ -6318,14 +6300,18 @@ class _$_PeerMessageBlockAccepted implements _PeerMessageBlockAccepted {
         (other.runtimeType == runtimeType &&
             other is _$_PeerMessageBlockAccepted &&
             (identical(other.content, content) || other.content == content) &&
-            (identical(other.peerId, peerId) || other.peerId == peerId) &&
+            (identical(other.senderIdentity, senderIdentity) ||
+                other.senderIdentity == senderIdentity) &&
+            (identical(other.receiverIdentity, receiverIdentity) ||
+                other.receiverIdentity == receiverIdentity) &&
             (identical(other.tag, tag) || other.tag == tag) &&
             (identical(other.type, type) || other.type == type));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, content, peerId, tag, type);
+  int get hashCode => Object.hash(
+      runtimeType, content, senderIdentity, receiverIdentity, tag, type);
 
   @JsonKey(ignore: true)
   @override
@@ -6337,213 +6323,193 @@ class _$_PeerMessageBlockAccepted implements _PeerMessageBlockAccepted {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)
+    required TResult Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)
         peerTypeRequest,
-    required TResult Function(
-            PeerType content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(PeerType content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         peerTypeResponse,
-    required TResult Function(
-            Transaction content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(Transaction content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         addTransaction,
-    required TResult Function(
-            BlockHeader content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         blockHeadersRequest,
     required TResult Function(
             BlockHeadersResponseContent content,
-            @JsonKey(name: 'peer_id') int peerId,
+            String senderIdentity,
+            String receiverIdentity,
             String tag,
             PeerMessageType type)
         blockHeadersResponse,
-    required TResult Function(
-            BlockHeader content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         blockRequest,
-    required TResult Function(
-            Block content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         blockResponse,
-    required TResult Function(
-            BlockHeader content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         blockNotFoundResponse,
-    required TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)
+    required TResult Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)
         peerStateRequest,
-    required TResult Function(
-            PeerState content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         peerStateResponse,
-    required TResult Function(
-            PeerState content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         peerStateUpdate,
-    required TResult Function(
-            Block content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         addBlock,
     required TResult Function(
             BlockHeader header,
-            @JsonKey(name: 'peer_id') int peerId,
+            String senderIdentity,
+            String receiverIdentity,
             String tag,
-            PeerMessageType type)
+            PeerMessageType type,
+            dynamic content)
         blockRejected,
-    required TResult Function(
-            BlockHeader content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         blockAccepted,
-    required TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)
+    required TResult Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)
         getLastBlockRequest,
-    required TResult Function(
-            Block content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         getLastBlockResponse,
   }) {
-    return blockAccepted(content, peerId, tag, type);
+    return blockAccepted(content, senderIdentity, receiverIdentity, tag, type);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult? Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)?
         peerTypeRequest,
-    TResult? Function(PeerType content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(PeerType content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerTypeResponse,
-    TResult? Function(Transaction content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(Transaction content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         addTransaction,
-    TResult? Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockHeadersRequest,
     TResult? Function(
             BlockHeadersResponseContent content,
-            @JsonKey(name: 'peer_id') int peerId,
+            String senderIdentity,
+            String receiverIdentity,
             String tag,
             PeerMessageType type)?
         blockHeadersResponse,
-    TResult? Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockRequest,
-    TResult? Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockResponse,
-    TResult? Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockNotFoundResponse,
-    TResult? Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult? Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)?
         peerStateRequest,
-    TResult? Function(PeerState content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerStateResponse,
-    TResult? Function(PeerState content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerStateUpdate,
-    TResult? Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         addBlock,
-    TResult? Function(BlockHeader header, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(
+            BlockHeader header,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            dynamic content)?
         blockRejected,
-    TResult? Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockAccepted,
-    TResult? Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult? Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)?
         getLastBlockRequest,
-    TResult? Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         getLastBlockResponse,
   }) {
-    return blockAccepted?.call(content, peerId, tag, type);
+    return blockAccepted?.call(
+        content, senderIdentity, receiverIdentity, tag, type);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult Function(String senderIdentity, String receiverIdentity, String tag,
+            PeerMessageType type, dynamic content)?
         peerTypeRequest,
-    TResult Function(PeerType content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(PeerType content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerTypeResponse,
-    TResult Function(Transaction content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(Transaction content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         addTransaction,
-    TResult Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockHeadersRequest,
-    TResult Function(
-            BlockHeadersResponseContent content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)?
+    TResult Function(BlockHeadersResponseContent content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockHeadersResponse,
-    TResult Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockRequest,
-    TResult Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockResponse,
-    TResult Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockNotFoundResponse,
-    TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult Function(String senderIdentity, String receiverIdentity, String tag,
+            PeerMessageType type, dynamic content)?
         peerStateRequest,
-    TResult Function(PeerState content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerStateResponse,
-    TResult Function(PeerState content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerStateUpdate,
-    TResult Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         addBlock,
-    TResult Function(BlockHeader header, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeader header,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            dynamic content)?
         blockRejected,
-    TResult Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockAccepted,
-    TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult Function(String senderIdentity, String receiverIdentity, String tag,
+            PeerMessageType type, dynamic content)?
         getLastBlockRequest,
-    TResult Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         getLastBlockResponse,
     required TResult orElse(),
   }) {
     if (blockAccepted != null) {
-      return blockAccepted(content, peerId, tag, type);
+      return blockAccepted(
+          content, senderIdentity, receiverIdentity, tag, type);
     }
     return orElse();
   }
@@ -6653,17 +6619,20 @@ abstract class _PeerMessageBlockAccepted
     implements PeerMessage, KrapiMessageInterface {
   const factory _PeerMessageBlockAccepted(
       {required final BlockHeader content,
-      @JsonKey(name: 'peer_id') required final int peerId,
+      required final String senderIdentity,
+      required final String receiverIdentity,
       required final String tag,
       final PeerMessageType type}) = _$_PeerMessageBlockAccepted;
 
   factory _PeerMessageBlockAccepted.fromJson(Map<String, dynamic> json) =
       _$_PeerMessageBlockAccepted.fromJson;
 
+  @override
   BlockHeader get content;
   @override
-  @JsonKey(name: 'peer_id')
-  int get peerId;
+  String get senderIdentity;
+  @override
+  String get receiverIdentity;
   @override
   String get tag;
   @override
@@ -6684,7 +6653,11 @@ abstract class _$$_PeerMessageGetLastBlockRequestCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'peer_id') int peerId, String tag, PeerMessageType type});
+      {String senderIdentity,
+      String receiverIdentity,
+      String tag,
+      PeerMessageType type,
+      dynamic content});
 }
 
 /// @nodoc
@@ -6699,15 +6672,21 @@ class __$$_PeerMessageGetLastBlockRequestCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? peerId = null,
+    Object? senderIdentity = null,
+    Object? receiverIdentity = null,
     Object? tag = null,
     Object? type = null,
+    Object? content = freezed,
   }) {
     return _then(_$_PeerMessageGetLastBlockRequest(
-      peerId: null == peerId
-          ? _value.peerId
-          : peerId // ignore: cast_nullable_to_non_nullable
-              as int,
+      senderIdentity: null == senderIdentity
+          ? _value.senderIdentity
+          : senderIdentity // ignore: cast_nullable_to_non_nullable
+              as String,
+      receiverIdentity: null == receiverIdentity
+          ? _value.receiverIdentity
+          : receiverIdentity // ignore: cast_nullable_to_non_nullable
+              as String,
       tag: null == tag
           ? _value.tag
           : tag // ignore: cast_nullable_to_non_nullable
@@ -6716,6 +6695,10 @@ class __$$_PeerMessageGetLastBlockRequestCopyWithImpl<$Res>
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as PeerMessageType,
+      content: freezed == content
+          ? _value.content
+          : content // ignore: cast_nullable_to_non_nullable
+              as dynamic,
     ));
   }
 }
@@ -6725,26 +6708,31 @@ class __$$_PeerMessageGetLastBlockRequestCopyWithImpl<$Res>
 class _$_PeerMessageGetLastBlockRequest
     implements _PeerMessageGetLastBlockRequest {
   const _$_PeerMessageGetLastBlockRequest(
-      {@JsonKey(name: 'peer_id') required this.peerId,
+      {required this.senderIdentity,
+      required this.receiverIdentity,
       required this.tag,
-      this.type = PeerMessageType.getLastBlockRequest});
+      this.type = PeerMessageType.getLastBlockRequest,
+      this.content});
 
   factory _$_PeerMessageGetLastBlockRequest.fromJson(
           Map<String, dynamic> json) =>
       _$$_PeerMessageGetLastBlockRequestFromJson(json);
 
   @override
-  @JsonKey(name: 'peer_id')
-  final int peerId;
+  final String senderIdentity;
+  @override
+  final String receiverIdentity;
   @override
   final String tag;
   @override
   @JsonKey()
   final PeerMessageType type;
+  @override
+  final dynamic content;
 
   @override
   String toString() {
-    return 'PeerMessage.getLastBlockRequest(peerId: $peerId, tag: $tag, type: $type)';
+    return 'PeerMessage.getLastBlockRequest(senderIdentity: $senderIdentity, receiverIdentity: $receiverIdentity, tag: $tag, type: $type, content: $content)';
   }
 
   @override
@@ -6752,14 +6740,19 @@ class _$_PeerMessageGetLastBlockRequest
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_PeerMessageGetLastBlockRequest &&
-            (identical(other.peerId, peerId) || other.peerId == peerId) &&
+            (identical(other.senderIdentity, senderIdentity) ||
+                other.senderIdentity == senderIdentity) &&
+            (identical(other.receiverIdentity, receiverIdentity) ||
+                other.receiverIdentity == receiverIdentity) &&
             (identical(other.tag, tag) || other.tag == tag) &&
-            (identical(other.type, type) || other.type == type));
+            (identical(other.type, type) || other.type == type) &&
+            const DeepCollectionEquality().equals(other.content, content));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, peerId, tag, type);
+  int get hashCode => Object.hash(runtimeType, senderIdentity, receiverIdentity,
+      tag, type, const DeepCollectionEquality().hash(content));
 
   @JsonKey(ignore: true)
   @override
@@ -6771,213 +6764,194 @@ class _$_PeerMessageGetLastBlockRequest
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)
+    required TResult Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)
         peerTypeRequest,
-    required TResult Function(
-            PeerType content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(PeerType content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         peerTypeResponse,
-    required TResult Function(
-            Transaction content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(Transaction content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         addTransaction,
-    required TResult Function(
-            BlockHeader content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         blockHeadersRequest,
     required TResult Function(
             BlockHeadersResponseContent content,
-            @JsonKey(name: 'peer_id') int peerId,
+            String senderIdentity,
+            String receiverIdentity,
             String tag,
             PeerMessageType type)
         blockHeadersResponse,
-    required TResult Function(
-            BlockHeader content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         blockRequest,
-    required TResult Function(
-            Block content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         blockResponse,
-    required TResult Function(
-            BlockHeader content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         blockNotFoundResponse,
-    required TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)
+    required TResult Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)
         peerStateRequest,
-    required TResult Function(
-            PeerState content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         peerStateResponse,
-    required TResult Function(
-            PeerState content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         peerStateUpdate,
-    required TResult Function(
-            Block content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         addBlock,
     required TResult Function(
             BlockHeader header,
-            @JsonKey(name: 'peer_id') int peerId,
+            String senderIdentity,
+            String receiverIdentity,
             String tag,
-            PeerMessageType type)
+            PeerMessageType type,
+            dynamic content)
         blockRejected,
-    required TResult Function(
-            BlockHeader content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         blockAccepted,
-    required TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)
+    required TResult Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)
         getLastBlockRequest,
-    required TResult Function(
-            Block content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         getLastBlockResponse,
   }) {
-    return getLastBlockRequest(peerId, tag, type);
+    return getLastBlockRequest(
+        senderIdentity, receiverIdentity, tag, type, content);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult? Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)?
         peerTypeRequest,
-    TResult? Function(PeerType content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(PeerType content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerTypeResponse,
-    TResult? Function(Transaction content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(Transaction content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         addTransaction,
-    TResult? Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockHeadersRequest,
     TResult? Function(
             BlockHeadersResponseContent content,
-            @JsonKey(name: 'peer_id') int peerId,
+            String senderIdentity,
+            String receiverIdentity,
             String tag,
             PeerMessageType type)?
         blockHeadersResponse,
-    TResult? Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockRequest,
-    TResult? Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockResponse,
-    TResult? Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockNotFoundResponse,
-    TResult? Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult? Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)?
         peerStateRequest,
-    TResult? Function(PeerState content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerStateResponse,
-    TResult? Function(PeerState content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerStateUpdate,
-    TResult? Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         addBlock,
-    TResult? Function(BlockHeader header, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(
+            BlockHeader header,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            dynamic content)?
         blockRejected,
-    TResult? Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockAccepted,
-    TResult? Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult? Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)?
         getLastBlockRequest,
-    TResult? Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         getLastBlockResponse,
   }) {
-    return getLastBlockRequest?.call(peerId, tag, type);
+    return getLastBlockRequest?.call(
+        senderIdentity, receiverIdentity, tag, type, content);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult Function(String senderIdentity, String receiverIdentity, String tag,
+            PeerMessageType type, dynamic content)?
         peerTypeRequest,
-    TResult Function(PeerType content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(PeerType content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerTypeResponse,
-    TResult Function(Transaction content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(Transaction content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         addTransaction,
-    TResult Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockHeadersRequest,
-    TResult Function(
-            BlockHeadersResponseContent content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)?
+    TResult Function(BlockHeadersResponseContent content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockHeadersResponse,
-    TResult Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockRequest,
-    TResult Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockResponse,
-    TResult Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockNotFoundResponse,
-    TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult Function(String senderIdentity, String receiverIdentity, String tag,
+            PeerMessageType type, dynamic content)?
         peerStateRequest,
-    TResult Function(PeerState content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerStateResponse,
-    TResult Function(PeerState content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerStateUpdate,
-    TResult Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         addBlock,
-    TResult Function(BlockHeader header, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeader header,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            dynamic content)?
         blockRejected,
-    TResult Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockAccepted,
-    TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult Function(String senderIdentity, String receiverIdentity, String tag,
+            PeerMessageType type, dynamic content)?
         getLastBlockRequest,
-    TResult Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         getLastBlockResponse,
     required TResult orElse(),
   }) {
     if (getLastBlockRequest != null) {
-      return getLastBlockRequest(peerId, tag, type);
+      return getLastBlockRequest(
+          senderIdentity, receiverIdentity, tag, type, content);
     }
     return orElse();
   }
@@ -7086,20 +7060,25 @@ class _$_PeerMessageGetLastBlockRequest
 abstract class _PeerMessageGetLastBlockRequest
     implements PeerMessage, KrapiMessageInterface {
   const factory _PeerMessageGetLastBlockRequest(
-      {@JsonKey(name: 'peer_id') required final int peerId,
+      {required final String senderIdentity,
+      required final String receiverIdentity,
       required final String tag,
-      final PeerMessageType type}) = _$_PeerMessageGetLastBlockRequest;
+      final PeerMessageType type,
+      final dynamic content}) = _$_PeerMessageGetLastBlockRequest;
 
   factory _PeerMessageGetLastBlockRequest.fromJson(Map<String, dynamic> json) =
       _$_PeerMessageGetLastBlockRequest.fromJson;
 
   @override
-  @JsonKey(name: 'peer_id')
-  int get peerId;
+  String get senderIdentity;
+  @override
+  String get receiverIdentity;
   @override
   String get tag;
   @override
   PeerMessageType get type;
+  @override
+  dynamic get content;
   @override
   @JsonKey(ignore: true)
   _$$_PeerMessageGetLastBlockRequestCopyWith<_$_PeerMessageGetLastBlockRequest>
@@ -7117,7 +7096,8 @@ abstract class _$$_PeerMessageGetLastBlockResponseCopyWith<$Res>
   @useResult
   $Res call(
       {Block content,
-      @JsonKey(name: 'peer_id') int peerId,
+      String senderIdentity,
+      String receiverIdentity,
       String tag,
       PeerMessageType type});
 
@@ -7137,7 +7117,8 @@ class __$$_PeerMessageGetLastBlockResponseCopyWithImpl<$Res>
   @override
   $Res call({
     Object? content = null,
-    Object? peerId = null,
+    Object? senderIdentity = null,
+    Object? receiverIdentity = null,
     Object? tag = null,
     Object? type = null,
   }) {
@@ -7146,10 +7127,14 @@ class __$$_PeerMessageGetLastBlockResponseCopyWithImpl<$Res>
           ? _value.content
           : content // ignore: cast_nullable_to_non_nullable
               as Block,
-      peerId: null == peerId
-          ? _value.peerId
-          : peerId // ignore: cast_nullable_to_non_nullable
-              as int,
+      senderIdentity: null == senderIdentity
+          ? _value.senderIdentity
+          : senderIdentity // ignore: cast_nullable_to_non_nullable
+              as String,
+      receiverIdentity: null == receiverIdentity
+          ? _value.receiverIdentity
+          : receiverIdentity // ignore: cast_nullable_to_non_nullable
+              as String,
       tag: null == tag
           ? _value.tag
           : tag // ignore: cast_nullable_to_non_nullable
@@ -7176,7 +7161,8 @@ class _$_PeerMessageGetLastBlockResponse
     implements _PeerMessageGetLastBlockResponse {
   const _$_PeerMessageGetLastBlockResponse(
       {required this.content,
-      @JsonKey(name: 'peer_id') required this.peerId,
+      required this.senderIdentity,
+      required this.receiverIdentity,
       required this.tag,
       this.type = PeerMessageType.getLastBlockResponse});
 
@@ -7187,8 +7173,9 @@ class _$_PeerMessageGetLastBlockResponse
   @override
   final Block content;
   @override
-  @JsonKey(name: 'peer_id')
-  final int peerId;
+  final String senderIdentity;
+  @override
+  final String receiverIdentity;
   @override
   final String tag;
   @override
@@ -7197,7 +7184,7 @@ class _$_PeerMessageGetLastBlockResponse
 
   @override
   String toString() {
-    return 'PeerMessage.getLastBlockResponse(content: $content, peerId: $peerId, tag: $tag, type: $type)';
+    return 'PeerMessage.getLastBlockResponse(content: $content, senderIdentity: $senderIdentity, receiverIdentity: $receiverIdentity, tag: $tag, type: $type)';
   }
 
   @override
@@ -7206,14 +7193,18 @@ class _$_PeerMessageGetLastBlockResponse
         (other.runtimeType == runtimeType &&
             other is _$_PeerMessageGetLastBlockResponse &&
             (identical(other.content, content) || other.content == content) &&
-            (identical(other.peerId, peerId) || other.peerId == peerId) &&
+            (identical(other.senderIdentity, senderIdentity) ||
+                other.senderIdentity == senderIdentity) &&
+            (identical(other.receiverIdentity, receiverIdentity) ||
+                other.receiverIdentity == receiverIdentity) &&
             (identical(other.tag, tag) || other.tag == tag) &&
             (identical(other.type, type) || other.type == type));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, content, peerId, tag, type);
+  int get hashCode => Object.hash(
+      runtimeType, content, senderIdentity, receiverIdentity, tag, type);
 
   @JsonKey(ignore: true)
   @override
@@ -7226,213 +7217,194 @@ class _$_PeerMessageGetLastBlockResponse
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)
+    required TResult Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)
         peerTypeRequest,
-    required TResult Function(
-            PeerType content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(PeerType content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         peerTypeResponse,
-    required TResult Function(
-            Transaction content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(Transaction content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         addTransaction,
-    required TResult Function(
-            BlockHeader content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         blockHeadersRequest,
     required TResult Function(
             BlockHeadersResponseContent content,
-            @JsonKey(name: 'peer_id') int peerId,
+            String senderIdentity,
+            String receiverIdentity,
             String tag,
             PeerMessageType type)
         blockHeadersResponse,
-    required TResult Function(
-            BlockHeader content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         blockRequest,
-    required TResult Function(
-            Block content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         blockResponse,
-    required TResult Function(
-            BlockHeader content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         blockNotFoundResponse,
-    required TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)
+    required TResult Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)
         peerStateRequest,
-    required TResult Function(
-            PeerState content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         peerStateResponse,
-    required TResult Function(
-            PeerState content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         peerStateUpdate,
-    required TResult Function(
-            Block content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         addBlock,
     required TResult Function(
             BlockHeader header,
-            @JsonKey(name: 'peer_id') int peerId,
+            String senderIdentity,
+            String receiverIdentity,
             String tag,
-            PeerMessageType type)
+            PeerMessageType type,
+            dynamic content)
         blockRejected,
-    required TResult Function(
-            BlockHeader content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         blockAccepted,
-    required TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)
+    required TResult Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)
         getLastBlockRequest,
-    required TResult Function(
-            Block content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)
+    required TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
         getLastBlockResponse,
   }) {
-    return getLastBlockResponse(content, peerId, tag, type);
+    return getLastBlockResponse(
+        content, senderIdentity, receiverIdentity, tag, type);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult? Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)?
         peerTypeRequest,
-    TResult? Function(PeerType content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(PeerType content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerTypeResponse,
-    TResult? Function(Transaction content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(Transaction content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         addTransaction,
-    TResult? Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockHeadersRequest,
     TResult? Function(
             BlockHeadersResponseContent content,
-            @JsonKey(name: 'peer_id') int peerId,
+            String senderIdentity,
+            String receiverIdentity,
             String tag,
             PeerMessageType type)?
         blockHeadersResponse,
-    TResult? Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockRequest,
-    TResult? Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockResponse,
-    TResult? Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockNotFoundResponse,
-    TResult? Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult? Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)?
         peerStateRequest,
-    TResult? Function(PeerState content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerStateResponse,
-    TResult? Function(PeerState content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerStateUpdate,
-    TResult? Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         addBlock,
-    TResult? Function(BlockHeader header, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(
+            BlockHeader header,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            dynamic content)?
         blockRejected,
-    TResult? Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockAccepted,
-    TResult? Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult? Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)?
         getLastBlockRequest,
-    TResult? Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult? Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         getLastBlockResponse,
   }) {
-    return getLastBlockResponse?.call(content, peerId, tag, type);
+    return getLastBlockResponse?.call(
+        content, senderIdentity, receiverIdentity, tag, type);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult Function(String senderIdentity, String receiverIdentity, String tag,
+            PeerMessageType type, dynamic content)?
         peerTypeRequest,
-    TResult Function(PeerType content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(PeerType content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerTypeResponse,
-    TResult Function(Transaction content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(Transaction content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         addTransaction,
-    TResult Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockHeadersRequest,
-    TResult Function(
-            BlockHeadersResponseContent content,
-            @JsonKey(name: 'peer_id') int peerId,
-            String tag,
-            PeerMessageType type)?
+    TResult Function(BlockHeadersResponseContent content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockHeadersResponse,
-    TResult Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockRequest,
-    TResult Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockResponse,
-    TResult Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockNotFoundResponse,
-    TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult Function(String senderIdentity, String receiverIdentity, String tag,
+            PeerMessageType type, dynamic content)?
         peerStateRequest,
-    TResult Function(PeerState content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerStateResponse,
-    TResult Function(PeerState content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         peerStateUpdate,
-    TResult Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         addBlock,
-    TResult Function(BlockHeader header, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeader header,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            dynamic content)?
         blockRejected,
-    TResult Function(BlockHeader content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         blockAccepted,
-    TResult Function(@JsonKey(name: 'peer_id') int peerId, String tag,
-            PeerMessageType type)?
+    TResult Function(String senderIdentity, String receiverIdentity, String tag,
+            PeerMessageType type, dynamic content)?
         getLastBlockRequest,
-    TResult Function(Block content, @JsonKey(name: 'peer_id') int peerId,
-            String tag, PeerMessageType type)?
+    TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
         getLastBlockResponse,
     required TResult orElse(),
   }) {
     if (getLastBlockResponse != null) {
-      return getLastBlockResponse(content, peerId, tag, type);
+      return getLastBlockResponse(
+          content, senderIdentity, receiverIdentity, tag, type);
     }
     return orElse();
   }
@@ -7542,17 +7514,20 @@ abstract class _PeerMessageGetLastBlockResponse
     implements PeerMessage, KrapiMessageInterface {
   const factory _PeerMessageGetLastBlockResponse(
       {required final Block content,
-      @JsonKey(name: 'peer_id') required final int peerId,
+      required final String senderIdentity,
+      required final String receiverIdentity,
       required final String tag,
       final PeerMessageType type}) = _$_PeerMessageGetLastBlockResponse;
 
   factory _PeerMessageGetLastBlockResponse.fromJson(Map<String, dynamic> json) =
       _$_PeerMessageGetLastBlockResponse.fromJson;
 
+  @override
   Block get content;
   @override
-  @JsonKey(name: 'peer_id')
-  int get peerId;
+  String get senderIdentity;
+  @override
+  String get receiverIdentity;
   @override
   String get tag;
   @override

@@ -1,56 +1,61 @@
 import 'dart:async';
 import 'dart:convert';
+import 'package:rxdart/subjects.dart';
 import 'package:uuid/uuid.dart';
 import 'package:web_socket_channel/io.dart';
 
 import 'models/signaling_message/signaling_message.dart';
 
 class SignalingClient {
-  late final IOWebSocketChannel _socket;
-  late final Stream<SignalingMessage> _RTCSetupMessageStream;
-  late final Stream<SignalingMessage> _messageStream;
-  bool _isInit = false;
+  late final String _identity;
+  late final IOWebSocketChannel _ws;
+  final _subject = BehaviorSubject<SignalingMessage>();
 
-  Function(dynamic)? onRTCSetup;
+  Future<void> init() async {
+    _ws = IOWebSocketChannel.connect('ws://127.0.0.1:8080');
+    _ws.stream.handleError((err) {
+      print('SignalingClient: $err');
+      return true;
+    });
+    _ws.stream.map((e) => SignalingMessage.fromJson(e)).pipe(_subject.sink);
 
-  Future<int> init() async {
-    
-    _socket = IOWebSocketChannel.connect('ws://127.0.0.1:8080');
-    final broadcastStream = _socket.stream.asBroadcastStream();
-
-    _RTCSetupMessageStream = broadcastStream
-        .map(
-          (e) => SignalingMessage.fromJson(e),
-        )
-        .where((e) => e.type == SignalingMessageType.rtcSetup);
-    _RTCSetupMessageStream.listen(
-      (e) {
-        assert(onRTCSetup != null, 'onRTCSetup not defined for SignalingClient');
-        onRTCSetup!(e.content);
-      },
+    final identity_response = await submit(
+      SignalingMessage(
+        SignalingMessageType.identityRequest,
+        'unkown_identity',
+        'signaling_server',
+        const Uuid().v4(),
+      ),
     );
 
-    _messageStream = broadcastStream
-        .map(
-          (e) => SignalingMessage.fromJson(e),
-        )
-        .where((e) => e.type != SignalingMessageType.rtcSetup);
+    _identity = identity_response.content as String;
 
-    final identityRequestMessage = SignalingMessage(SignalingMessageType.identityRequest, const Uuid().v4());
-    _socket.sink.add(jsonEncode(identityRequestMessage));
-    final identityResponse = await _messageStream.firstWhere((e) => e.tag == identityRequestMessage.tag);
-    _isInit = true;
-    return identityResponse.content as int;
+    print('SignalingClient: Accquired Identity $_identity');
   }
 
   void send(SignalingMessage message) {
-    assert(_isInit, 'init() not called on instance of SignalingClient');
-    _socket.sink.add(jsonEncode(message));
+    _ws.sink.add(jsonEncode(message.toJson()));
   }
 
-  Future<SignalingMessage> send_async(SignalingMessage message) async {
-    assert(_isInit, 'init() not called on instance of SignalingClient');
-    _socket.sink.add(jsonEncode(message));
-    return await _messageStream.firstWhere((e) => e.tag == message.tag);
+  Future<SignalingMessage> submit(SignalingMessage message) async {
+    _ws.sink.add(jsonEncode(message.toJson()));
+    return await _subject.firstWhere((element) => element.tag == message.tag);
   }
+
+  StreamSubscription<SignalingMessage> listen(
+    SignalingMessageType type,
+    Function(SignalingMessage) callback,
+  ) {
+    return _subject.listen((e) {
+      if (e.type == type) {
+        callback(e);
+      }
+    });
+  }
+
+  void dispose() {
+    _subject.close();
+  }
+
+  String get identity => _identity;
 }

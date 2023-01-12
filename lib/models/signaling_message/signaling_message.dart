@@ -15,7 +15,9 @@ enum SignalingMessageType {
   identityRequest,
   identityResponse,
   peerAvailable,
-  rtcSetup
+  peerClosed,
+  rtcSetup,
+  rtcCandidate
 }
 
 @Freezed(
@@ -25,6 +27,8 @@ enum SignalingMessageType {
 class SignalingMessage with _$SignalingMessage {
   factory SignalingMessage(
     SignalingMessageType type,
+    String senderIdentity,
+    String receiverIdentity,
     String? tag, {
     dynamic content,
   }) = _SignalingMessage;

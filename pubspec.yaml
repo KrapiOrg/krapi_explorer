@@ -1,10 +1,10 @@
 name: krapi_explorer
 description: Explorer application for the krapi blockchain
-publish_to: 'none'
+publish_to: "none"
 version: 1.0.0+1
 
 environment:
-  sdk: '>=2.18.2 <3.0.0'
+  sdk: ">=2.18.2 <3.0.0"
 dependencies:
   flutter:
     sdk: flutter
@@ -32,9 +32,4 @@ dev_dependencies:
   freezed: ^2.3.1
   json_serializable: ^6.5.4
 flutter:
-
   uses-material-design: true
-
-
-
-

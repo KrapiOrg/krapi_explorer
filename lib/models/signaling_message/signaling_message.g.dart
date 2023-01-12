@@ -9,6 +9,8 @@ part of 'signaling_message.dart';
 _$_SignalingMessage _$$_SignalingMessageFromJson(Map<String, dynamic> json) =>
     _$_SignalingMessage(
       $enumDecode(_$SignalingMessageTypeEnumMap, json['type']),
+      json['sender_identity'] as String,
+      json['receiver_identity'] as String,
       json['tag'] as String?,
       content: json['content'],
     );
@@ -16,6 +18,8 @@ _$_SignalingMessage _$$_SignalingMessageFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$$_SignalingMessageToJson(_$_SignalingMessage instance) =>
     <String, dynamic>{
       'type': _$SignalingMessageTypeEnumMap[instance.type]!,
+      'sender_identity': instance.senderIdentity,
+      'receiver_identity': instance.receiverIdentity,
       'tag': instance.tag,
       'content': instance.content,
     };
@@ -26,5 +30,7 @@ const _$SignalingMessageTypeEnumMap = {
   SignalingMessageType.identityRequest: 'identity_request',
   SignalingMessageType.identityResponse: 'identity_response',
   SignalingMessageType.peerAvailable: 'peer_available',
+  SignalingMessageType.peerClosed: 'peer_closed',
   SignalingMessageType.rtcSetup: 'rtc_setup',
+  SignalingMessageType.rtcCandidate: 'rtc_candidate',
 };

@@ -35,44 +35,44 @@ mixin _$Transaction {
   TransactionStatus get status => throw _privateConstructorUsedError;
   String get hash => throw _privateConstructorUsedError;
   int get timestamp => throw _privateConstructorUsedError;
-  int get from => throw _privateConstructorUsedError;
-  int get to => throw _privateConstructorUsedError;
+  String get from => throw _privateConstructorUsedError;
+  String get to => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(TransactionType type, TransactionStatus status,
-            String hash, int timestamp, int from, int to)
+            String hash, int timestamp, String from, String to)
         verified,
     required TResult Function(TransactionType type, TransactionStatus status,
-            String hash, int timestamp, int from, int to)
+            String hash, int timestamp, String from, String to)
         pending,
     required TResult Function(TransactionType type, TransactionStatus status,
-            String hash, int timestamp, int from, int to)
+            String hash, int timestamp, String from, String to)
         rejected,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(TransactionType type, TransactionStatus status,
-            String hash, int timestamp, int from, int to)?
+            String hash, int timestamp, String from, String to)?
         verified,
     TResult? Function(TransactionType type, TransactionStatus status,
-            String hash, int timestamp, int from, int to)?
+            String hash, int timestamp, String from, String to)?
         pending,
     TResult? Function(TransactionType type, TransactionStatus status,
-            String hash, int timestamp, int from, int to)?
+            String hash, int timestamp, String from, String to)?
         rejected,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(TransactionType type, TransactionStatus status,
-            String hash, int timestamp, int from, int to)?
+            String hash, int timestamp, String from, String to)?
         verified,
     TResult Function(TransactionType type, TransactionStatus status,
-            String hash, int timestamp, int from, int to)?
+            String hash, int timestamp, String from, String to)?
         pending,
     TResult Function(TransactionType type, TransactionStatus status,
-            String hash, int timestamp, int from, int to)?
+            String hash, int timestamp, String from, String to)?
         rejected,
     required TResult orElse(),
   }) =>
@@ -116,8 +116,8 @@ abstract class $TransactionCopyWith<$Res> {
       TransactionStatus status,
       String hash,
       int timestamp,
-      int from,
-      int to});
+      String from,
+      String to});
 }
 
 /// @nodoc
@@ -160,11 +160,11 @@ class _$TransactionCopyWithImpl<$Res, $Val extends Transaction>
       from: null == from
           ? _value.from
           : from // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
       to: null == to
           ? _value.to
           : to // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
     ) as $Val);
   }
 }
@@ -182,8 +182,8 @@ abstract class _$$_TransactionVerifiedCopyWith<$Res>
       TransactionStatus status,
       String hash,
       int timestamp,
-      int from,
-      int to});
+      String from,
+      String to});
 }
 
 /// @nodoc
@@ -224,11 +224,11 @@ class __$$_TransactionVerifiedCopyWithImpl<$Res>
       null == from
           ? _value.from
           : from // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
       null == to
           ? _value.to
           : to // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
     ));
   }
 }
@@ -251,9 +251,9 @@ class _$_TransactionVerified implements _TransactionVerified {
   @override
   final int timestamp;
   @override
-  final int from;
+  final String from;
   @override
-  final int to;
+  final String to;
 
   @override
   String toString() {
@@ -290,13 +290,13 @@ class _$_TransactionVerified implements _TransactionVerified {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(TransactionType type, TransactionStatus status,
-            String hash, int timestamp, int from, int to)
+            String hash, int timestamp, String from, String to)
         verified,
     required TResult Function(TransactionType type, TransactionStatus status,
-            String hash, int timestamp, int from, int to)
+            String hash, int timestamp, String from, String to)
         pending,
     required TResult Function(TransactionType type, TransactionStatus status,
-            String hash, int timestamp, int from, int to)
+            String hash, int timestamp, String from, String to)
         rejected,
   }) {
     return verified(type, status, hash, timestamp, from, to);
@@ -306,13 +306,13 @@ class _$_TransactionVerified implements _TransactionVerified {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(TransactionType type, TransactionStatus status,
-            String hash, int timestamp, int from, int to)?
+            String hash, int timestamp, String from, String to)?
         verified,
     TResult? Function(TransactionType type, TransactionStatus status,
-            String hash, int timestamp, int from, int to)?
+            String hash, int timestamp, String from, String to)?
         pending,
     TResult? Function(TransactionType type, TransactionStatus status,
-            String hash, int timestamp, int from, int to)?
+            String hash, int timestamp, String from, String to)?
         rejected,
   }) {
     return verified?.call(type, status, hash, timestamp, from, to);
@@ -322,13 +322,13 @@ class _$_TransactionVerified implements _TransactionVerified {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(TransactionType type, TransactionStatus status,
-            String hash, int timestamp, int from, int to)?
+            String hash, int timestamp, String from, String to)?
         verified,
     TResult Function(TransactionType type, TransactionStatus status,
-            String hash, int timestamp, int from, int to)?
+            String hash, int timestamp, String from, String to)?
         pending,
     TResult Function(TransactionType type, TransactionStatus status,
-            String hash, int timestamp, int from, int to)?
+            String hash, int timestamp, String from, String to)?
         rejected,
     required TResult orElse(),
   }) {
@@ -387,8 +387,8 @@ abstract class _TransactionVerified
       final TransactionStatus status,
       final String hash,
       final int timestamp,
-      final int from,
-      final int to) = _$_TransactionVerified;
+      final String from,
+      final String to) = _$_TransactionVerified;
 
   factory _TransactionVerified.fromJson(Map<String, dynamic> json) =
       _$_TransactionVerified.fromJson;
@@ -402,9 +402,9 @@ abstract class _TransactionVerified
   @override
   int get timestamp;
   @override
-  int get from;
+  String get from;
   @override
-  int get to;
+  String get to;
   @override
   @JsonKey(ignore: true)
   _$$_TransactionVerifiedCopyWith<_$_TransactionVerified> get copyWith =>
@@ -424,8 +424,8 @@ abstract class _$$_TransactionPendingCopyWith<$Res>
       TransactionStatus status,
       String hash,
       int timestamp,
-      int from,
-      int to});
+      String from,
+      String to});
 }
 
 /// @nodoc
@@ -466,11 +466,11 @@ class __$$_TransactionPendingCopyWithImpl<$Res>
       null == from
           ? _value.from
           : from // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
       null == to
           ? _value.to
           : to // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
     ));
   }
 }
@@ -493,9 +493,9 @@ class _$_TransactionPending implements _TransactionPending {
   @override
   final int timestamp;
   @override
-  final int from;
+  final String from;
   @override
-  final int to;
+  final String to;
 
   @override
   String toString() {
@@ -532,13 +532,13 @@ class _$_TransactionPending implements _TransactionPending {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(TransactionType type, TransactionStatus status,
-            String hash, int timestamp, int from, int to)
+            String hash, int timestamp, String from, String to)
         verified,
     required TResult Function(TransactionType type, TransactionStatus status,
-            String hash, int timestamp, int from, int to)
+            String hash, int timestamp, String from, String to)
         pending,
     required TResult Function(TransactionType type, TransactionStatus status,
-            String hash, int timestamp, int from, int to)
+            String hash, int timestamp, String from, String to)
         rejected,
   }) {
     return pending(type, status, hash, timestamp, from, to);
@@ -548,13 +548,13 @@ class _$_TransactionPending implements _TransactionPending {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(TransactionType type, TransactionStatus status,
-            String hash, int timestamp, int from, int to)?
+            String hash, int timestamp, String from, String to)?
         verified,
     TResult? Function(TransactionType type, TransactionStatus status,
-            String hash, int timestamp, int from, int to)?
+            String hash, int timestamp, String from, String to)?
         pending,
     TResult? Function(TransactionType type, TransactionStatus status,
-            String hash, int timestamp, int from, int to)?
+            String hash, int timestamp, String from, String to)?
         rejected,
   }) {
     return pending?.call(type, status, hash, timestamp, from, to);
@@ -564,13 +564,13 @@ class _$_TransactionPending implements _TransactionPending {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(TransactionType type, TransactionStatus status,
-            String hash, int timestamp, int from, int to)?
+            String hash, int timestamp, String from, String to)?
         verified,
     TResult Function(TransactionType type, TransactionStatus status,
-            String hash, int timestamp, int from, int to)?
+            String hash, int timestamp, String from, String to)?
         pending,
     TResult Function(TransactionType type, TransactionStatus status,
-            String hash, int timestamp, int from, int to)?
+            String hash, int timestamp, String from, String to)?
         rejected,
     required TResult orElse(),
   }) {
@@ -629,8 +629,8 @@ abstract class _TransactionPending
       final TransactionStatus status,
       final String hash,
       final int timestamp,
-      final int from,
-      final int to) = _$_TransactionPending;
+      final String from,
+      final String to) = _$_TransactionPending;
 
   factory _TransactionPending.fromJson(Map<String, dynamic> json) =
       _$_TransactionPending.fromJson;
@@ -644,9 +644,9 @@ abstract class _TransactionPending
   @override
   int get timestamp;
   @override
-  int get from;
+  String get from;
   @override
-  int get to;
+  String get to;
   @override
   @JsonKey(ignore: true)
   _$$_TransactionPendingCopyWith<_$_TransactionPending> get copyWith =>
@@ -666,8 +666,8 @@ abstract class _$$_TransactionRejectedCopyWith<$Res>
       TransactionStatus status,
       String hash,
       int timestamp,
-      int from,
-      int to});
+      String from,
+      String to});
 }
 
 /// @nodoc
@@ -708,11 +708,11 @@ class __$$_TransactionRejectedCopyWithImpl<$Res>
       null == from
           ? _value.from
           : from // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
       null == to
           ? _value.to
           : to // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
     ));
   }
 }
@@ -735,9 +735,9 @@ class _$_TransactionRejected implements _TransactionRejected {
   @override
   final int timestamp;
   @override
-  final int from;
+  final String from;
   @override
-  final int to;
+  final String to;
 
   @override
   String toString() {
@@ -774,13 +774,13 @@ class _$_TransactionRejected implements _TransactionRejected {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(TransactionType type, TransactionStatus status,
-            String hash, int timestamp, int from, int to)
+            String hash, int timestamp, String from, String to)
         verified,
     required TResult Function(TransactionType type, TransactionStatus status,
-            String hash, int timestamp, int from, int to)
+            String hash, int timestamp, String from, String to)
         pending,
     required TResult Function(TransactionType type, TransactionStatus status,
-            String hash, int timestamp, int from, int to)
+            String hash, int timestamp, String from, String to)
         rejected,
   }) {
     return rejected(type, status, hash, timestamp, from, to);
@@ -790,13 +790,13 @@ class _$_TransactionRejected implements _TransactionRejected {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(TransactionType type, TransactionStatus status,
-            String hash, int timestamp, int from, int to)?
+            String hash, int timestamp, String from, String to)?
         verified,
     TResult? Function(TransactionType type, TransactionStatus status,
-            String hash, int timestamp, int from, int to)?
+            String hash, int timestamp, String from, String to)?
         pending,
     TResult? Function(TransactionType type, TransactionStatus status,
-            String hash, int timestamp, int from, int to)?
+            String hash, int timestamp, String from, String to)?
         rejected,
   }) {
     return rejected?.call(type, status, hash, timestamp, from, to);
@@ -806,13 +806,13 @@ class _$_TransactionRejected implements _TransactionRejected {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(TransactionType type, TransactionStatus status,
-            String hash, int timestamp, int from, int to)?
+            String hash, int timestamp, String from, String to)?
         verified,
     TResult Function(TransactionType type, TransactionStatus status,
-            String hash, int timestamp, int from, int to)?
+            String hash, int timestamp, String from, String to)?
         pending,
     TResult Function(TransactionType type, TransactionStatus status,
-            String hash, int timestamp, int from, int to)?
+            String hash, int timestamp, String from, String to)?
         rejected,
     required TResult orElse(),
   }) {
@@ -871,8 +871,8 @@ abstract class _TransactionRejected
       final TransactionStatus status,
       final String hash,
       final int timestamp,
-      final int from,
-      final int to) = _$_TransactionRejected;
+      final String from,
+      final String to) = _$_TransactionRejected;
 
   factory _TransactionRejected.fromJson(Map<String, dynamic> json) =
       _$_TransactionRejected.fromJson;
@@ -886,9 +886,9 @@ abstract class _TransactionRejected
   @override
   int get timestamp;
   @override
-  int get from;
+  String get from;
   @override
-  int get to;
+  String get to;
   @override
   @JsonKey(ignore: true)
   _$$_TransactionRejectedCopyWith<_$_TransactionRejected> get copyWith =>

@@ -21,6 +21,8 @@ SignalingMessage _$SignalingMessageFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$SignalingMessage {
   SignalingMessageType get type => throw _privateConstructorUsedError;
+  String get senderIdentity => throw _privateConstructorUsedError;
+  String get receiverIdentity => throw _privateConstructorUsedError;
   String? get tag => throw _privateConstructorUsedError;
   dynamic get content => throw _privateConstructorUsedError;
 
@@ -36,7 +38,12 @@ abstract class $SignalingMessageCopyWith<$Res> {
           SignalingMessage value, $Res Function(SignalingMessage) then) =
       _$SignalingMessageCopyWithImpl<$Res, SignalingMessage>;
   @useResult
-  $Res call({SignalingMessageType type, String? tag, dynamic content});
+  $Res call(
+      {SignalingMessageType type,
+      String senderIdentity,
+      String receiverIdentity,
+      String? tag,
+      dynamic content});
 }
 
 /// @nodoc
@@ -53,6 +60,8 @@ class _$SignalingMessageCopyWithImpl<$Res, $Val extends SignalingMessage>
   @override
   $Res call({
     Object? type = null,
+    Object? senderIdentity = null,
+    Object? receiverIdentity = null,
     Object? tag = freezed,
     Object? content = freezed,
   }) {
@@ -61,6 +70,14 @@ class _$SignalingMessageCopyWithImpl<$Res, $Val extends SignalingMessage>
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as SignalingMessageType,
+      senderIdentity: null == senderIdentity
+          ? _value.senderIdentity
+          : senderIdentity // ignore: cast_nullable_to_non_nullable
+              as String,
+      receiverIdentity: null == receiverIdentity
+          ? _value.receiverIdentity
+          : receiverIdentity // ignore: cast_nullable_to_non_nullable
+              as String,
       tag: freezed == tag
           ? _value.tag
           : tag // ignore: cast_nullable_to_non_nullable
@@ -81,7 +98,12 @@ abstract class _$$_SignalingMessageCopyWith<$Res>
       __$$_SignalingMessageCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({SignalingMessageType type, String? tag, dynamic content});
+  $Res call(
+      {SignalingMessageType type,
+      String senderIdentity,
+      String receiverIdentity,
+      String? tag,
+      dynamic content});
 }
 
 /// @nodoc
@@ -96,6 +118,8 @@ class __$$_SignalingMessageCopyWithImpl<$Res>
   @override
   $Res call({
     Object? type = null,
+    Object? senderIdentity = null,
+    Object? receiverIdentity = null,
     Object? tag = freezed,
     Object? content = freezed,
   }) {
@@ -104,6 +128,14 @@ class __$$_SignalingMessageCopyWithImpl<$Res>
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as SignalingMessageType,
+      null == senderIdentity
+          ? _value.senderIdentity
+          : senderIdentity // ignore: cast_nullable_to_non_nullable
+              as String,
+      null == receiverIdentity
+          ? _value.receiverIdentity
+          : receiverIdentity // ignore: cast_nullable_to_non_nullable
+              as String,
       freezed == tag
           ? _value.tag
           : tag // ignore: cast_nullable_to_non_nullable
@@ -119,7 +151,9 @@ class __$$_SignalingMessageCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_SignalingMessage implements _SignalingMessage {
-  _$_SignalingMessage(this.type, this.tag, {this.content});
+  _$_SignalingMessage(
+      this.type, this.senderIdentity, this.receiverIdentity, this.tag,
+      {this.content});
 
   factory _$_SignalingMessage.fromJson(Map<String, dynamic> json) =>
       _$$_SignalingMessageFromJson(json);
@@ -127,13 +161,17 @@ class _$_SignalingMessage implements _SignalingMessage {
   @override
   final SignalingMessageType type;
   @override
+  final String senderIdentity;
+  @override
+  final String receiverIdentity;
+  @override
   final String? tag;
   @override
   final dynamic content;
 
   @override
   String toString() {
-    return 'SignalingMessage(type: $type, tag: $tag, content: $content)';
+    return 'SignalingMessage(type: $type, senderIdentity: $senderIdentity, receiverIdentity: $receiverIdentity, tag: $tag, content: $content)';
   }
 
   @override
@@ -142,14 +180,18 @@ class _$_SignalingMessage implements _SignalingMessage {
         (other.runtimeType == runtimeType &&
             other is _$_SignalingMessage &&
             (identical(other.type, type) || other.type == type) &&
+            (identical(other.senderIdentity, senderIdentity) ||
+                other.senderIdentity == senderIdentity) &&
+            (identical(other.receiverIdentity, receiverIdentity) ||
+                other.receiverIdentity == receiverIdentity) &&
             (identical(other.tag, tag) || other.tag == tag) &&
             const DeepCollectionEquality().equals(other.content, content));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, type, tag, const DeepCollectionEquality().hash(content));
+  int get hashCode => Object.hash(runtimeType, type, senderIdentity,
+      receiverIdentity, tag, const DeepCollectionEquality().hash(content));
 
   @JsonKey(ignore: true)
   @override
@@ -166,7 +208,11 @@ class _$_SignalingMessage implements _SignalingMessage {
 }
 
 abstract class _SignalingMessage implements SignalingMessage {
-  factory _SignalingMessage(final SignalingMessageType type, final String? tag,
+  factory _SignalingMessage(
+      final SignalingMessageType type,
+      final String senderIdentity,
+      final String receiverIdentity,
+      final String? tag,
       {final dynamic content}) = _$_SignalingMessage;
 
   factory _SignalingMessage.fromJson(Map<String, dynamic> json) =
@@ -174,6 +220,10 @@ abstract class _SignalingMessage implements SignalingMessage {
 
   @override
   SignalingMessageType get type;
+  @override
+  String get senderIdentity;
+  @override
+  String get receiverIdentity;
   @override
   String? get tag;
   @override

@@ -13,8 +13,8 @@ _$_TransactionVerified _$$_TransactionVerifiedFromJson(
       $enumDecode(_$TransactionStatusEnumMap, json['status']),
       json['hash'] as String,
       json['timestamp'] as int,
-      json['from'] as int,
-      json['to'] as int,
+      json['from'] as String,
+      json['to'] as String,
     );
 
 Map<String, dynamic> _$$_TransactionVerifiedToJson(
@@ -45,8 +45,8 @@ _$_TransactionPending _$$_TransactionPendingFromJson(
       $enumDecode(_$TransactionStatusEnumMap, json['status']),
       json['hash'] as String,
       json['timestamp'] as int,
-      json['from'] as int,
-      json['to'] as int,
+      json['from'] as String,
+      json['to'] as String,
     );
 
 Map<String, dynamic> _$$_TransactionPendingToJson(
@@ -67,8 +67,8 @@ _$_TransactionRejected _$$_TransactionRejectedFromJson(
       $enumDecode(_$TransactionStatusEnumMap, json['status']),
       json['hash'] as String,
       json['timestamp'] as int,
-      json['from'] as int,
-      json['to'] as int,
+      json['from'] as String,
+      json['to'] as String,
     );
 
 Map<String, dynamic> _$$_TransactionRejectedToJson(

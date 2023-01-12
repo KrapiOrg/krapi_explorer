@@ -5,7 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:krapi_explorer/models/blockchain/block/block.dart';
-import 'package:krapi_explorer/node_manager.dart';
+import 'package:krapi_explorer/models/peer_models/peer_type.dart';
+import 'package:krapi_explorer/peer_manager.dart';
 import 'package:timelines/timelines.dart';
 
 Future<void> main() async {
@@ -34,11 +35,12 @@ class MyHomePage extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final peerList = ref.watch(peerListProvider);
+    final peerList = ref.watch(peerListProvider(PeerType.full));
     final page = useValueNotifier(0);
     return Scaffold(
       body: peerList.when(
         data: (peers) {
+          print(peers);
           return NestedScrollView(
             headerSliverBuilder: (context, innerBoxIsScrolled) {
               return [
@@ -50,12 +52,6 @@ class MyHomePage extends HookConsumerWidget {
                   title: peers.isNotEmpty
                       ? HookBuilder(builder: (_) => Text('Node ${peers[useValueListenable(page)]} Blockchain view'))
                       : const Text('Blockchain view'),
-                  actions: [
-                    IconButton(
-                      onPressed: () => ref.invalidate(peerListProvider),
-                      icon: const Icon(Icons.refresh),
-                    )
-                  ],
                 ),
               ];
             },
@@ -66,7 +62,11 @@ class MyHomePage extends HookConsumerWidget {
             ),
           );
         },
-        error: (_, __) => const Center(child: Text('Error')),
+        error: (_, __) {
+          print(_);
+          print(__);
+          return const Center(child: Text('Error'));
+        },
         loading: () => const Center(child: CircularProgressIndicator()),
       ),
     );
@@ -79,7 +79,7 @@ class PeerBlockchainPage extends StatefulHookConsumerWidget {
     required this.peerId,
   }) : super(key: key);
 
-  final int peerId;
+  final String peerId;
 
   @override
   ConsumerState<PeerBlockchainPage> createState() => _PeerBlockchainPageState();
@@ -149,7 +149,7 @@ class BlockScreen extends StatefulHookConsumerWidget {
     required this.peerId,
     required this.block,
   });
-  final int peerId;
+  final String peerId;
   final Block block;
 
   @override

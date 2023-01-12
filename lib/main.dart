@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:krapi_explorer/models/blockchain/block/block.dart';
+import 'package:krapi_explorer/models/blockchain/transaction/transaction.dart';
 import 'package:krapi_explorer/models/peer_models/peer_type.dart';
 import 'package:krapi_explorer/peer_manager.dart';
 import 'package:timelines/timelines.dart';
@@ -89,6 +90,7 @@ class _PeerBlockchainPageState extends ConsumerState<PeerBlockchainPage> with Au
   @override
   Widget build(BuildContext context) {
     super.build(context);
+
     final blockchain = ref.watch(blockchainFromPeerProvider(widget.peerId));
     return blockchain.when(
       data: (blocks) {
@@ -197,6 +199,10 @@ class _BlockScreenState extends ConsumerState<BlockScreen> {
                       subTitle: widget.block.header.merkleRoot,
                     ),
                     BlockDetailWidget(
+                      title: 'Mined By',
+                      subTitle: widget.block.header.minedBy,
+                    ),
+                    BlockDetailWidget(
                       title: 'Nonce',
                       subTitle: widget.block.header.nonce.toString(),
                     ),
@@ -223,26 +229,63 @@ class _BlockScreenState extends ConsumerState<BlockScreen> {
           SliverList(
             delegate: SliverChildBuilderDelegate(
               childCount: widget.block.transactions.length,
-              (context, index) {
-                return Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 32),
-                  child: Container(
-                    margin: const EdgeInsets.only(top: 16),
-                    padding: const EdgeInsets.all(8.0),
-                    decoration: BoxDecoration(
-                      color: Colors.black.withOpacity(0.05),
-                      borderRadius: BorderRadius.circular(4),
-                    ),
-                    child: SelectableText(
-                      widget.block.transactions.toList()[index].hash,
-                      style: const TextStyle(fontSize: 20),
-                    ),
-                  ),
-                );
-              },
+              (context, index) => TransactionDetailsWidget(transaction: widget.block.transactions.toList()[index]),
             ),
           )
         ],
+      ),
+    );
+  }
+}
+
+class TransactionDetailsWidget extends HookConsumerWidget {
+  const TransactionDetailsWidget({
+    Key? key,
+    required this.transaction,
+  }) : super(key: key);
+
+  final Transaction transaction;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 32),
+      child: Container(
+        margin: const EdgeInsets.only(top: 16),
+        padding: const EdgeInsets.all(8.0),
+        decoration: BoxDecoration(
+          color: Colors.black.withOpacity(0.05),
+          borderRadius: BorderRadius.circular(4),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Wrap(
+              children: [
+                const Text(
+                  'Hash: ',
+                  style: TextStyle(fontSize: 20),
+                ),
+                SelectableText(
+                  transaction.hash,
+                  style: const TextStyle(fontSize: 20),
+                ),
+              ],
+            ),
+            Wrap(
+              children: [
+                const Text(
+                  'Status: ',
+                  style: TextStyle(fontSize: 20),
+                ),
+                SelectableText(
+                  transaction.status.name,
+                  style: const TextStyle(fontSize: 20),
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }

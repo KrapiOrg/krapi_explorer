@@ -48,6 +48,8 @@ PeerMessage _$PeerMessageFromJson(Map<String, dynamic> json) {
       return _PeerMessageGetLastBlockRequest.fromJson(json);
     case 'get_last_block_response':
       return _PeerMessageGetLastBlockResponse.fromJson(json);
+    case 'set_transaction_status':
+      return _PeerMessageSetTransactionStatus.fromJson(json);
 
     default:
       throw CheckedFromJsonException(
@@ -121,6 +123,13 @@ mixin _$PeerMessage {
     required TResult Function(Block content, String senderIdentity,
             String receiverIdentity, String tag, PeerMessageType type)
         getLastBlockResponse,
+    required TResult Function(
+            SetTransactionStatusContent content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type)
+        setTransactionStatus,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -182,6 +191,13 @@ mixin _$PeerMessage {
     TResult? Function(Block content, String senderIdentity,
             String receiverIdentity, String tag, PeerMessageType type)?
         getLastBlockResponse,
+    TResult? Function(
+            SetTransactionStatusContent content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type)?
+        setTransactionStatus,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -239,6 +255,9 @@ mixin _$PeerMessage {
     TResult Function(Block content, String senderIdentity,
             String receiverIdentity, String tag, PeerMessageType type)?
         getLastBlockResponse,
+    TResult Function(SetTransactionStatusContent content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
+        setTransactionStatus,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -270,6 +289,8 @@ mixin _$PeerMessage {
         getLastBlockRequest,
     required TResult Function(_PeerMessageGetLastBlockResponse value)
         getLastBlockResponse,
+    required TResult Function(_PeerMessageSetTransactionStatus value)
+        setTransactionStatus,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -295,6 +316,8 @@ mixin _$PeerMessage {
         getLastBlockRequest,
     TResult? Function(_PeerMessageGetLastBlockResponse value)?
         getLastBlockResponse,
+    TResult? Function(_PeerMessageSetTransactionStatus value)?
+        setTransactionStatus,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -320,6 +343,8 @@ mixin _$PeerMessage {
         getLastBlockRequest,
     TResult Function(_PeerMessageGetLastBlockResponse value)?
         getLastBlockResponse,
+    TResult Function(_PeerMessageSetTransactionStatus value)?
+        setTransactionStatus,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -557,6 +582,13 @@ class _$_PeerMessagePeerTypeRequest implements _PeerMessagePeerTypeRequest {
     required TResult Function(Block content, String senderIdentity,
             String receiverIdentity, String tag, PeerMessageType type)
         getLastBlockResponse,
+    required TResult Function(
+            SetTransactionStatusContent content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type)
+        setTransactionStatus,
   }) {
     return peerTypeRequest(
         senderIdentity, receiverIdentity, tag, type, content);
@@ -622,6 +654,13 @@ class _$_PeerMessagePeerTypeRequest implements _PeerMessagePeerTypeRequest {
     TResult? Function(Block content, String senderIdentity,
             String receiverIdentity, String tag, PeerMessageType type)?
         getLastBlockResponse,
+    TResult? Function(
+            SetTransactionStatusContent content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type)?
+        setTransactionStatus,
   }) {
     return peerTypeRequest?.call(
         senderIdentity, receiverIdentity, tag, type, content);
@@ -683,6 +722,9 @@ class _$_PeerMessagePeerTypeRequest implements _PeerMessagePeerTypeRequest {
     TResult Function(Block content, String senderIdentity,
             String receiverIdentity, String tag, PeerMessageType type)?
         getLastBlockResponse,
+    TResult Function(SetTransactionStatusContent content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
+        setTransactionStatus,
     required TResult orElse(),
   }) {
     if (peerTypeRequest != null) {
@@ -721,6 +763,8 @@ class _$_PeerMessagePeerTypeRequest implements _PeerMessagePeerTypeRequest {
         getLastBlockRequest,
     required TResult Function(_PeerMessageGetLastBlockResponse value)
         getLastBlockResponse,
+    required TResult Function(_PeerMessageSetTransactionStatus value)
+        setTransactionStatus,
   }) {
     return peerTypeRequest(this);
   }
@@ -749,6 +793,8 @@ class _$_PeerMessagePeerTypeRequest implements _PeerMessagePeerTypeRequest {
         getLastBlockRequest,
     TResult? Function(_PeerMessageGetLastBlockResponse value)?
         getLastBlockResponse,
+    TResult? Function(_PeerMessageSetTransactionStatus value)?
+        setTransactionStatus,
   }) {
     return peerTypeRequest?.call(this);
   }
@@ -777,6 +823,8 @@ class _$_PeerMessagePeerTypeRequest implements _PeerMessagePeerTypeRequest {
         getLastBlockRequest,
     TResult Function(_PeerMessageGetLastBlockResponse value)?
         getLastBlockResponse,
+    TResult Function(_PeerMessageSetTransactionStatus value)?
+        setTransactionStatus,
     required TResult orElse(),
   }) {
     if (peerTypeRequest != null) {
@@ -997,6 +1045,13 @@ class _$_PeerMessagePeerTypeResponse implements _PeerMessagePeerTypeResponse {
     required TResult Function(Block content, String senderIdentity,
             String receiverIdentity, String tag, PeerMessageType type)
         getLastBlockResponse,
+    required TResult Function(
+            SetTransactionStatusContent content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type)
+        setTransactionStatus,
   }) {
     return peerTypeResponse(
         content, senderIdentity, receiverIdentity, tag, type);
@@ -1062,6 +1117,13 @@ class _$_PeerMessagePeerTypeResponse implements _PeerMessagePeerTypeResponse {
     TResult? Function(Block content, String senderIdentity,
             String receiverIdentity, String tag, PeerMessageType type)?
         getLastBlockResponse,
+    TResult? Function(
+            SetTransactionStatusContent content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type)?
+        setTransactionStatus,
   }) {
     return peerTypeResponse?.call(
         content, senderIdentity, receiverIdentity, tag, type);
@@ -1123,6 +1185,9 @@ class _$_PeerMessagePeerTypeResponse implements _PeerMessagePeerTypeResponse {
     TResult Function(Block content, String senderIdentity,
             String receiverIdentity, String tag, PeerMessageType type)?
         getLastBlockResponse,
+    TResult Function(SetTransactionStatusContent content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
+        setTransactionStatus,
     required TResult orElse(),
   }) {
     if (peerTypeResponse != null) {
@@ -1161,6 +1226,8 @@ class _$_PeerMessagePeerTypeResponse implements _PeerMessagePeerTypeResponse {
         getLastBlockRequest,
     required TResult Function(_PeerMessageGetLastBlockResponse value)
         getLastBlockResponse,
+    required TResult Function(_PeerMessageSetTransactionStatus value)
+        setTransactionStatus,
   }) {
     return peerTypeResponse(this);
   }
@@ -1189,6 +1256,8 @@ class _$_PeerMessagePeerTypeResponse implements _PeerMessagePeerTypeResponse {
         getLastBlockRequest,
     TResult? Function(_PeerMessageGetLastBlockResponse value)?
         getLastBlockResponse,
+    TResult? Function(_PeerMessageSetTransactionStatus value)?
+        setTransactionStatus,
   }) {
     return peerTypeResponse?.call(this);
   }
@@ -1217,6 +1286,8 @@ class _$_PeerMessagePeerTypeResponse implements _PeerMessagePeerTypeResponse {
         getLastBlockRequest,
     TResult Function(_PeerMessageGetLastBlockResponse value)?
         getLastBlockResponse,
+    TResult Function(_PeerMessageSetTransactionStatus value)?
+        setTransactionStatus,
     required TResult orElse(),
   }) {
     if (peerTypeResponse != null) {
@@ -1447,6 +1518,13 @@ class _$_PeerMessageAddTransaction implements _PeerMessageAddTransaction {
     required TResult Function(Block content, String senderIdentity,
             String receiverIdentity, String tag, PeerMessageType type)
         getLastBlockResponse,
+    required TResult Function(
+            SetTransactionStatusContent content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type)
+        setTransactionStatus,
   }) {
     return addTransaction(content, senderIdentity, receiverIdentity, tag, type);
   }
@@ -1511,6 +1589,13 @@ class _$_PeerMessageAddTransaction implements _PeerMessageAddTransaction {
     TResult? Function(Block content, String senderIdentity,
             String receiverIdentity, String tag, PeerMessageType type)?
         getLastBlockResponse,
+    TResult? Function(
+            SetTransactionStatusContent content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type)?
+        setTransactionStatus,
   }) {
     return addTransaction?.call(
         content, senderIdentity, receiverIdentity, tag, type);
@@ -1572,6 +1657,9 @@ class _$_PeerMessageAddTransaction implements _PeerMessageAddTransaction {
     TResult Function(Block content, String senderIdentity,
             String receiverIdentity, String tag, PeerMessageType type)?
         getLastBlockResponse,
+    TResult Function(SetTransactionStatusContent content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
+        setTransactionStatus,
     required TResult orElse(),
   }) {
     if (addTransaction != null) {
@@ -1610,6 +1698,8 @@ class _$_PeerMessageAddTransaction implements _PeerMessageAddTransaction {
         getLastBlockRequest,
     required TResult Function(_PeerMessageGetLastBlockResponse value)
         getLastBlockResponse,
+    required TResult Function(_PeerMessageSetTransactionStatus value)
+        setTransactionStatus,
   }) {
     return addTransaction(this);
   }
@@ -1638,6 +1728,8 @@ class _$_PeerMessageAddTransaction implements _PeerMessageAddTransaction {
         getLastBlockRequest,
     TResult? Function(_PeerMessageGetLastBlockResponse value)?
         getLastBlockResponse,
+    TResult? Function(_PeerMessageSetTransactionStatus value)?
+        setTransactionStatus,
   }) {
     return addTransaction?.call(this);
   }
@@ -1666,6 +1758,8 @@ class _$_PeerMessageAddTransaction implements _PeerMessageAddTransaction {
         getLastBlockRequest,
     TResult Function(_PeerMessageGetLastBlockResponse value)?
         getLastBlockResponse,
+    TResult Function(_PeerMessageSetTransactionStatus value)?
+        setTransactionStatus,
     required TResult orElse(),
   }) {
     if (addTransaction != null) {
@@ -1898,6 +1992,13 @@ class _$_PeerMessageBlockHeadersRequest
     required TResult Function(Block content, String senderIdentity,
             String receiverIdentity, String tag, PeerMessageType type)
         getLastBlockResponse,
+    required TResult Function(
+            SetTransactionStatusContent content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type)
+        setTransactionStatus,
   }) {
     return blockHeadersRequest(
         content, senderIdentity, receiverIdentity, tag, type);
@@ -1963,6 +2064,13 @@ class _$_PeerMessageBlockHeadersRequest
     TResult? Function(Block content, String senderIdentity,
             String receiverIdentity, String tag, PeerMessageType type)?
         getLastBlockResponse,
+    TResult? Function(
+            SetTransactionStatusContent content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type)?
+        setTransactionStatus,
   }) {
     return blockHeadersRequest?.call(
         content, senderIdentity, receiverIdentity, tag, type);
@@ -2024,6 +2132,9 @@ class _$_PeerMessageBlockHeadersRequest
     TResult Function(Block content, String senderIdentity,
             String receiverIdentity, String tag, PeerMessageType type)?
         getLastBlockResponse,
+    TResult Function(SetTransactionStatusContent content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
+        setTransactionStatus,
     required TResult orElse(),
   }) {
     if (blockHeadersRequest != null) {
@@ -2062,6 +2173,8 @@ class _$_PeerMessageBlockHeadersRequest
         getLastBlockRequest,
     required TResult Function(_PeerMessageGetLastBlockResponse value)
         getLastBlockResponse,
+    required TResult Function(_PeerMessageSetTransactionStatus value)
+        setTransactionStatus,
   }) {
     return blockHeadersRequest(this);
   }
@@ -2090,6 +2203,8 @@ class _$_PeerMessageBlockHeadersRequest
         getLastBlockRequest,
     TResult? Function(_PeerMessageGetLastBlockResponse value)?
         getLastBlockResponse,
+    TResult? Function(_PeerMessageSetTransactionStatus value)?
+        setTransactionStatus,
   }) {
     return blockHeadersRequest?.call(this);
   }
@@ -2118,6 +2233,8 @@ class _$_PeerMessageBlockHeadersRequest
         getLastBlockRequest,
     TResult Function(_PeerMessageGetLastBlockResponse value)?
         getLastBlockResponse,
+    TResult Function(_PeerMessageSetTransactionStatus value)?
+        setTransactionStatus,
     required TResult orElse(),
   }) {
     if (blockHeadersRequest != null) {
@@ -2351,6 +2468,13 @@ class _$_PeerMessageBlockHeadersResponse
     required TResult Function(Block content, String senderIdentity,
             String receiverIdentity, String tag, PeerMessageType type)
         getLastBlockResponse,
+    required TResult Function(
+            SetTransactionStatusContent content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type)
+        setTransactionStatus,
   }) {
     return blockHeadersResponse(
         content, senderIdentity, receiverIdentity, tag, type);
@@ -2416,6 +2540,13 @@ class _$_PeerMessageBlockHeadersResponse
     TResult? Function(Block content, String senderIdentity,
             String receiverIdentity, String tag, PeerMessageType type)?
         getLastBlockResponse,
+    TResult? Function(
+            SetTransactionStatusContent content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type)?
+        setTransactionStatus,
   }) {
     return blockHeadersResponse?.call(
         content, senderIdentity, receiverIdentity, tag, type);
@@ -2477,6 +2608,9 @@ class _$_PeerMessageBlockHeadersResponse
     TResult Function(Block content, String senderIdentity,
             String receiverIdentity, String tag, PeerMessageType type)?
         getLastBlockResponse,
+    TResult Function(SetTransactionStatusContent content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
+        setTransactionStatus,
     required TResult orElse(),
   }) {
     if (blockHeadersResponse != null) {
@@ -2515,6 +2649,8 @@ class _$_PeerMessageBlockHeadersResponse
         getLastBlockRequest,
     required TResult Function(_PeerMessageGetLastBlockResponse value)
         getLastBlockResponse,
+    required TResult Function(_PeerMessageSetTransactionStatus value)
+        setTransactionStatus,
   }) {
     return blockHeadersResponse(this);
   }
@@ -2543,6 +2679,8 @@ class _$_PeerMessageBlockHeadersResponse
         getLastBlockRequest,
     TResult? Function(_PeerMessageGetLastBlockResponse value)?
         getLastBlockResponse,
+    TResult? Function(_PeerMessageSetTransactionStatus value)?
+        setTransactionStatus,
   }) {
     return blockHeadersResponse?.call(this);
   }
@@ -2571,6 +2709,8 @@ class _$_PeerMessageBlockHeadersResponse
         getLastBlockRequest,
     TResult Function(_PeerMessageGetLastBlockResponse value)?
         getLastBlockResponse,
+    TResult Function(_PeerMessageSetTransactionStatus value)?
+        setTransactionStatus,
     required TResult orElse(),
   }) {
     if (blockHeadersResponse != null) {
@@ -2801,6 +2941,13 @@ class _$_PeerMessageBlockRequest implements _PeerMessageBlockRequest {
     required TResult Function(Block content, String senderIdentity,
             String receiverIdentity, String tag, PeerMessageType type)
         getLastBlockResponse,
+    required TResult Function(
+            SetTransactionStatusContent content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type)
+        setTransactionStatus,
   }) {
     return blockRequest(content, senderIdentity, receiverIdentity, tag, type);
   }
@@ -2865,6 +3012,13 @@ class _$_PeerMessageBlockRequest implements _PeerMessageBlockRequest {
     TResult? Function(Block content, String senderIdentity,
             String receiverIdentity, String tag, PeerMessageType type)?
         getLastBlockResponse,
+    TResult? Function(
+            SetTransactionStatusContent content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type)?
+        setTransactionStatus,
   }) {
     return blockRequest?.call(
         content, senderIdentity, receiverIdentity, tag, type);
@@ -2926,6 +3080,9 @@ class _$_PeerMessageBlockRequest implements _PeerMessageBlockRequest {
     TResult Function(Block content, String senderIdentity,
             String receiverIdentity, String tag, PeerMessageType type)?
         getLastBlockResponse,
+    TResult Function(SetTransactionStatusContent content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
+        setTransactionStatus,
     required TResult orElse(),
   }) {
     if (blockRequest != null) {
@@ -2963,6 +3120,8 @@ class _$_PeerMessageBlockRequest implements _PeerMessageBlockRequest {
         getLastBlockRequest,
     required TResult Function(_PeerMessageGetLastBlockResponse value)
         getLastBlockResponse,
+    required TResult Function(_PeerMessageSetTransactionStatus value)
+        setTransactionStatus,
   }) {
     return blockRequest(this);
   }
@@ -2991,6 +3150,8 @@ class _$_PeerMessageBlockRequest implements _PeerMessageBlockRequest {
         getLastBlockRequest,
     TResult? Function(_PeerMessageGetLastBlockResponse value)?
         getLastBlockResponse,
+    TResult? Function(_PeerMessageSetTransactionStatus value)?
+        setTransactionStatus,
   }) {
     return blockRequest?.call(this);
   }
@@ -3019,6 +3180,8 @@ class _$_PeerMessageBlockRequest implements _PeerMessageBlockRequest {
         getLastBlockRequest,
     TResult Function(_PeerMessageGetLastBlockResponse value)?
         getLastBlockResponse,
+    TResult Function(_PeerMessageSetTransactionStatus value)?
+        setTransactionStatus,
     required TResult orElse(),
   }) {
     if (blockRequest != null) {
@@ -3248,6 +3411,13 @@ class _$_PeerMessageBlockResponse implements _PeerMessageBlockResponse {
     required TResult Function(Block content, String senderIdentity,
             String receiverIdentity, String tag, PeerMessageType type)
         getLastBlockResponse,
+    required TResult Function(
+            SetTransactionStatusContent content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type)
+        setTransactionStatus,
   }) {
     return blockResponse(content, senderIdentity, receiverIdentity, tag, type);
   }
@@ -3312,6 +3482,13 @@ class _$_PeerMessageBlockResponse implements _PeerMessageBlockResponse {
     TResult? Function(Block content, String senderIdentity,
             String receiverIdentity, String tag, PeerMessageType type)?
         getLastBlockResponse,
+    TResult? Function(
+            SetTransactionStatusContent content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type)?
+        setTransactionStatus,
   }) {
     return blockResponse?.call(
         content, senderIdentity, receiverIdentity, tag, type);
@@ -3373,6 +3550,9 @@ class _$_PeerMessageBlockResponse implements _PeerMessageBlockResponse {
     TResult Function(Block content, String senderIdentity,
             String receiverIdentity, String tag, PeerMessageType type)?
         getLastBlockResponse,
+    TResult Function(SetTransactionStatusContent content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
+        setTransactionStatus,
     required TResult orElse(),
   }) {
     if (blockResponse != null) {
@@ -3411,6 +3591,8 @@ class _$_PeerMessageBlockResponse implements _PeerMessageBlockResponse {
         getLastBlockRequest,
     required TResult Function(_PeerMessageGetLastBlockResponse value)
         getLastBlockResponse,
+    required TResult Function(_PeerMessageSetTransactionStatus value)
+        setTransactionStatus,
   }) {
     return blockResponse(this);
   }
@@ -3439,6 +3621,8 @@ class _$_PeerMessageBlockResponse implements _PeerMessageBlockResponse {
         getLastBlockRequest,
     TResult? Function(_PeerMessageGetLastBlockResponse value)?
         getLastBlockResponse,
+    TResult? Function(_PeerMessageSetTransactionStatus value)?
+        setTransactionStatus,
   }) {
     return blockResponse?.call(this);
   }
@@ -3467,6 +3651,8 @@ class _$_PeerMessageBlockResponse implements _PeerMessageBlockResponse {
         getLastBlockRequest,
     TResult Function(_PeerMessageGetLastBlockResponse value)?
         getLastBlockResponse,
+    TResult Function(_PeerMessageSetTransactionStatus value)?
+        setTransactionStatus,
     required TResult orElse(),
   }) {
     if (blockResponse != null) {
@@ -3700,6 +3886,13 @@ class _$_PeerMessageBlockNotFoundResponse
     required TResult Function(Block content, String senderIdentity,
             String receiverIdentity, String tag, PeerMessageType type)
         getLastBlockResponse,
+    required TResult Function(
+            SetTransactionStatusContent content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type)
+        setTransactionStatus,
   }) {
     return blockNotFoundResponse(
         content, senderIdentity, receiverIdentity, tag, type);
@@ -3765,6 +3958,13 @@ class _$_PeerMessageBlockNotFoundResponse
     TResult? Function(Block content, String senderIdentity,
             String receiverIdentity, String tag, PeerMessageType type)?
         getLastBlockResponse,
+    TResult? Function(
+            SetTransactionStatusContent content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type)?
+        setTransactionStatus,
   }) {
     return blockNotFoundResponse?.call(
         content, senderIdentity, receiverIdentity, tag, type);
@@ -3826,6 +4026,9 @@ class _$_PeerMessageBlockNotFoundResponse
     TResult Function(Block content, String senderIdentity,
             String receiverIdentity, String tag, PeerMessageType type)?
         getLastBlockResponse,
+    TResult Function(SetTransactionStatusContent content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
+        setTransactionStatus,
     required TResult orElse(),
   }) {
     if (blockNotFoundResponse != null) {
@@ -3864,6 +4067,8 @@ class _$_PeerMessageBlockNotFoundResponse
         getLastBlockRequest,
     required TResult Function(_PeerMessageGetLastBlockResponse value)
         getLastBlockResponse,
+    required TResult Function(_PeerMessageSetTransactionStatus value)
+        setTransactionStatus,
   }) {
     return blockNotFoundResponse(this);
   }
@@ -3892,6 +4097,8 @@ class _$_PeerMessageBlockNotFoundResponse
         getLastBlockRequest,
     TResult? Function(_PeerMessageGetLastBlockResponse value)?
         getLastBlockResponse,
+    TResult? Function(_PeerMessageSetTransactionStatus value)?
+        setTransactionStatus,
   }) {
     return blockNotFoundResponse?.call(this);
   }
@@ -3920,6 +4127,8 @@ class _$_PeerMessageBlockNotFoundResponse
         getLastBlockRequest,
     TResult Function(_PeerMessageGetLastBlockResponse value)?
         getLastBlockResponse,
+    TResult Function(_PeerMessageSetTransactionStatus value)?
+        setTransactionStatus,
     required TResult orElse(),
   }) {
     if (blockNotFoundResponse != null) {
@@ -4141,6 +4350,13 @@ class _$_PeerMessagePeerStateRequest implements _PeerMessagePeerStateRequest {
     required TResult Function(Block content, String senderIdentity,
             String receiverIdentity, String tag, PeerMessageType type)
         getLastBlockResponse,
+    required TResult Function(
+            SetTransactionStatusContent content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type)
+        setTransactionStatus,
   }) {
     return peerStateRequest(
         senderIdentity, receiverIdentity, tag, type, content);
@@ -4206,6 +4422,13 @@ class _$_PeerMessagePeerStateRequest implements _PeerMessagePeerStateRequest {
     TResult? Function(Block content, String senderIdentity,
             String receiverIdentity, String tag, PeerMessageType type)?
         getLastBlockResponse,
+    TResult? Function(
+            SetTransactionStatusContent content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type)?
+        setTransactionStatus,
   }) {
     return peerStateRequest?.call(
         senderIdentity, receiverIdentity, tag, type, content);
@@ -4267,6 +4490,9 @@ class _$_PeerMessagePeerStateRequest implements _PeerMessagePeerStateRequest {
     TResult Function(Block content, String senderIdentity,
             String receiverIdentity, String tag, PeerMessageType type)?
         getLastBlockResponse,
+    TResult Function(SetTransactionStatusContent content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
+        setTransactionStatus,
     required TResult orElse(),
   }) {
     if (peerStateRequest != null) {
@@ -4305,6 +4531,8 @@ class _$_PeerMessagePeerStateRequest implements _PeerMessagePeerStateRequest {
         getLastBlockRequest,
     required TResult Function(_PeerMessageGetLastBlockResponse value)
         getLastBlockResponse,
+    required TResult Function(_PeerMessageSetTransactionStatus value)
+        setTransactionStatus,
   }) {
     return peerStateRequest(this);
   }
@@ -4333,6 +4561,8 @@ class _$_PeerMessagePeerStateRequest implements _PeerMessagePeerStateRequest {
         getLastBlockRequest,
     TResult? Function(_PeerMessageGetLastBlockResponse value)?
         getLastBlockResponse,
+    TResult? Function(_PeerMessageSetTransactionStatus value)?
+        setTransactionStatus,
   }) {
     return peerStateRequest?.call(this);
   }
@@ -4361,6 +4591,8 @@ class _$_PeerMessagePeerStateRequest implements _PeerMessagePeerStateRequest {
         getLastBlockRequest,
     TResult Function(_PeerMessageGetLastBlockResponse value)?
         getLastBlockResponse,
+    TResult Function(_PeerMessageSetTransactionStatus value)?
+        setTransactionStatus,
     required TResult orElse(),
   }) {
     if (peerStateRequest != null) {
@@ -4581,6 +4813,13 @@ class _$_PeerMessagePeerStateResponse implements _PeerMessagePeerStateResponse {
     required TResult Function(Block content, String senderIdentity,
             String receiverIdentity, String tag, PeerMessageType type)
         getLastBlockResponse,
+    required TResult Function(
+            SetTransactionStatusContent content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type)
+        setTransactionStatus,
   }) {
     return peerStateResponse(
         content, senderIdentity, receiverIdentity, tag, type);
@@ -4646,6 +4885,13 @@ class _$_PeerMessagePeerStateResponse implements _PeerMessagePeerStateResponse {
     TResult? Function(Block content, String senderIdentity,
             String receiverIdentity, String tag, PeerMessageType type)?
         getLastBlockResponse,
+    TResult? Function(
+            SetTransactionStatusContent content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type)?
+        setTransactionStatus,
   }) {
     return peerStateResponse?.call(
         content, senderIdentity, receiverIdentity, tag, type);
@@ -4707,6 +4953,9 @@ class _$_PeerMessagePeerStateResponse implements _PeerMessagePeerStateResponse {
     TResult Function(Block content, String senderIdentity,
             String receiverIdentity, String tag, PeerMessageType type)?
         getLastBlockResponse,
+    TResult Function(SetTransactionStatusContent content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
+        setTransactionStatus,
     required TResult orElse(),
   }) {
     if (peerStateResponse != null) {
@@ -4745,6 +4994,8 @@ class _$_PeerMessagePeerStateResponse implements _PeerMessagePeerStateResponse {
         getLastBlockRequest,
     required TResult Function(_PeerMessageGetLastBlockResponse value)
         getLastBlockResponse,
+    required TResult Function(_PeerMessageSetTransactionStatus value)
+        setTransactionStatus,
   }) {
     return peerStateResponse(this);
   }
@@ -4773,6 +5024,8 @@ class _$_PeerMessagePeerStateResponse implements _PeerMessagePeerStateResponse {
         getLastBlockRequest,
     TResult? Function(_PeerMessageGetLastBlockResponse value)?
         getLastBlockResponse,
+    TResult? Function(_PeerMessageSetTransactionStatus value)?
+        setTransactionStatus,
   }) {
     return peerStateResponse?.call(this);
   }
@@ -4801,6 +5054,8 @@ class _$_PeerMessagePeerStateResponse implements _PeerMessagePeerStateResponse {
         getLastBlockRequest,
     TResult Function(_PeerMessageGetLastBlockResponse value)?
         getLastBlockResponse,
+    TResult Function(_PeerMessageSetTransactionStatus value)?
+        setTransactionStatus,
     required TResult orElse(),
   }) {
     if (peerStateResponse != null) {
@@ -5021,6 +5276,13 @@ class _$_PeerMessagePeerStateUpdate implements _PeerMessagePeerStateUpdate {
     required TResult Function(Block content, String senderIdentity,
             String receiverIdentity, String tag, PeerMessageType type)
         getLastBlockResponse,
+    required TResult Function(
+            SetTransactionStatusContent content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type)
+        setTransactionStatus,
   }) {
     return peerStateUpdate(
         content, senderIdentity, receiverIdentity, tag, type);
@@ -5086,6 +5348,13 @@ class _$_PeerMessagePeerStateUpdate implements _PeerMessagePeerStateUpdate {
     TResult? Function(Block content, String senderIdentity,
             String receiverIdentity, String tag, PeerMessageType type)?
         getLastBlockResponse,
+    TResult? Function(
+            SetTransactionStatusContent content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type)?
+        setTransactionStatus,
   }) {
     return peerStateUpdate?.call(
         content, senderIdentity, receiverIdentity, tag, type);
@@ -5147,6 +5416,9 @@ class _$_PeerMessagePeerStateUpdate implements _PeerMessagePeerStateUpdate {
     TResult Function(Block content, String senderIdentity,
             String receiverIdentity, String tag, PeerMessageType type)?
         getLastBlockResponse,
+    TResult Function(SetTransactionStatusContent content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
+        setTransactionStatus,
     required TResult orElse(),
   }) {
     if (peerStateUpdate != null) {
@@ -5185,6 +5457,8 @@ class _$_PeerMessagePeerStateUpdate implements _PeerMessagePeerStateUpdate {
         getLastBlockRequest,
     required TResult Function(_PeerMessageGetLastBlockResponse value)
         getLastBlockResponse,
+    required TResult Function(_PeerMessageSetTransactionStatus value)
+        setTransactionStatus,
   }) {
     return peerStateUpdate(this);
   }
@@ -5213,6 +5487,8 @@ class _$_PeerMessagePeerStateUpdate implements _PeerMessagePeerStateUpdate {
         getLastBlockRequest,
     TResult? Function(_PeerMessageGetLastBlockResponse value)?
         getLastBlockResponse,
+    TResult? Function(_PeerMessageSetTransactionStatus value)?
+        setTransactionStatus,
   }) {
     return peerStateUpdate?.call(this);
   }
@@ -5241,6 +5517,8 @@ class _$_PeerMessagePeerStateUpdate implements _PeerMessagePeerStateUpdate {
         getLastBlockRequest,
     TResult Function(_PeerMessageGetLastBlockResponse value)?
         getLastBlockResponse,
+    TResult Function(_PeerMessageSetTransactionStatus value)?
+        setTransactionStatus,
     required TResult orElse(),
   }) {
     if (peerStateUpdate != null) {
@@ -5469,6 +5747,13 @@ class _$_PeerMessageAddBlock implements _PeerMessageAddBlock {
     required TResult Function(Block content, String senderIdentity,
             String receiverIdentity, String tag, PeerMessageType type)
         getLastBlockResponse,
+    required TResult Function(
+            SetTransactionStatusContent content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type)
+        setTransactionStatus,
   }) {
     return addBlock(content, senderIdentity, receiverIdentity, tag, type);
   }
@@ -5533,6 +5818,13 @@ class _$_PeerMessageAddBlock implements _PeerMessageAddBlock {
     TResult? Function(Block content, String senderIdentity,
             String receiverIdentity, String tag, PeerMessageType type)?
         getLastBlockResponse,
+    TResult? Function(
+            SetTransactionStatusContent content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type)?
+        setTransactionStatus,
   }) {
     return addBlock?.call(content, senderIdentity, receiverIdentity, tag, type);
   }
@@ -5593,6 +5885,9 @@ class _$_PeerMessageAddBlock implements _PeerMessageAddBlock {
     TResult Function(Block content, String senderIdentity,
             String receiverIdentity, String tag, PeerMessageType type)?
         getLastBlockResponse,
+    TResult Function(SetTransactionStatusContent content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
+        setTransactionStatus,
     required TResult orElse(),
   }) {
     if (addBlock != null) {
@@ -5630,6 +5925,8 @@ class _$_PeerMessageAddBlock implements _PeerMessageAddBlock {
         getLastBlockRequest,
     required TResult Function(_PeerMessageGetLastBlockResponse value)
         getLastBlockResponse,
+    required TResult Function(_PeerMessageSetTransactionStatus value)
+        setTransactionStatus,
   }) {
     return addBlock(this);
   }
@@ -5658,6 +5955,8 @@ class _$_PeerMessageAddBlock implements _PeerMessageAddBlock {
         getLastBlockRequest,
     TResult? Function(_PeerMessageGetLastBlockResponse value)?
         getLastBlockResponse,
+    TResult? Function(_PeerMessageSetTransactionStatus value)?
+        setTransactionStatus,
   }) {
     return addBlock?.call(this);
   }
@@ -5686,6 +5985,8 @@ class _$_PeerMessageAddBlock implements _PeerMessageAddBlock {
         getLastBlockRequest,
     TResult Function(_PeerMessageGetLastBlockResponse value)?
         getLastBlockResponse,
+    TResult Function(_PeerMessageSetTransactionStatus value)?
+        setTransactionStatus,
     required TResult orElse(),
   }) {
     if (addBlock != null) {
@@ -5930,6 +6231,13 @@ class _$_PeerMessageBlockRejected implements _PeerMessageBlockRejected {
     required TResult Function(Block content, String senderIdentity,
             String receiverIdentity, String tag, PeerMessageType type)
         getLastBlockResponse,
+    required TResult Function(
+            SetTransactionStatusContent content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type)
+        setTransactionStatus,
   }) {
     return blockRejected(
         header, senderIdentity, receiverIdentity, tag, type, content);
@@ -5995,6 +6303,13 @@ class _$_PeerMessageBlockRejected implements _PeerMessageBlockRejected {
     TResult? Function(Block content, String senderIdentity,
             String receiverIdentity, String tag, PeerMessageType type)?
         getLastBlockResponse,
+    TResult? Function(
+            SetTransactionStatusContent content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type)?
+        setTransactionStatus,
   }) {
     return blockRejected?.call(
         header, senderIdentity, receiverIdentity, tag, type, content);
@@ -6056,6 +6371,9 @@ class _$_PeerMessageBlockRejected implements _PeerMessageBlockRejected {
     TResult Function(Block content, String senderIdentity,
             String receiverIdentity, String tag, PeerMessageType type)?
         getLastBlockResponse,
+    TResult Function(SetTransactionStatusContent content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
+        setTransactionStatus,
     required TResult orElse(),
   }) {
     if (blockRejected != null) {
@@ -6094,6 +6412,8 @@ class _$_PeerMessageBlockRejected implements _PeerMessageBlockRejected {
         getLastBlockRequest,
     required TResult Function(_PeerMessageGetLastBlockResponse value)
         getLastBlockResponse,
+    required TResult Function(_PeerMessageSetTransactionStatus value)
+        setTransactionStatus,
   }) {
     return blockRejected(this);
   }
@@ -6122,6 +6442,8 @@ class _$_PeerMessageBlockRejected implements _PeerMessageBlockRejected {
         getLastBlockRequest,
     TResult? Function(_PeerMessageGetLastBlockResponse value)?
         getLastBlockResponse,
+    TResult? Function(_PeerMessageSetTransactionStatus value)?
+        setTransactionStatus,
   }) {
     return blockRejected?.call(this);
   }
@@ -6150,6 +6472,8 @@ class _$_PeerMessageBlockRejected implements _PeerMessageBlockRejected {
         getLastBlockRequest,
     TResult Function(_PeerMessageGetLastBlockResponse value)?
         getLastBlockResponse,
+    TResult Function(_PeerMessageSetTransactionStatus value)?
+        setTransactionStatus,
     required TResult orElse(),
   }) {
     if (blockRejected != null) {
@@ -6380,6 +6704,13 @@ class _$_PeerMessageBlockAccepted implements _PeerMessageBlockAccepted {
     required TResult Function(Block content, String senderIdentity,
             String receiverIdentity, String tag, PeerMessageType type)
         getLastBlockResponse,
+    required TResult Function(
+            SetTransactionStatusContent content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type)
+        setTransactionStatus,
   }) {
     return blockAccepted(content, senderIdentity, receiverIdentity, tag, type);
   }
@@ -6444,6 +6775,13 @@ class _$_PeerMessageBlockAccepted implements _PeerMessageBlockAccepted {
     TResult? Function(Block content, String senderIdentity,
             String receiverIdentity, String tag, PeerMessageType type)?
         getLastBlockResponse,
+    TResult? Function(
+            SetTransactionStatusContent content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type)?
+        setTransactionStatus,
   }) {
     return blockAccepted?.call(
         content, senderIdentity, receiverIdentity, tag, type);
@@ -6505,6 +6843,9 @@ class _$_PeerMessageBlockAccepted implements _PeerMessageBlockAccepted {
     TResult Function(Block content, String senderIdentity,
             String receiverIdentity, String tag, PeerMessageType type)?
         getLastBlockResponse,
+    TResult Function(SetTransactionStatusContent content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
+        setTransactionStatus,
     required TResult orElse(),
   }) {
     if (blockAccepted != null) {
@@ -6543,6 +6884,8 @@ class _$_PeerMessageBlockAccepted implements _PeerMessageBlockAccepted {
         getLastBlockRequest,
     required TResult Function(_PeerMessageGetLastBlockResponse value)
         getLastBlockResponse,
+    required TResult Function(_PeerMessageSetTransactionStatus value)
+        setTransactionStatus,
   }) {
     return blockAccepted(this);
   }
@@ -6571,6 +6914,8 @@ class _$_PeerMessageBlockAccepted implements _PeerMessageBlockAccepted {
         getLastBlockRequest,
     TResult? Function(_PeerMessageGetLastBlockResponse value)?
         getLastBlockResponse,
+    TResult? Function(_PeerMessageSetTransactionStatus value)?
+        setTransactionStatus,
   }) {
     return blockAccepted?.call(this);
   }
@@ -6599,6 +6944,8 @@ class _$_PeerMessageBlockAccepted implements _PeerMessageBlockAccepted {
         getLastBlockRequest,
     TResult Function(_PeerMessageGetLastBlockResponse value)?
         getLastBlockResponse,
+    TResult Function(_PeerMessageSetTransactionStatus value)?
+        setTransactionStatus,
     required TResult orElse(),
   }) {
     if (blockAccepted != null) {
@@ -6821,6 +7168,13 @@ class _$_PeerMessageGetLastBlockRequest
     required TResult Function(Block content, String senderIdentity,
             String receiverIdentity, String tag, PeerMessageType type)
         getLastBlockResponse,
+    required TResult Function(
+            SetTransactionStatusContent content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type)
+        setTransactionStatus,
   }) {
     return getLastBlockRequest(
         senderIdentity, receiverIdentity, tag, type, content);
@@ -6886,6 +7240,13 @@ class _$_PeerMessageGetLastBlockRequest
     TResult? Function(Block content, String senderIdentity,
             String receiverIdentity, String tag, PeerMessageType type)?
         getLastBlockResponse,
+    TResult? Function(
+            SetTransactionStatusContent content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type)?
+        setTransactionStatus,
   }) {
     return getLastBlockRequest?.call(
         senderIdentity, receiverIdentity, tag, type, content);
@@ -6947,6 +7308,9 @@ class _$_PeerMessageGetLastBlockRequest
     TResult Function(Block content, String senderIdentity,
             String receiverIdentity, String tag, PeerMessageType type)?
         getLastBlockResponse,
+    TResult Function(SetTransactionStatusContent content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
+        setTransactionStatus,
     required TResult orElse(),
   }) {
     if (getLastBlockRequest != null) {
@@ -6985,6 +7349,8 @@ class _$_PeerMessageGetLastBlockRequest
         getLastBlockRequest,
     required TResult Function(_PeerMessageGetLastBlockResponse value)
         getLastBlockResponse,
+    required TResult Function(_PeerMessageSetTransactionStatus value)
+        setTransactionStatus,
   }) {
     return getLastBlockRequest(this);
   }
@@ -7013,6 +7379,8 @@ class _$_PeerMessageGetLastBlockRequest
         getLastBlockRequest,
     TResult? Function(_PeerMessageGetLastBlockResponse value)?
         getLastBlockResponse,
+    TResult? Function(_PeerMessageSetTransactionStatus value)?
+        setTransactionStatus,
   }) {
     return getLastBlockRequest?.call(this);
   }
@@ -7041,6 +7409,8 @@ class _$_PeerMessageGetLastBlockRequest
         getLastBlockRequest,
     TResult Function(_PeerMessageGetLastBlockResponse value)?
         getLastBlockResponse,
+    TResult Function(_PeerMessageSetTransactionStatus value)?
+        setTransactionStatus,
     required TResult orElse(),
   }) {
     if (getLastBlockRequest != null) {
@@ -7274,6 +7644,13 @@ class _$_PeerMessageGetLastBlockResponse
     required TResult Function(Block content, String senderIdentity,
             String receiverIdentity, String tag, PeerMessageType type)
         getLastBlockResponse,
+    required TResult Function(
+            SetTransactionStatusContent content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type)
+        setTransactionStatus,
   }) {
     return getLastBlockResponse(
         content, senderIdentity, receiverIdentity, tag, type);
@@ -7339,6 +7716,13 @@ class _$_PeerMessageGetLastBlockResponse
     TResult? Function(Block content, String senderIdentity,
             String receiverIdentity, String tag, PeerMessageType type)?
         getLastBlockResponse,
+    TResult? Function(
+            SetTransactionStatusContent content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type)?
+        setTransactionStatus,
   }) {
     return getLastBlockResponse?.call(
         content, senderIdentity, receiverIdentity, tag, type);
@@ -7400,6 +7784,9 @@ class _$_PeerMessageGetLastBlockResponse
     TResult Function(Block content, String senderIdentity,
             String receiverIdentity, String tag, PeerMessageType type)?
         getLastBlockResponse,
+    TResult Function(SetTransactionStatusContent content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
+        setTransactionStatus,
     required TResult orElse(),
   }) {
     if (getLastBlockResponse != null) {
@@ -7438,6 +7825,8 @@ class _$_PeerMessageGetLastBlockResponse
         getLastBlockRequest,
     required TResult Function(_PeerMessageGetLastBlockResponse value)
         getLastBlockResponse,
+    required TResult Function(_PeerMessageSetTransactionStatus value)
+        setTransactionStatus,
   }) {
     return getLastBlockResponse(this);
   }
@@ -7466,6 +7855,8 @@ class _$_PeerMessageGetLastBlockResponse
         getLastBlockRequest,
     TResult? Function(_PeerMessageGetLastBlockResponse value)?
         getLastBlockResponse,
+    TResult? Function(_PeerMessageSetTransactionStatus value)?
+        setTransactionStatus,
   }) {
     return getLastBlockResponse?.call(this);
   }
@@ -7494,6 +7885,8 @@ class _$_PeerMessageGetLastBlockResponse
         getLastBlockRequest,
     TResult Function(_PeerMessageGetLastBlockResponse value)?
         getLastBlockResponse,
+    TResult Function(_PeerMessageSetTransactionStatus value)?
+        setTransactionStatus,
     required TResult orElse(),
   }) {
     if (getLastBlockResponse != null) {
@@ -7536,5 +7929,481 @@ abstract class _PeerMessageGetLastBlockResponse
   @JsonKey(ignore: true)
   _$$_PeerMessageGetLastBlockResponseCopyWith<
           _$_PeerMessageGetLastBlockResponse>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_PeerMessageSetTransactionStatusCopyWith<$Res>
+    implements $PeerMessageCopyWith<$Res> {
+  factory _$$_PeerMessageSetTransactionStatusCopyWith(
+          _$_PeerMessageSetTransactionStatus value,
+          $Res Function(_$_PeerMessageSetTransactionStatus) then) =
+      __$$_PeerMessageSetTransactionStatusCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {SetTransactionStatusContent content,
+      String senderIdentity,
+      String receiverIdentity,
+      String tag,
+      PeerMessageType type});
+
+  $SetTransactionStatusContentCopyWith<$Res> get content;
+}
+
+/// @nodoc
+class __$$_PeerMessageSetTransactionStatusCopyWithImpl<$Res>
+    extends _$PeerMessageCopyWithImpl<$Res, _$_PeerMessageSetTransactionStatus>
+    implements _$$_PeerMessageSetTransactionStatusCopyWith<$Res> {
+  __$$_PeerMessageSetTransactionStatusCopyWithImpl(
+      _$_PeerMessageSetTransactionStatus _value,
+      $Res Function(_$_PeerMessageSetTransactionStatus) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? content = null,
+    Object? senderIdentity = null,
+    Object? receiverIdentity = null,
+    Object? tag = null,
+    Object? type = null,
+  }) {
+    return _then(_$_PeerMessageSetTransactionStatus(
+      content: null == content
+          ? _value.content
+          : content // ignore: cast_nullable_to_non_nullable
+              as SetTransactionStatusContent,
+      senderIdentity: null == senderIdentity
+          ? _value.senderIdentity
+          : senderIdentity // ignore: cast_nullable_to_non_nullable
+              as String,
+      receiverIdentity: null == receiverIdentity
+          ? _value.receiverIdentity
+          : receiverIdentity // ignore: cast_nullable_to_non_nullable
+              as String,
+      tag: null == tag
+          ? _value.tag
+          : tag // ignore: cast_nullable_to_non_nullable
+              as String,
+      type: null == type
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as PeerMessageType,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $SetTransactionStatusContentCopyWith<$Res> get content {
+    return $SetTransactionStatusContentCopyWith<$Res>(_value.content, (value) {
+      return _then(_value.copyWith(content: value));
+    });
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_PeerMessageSetTransactionStatus
+    implements _PeerMessageSetTransactionStatus {
+  const _$_PeerMessageSetTransactionStatus(
+      {required this.content,
+      required this.senderIdentity,
+      required this.receiverIdentity,
+      required this.tag,
+      this.type = PeerMessageType.setTransactionStatus});
+
+  factory _$_PeerMessageSetTransactionStatus.fromJson(
+          Map<String, dynamic> json) =>
+      _$$_PeerMessageSetTransactionStatusFromJson(json);
+
+  @override
+  final SetTransactionStatusContent content;
+  @override
+  final String senderIdentity;
+  @override
+  final String receiverIdentity;
+  @override
+  final String tag;
+  @override
+  @JsonKey()
+  final PeerMessageType type;
+
+  @override
+  String toString() {
+    return 'PeerMessage.setTransactionStatus(content: $content, senderIdentity: $senderIdentity, receiverIdentity: $receiverIdentity, tag: $tag, type: $type)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_PeerMessageSetTransactionStatus &&
+            (identical(other.content, content) || other.content == content) &&
+            (identical(other.senderIdentity, senderIdentity) ||
+                other.senderIdentity == senderIdentity) &&
+            (identical(other.receiverIdentity, receiverIdentity) ||
+                other.receiverIdentity == receiverIdentity) &&
+            (identical(other.tag, tag) || other.tag == tag) &&
+            (identical(other.type, type) || other.type == type));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, content, senderIdentity, receiverIdentity, tag, type);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_PeerMessageSetTransactionStatusCopyWith<
+          _$_PeerMessageSetTransactionStatus>
+      get copyWith => __$$_PeerMessageSetTransactionStatusCopyWithImpl<
+          _$_PeerMessageSetTransactionStatus>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)
+        peerTypeRequest,
+    required TResult Function(PeerType content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
+        peerTypeResponse,
+    required TResult Function(Transaction content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
+        addTransaction,
+    required TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
+        blockHeadersRequest,
+    required TResult Function(
+            BlockHeadersResponseContent content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type)
+        blockHeadersResponse,
+    required TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
+        blockRequest,
+    required TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
+        blockResponse,
+    required TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
+        blockNotFoundResponse,
+    required TResult Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)
+        peerStateRequest,
+    required TResult Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
+        peerStateResponse,
+    required TResult Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
+        peerStateUpdate,
+    required TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
+        addBlock,
+    required TResult Function(
+            BlockHeader header,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            dynamic content)
+        blockRejected,
+    required TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
+        blockAccepted,
+    required TResult Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)
+        getLastBlockRequest,
+    required TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)
+        getLastBlockResponse,
+    required TResult Function(
+            SetTransactionStatusContent content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type)
+        setTransactionStatus,
+  }) {
+    return setTransactionStatus(
+        content, senderIdentity, receiverIdentity, tag, type);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)?
+        peerTypeRequest,
+    TResult? Function(PeerType content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
+        peerTypeResponse,
+    TResult? Function(Transaction content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
+        addTransaction,
+    TResult? Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
+        blockHeadersRequest,
+    TResult? Function(
+            BlockHeadersResponseContent content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type)?
+        blockHeadersResponse,
+    TResult? Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
+        blockRequest,
+    TResult? Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
+        blockResponse,
+    TResult? Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
+        blockNotFoundResponse,
+    TResult? Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)?
+        peerStateRequest,
+    TResult? Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
+        peerStateResponse,
+    TResult? Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
+        peerStateUpdate,
+    TResult? Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
+        addBlock,
+    TResult? Function(
+            BlockHeader header,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            dynamic content)?
+        blockRejected,
+    TResult? Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
+        blockAccepted,
+    TResult? Function(String senderIdentity, String receiverIdentity,
+            String tag, PeerMessageType type, dynamic content)?
+        getLastBlockRequest,
+    TResult? Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
+        getLastBlockResponse,
+    TResult? Function(
+            SetTransactionStatusContent content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type)?
+        setTransactionStatus,
+  }) {
+    return setTransactionStatus?.call(
+        content, senderIdentity, receiverIdentity, tag, type);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String senderIdentity, String receiverIdentity, String tag,
+            PeerMessageType type, dynamic content)?
+        peerTypeRequest,
+    TResult Function(PeerType content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
+        peerTypeResponse,
+    TResult Function(Transaction content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
+        addTransaction,
+    TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
+        blockHeadersRequest,
+    TResult Function(BlockHeadersResponseContent content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
+        blockHeadersResponse,
+    TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
+        blockRequest,
+    TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
+        blockResponse,
+    TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
+        blockNotFoundResponse,
+    TResult Function(String senderIdentity, String receiverIdentity, String tag,
+            PeerMessageType type, dynamic content)?
+        peerStateRequest,
+    TResult Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
+        peerStateResponse,
+    TResult Function(PeerState content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
+        peerStateUpdate,
+    TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
+        addBlock,
+    TResult Function(
+            BlockHeader header,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            dynamic content)?
+        blockRejected,
+    TResult Function(BlockHeader content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
+        blockAccepted,
+    TResult Function(String senderIdentity, String receiverIdentity, String tag,
+            PeerMessageType type, dynamic content)?
+        getLastBlockRequest,
+    TResult Function(Block content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
+        getLastBlockResponse,
+    TResult Function(SetTransactionStatusContent content, String senderIdentity,
+            String receiverIdentity, String tag, PeerMessageType type)?
+        setTransactionStatus,
+    required TResult orElse(),
+  }) {
+    if (setTransactionStatus != null) {
+      return setTransactionStatus(
+          content, senderIdentity, receiverIdentity, tag, type);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_PeerMessagePeerTypeRequest value)
+        peerTypeRequest,
+    required TResult Function(_PeerMessagePeerTypeResponse value)
+        peerTypeResponse,
+    required TResult Function(_PeerMessageAddTransaction value) addTransaction,
+    required TResult Function(_PeerMessageBlockHeadersRequest value)
+        blockHeadersRequest,
+    required TResult Function(_PeerMessageBlockHeadersResponse value)
+        blockHeadersResponse,
+    required TResult Function(_PeerMessageBlockRequest value) blockRequest,
+    required TResult Function(_PeerMessageBlockResponse value) blockResponse,
+    required TResult Function(_PeerMessageBlockNotFoundResponse value)
+        blockNotFoundResponse,
+    required TResult Function(_PeerMessagePeerStateRequest value)
+        peerStateRequest,
+    required TResult Function(_PeerMessagePeerStateResponse value)
+        peerStateResponse,
+    required TResult Function(_PeerMessagePeerStateUpdate value)
+        peerStateUpdate,
+    required TResult Function(_PeerMessageAddBlock value) addBlock,
+    required TResult Function(_PeerMessageBlockRejected value) blockRejected,
+    required TResult Function(_PeerMessageBlockAccepted value) blockAccepted,
+    required TResult Function(_PeerMessageGetLastBlockRequest value)
+        getLastBlockRequest,
+    required TResult Function(_PeerMessageGetLastBlockResponse value)
+        getLastBlockResponse,
+    required TResult Function(_PeerMessageSetTransactionStatus value)
+        setTransactionStatus,
+  }) {
+    return setTransactionStatus(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_PeerMessagePeerTypeRequest value)? peerTypeRequest,
+    TResult? Function(_PeerMessagePeerTypeResponse value)? peerTypeResponse,
+    TResult? Function(_PeerMessageAddTransaction value)? addTransaction,
+    TResult? Function(_PeerMessageBlockHeadersRequest value)?
+        blockHeadersRequest,
+    TResult? Function(_PeerMessageBlockHeadersResponse value)?
+        blockHeadersResponse,
+    TResult? Function(_PeerMessageBlockRequest value)? blockRequest,
+    TResult? Function(_PeerMessageBlockResponse value)? blockResponse,
+    TResult? Function(_PeerMessageBlockNotFoundResponse value)?
+        blockNotFoundResponse,
+    TResult? Function(_PeerMessagePeerStateRequest value)? peerStateRequest,
+    TResult? Function(_PeerMessagePeerStateResponse value)? peerStateResponse,
+    TResult? Function(_PeerMessagePeerStateUpdate value)? peerStateUpdate,
+    TResult? Function(_PeerMessageAddBlock value)? addBlock,
+    TResult? Function(_PeerMessageBlockRejected value)? blockRejected,
+    TResult? Function(_PeerMessageBlockAccepted value)? blockAccepted,
+    TResult? Function(_PeerMessageGetLastBlockRequest value)?
+        getLastBlockRequest,
+    TResult? Function(_PeerMessageGetLastBlockResponse value)?
+        getLastBlockResponse,
+    TResult? Function(_PeerMessageSetTransactionStatus value)?
+        setTransactionStatus,
+  }) {
+    return setTransactionStatus?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_PeerMessagePeerTypeRequest value)? peerTypeRequest,
+    TResult Function(_PeerMessagePeerTypeResponse value)? peerTypeResponse,
+    TResult Function(_PeerMessageAddTransaction value)? addTransaction,
+    TResult Function(_PeerMessageBlockHeadersRequest value)?
+        blockHeadersRequest,
+    TResult Function(_PeerMessageBlockHeadersResponse value)?
+        blockHeadersResponse,
+    TResult Function(_PeerMessageBlockRequest value)? blockRequest,
+    TResult Function(_PeerMessageBlockResponse value)? blockResponse,
+    TResult Function(_PeerMessageBlockNotFoundResponse value)?
+        blockNotFoundResponse,
+    TResult Function(_PeerMessagePeerStateRequest value)? peerStateRequest,
+    TResult Function(_PeerMessagePeerStateResponse value)? peerStateResponse,
+    TResult Function(_PeerMessagePeerStateUpdate value)? peerStateUpdate,
+    TResult Function(_PeerMessageAddBlock value)? addBlock,
+    TResult Function(_PeerMessageBlockRejected value)? blockRejected,
+    TResult Function(_PeerMessageBlockAccepted value)? blockAccepted,
+    TResult Function(_PeerMessageGetLastBlockRequest value)?
+        getLastBlockRequest,
+    TResult Function(_PeerMessageGetLastBlockResponse value)?
+        getLastBlockResponse,
+    TResult Function(_PeerMessageSetTransactionStatus value)?
+        setTransactionStatus,
+    required TResult orElse(),
+  }) {
+    if (setTransactionStatus != null) {
+      return setTransactionStatus(this);
+    }
+    return orElse();
+  }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_PeerMessageSetTransactionStatusToJson(
+      this,
+    );
+  }
+}
+
+abstract class _PeerMessageSetTransactionStatus implements PeerMessage {
+  const factory _PeerMessageSetTransactionStatus(
+      {required final SetTransactionStatusContent content,
+      required final String senderIdentity,
+      required final String receiverIdentity,
+      required final String tag,
+      final PeerMessageType type}) = _$_PeerMessageSetTransactionStatus;
+
+  factory _PeerMessageSetTransactionStatus.fromJson(Map<String, dynamic> json) =
+      _$_PeerMessageSetTransactionStatus.fromJson;
+
+  @override
+  SetTransactionStatusContent get content;
+  @override
+  String get senderIdentity;
+  @override
+  String get receiverIdentity;
+  @override
+  String get tag;
+  @override
+  PeerMessageType get type;
+  @override
+  @JsonKey(ignore: true)
+  _$$_PeerMessageSetTransactionStatusCopyWith<
+          _$_PeerMessageSetTransactionStatus>
       get copyWith => throw _privateConstructorUsedError;
 }

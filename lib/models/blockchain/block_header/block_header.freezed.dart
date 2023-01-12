@@ -21,10 +21,9 @@ BlockHeader _$BlockHeaderFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$BlockHeader {
   String get hash => throw _privateConstructorUsedError;
-  @JsonKey(name: 'previous_hash')
   String get previousHash => throw _privateConstructorUsedError;
-  @JsonKey(name: 'merkle_root')
   String get merkleRoot => throw _privateConstructorUsedError;
+  String get minedBy => throw _privateConstructorUsedError;
   int get timestamp => throw _privateConstructorUsedError;
   int get nonce => throw _privateConstructorUsedError;
 
@@ -42,8 +41,9 @@ abstract class $BlockHeaderCopyWith<$Res> {
   @useResult
   $Res call(
       {String hash,
-      @JsonKey(name: 'previous_hash') String previousHash,
-      @JsonKey(name: 'merkle_root') String merkleRoot,
+      String previousHash,
+      String merkleRoot,
+      String minedBy,
       int timestamp,
       int nonce});
 }
@@ -64,6 +64,7 @@ class _$BlockHeaderCopyWithImpl<$Res, $Val extends BlockHeader>
     Object? hash = null,
     Object? previousHash = null,
     Object? merkleRoot = null,
+    Object? minedBy = null,
     Object? timestamp = null,
     Object? nonce = null,
   }) {
@@ -79,6 +80,10 @@ class _$BlockHeaderCopyWithImpl<$Res, $Val extends BlockHeader>
       merkleRoot: null == merkleRoot
           ? _value.merkleRoot
           : merkleRoot // ignore: cast_nullable_to_non_nullable
+              as String,
+      minedBy: null == minedBy
+          ? _value.minedBy
+          : minedBy // ignore: cast_nullable_to_non_nullable
               as String,
       timestamp: null == timestamp
           ? _value.timestamp
@@ -102,8 +107,9 @@ abstract class _$$_BlockHeaderCopyWith<$Res>
   @useResult
   $Res call(
       {String hash,
-      @JsonKey(name: 'previous_hash') String previousHash,
-      @JsonKey(name: 'merkle_root') String merkleRoot,
+      String previousHash,
+      String merkleRoot,
+      String minedBy,
       int timestamp,
       int nonce});
 }
@@ -122,6 +128,7 @@ class __$$_BlockHeaderCopyWithImpl<$Res>
     Object? hash = null,
     Object? previousHash = null,
     Object? merkleRoot = null,
+    Object? minedBy = null,
     Object? timestamp = null,
     Object? nonce = null,
   }) {
@@ -138,6 +145,10 @@ class __$$_BlockHeaderCopyWithImpl<$Res>
           ? _value.merkleRoot
           : merkleRoot // ignore: cast_nullable_to_non_nullable
               as String,
+      null == minedBy
+          ? _value.minedBy
+          : minedBy // ignore: cast_nullable_to_non_nullable
+              as String,
       null == timestamp
           ? _value.timestamp
           : timestamp // ignore: cast_nullable_to_non_nullable
@@ -153,12 +164,8 @@ class __$$_BlockHeaderCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_BlockHeader implements _BlockHeader {
-  const _$_BlockHeader(
-      this.hash,
-      @JsonKey(name: 'previous_hash') this.previousHash,
-      @JsonKey(name: 'merkle_root') this.merkleRoot,
-      this.timestamp,
-      this.nonce);
+  const _$_BlockHeader(this.hash, this.previousHash, this.merkleRoot,
+      this.minedBy, this.timestamp, this.nonce);
 
   factory _$_BlockHeader.fromJson(Map<String, dynamic> json) =>
       _$$_BlockHeaderFromJson(json);
@@ -166,11 +173,11 @@ class _$_BlockHeader implements _BlockHeader {
   @override
   final String hash;
   @override
-  @JsonKey(name: 'previous_hash')
   final String previousHash;
   @override
-  @JsonKey(name: 'merkle_root')
   final String merkleRoot;
+  @override
+  final String minedBy;
   @override
   final int timestamp;
   @override
@@ -178,7 +185,7 @@ class _$_BlockHeader implements _BlockHeader {
 
   @override
   String toString() {
-    return 'BlockHeader(hash: $hash, previousHash: $previousHash, merkleRoot: $merkleRoot, timestamp: $timestamp, nonce: $nonce)';
+    return 'BlockHeader(hash: $hash, previousHash: $previousHash, merkleRoot: $merkleRoot, minedBy: $minedBy, timestamp: $timestamp, nonce: $nonce)';
   }
 
   @override
@@ -191,6 +198,7 @@ class _$_BlockHeader implements _BlockHeader {
                 other.previousHash == previousHash) &&
             (identical(other.merkleRoot, merkleRoot) ||
                 other.merkleRoot == merkleRoot) &&
+            (identical(other.minedBy, minedBy) || other.minedBy == minedBy) &&
             (identical(other.timestamp, timestamp) ||
                 other.timestamp == timestamp) &&
             (identical(other.nonce, nonce) || other.nonce == nonce));
@@ -199,7 +207,7 @@ class _$_BlockHeader implements _BlockHeader {
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
-      runtimeType, hash, previousHash, merkleRoot, timestamp, nonce);
+      runtimeType, hash, previousHash, merkleRoot, minedBy, timestamp, nonce);
 
   @JsonKey(ignore: true)
   @override
@@ -218,8 +226,9 @@ class _$_BlockHeader implements _BlockHeader {
 abstract class _BlockHeader implements BlockHeader {
   const factory _BlockHeader(
       final String hash,
-      @JsonKey(name: 'previous_hash') final String previousHash,
-      @JsonKey(name: 'merkle_root') final String merkleRoot,
+      final String previousHash,
+      final String merkleRoot,
+      final String minedBy,
       final int timestamp,
       final int nonce) = _$_BlockHeader;
 
@@ -229,11 +238,11 @@ abstract class _BlockHeader implements BlockHeader {
   @override
   String get hash;
   @override
-  @JsonKey(name: 'previous_hash')
   String get previousHash;
   @override
-  @JsonKey(name: 'merkle_root')
   String get merkleRoot;
+  @override
+  String get minedBy;
   @override
   int get timestamp;
   @override

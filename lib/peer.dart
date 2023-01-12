@@ -34,7 +34,13 @@ class Peer {
 
   final controller = BehaviorSubject<PeerMessage>();
 
-  StreamSubscription<PeerMessage> listen(
+  StreamSubscription<PeerMessage> listenAll(
+    Function(PeerMessage) callback,
+  ) {
+    return controller.stream.listen(callback);
+  }
+
+  StreamSubscription<PeerMessage> listenSpecific(
     PeerMessageType type,
     Function(PeerMessage) callback,
   ) {
@@ -123,9 +129,9 @@ class Peer {
   }
 
   void setupListeners() {
-    listen(PeerMessageType.peerTypeRequest, onPeerTypeRequest);
-    listen(PeerMessageType.peerStateRequest, onPeerStateRequest);
-    listen(PeerMessageType.peerStateUpdate, onPeerStateUpdate);
+    listenSpecific(PeerMessageType.peerTypeRequest, onPeerTypeRequest);
+    listenSpecific(PeerMessageType.peerStateRequest, onPeerStateRequest);
+    listenSpecific(PeerMessageType.peerStateUpdate, onPeerStateUpdate);
     onSignalingClientRTCCandidateSubscription = signalingClient.listen(
       SignalingMessageType.rtcCandidate,
       onRTCCandidate,

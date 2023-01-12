@@ -369,3 +369,25 @@ Map<String, dynamic> _$$_PeerMessageGetLastBlockResponseToJson(
       'tag': instance.tag,
       'type': _$PeerMessageTypeEnumMap[instance.type]!,
     };
+
+_$_PeerMessageSetTransactionStatus _$$_PeerMessageSetTransactionStatusFromJson(
+        Map<String, dynamic> json) =>
+    _$_PeerMessageSetTransactionStatus(
+      content: SetTransactionStatusContent.fromJson(
+          json['content'] as Map<String, dynamic>),
+      senderIdentity: json['sender_identity'] as String,
+      receiverIdentity: json['receiver_identity'] as String,
+      tag: json['tag'] as String,
+      type: $enumDecodeNullable(_$PeerMessageTypeEnumMap, json['type']) ??
+          PeerMessageType.setTransactionStatus,
+    );
+
+Map<String, dynamic> _$$_PeerMessageSetTransactionStatusToJson(
+        _$_PeerMessageSetTransactionStatus instance) =>
+    <String, dynamic>{
+      'content': instance.content.toJson(),
+      'sender_identity': instance.senderIdentity,
+      'receiver_identity': instance.receiverIdentity,
+      'tag': instance.tag,
+      'type': _$PeerMessageTypeEnumMap[instance.type]!,
+    };

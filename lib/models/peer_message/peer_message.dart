@@ -5,6 +5,7 @@ import 'package:krapi_explorer/models/blockchain/block_header/block_headers_resp
 import 'package:krapi_explorer/models/blockchain/transaction/transaction.dart';
 import 'package:krapi_explorer/models/peer_models/peer_state.dart';
 import 'package:krapi_explorer/models/peer_models/peer_type.dart';
+import 'package:krapi_explorer/models/set_transaction_status_content/set_transaction_status_content.dart';
 
 part 'peer_message.freezed.dart';
 part 'peer_message.g.dart';
@@ -181,6 +182,12 @@ class PeerMessage with _$PeerMessage {
     required String tag,
     @Default(PeerMessageType.getLastBlockResponse) PeerMessageType type,
   }) = _PeerMessageGetLastBlockResponse;
-
+  const factory PeerMessage.setTransactionStatus({
+    required SetTransactionStatusContent content,
+    required String senderIdentity,
+    required String receiverIdentity,
+    required String tag,
+    @Default(PeerMessageType.setTransactionStatus) PeerMessageType type,
+  }) = _PeerMessageSetTransactionStatus;
   factory PeerMessage.fromJson(Map<String, dynamic> json) => _$PeerMessageFromJson(json);
 }

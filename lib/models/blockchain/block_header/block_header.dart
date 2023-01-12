@@ -15,8 +15,9 @@ part 'block_header.g.dart';
 class BlockHeader with _$BlockHeader {
   const factory BlockHeader(
     String hash,
-    @JsonKey(name: 'previous_hash') String previousHash,
-    @JsonKey(name: 'merkle_root') String merkleRoot,
+    String previousHash,
+    String merkleRoot,
+    String minedBy,
     int timestamp,
     int nonce,
   ) = _BlockHeader;

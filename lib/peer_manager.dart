@@ -7,6 +7,7 @@ import 'package:krapi_explorer/models/peer_manager_state/peer_manager_state.dart
 import 'package:krapi_explorer/models/signaling_message/signaling_message.dart';
 import 'package:krapi_explorer/peer.dart';
 import 'package:krapi_explorer/signaling_client.dart';
+import 'package:rxdart/subjects.dart';
 
 import 'package:uuid/uuid.dart';
 
@@ -17,7 +18,8 @@ import 'models/peer_models/peer_type.dart';
 
 class PeerManager extends StateNotifier<PeerManagerState> {
   static const localType = PeerType.observer;
-  final SignalingClient signalingClient = SignalingClient();
+  final signalingClient = SignalingClient();
+  final messages = BehaviorSubject<PeerMessage>();
   final peerMap = <String, Peer>{};
 
   PeerManager(super.state);
@@ -29,14 +31,20 @@ class PeerManager extends StateNotifier<PeerManagerState> {
     if (peerMap.containsKey(msg.senderIdentity)) {
       await peerMap[msg.senderIdentity]!.connection.setRemoteDescription(rtcDescription);
     } else {
-      peerMap[msg.senderIdentity] = await Peer.create(
+      final peer = await Peer.create(
         localType,
         msg.senderIdentity,
         signalingClient,
         true,
       );
-      peerMap[msg.senderIdentity]!.listenToOpen(onPeerDataChannelOpen);
+      peer.listenToOpen(onPeerDataChannelOpen);
+      peer.listenAll((m) => messages.sink.add(m));
+      peerMap[msg.senderIdentity] = peer;
     }
+  }
+
+  Stream<PeerMessage> getSpecificMessages(PeerMessageType type) {
+    return messages.where((event) => event.type == type);
   }
 
   void onPeerDataChannelOpen(String peerId) {
@@ -52,13 +60,15 @@ class PeerManager extends StateNotifier<PeerManagerState> {
 
     if (peerMap.containsKey(peerId)) return;
 
-    peerMap[peerId] = await Peer.create(
+    final peer = await Peer.create(
       localType,
       peerId,
       signalingClient,
       false,
     );
-    peerMap[peerId]!.listenToOpen(onPeerDataChannelOpen);
+    peer.listenToOpen(onPeerDataChannelOpen);
+    peer.listenAll((m) => messages.sink.add(m));
+    peerMap[peerId] = peer;
   }
 
   void onPeerClosed(SignalingMessage msg) {
@@ -139,6 +149,17 @@ final peerManagerProvider = FutureProvider.autoDispose<PeerManager>(
   (_) async => await PeerManager.create(),
 );
 
+final peerMessageProvider = StreamProvider.autoDispose.family<PeerMessage, PeerMessageType>(
+  (ref, messageType) async* {
+    final manager = await ref.watch(peerManagerProvider.future);
+
+    await for (final message in manager.getSpecificMessages(messageType)) {
+      yield message;
+    }
+  },
+  dependencies: [peerManagerProvider],
+);
+
 final peerListProvider = StreamProvider.autoDispose.family<List<String>, PeerType>(
   (ref, type) async* {
     final manager = await ref.watch(peerManagerProvider.future);
@@ -159,6 +180,10 @@ final peerListProvider = StreamProvider.autoDispose.family<List<String>, PeerTyp
 final blockchainFromPeerProvider = FutureProvider.autoDispose.family<List<Block>, String>(
   (ref, peerId) async {
     final manager = await ref.watch(peerManagerProvider.future);
+    ref.watch(peerMessageProvider(PeerMessageType.addBlock)).whenData((_) {
+      
+      ref.invalidateSelf();
+    });
     final type = await manager.typeOfPeer(peerId);
 
     if (type != PeerType.full) {
@@ -166,6 +191,7 @@ final blockchainFromPeerProvider = FutureProvider.autoDispose.family<List<Block>
     }
     const genesisHeader = BlockHeader(
       '6FBA8017848885FB34C183BF4B6015D9C53307ABCD1F86505A271ED4B387265A',
+      '0',
       '0',
       '0',
       1668542625,
@@ -201,7 +227,8 @@ final blockchainFromPeerProvider = FutureProvider.autoDispose.family<List<Block>
         blockResponse: (state) => blocks.add(state.content),
       );
     }
+
     return blocks;
   },
-  dependencies: [peerManagerProvider],
+  dependencies: [peerManagerProvider, peerMessageProvider],
 );

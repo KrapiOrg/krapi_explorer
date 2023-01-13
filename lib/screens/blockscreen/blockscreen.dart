@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_krapi/flutter_krapi.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:krapi_explorer/blockchain/models/block_header/block_header.dart';
-import 'package:krapi_explorer/blockchain/providers.dart';
+import 'package:krapi_explorer/providers.dart';
 import 'package:krapi_explorer/screens/blockscreen/widgets/block_detail_widget.dart';
 import 'package:krapi_explorer/screens/blockscreen/widgets/transaction_details_widget.dart';
 

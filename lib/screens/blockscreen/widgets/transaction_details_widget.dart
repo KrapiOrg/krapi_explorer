@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_krapi/models/transaction/transaction.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:krapi_explorer/blockchain/models/transaction/transaction.dart';
 
 class TransactionDetailsWidget extends HookConsumerWidget {
   const TransactionDetailsWidget({

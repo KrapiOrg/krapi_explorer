@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_krapi/flutter_krapi.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:krapi_explorer/models/peer_models/peer_type.dart';
-import 'package:krapi_explorer/peer_manager.dart';
 import 'package:krapi_explorer/screens/blockchain_screen/blockchain_screen.dart';
 
 class AvailablePeersScreen extends HookConsumerWidget {

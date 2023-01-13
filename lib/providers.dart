@@ -1,9 +1,5 @@
+import 'package:flutter_krapi/flutter_krapi.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:krapi_explorer/blockchain/models/block/block.dart';
-import 'package:krapi_explorer/blockchain/models/block_header/block_header.dart';
-import 'package:krapi_explorer/models/peer_message/peer_message.dart';
-import 'package:krapi_explorer/models/peer_models/peer_type.dart';
-import 'package:krapi_explorer/peer_manager.dart';
 import 'package:uuid/uuid.dart';
 
 const _genesisHeader = BlockHeader(

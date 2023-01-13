@@ -2,16 +2,14 @@ import 'dart:async';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_webrtc/flutter_webrtc.dart';
-import 'package:krapi_explorer/models/blockchain/block/block.dart';
+import 'package:rxdart/subjects.dart';
+import 'package:uuid/uuid.dart';
+
 import 'package:krapi_explorer/models/peer_manager_state/peer_manager_state.dart';
 import 'package:krapi_explorer/models/signaling_message/signaling_message.dart';
 import 'package:krapi_explorer/peer.dart';
 import 'package:krapi_explorer/signaling_client.dart';
-import 'package:rxdart/subjects.dart';
 
-import 'package:uuid/uuid.dart';
-
-import 'models/blockchain/block_header/block_header.dart';
 import 'models/peer_message/peer_message.dart';
 import 'models/peer_models/peer_state.dart';
 import 'models/peer_models/peer_type.dart';
@@ -137,7 +135,10 @@ class PeerManager extends StateNotifier<PeerManagerState> {
   }
 
   Future<PeerType> typeOfPeer(String peerId) async {
-    return await peerMap[peerId]?.type ?? PeerType.unknown;
+    print('here');
+    final type = await peerMap[peerId]?.type ?? PeerType.unknown;
+    print('type of $peerId $type');
+    return type;
   }
 
   Future<PeerState> stateOfPeer(String peerId) async {
@@ -177,58 +178,3 @@ final peerListProvider = StreamProvider.autoDispose.family<List<String>, PeerTyp
   dependencies: [peerManagerProvider],
 );
 
-final blockchainFromPeerProvider = FutureProvider.autoDispose.family<List<Block>, String>(
-  (ref, peerId) async {
-    final manager = await ref.watch(peerManagerProvider.future);
-    ref.watch(peerMessageProvider(PeerMessageType.addBlock)).whenData((_) {
-      
-      ref.invalidateSelf();
-    });
-    final type = await manager.typeOfPeer(peerId);
-
-    if (type != PeerType.full) {
-      return <Block>[];
-    }
-    const genesisHeader = BlockHeader(
-      '6FBA8017848885FB34C183BF4B6015D9C53307ABCD1F86505A271ED4B387265A',
-      '0',
-      '0',
-      '0',
-      1668542625,
-      0,
-    );
-    const genesisBlock = Block(genesisHeader, {});
-    final blocks = [genesisBlock];
-
-    final headersResponse = await manager.submit(
-      peerId,
-      PeerMessage.blockHeadersRequest(
-        content: genesisHeader,
-        senderIdentity: manager.signalingClient.identity,
-        receiverIdentity: peerId,
-        tag: const Uuid().v4(),
-      ),
-    );
-    final headers = headersResponse.maybeMap(
-      blockHeadersResponse: (state) => state.content.headers,
-      orElse: () => const <BlockHeader>[],
-    );
-    for (final header in headers) {
-      final blockResponse = await manager.submit(
-        peerId,
-        PeerMessage.blockRequest(
-          senderIdentity: manager.signalingClient.identity,
-          receiverIdentity: peerId,
-          tag: const Uuid().v4(),
-          content: header,
-        ),
-      );
-      blockResponse.mapOrNull(
-        blockResponse: (state) => blocks.add(state.content),
-      );
-    }
-
-    return blocks;
-  },
-  dependencies: [peerManagerProvider, peerMessageProvider],
-);

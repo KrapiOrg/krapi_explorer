@@ -27,8 +27,8 @@ Map<String, dynamic> _$$_SignalingMessageToJson(_$_SignalingMessage instance) =>
 const _$SignalingMessageTypeEnumMap = {
   SignalingMessageType.availablePeersRequest: 'available_peers_request',
   SignalingMessageType.availablePeersResponse: 'available_peers_response',
-  SignalingMessageType.identityRequest: 'identity_request',
-  SignalingMessageType.identityResponse: 'identity_response',
+  SignalingMessageType.setIdentityRequest: 'set_identity_request',
+  SignalingMessageType.setIdentityResponse: 'set_identity_response',
   SignalingMessageType.peerAvailable: 'peer_available',
   SignalingMessageType.peerClosed: 'peer_closed',
   SignalingMessageType.rtcSetup: 'rtc_setup',

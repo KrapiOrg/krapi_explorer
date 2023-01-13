@@ -13,22 +13,20 @@ class SignalingClient {
 
   Future<void> init() async {
     _ws = IOWebSocketChannel.connect('ws://127.0.0.1:8080');
-    _ws.stream.handleError((err) {
-      print('SignalingClient: $err');
-      return true;
-    });
+
     _ws.stream.map((e) => SignalingMessage.fromJson(e)).pipe(_subject.sink);
 
-    final identity_response = await submit(
+    _identity = const Uuid().v4();
+
+    await submit(
       SignalingMessage(
-        SignalingMessageType.identityRequest,
-        'unkown_identity',
+        SignalingMessageType.setIdentityRequest,
+        _identity,
         'signaling_server',
         const Uuid().v4(),
+        content: _identity,
       ),
     );
-
-    _identity = identity_response.content as String;
 
     print('SignalingClient: Accquired Identity $_identity');
   }

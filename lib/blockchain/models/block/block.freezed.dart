@@ -21,7 +21,7 @@ Block _$BlockFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Block {
   BlockHeader get header => throw _privateConstructorUsedError;
-  Set<Transaction> get transactions => throw _privateConstructorUsedError;
+  List<Transaction> get transactions => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -33,7 +33,7 @@ abstract class $BlockCopyWith<$Res> {
   factory $BlockCopyWith(Block value, $Res Function(Block) then) =
       _$BlockCopyWithImpl<$Res, Block>;
   @useResult
-  $Res call({BlockHeader header, Set<Transaction> transactions});
+  $Res call({BlockHeader header, List<Transaction> transactions});
 
   $BlockHeaderCopyWith<$Res> get header;
 }
@@ -62,7 +62,7 @@ class _$BlockCopyWithImpl<$Res, $Val extends Block>
       transactions: null == transactions
           ? _value.transactions
           : transactions // ignore: cast_nullable_to_non_nullable
-              as Set<Transaction>,
+              as List<Transaction>,
     ) as $Val);
   }
 
@@ -81,7 +81,7 @@ abstract class _$$_BlockCopyWith<$Res> implements $BlockCopyWith<$Res> {
       __$$_BlockCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({BlockHeader header, Set<Transaction> transactions});
+  $Res call({BlockHeader header, List<Transaction> transactions});
 
   @override
   $BlockHeaderCopyWith<$Res> get header;
@@ -107,7 +107,7 @@ class __$$_BlockCopyWithImpl<$Res> extends _$BlockCopyWithImpl<$Res, _$_Block>
       null == transactions
           ? _value._transactions
           : transactions // ignore: cast_nullable_to_non_nullable
-              as Set<Transaction>,
+              as List<Transaction>,
     ));
   }
 }
@@ -115,7 +115,7 @@ class __$$_BlockCopyWithImpl<$Res> extends _$BlockCopyWithImpl<$Res, _$_Block>
 /// @nodoc
 @JsonSerializable()
 class _$_Block implements _Block {
-  const _$_Block(this.header, final Set<Transaction> transactions)
+  const _$_Block(this.header, final List<Transaction> transactions)
       : _transactions = transactions;
 
   factory _$_Block.fromJson(Map<String, dynamic> json) =>
@@ -123,12 +123,12 @@ class _$_Block implements _Block {
 
   @override
   final BlockHeader header;
-  final Set<Transaction> _transactions;
+  final List<Transaction> _transactions;
   @override
-  Set<Transaction> get transactions {
-    if (_transactions is EqualUnmodifiableSetView) return _transactions;
+  List<Transaction> get transactions {
+    if (_transactions is EqualUnmodifiableListView) return _transactions;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableSetView(_transactions);
+    return EqualUnmodifiableListView(_transactions);
   }
 
   @override
@@ -167,14 +167,15 @@ class _$_Block implements _Block {
 
 abstract class _Block implements Block {
   const factory _Block(
-      final BlockHeader header, final Set<Transaction> transactions) = _$_Block;
+          final BlockHeader header, final List<Transaction> transactions) =
+      _$_Block;
 
   factory _Block.fromJson(Map<String, dynamic> json) = _$_Block.fromJson;
 
   @override
   BlockHeader get header;
   @override
-  Set<Transaction> get transactions;
+  List<Transaction> get transactions;
   @override
   @JsonKey(ignore: true)
   _$$_BlockCopyWith<_$_Block> get copyWith =>

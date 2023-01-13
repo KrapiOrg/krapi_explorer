@@ -12,8 +12,8 @@ part 'signaling_message.g.dart';
 enum SignalingMessageType {
   availablePeersRequest,
   availablePeersResponse,
-  identityRequest,
-  identityResponse,
+  setIdentityRequest,
+  setIdentityResponse,
   peerAvailable,
   peerClosed,
   rtcSetup,

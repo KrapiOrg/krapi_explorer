@@ -15,6 +15,7 @@ _$_PeerMessagePeerTypeRequest _$$_PeerMessagePeerTypeRequestFromJson(
       type: $enumDecodeNullable(_$PeerMessageTypeEnumMap, json['type']) ??
           PeerMessageType.peerTypeRequest,
       content: json['content'],
+      timestamp: json['timestamp'] as int,
     );
 
 Map<String, dynamic> _$$_PeerMessagePeerTypeRequestToJson(
@@ -25,6 +26,7 @@ Map<String, dynamic> _$$_PeerMessagePeerTypeRequestToJson(
       'tag': instance.tag,
       'type': _$PeerMessageTypeEnumMap[instance.type]!,
       'content': instance.content,
+      'timestamp': instance.timestamp,
     };
 
 const _$PeerMessageTypeEnumMap = {
@@ -60,6 +62,7 @@ _$_PeerMessagePeerTypeResponse _$$_PeerMessagePeerTypeResponseFromJson(
       tag: json['tag'] as String,
       type: $enumDecodeNullable(_$PeerMessageTypeEnumMap, json['type']) ??
           PeerMessageType.peerTypeResponse,
+      timestamp: json['timestamp'] as int,
     );
 
 Map<String, dynamic> _$$_PeerMessagePeerTypeResponseToJson(
@@ -70,6 +73,7 @@ Map<String, dynamic> _$$_PeerMessagePeerTypeResponseToJson(
       'receiver_identity': instance.receiverIdentity,
       'tag': instance.tag,
       'type': _$PeerMessageTypeEnumMap[instance.type]!,
+      'timestamp': instance.timestamp,
     };
 
 _$_PeerMessageAddTransaction _$$_PeerMessageAddTransactionFromJson(
@@ -81,6 +85,7 @@ _$_PeerMessageAddTransaction _$$_PeerMessageAddTransactionFromJson(
       tag: json['tag'] as String,
       type: $enumDecodeNullable(_$PeerMessageTypeEnumMap, json['type']) ??
           PeerMessageType.addTransaction,
+      timestamp: json['timestamp'] as int,
     );
 
 Map<String, dynamic> _$$_PeerMessageAddTransactionToJson(
@@ -91,6 +96,7 @@ Map<String, dynamic> _$$_PeerMessageAddTransactionToJson(
       'receiver_identity': instance.receiverIdentity,
       'tag': instance.tag,
       'type': _$PeerMessageTypeEnumMap[instance.type]!,
+      'timestamp': instance.timestamp,
     };
 
 _$_PeerMessageBlockHeadersRequest _$$_PeerMessageBlockHeadersRequestFromJson(
@@ -102,6 +108,7 @@ _$_PeerMessageBlockHeadersRequest _$$_PeerMessageBlockHeadersRequestFromJson(
       tag: json['tag'] as String,
       type: $enumDecodeNullable(_$PeerMessageTypeEnumMap, json['type']) ??
           PeerMessageType.blockHeadersRequest,
+      timestamp: json['timestamp'] as int,
     );
 
 Map<String, dynamic> _$$_PeerMessageBlockHeadersRequestToJson(
@@ -112,6 +119,7 @@ Map<String, dynamic> _$$_PeerMessageBlockHeadersRequestToJson(
       'receiver_identity': instance.receiverIdentity,
       'tag': instance.tag,
       'type': _$PeerMessageTypeEnumMap[instance.type]!,
+      'timestamp': instance.timestamp,
     };
 
 _$_PeerMessageBlockHeadersResponse _$$_PeerMessageBlockHeadersResponseFromJson(
@@ -124,6 +132,7 @@ _$_PeerMessageBlockHeadersResponse _$$_PeerMessageBlockHeadersResponseFromJson(
       tag: json['tag'] as String,
       type: $enumDecodeNullable(_$PeerMessageTypeEnumMap, json['type']) ??
           PeerMessageType.blockHeadersResponse,
+      timestamp: json['timestamp'] as int,
     );
 
 Map<String, dynamic> _$$_PeerMessageBlockHeadersResponseToJson(
@@ -134,6 +143,7 @@ Map<String, dynamic> _$$_PeerMessageBlockHeadersResponseToJson(
       'receiver_identity': instance.receiverIdentity,
       'tag': instance.tag,
       'type': _$PeerMessageTypeEnumMap[instance.type]!,
+      'timestamp': instance.timestamp,
     };
 
 _$_PeerMessageBlockRequest _$$_PeerMessageBlockRequestFromJson(
@@ -145,6 +155,7 @@ _$_PeerMessageBlockRequest _$$_PeerMessageBlockRequestFromJson(
       tag: json['tag'] as String,
       type: $enumDecodeNullable(_$PeerMessageTypeEnumMap, json['type']) ??
           PeerMessageType.blockRequest,
+      timestamp: json['timestamp'] as int,
     );
 
 Map<String, dynamic> _$$_PeerMessageBlockRequestToJson(
@@ -155,6 +166,7 @@ Map<String, dynamic> _$$_PeerMessageBlockRequestToJson(
       'receiver_identity': instance.receiverIdentity,
       'tag': instance.tag,
       'type': _$PeerMessageTypeEnumMap[instance.type]!,
+      'timestamp': instance.timestamp,
     };
 
 _$_PeerMessageBlockResponse _$$_PeerMessageBlockResponseFromJson(
@@ -166,6 +178,7 @@ _$_PeerMessageBlockResponse _$$_PeerMessageBlockResponseFromJson(
       tag: json['tag'] as String,
       type: $enumDecodeNullable(_$PeerMessageTypeEnumMap, json['type']) ??
           PeerMessageType.blockResponse,
+      timestamp: json['timestamp'] as int,
     );
 
 Map<String, dynamic> _$$_PeerMessageBlockResponseToJson(
@@ -176,6 +189,7 @@ Map<String, dynamic> _$$_PeerMessageBlockResponseToJson(
       'receiver_identity': instance.receiverIdentity,
       'tag': instance.tag,
       'type': _$PeerMessageTypeEnumMap[instance.type]!,
+      'timestamp': instance.timestamp,
     };
 
 _$_PeerMessageBlockNotFoundResponse
@@ -188,6 +202,7 @@ _$_PeerMessageBlockNotFoundResponse
           tag: json['tag'] as String,
           type: $enumDecodeNullable(_$PeerMessageTypeEnumMap, json['type']) ??
               PeerMessageType.blockNotFoundResponse,
+          timestamp: json['timestamp'] as int,
         );
 
 Map<String, dynamic> _$$_PeerMessageBlockNotFoundResponseToJson(
@@ -198,6 +213,7 @@ Map<String, dynamic> _$$_PeerMessageBlockNotFoundResponseToJson(
       'receiver_identity': instance.receiverIdentity,
       'tag': instance.tag,
       'type': _$PeerMessageTypeEnumMap[instance.type]!,
+      'timestamp': instance.timestamp,
     };
 
 _$_PeerMessagePeerStateRequest _$$_PeerMessagePeerStateRequestFromJson(
@@ -209,6 +225,7 @@ _$_PeerMessagePeerStateRequest _$$_PeerMessagePeerStateRequestFromJson(
       type: $enumDecodeNullable(_$PeerMessageTypeEnumMap, json['type']) ??
           PeerMessageType.peerStateRequest,
       content: json['content'],
+      timestamp: json['timestamp'] as int,
     );
 
 Map<String, dynamic> _$$_PeerMessagePeerStateRequestToJson(
@@ -219,6 +236,7 @@ Map<String, dynamic> _$$_PeerMessagePeerStateRequestToJson(
       'tag': instance.tag,
       'type': _$PeerMessageTypeEnumMap[instance.type]!,
       'content': instance.content,
+      'timestamp': instance.timestamp,
     };
 
 _$_PeerMessagePeerStateResponse _$$_PeerMessagePeerStateResponseFromJson(
@@ -230,6 +248,7 @@ _$_PeerMessagePeerStateResponse _$$_PeerMessagePeerStateResponseFromJson(
       tag: json['tag'] as String,
       type: $enumDecodeNullable(_$PeerMessageTypeEnumMap, json['type']) ??
           PeerMessageType.peerStateResponse,
+      timestamp: json['timestamp'] as int,
     );
 
 Map<String, dynamic> _$$_PeerMessagePeerStateResponseToJson(
@@ -240,6 +259,7 @@ Map<String, dynamic> _$$_PeerMessagePeerStateResponseToJson(
       'receiver_identity': instance.receiverIdentity,
       'tag': instance.tag,
       'type': _$PeerMessageTypeEnumMap[instance.type]!,
+      'timestamp': instance.timestamp,
     };
 
 _$_PeerMessagePeerStateUpdate _$$_PeerMessagePeerStateUpdateFromJson(
@@ -251,6 +271,7 @@ _$_PeerMessagePeerStateUpdate _$$_PeerMessagePeerStateUpdateFromJson(
       tag: json['tag'] as String,
       type: $enumDecodeNullable(_$PeerMessageTypeEnumMap, json['type']) ??
           PeerMessageType.peerStateUpdate,
+      timestamp: json['timestamp'] as int,
     );
 
 Map<String, dynamic> _$$_PeerMessagePeerStateUpdateToJson(
@@ -261,6 +282,7 @@ Map<String, dynamic> _$$_PeerMessagePeerStateUpdateToJson(
       'receiver_identity': instance.receiverIdentity,
       'tag': instance.tag,
       'type': _$PeerMessageTypeEnumMap[instance.type]!,
+      'timestamp': instance.timestamp,
     };
 
 _$_PeerMessageAddBlock _$$_PeerMessageAddBlockFromJson(
@@ -272,6 +294,7 @@ _$_PeerMessageAddBlock _$$_PeerMessageAddBlockFromJson(
       tag: json['tag'] as String,
       type: $enumDecodeNullable(_$PeerMessageTypeEnumMap, json['type']) ??
           PeerMessageType.addBlock,
+      timestamp: json['timestamp'] as int,
     );
 
 Map<String, dynamic> _$$_PeerMessageAddBlockToJson(
@@ -282,6 +305,7 @@ Map<String, dynamic> _$$_PeerMessageAddBlockToJson(
       'receiver_identity': instance.receiverIdentity,
       'tag': instance.tag,
       'type': _$PeerMessageTypeEnumMap[instance.type]!,
+      'timestamp': instance.timestamp,
     };
 
 _$_PeerMessageBlockRejected _$$_PeerMessageBlockRejectedFromJson(
@@ -294,6 +318,7 @@ _$_PeerMessageBlockRejected _$$_PeerMessageBlockRejectedFromJson(
       type: $enumDecodeNullable(_$PeerMessageTypeEnumMap, json['type']) ??
           PeerMessageType.blockRejected,
       content: json['content'],
+      timestamp: json['timestamp'] as int,
     );
 
 Map<String, dynamic> _$$_PeerMessageBlockRejectedToJson(
@@ -305,6 +330,7 @@ Map<String, dynamic> _$$_PeerMessageBlockRejectedToJson(
       'tag': instance.tag,
       'type': _$PeerMessageTypeEnumMap[instance.type]!,
       'content': instance.content,
+      'timestamp': instance.timestamp,
     };
 
 _$_PeerMessageBlockAccepted _$$_PeerMessageBlockAcceptedFromJson(
@@ -316,6 +342,7 @@ _$_PeerMessageBlockAccepted _$$_PeerMessageBlockAcceptedFromJson(
       tag: json['tag'] as String,
       type: $enumDecodeNullable(_$PeerMessageTypeEnumMap, json['type']) ??
           PeerMessageType.blockAccepted,
+      timestamp: json['timestamp'] as int,
     );
 
 Map<String, dynamic> _$$_PeerMessageBlockAcceptedToJson(
@@ -326,6 +353,7 @@ Map<String, dynamic> _$$_PeerMessageBlockAcceptedToJson(
       'receiver_identity': instance.receiverIdentity,
       'tag': instance.tag,
       'type': _$PeerMessageTypeEnumMap[instance.type]!,
+      'timestamp': instance.timestamp,
     };
 
 _$_PeerMessageGetLastBlockRequest _$$_PeerMessageGetLastBlockRequestFromJson(
@@ -337,6 +365,7 @@ _$_PeerMessageGetLastBlockRequest _$$_PeerMessageGetLastBlockRequestFromJson(
       type: $enumDecodeNullable(_$PeerMessageTypeEnumMap, json['type']) ??
           PeerMessageType.getLastBlockRequest,
       content: json['content'],
+      timestamp: json['timestamp'] as int,
     );
 
 Map<String, dynamic> _$$_PeerMessageGetLastBlockRequestToJson(
@@ -347,6 +376,7 @@ Map<String, dynamic> _$$_PeerMessageGetLastBlockRequestToJson(
       'tag': instance.tag,
       'type': _$PeerMessageTypeEnumMap[instance.type]!,
       'content': instance.content,
+      'timestamp': instance.timestamp,
     };
 
 _$_PeerMessageGetLastBlockResponse _$$_PeerMessageGetLastBlockResponseFromJson(
@@ -358,6 +388,7 @@ _$_PeerMessageGetLastBlockResponse _$$_PeerMessageGetLastBlockResponseFromJson(
       tag: json['tag'] as String,
       type: $enumDecodeNullable(_$PeerMessageTypeEnumMap, json['type']) ??
           PeerMessageType.getLastBlockResponse,
+      timestamp: json['timestamp'] as int,
     );
 
 Map<String, dynamic> _$$_PeerMessageGetLastBlockResponseToJson(
@@ -368,6 +399,7 @@ Map<String, dynamic> _$$_PeerMessageGetLastBlockResponseToJson(
       'receiver_identity': instance.receiverIdentity,
       'tag': instance.tag,
       'type': _$PeerMessageTypeEnumMap[instance.type]!,
+      'timestamp': instance.timestamp,
     };
 
 _$_PeerMessageSetTransactionStatus _$$_PeerMessageSetTransactionStatusFromJson(
@@ -380,6 +412,7 @@ _$_PeerMessageSetTransactionStatus _$$_PeerMessageSetTransactionStatusFromJson(
       tag: json['tag'] as String,
       type: $enumDecodeNullable(_$PeerMessageTypeEnumMap, json['type']) ??
           PeerMessageType.setTransactionStatus,
+      timestamp: json['timestamp'] as int,
     );
 
 Map<String, dynamic> _$$_PeerMessageSetTransactionStatusToJson(
@@ -390,4 +423,5 @@ Map<String, dynamic> _$$_PeerMessageSetTransactionStatusToJson(
       'receiver_identity': instance.receiverIdentity,
       'tag': instance.tag,
       'type': _$PeerMessageTypeEnumMap[instance.type]!,
+      'timestamp': instance.timestamp,
     };

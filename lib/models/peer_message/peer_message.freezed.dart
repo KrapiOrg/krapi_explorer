@@ -64,47 +64,94 @@ mixin _$PeerMessage {
   String get tag => throw _privateConstructorUsedError;
   PeerMessageType get type => throw _privateConstructorUsedError;
   dynamic get content => throw _privateConstructorUsedError;
+  int get timestamp => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)
+            String tag, PeerMessageType type, dynamic content, int timestamp)
         peerTypeRequest,
-    required TResult Function(PeerType content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            PeerType content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         peerTypeResponse,
-    required TResult Function(Transaction content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            Transaction content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         addTransaction,
-    required TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         blockHeadersRequest,
     required TResult Function(
             BlockHeadersResponseContent content,
             String senderIdentity,
             String receiverIdentity,
             String tag,
-            PeerMessageType type)
+            PeerMessageType type,
+            int timestamp)
         blockHeadersResponse,
-    required TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         blockRequest,
-    required TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         blockResponse,
-    required TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         blockNotFoundResponse,
     required TResult Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)
+            String tag, PeerMessageType type, dynamic content, int timestamp)
         peerStateRequest,
-    required TResult Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         peerStateResponse,
-    required TResult Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         peerStateUpdate,
-    required TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         addBlock,
     required TResult Function(
             BlockHeader header,
@@ -112,67 +159,125 @@ mixin _$PeerMessage {
             String receiverIdentity,
             String tag,
             PeerMessageType type,
-            dynamic content)
+            dynamic content,
+            int timestamp)
         blockRejected,
-    required TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         blockAccepted,
     required TResult Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)
+            String tag, PeerMessageType type, dynamic content, int timestamp)
         getLastBlockRequest,
-    required TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         getLastBlockResponse,
     required TResult Function(
             SetTransactionStatusContent content,
             String senderIdentity,
             String receiverIdentity,
             String tag,
-            PeerMessageType type)
+            PeerMessageType type,
+            int timestamp)
         setTransactionStatus,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)?
+            String tag, PeerMessageType type, dynamic content, int timestamp)?
         peerTypeRequest,
-    TResult? Function(PeerType content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            PeerType content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerTypeResponse,
-    TResult? Function(Transaction content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            Transaction content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         addTransaction,
-    TResult? Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockHeadersRequest,
     TResult? Function(
             BlockHeadersResponseContent content,
             String senderIdentity,
             String receiverIdentity,
             String tag,
-            PeerMessageType type)?
+            PeerMessageType type,
+            int timestamp)?
         blockHeadersResponse,
-    TResult? Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockRequest,
-    TResult? Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockResponse,
-    TResult? Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockNotFoundResponse,
     TResult? Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)?
+            String tag, PeerMessageType type, dynamic content, int timestamp)?
         peerStateRequest,
-    TResult? Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerStateResponse,
-    TResult? Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerStateUpdate,
-    TResult? Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         addBlock,
     TResult? Function(
             BlockHeader header,
@@ -180,63 +285,125 @@ mixin _$PeerMessage {
             String receiverIdentity,
             String tag,
             PeerMessageType type,
-            dynamic content)?
+            dynamic content,
+            int timestamp)?
         blockRejected,
-    TResult? Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockAccepted,
     TResult? Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)?
+            String tag, PeerMessageType type, dynamic content, int timestamp)?
         getLastBlockRequest,
-    TResult? Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         getLastBlockResponse,
     TResult? Function(
             SetTransactionStatusContent content,
             String senderIdentity,
             String receiverIdentity,
             String tag,
-            PeerMessageType type)?
+            PeerMessageType type,
+            int timestamp)?
         setTransactionStatus,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String senderIdentity, String receiverIdentity, String tag,
-            PeerMessageType type, dynamic content)?
+            PeerMessageType type, dynamic content, int timestamp)?
         peerTypeRequest,
-    TResult Function(PeerType content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            PeerType content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerTypeResponse,
-    TResult Function(Transaction content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            Transaction content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         addTransaction,
-    TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockHeadersRequest,
-    TResult Function(BlockHeadersResponseContent content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeadersResponseContent content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockHeadersResponse,
-    TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockRequest,
-    TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockResponse,
-    TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockNotFoundResponse,
     TResult Function(String senderIdentity, String receiverIdentity, String tag,
-            PeerMessageType type, dynamic content)?
+            PeerMessageType type, dynamic content, int timestamp)?
         peerStateRequest,
-    TResult Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerStateResponse,
-    TResult Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerStateUpdate,
-    TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         addBlock,
     TResult Function(
             BlockHeader header,
@@ -244,19 +411,35 @@ mixin _$PeerMessage {
             String receiverIdentity,
             String tag,
             PeerMessageType type,
-            dynamic content)?
+            dynamic content,
+            int timestamp)?
         blockRejected,
-    TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockAccepted,
     TResult Function(String senderIdentity, String receiverIdentity, String tag,
-            PeerMessageType type, dynamic content)?
+            PeerMessageType type, dynamic content, int timestamp)?
         getLastBlockRequest,
-    TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         getLastBlockResponse,
-    TResult Function(SetTransactionStatusContent content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            SetTransactionStatusContent content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         setTransactionStatus,
     required TResult orElse(),
   }) =>
@@ -364,7 +547,8 @@ abstract class $PeerMessageCopyWith<$Res> {
       {String senderIdentity,
       String receiverIdentity,
       String tag,
-      PeerMessageType type});
+      PeerMessageType type,
+      int timestamp});
 }
 
 /// @nodoc
@@ -384,6 +568,7 @@ class _$PeerMessageCopyWithImpl<$Res, $Val extends PeerMessage>
     Object? receiverIdentity = null,
     Object? tag = null,
     Object? type = null,
+    Object? timestamp = null,
   }) {
     return _then(_value.copyWith(
       senderIdentity: null == senderIdentity
@@ -402,6 +587,10 @@ class _$PeerMessageCopyWithImpl<$Res, $Val extends PeerMessage>
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as PeerMessageType,
+      timestamp: null == timestamp
+          ? _value.timestamp
+          : timestamp // ignore: cast_nullable_to_non_nullable
+              as int,
     ) as $Val);
   }
 }
@@ -420,7 +609,8 @@ abstract class _$$_PeerMessagePeerTypeRequestCopyWith<$Res>
       String receiverIdentity,
       String tag,
       PeerMessageType type,
-      dynamic content});
+      dynamic content,
+      int timestamp});
 }
 
 /// @nodoc
@@ -440,6 +630,7 @@ class __$$_PeerMessagePeerTypeRequestCopyWithImpl<$Res>
     Object? tag = null,
     Object? type = null,
     Object? content = freezed,
+    Object? timestamp = null,
   }) {
     return _then(_$_PeerMessagePeerTypeRequest(
       senderIdentity: null == senderIdentity
@@ -462,6 +653,10 @@ class __$$_PeerMessagePeerTypeRequestCopyWithImpl<$Res>
           ? _value.content
           : content // ignore: cast_nullable_to_non_nullable
               as dynamic,
+      timestamp: null == timestamp
+          ? _value.timestamp
+          : timestamp // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -474,7 +669,8 @@ class _$_PeerMessagePeerTypeRequest implements _PeerMessagePeerTypeRequest {
       required this.receiverIdentity,
       required this.tag,
       this.type = PeerMessageType.peerTypeRequest,
-      this.content});
+      this.content,
+      required this.timestamp});
 
   factory _$_PeerMessagePeerTypeRequest.fromJson(Map<String, dynamic> json) =>
       _$$_PeerMessagePeerTypeRequestFromJson(json);
@@ -490,10 +686,12 @@ class _$_PeerMessagePeerTypeRequest implements _PeerMessagePeerTypeRequest {
   final PeerMessageType type;
   @override
   final dynamic content;
+  @override
+  final int timestamp;
 
   @override
   String toString() {
-    return 'PeerMessage.peerTypeRequest(senderIdentity: $senderIdentity, receiverIdentity: $receiverIdentity, tag: $tag, type: $type, content: $content)';
+    return 'PeerMessage.peerTypeRequest(senderIdentity: $senderIdentity, receiverIdentity: $receiverIdentity, tag: $tag, type: $type, content: $content, timestamp: $timestamp)';
   }
 
   @override
@@ -507,13 +705,15 @@ class _$_PeerMessagePeerTypeRequest implements _PeerMessagePeerTypeRequest {
                 other.receiverIdentity == receiverIdentity) &&
             (identical(other.tag, tag) || other.tag == tag) &&
             (identical(other.type, type) || other.type == type) &&
-            const DeepCollectionEquality().equals(other.content, content));
+            const DeepCollectionEquality().equals(other.content, content) &&
+            (identical(other.timestamp, timestamp) ||
+                other.timestamp == timestamp));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, senderIdentity, receiverIdentity,
-      tag, type, const DeepCollectionEquality().hash(content));
+      tag, type, const DeepCollectionEquality().hash(content), timestamp);
 
   @JsonKey(ignore: true)
   @override
@@ -526,44 +726,90 @@ class _$_PeerMessagePeerTypeRequest implements _PeerMessagePeerTypeRequest {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)
+            String tag, PeerMessageType type, dynamic content, int timestamp)
         peerTypeRequest,
-    required TResult Function(PeerType content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            PeerType content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         peerTypeResponse,
-    required TResult Function(Transaction content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            Transaction content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         addTransaction,
-    required TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         blockHeadersRequest,
     required TResult Function(
             BlockHeadersResponseContent content,
             String senderIdentity,
             String receiverIdentity,
             String tag,
-            PeerMessageType type)
+            PeerMessageType type,
+            int timestamp)
         blockHeadersResponse,
-    required TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         blockRequest,
-    required TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         blockResponse,
-    required TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         blockNotFoundResponse,
     required TResult Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)
+            String tag, PeerMessageType type, dynamic content, int timestamp)
         peerStateRequest,
-    required TResult Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         peerStateResponse,
-    required TResult Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         peerStateUpdate,
-    required TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         addBlock,
     required TResult Function(
             BlockHeader header,
@@ -571,71 +817,129 @@ class _$_PeerMessagePeerTypeRequest implements _PeerMessagePeerTypeRequest {
             String receiverIdentity,
             String tag,
             PeerMessageType type,
-            dynamic content)
+            dynamic content,
+            int timestamp)
         blockRejected,
-    required TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         blockAccepted,
     required TResult Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)
+            String tag, PeerMessageType type, dynamic content, int timestamp)
         getLastBlockRequest,
-    required TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         getLastBlockResponse,
     required TResult Function(
             SetTransactionStatusContent content,
             String senderIdentity,
             String receiverIdentity,
             String tag,
-            PeerMessageType type)
+            PeerMessageType type,
+            int timestamp)
         setTransactionStatus,
   }) {
     return peerTypeRequest(
-        senderIdentity, receiverIdentity, tag, type, content);
+        senderIdentity, receiverIdentity, tag, type, content, timestamp);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)?
+            String tag, PeerMessageType type, dynamic content, int timestamp)?
         peerTypeRequest,
-    TResult? Function(PeerType content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            PeerType content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerTypeResponse,
-    TResult? Function(Transaction content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            Transaction content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         addTransaction,
-    TResult? Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockHeadersRequest,
     TResult? Function(
             BlockHeadersResponseContent content,
             String senderIdentity,
             String receiverIdentity,
             String tag,
-            PeerMessageType type)?
+            PeerMessageType type,
+            int timestamp)?
         blockHeadersResponse,
-    TResult? Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockRequest,
-    TResult? Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockResponse,
-    TResult? Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockNotFoundResponse,
     TResult? Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)?
+            String tag, PeerMessageType type, dynamic content, int timestamp)?
         peerStateRequest,
-    TResult? Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerStateResponse,
-    TResult? Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerStateUpdate,
-    TResult? Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         addBlock,
     TResult? Function(
             BlockHeader header,
@@ -643,67 +947,129 @@ class _$_PeerMessagePeerTypeRequest implements _PeerMessagePeerTypeRequest {
             String receiverIdentity,
             String tag,
             PeerMessageType type,
-            dynamic content)?
+            dynamic content,
+            int timestamp)?
         blockRejected,
-    TResult? Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockAccepted,
     TResult? Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)?
+            String tag, PeerMessageType type, dynamic content, int timestamp)?
         getLastBlockRequest,
-    TResult? Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         getLastBlockResponse,
     TResult? Function(
             SetTransactionStatusContent content,
             String senderIdentity,
             String receiverIdentity,
             String tag,
-            PeerMessageType type)?
+            PeerMessageType type,
+            int timestamp)?
         setTransactionStatus,
   }) {
     return peerTypeRequest?.call(
-        senderIdentity, receiverIdentity, tag, type, content);
+        senderIdentity, receiverIdentity, tag, type, content, timestamp);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String senderIdentity, String receiverIdentity, String tag,
-            PeerMessageType type, dynamic content)?
+            PeerMessageType type, dynamic content, int timestamp)?
         peerTypeRequest,
-    TResult Function(PeerType content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            PeerType content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerTypeResponse,
-    TResult Function(Transaction content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            Transaction content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         addTransaction,
-    TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockHeadersRequest,
-    TResult Function(BlockHeadersResponseContent content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeadersResponseContent content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockHeadersResponse,
-    TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockRequest,
-    TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockResponse,
-    TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockNotFoundResponse,
     TResult Function(String senderIdentity, String receiverIdentity, String tag,
-            PeerMessageType type, dynamic content)?
+            PeerMessageType type, dynamic content, int timestamp)?
         peerStateRequest,
-    TResult Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerStateResponse,
-    TResult Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerStateUpdate,
-    TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         addBlock,
     TResult Function(
             BlockHeader header,
@@ -711,25 +1077,41 @@ class _$_PeerMessagePeerTypeRequest implements _PeerMessagePeerTypeRequest {
             String receiverIdentity,
             String tag,
             PeerMessageType type,
-            dynamic content)?
+            dynamic content,
+            int timestamp)?
         blockRejected,
-    TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockAccepted,
     TResult Function(String senderIdentity, String receiverIdentity, String tag,
-            PeerMessageType type, dynamic content)?
+            PeerMessageType type, dynamic content, int timestamp)?
         getLastBlockRequest,
-    TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         getLastBlockResponse,
-    TResult Function(SetTransactionStatusContent content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            SetTransactionStatusContent content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         setTransactionStatus,
     required TResult orElse(),
   }) {
     if (peerTypeRequest != null) {
       return peerTypeRequest(
-          senderIdentity, receiverIdentity, tag, type, content);
+          senderIdentity, receiverIdentity, tag, type, content, timestamp);
     }
     return orElse();
   }
@@ -848,7 +1230,8 @@ abstract class _PeerMessagePeerTypeRequest
       required final String receiverIdentity,
       required final String tag,
       final PeerMessageType type,
-      final dynamic content}) = _$_PeerMessagePeerTypeRequest;
+      final dynamic content,
+      required final int timestamp}) = _$_PeerMessagePeerTypeRequest;
 
   factory _PeerMessagePeerTypeRequest.fromJson(Map<String, dynamic> json) =
       _$_PeerMessagePeerTypeRequest.fromJson;
@@ -863,6 +1246,8 @@ abstract class _PeerMessagePeerTypeRequest
   PeerMessageType get type;
   @override
   dynamic get content;
+  @override
+  int get timestamp;
   @override
   @JsonKey(ignore: true)
   _$$_PeerMessagePeerTypeRequestCopyWith<_$_PeerMessagePeerTypeRequest>
@@ -883,7 +1268,8 @@ abstract class _$$_PeerMessagePeerTypeResponseCopyWith<$Res>
       String senderIdentity,
       String receiverIdentity,
       String tag,
-      PeerMessageType type});
+      PeerMessageType type,
+      int timestamp});
 }
 
 /// @nodoc
@@ -903,6 +1289,7 @@ class __$$_PeerMessagePeerTypeResponseCopyWithImpl<$Res>
     Object? receiverIdentity = null,
     Object? tag = null,
     Object? type = null,
+    Object? timestamp = null,
   }) {
     return _then(_$_PeerMessagePeerTypeResponse(
       content: null == content
@@ -925,6 +1312,10 @@ class __$$_PeerMessagePeerTypeResponseCopyWithImpl<$Res>
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as PeerMessageType,
+      timestamp: null == timestamp
+          ? _value.timestamp
+          : timestamp // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -937,7 +1328,8 @@ class _$_PeerMessagePeerTypeResponse implements _PeerMessagePeerTypeResponse {
       required this.senderIdentity,
       required this.receiverIdentity,
       required this.tag,
-      this.type = PeerMessageType.peerTypeResponse});
+      this.type = PeerMessageType.peerTypeResponse,
+      required this.timestamp});
 
   factory _$_PeerMessagePeerTypeResponse.fromJson(Map<String, dynamic> json) =>
       _$$_PeerMessagePeerTypeResponseFromJson(json);
@@ -953,10 +1345,12 @@ class _$_PeerMessagePeerTypeResponse implements _PeerMessagePeerTypeResponse {
   @override
   @JsonKey()
   final PeerMessageType type;
+  @override
+  final int timestamp;
 
   @override
   String toString() {
-    return 'PeerMessage.peerTypeResponse(content: $content, senderIdentity: $senderIdentity, receiverIdentity: $receiverIdentity, tag: $tag, type: $type)';
+    return 'PeerMessage.peerTypeResponse(content: $content, senderIdentity: $senderIdentity, receiverIdentity: $receiverIdentity, tag: $tag, type: $type, timestamp: $timestamp)';
   }
 
   @override
@@ -970,13 +1364,15 @@ class _$_PeerMessagePeerTypeResponse implements _PeerMessagePeerTypeResponse {
             (identical(other.receiverIdentity, receiverIdentity) ||
                 other.receiverIdentity == receiverIdentity) &&
             (identical(other.tag, tag) || other.tag == tag) &&
-            (identical(other.type, type) || other.type == type));
+            (identical(other.type, type) || other.type == type) &&
+            (identical(other.timestamp, timestamp) ||
+                other.timestamp == timestamp));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, content, senderIdentity, receiverIdentity, tag, type);
+  int get hashCode => Object.hash(runtimeType, content, senderIdentity,
+      receiverIdentity, tag, type, timestamp);
 
   @JsonKey(ignore: true)
   @override
@@ -989,44 +1385,90 @@ class _$_PeerMessagePeerTypeResponse implements _PeerMessagePeerTypeResponse {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)
+            String tag, PeerMessageType type, dynamic content, int timestamp)
         peerTypeRequest,
-    required TResult Function(PeerType content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            PeerType content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         peerTypeResponse,
-    required TResult Function(Transaction content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            Transaction content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         addTransaction,
-    required TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         blockHeadersRequest,
     required TResult Function(
             BlockHeadersResponseContent content,
             String senderIdentity,
             String receiverIdentity,
             String tag,
-            PeerMessageType type)
+            PeerMessageType type,
+            int timestamp)
         blockHeadersResponse,
-    required TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         blockRequest,
-    required TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         blockResponse,
-    required TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         blockNotFoundResponse,
     required TResult Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)
+            String tag, PeerMessageType type, dynamic content, int timestamp)
         peerStateRequest,
-    required TResult Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         peerStateResponse,
-    required TResult Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         peerStateUpdate,
-    required TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         addBlock,
     required TResult Function(
             BlockHeader header,
@@ -1034,71 +1476,129 @@ class _$_PeerMessagePeerTypeResponse implements _PeerMessagePeerTypeResponse {
             String receiverIdentity,
             String tag,
             PeerMessageType type,
-            dynamic content)
+            dynamic content,
+            int timestamp)
         blockRejected,
-    required TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         blockAccepted,
     required TResult Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)
+            String tag, PeerMessageType type, dynamic content, int timestamp)
         getLastBlockRequest,
-    required TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         getLastBlockResponse,
     required TResult Function(
             SetTransactionStatusContent content,
             String senderIdentity,
             String receiverIdentity,
             String tag,
-            PeerMessageType type)
+            PeerMessageType type,
+            int timestamp)
         setTransactionStatus,
   }) {
     return peerTypeResponse(
-        content, senderIdentity, receiverIdentity, tag, type);
+        content, senderIdentity, receiverIdentity, tag, type, timestamp);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)?
+            String tag, PeerMessageType type, dynamic content, int timestamp)?
         peerTypeRequest,
-    TResult? Function(PeerType content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            PeerType content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerTypeResponse,
-    TResult? Function(Transaction content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            Transaction content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         addTransaction,
-    TResult? Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockHeadersRequest,
     TResult? Function(
             BlockHeadersResponseContent content,
             String senderIdentity,
             String receiverIdentity,
             String tag,
-            PeerMessageType type)?
+            PeerMessageType type,
+            int timestamp)?
         blockHeadersResponse,
-    TResult? Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockRequest,
-    TResult? Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockResponse,
-    TResult? Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockNotFoundResponse,
     TResult? Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)?
+            String tag, PeerMessageType type, dynamic content, int timestamp)?
         peerStateRequest,
-    TResult? Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerStateResponse,
-    TResult? Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerStateUpdate,
-    TResult? Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         addBlock,
     TResult? Function(
             BlockHeader header,
@@ -1106,67 +1606,129 @@ class _$_PeerMessagePeerTypeResponse implements _PeerMessagePeerTypeResponse {
             String receiverIdentity,
             String tag,
             PeerMessageType type,
-            dynamic content)?
+            dynamic content,
+            int timestamp)?
         blockRejected,
-    TResult? Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockAccepted,
     TResult? Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)?
+            String tag, PeerMessageType type, dynamic content, int timestamp)?
         getLastBlockRequest,
-    TResult? Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         getLastBlockResponse,
     TResult? Function(
             SetTransactionStatusContent content,
             String senderIdentity,
             String receiverIdentity,
             String tag,
-            PeerMessageType type)?
+            PeerMessageType type,
+            int timestamp)?
         setTransactionStatus,
   }) {
     return peerTypeResponse?.call(
-        content, senderIdentity, receiverIdentity, tag, type);
+        content, senderIdentity, receiverIdentity, tag, type, timestamp);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String senderIdentity, String receiverIdentity, String tag,
-            PeerMessageType type, dynamic content)?
+            PeerMessageType type, dynamic content, int timestamp)?
         peerTypeRequest,
-    TResult Function(PeerType content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            PeerType content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerTypeResponse,
-    TResult Function(Transaction content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            Transaction content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         addTransaction,
-    TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockHeadersRequest,
-    TResult Function(BlockHeadersResponseContent content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeadersResponseContent content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockHeadersResponse,
-    TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockRequest,
-    TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockResponse,
-    TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockNotFoundResponse,
     TResult Function(String senderIdentity, String receiverIdentity, String tag,
-            PeerMessageType type, dynamic content)?
+            PeerMessageType type, dynamic content, int timestamp)?
         peerStateRequest,
-    TResult Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerStateResponse,
-    TResult Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerStateUpdate,
-    TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         addBlock,
     TResult Function(
             BlockHeader header,
@@ -1174,25 +1736,41 @@ class _$_PeerMessagePeerTypeResponse implements _PeerMessagePeerTypeResponse {
             String receiverIdentity,
             String tag,
             PeerMessageType type,
-            dynamic content)?
+            dynamic content,
+            int timestamp)?
         blockRejected,
-    TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockAccepted,
     TResult Function(String senderIdentity, String receiverIdentity, String tag,
-            PeerMessageType type, dynamic content)?
+            PeerMessageType type, dynamic content, int timestamp)?
         getLastBlockRequest,
-    TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         getLastBlockResponse,
-    TResult Function(SetTransactionStatusContent content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            SetTransactionStatusContent content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         setTransactionStatus,
     required TResult orElse(),
   }) {
     if (peerTypeResponse != null) {
       return peerTypeResponse(
-          content, senderIdentity, receiverIdentity, tag, type);
+          content, senderIdentity, receiverIdentity, tag, type, timestamp);
     }
     return orElse();
   }
@@ -1311,7 +1889,8 @@ abstract class _PeerMessagePeerTypeResponse
       required final String senderIdentity,
       required final String receiverIdentity,
       required final String tag,
-      final PeerMessageType type}) = _$_PeerMessagePeerTypeResponse;
+      final PeerMessageType type,
+      required final int timestamp}) = _$_PeerMessagePeerTypeResponse;
 
   factory _PeerMessagePeerTypeResponse.fromJson(Map<String, dynamic> json) =
       _$_PeerMessagePeerTypeResponse.fromJson;
@@ -1326,6 +1905,8 @@ abstract class _PeerMessagePeerTypeResponse
   String get tag;
   @override
   PeerMessageType get type;
+  @override
+  int get timestamp;
   @override
   @JsonKey(ignore: true)
   _$$_PeerMessagePeerTypeResponseCopyWith<_$_PeerMessagePeerTypeResponse>
@@ -1346,7 +1927,8 @@ abstract class _$$_PeerMessageAddTransactionCopyWith<$Res>
       String senderIdentity,
       String receiverIdentity,
       String tag,
-      PeerMessageType type});
+      PeerMessageType type,
+      int timestamp});
 
   $TransactionCopyWith<$Res> get content;
 }
@@ -1368,6 +1950,7 @@ class __$$_PeerMessageAddTransactionCopyWithImpl<$Res>
     Object? receiverIdentity = null,
     Object? tag = null,
     Object? type = null,
+    Object? timestamp = null,
   }) {
     return _then(_$_PeerMessageAddTransaction(
       content: null == content
@@ -1390,6 +1973,10 @@ class __$$_PeerMessageAddTransactionCopyWithImpl<$Res>
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as PeerMessageType,
+      timestamp: null == timestamp
+          ? _value.timestamp
+          : timestamp // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 
@@ -1410,7 +1997,8 @@ class _$_PeerMessageAddTransaction implements _PeerMessageAddTransaction {
       required this.senderIdentity,
       required this.receiverIdentity,
       required this.tag,
-      this.type = PeerMessageType.addTransaction});
+      this.type = PeerMessageType.addTransaction,
+      required this.timestamp});
 
   factory _$_PeerMessageAddTransaction.fromJson(Map<String, dynamic> json) =>
       _$$_PeerMessageAddTransactionFromJson(json);
@@ -1426,10 +2014,12 @@ class _$_PeerMessageAddTransaction implements _PeerMessageAddTransaction {
   @override
   @JsonKey()
   final PeerMessageType type;
+  @override
+  final int timestamp;
 
   @override
   String toString() {
-    return 'PeerMessage.addTransaction(content: $content, senderIdentity: $senderIdentity, receiverIdentity: $receiverIdentity, tag: $tag, type: $type)';
+    return 'PeerMessage.addTransaction(content: $content, senderIdentity: $senderIdentity, receiverIdentity: $receiverIdentity, tag: $tag, type: $type, timestamp: $timestamp)';
   }
 
   @override
@@ -1443,13 +2033,15 @@ class _$_PeerMessageAddTransaction implements _PeerMessageAddTransaction {
             (identical(other.receiverIdentity, receiverIdentity) ||
                 other.receiverIdentity == receiverIdentity) &&
             (identical(other.tag, tag) || other.tag == tag) &&
-            (identical(other.type, type) || other.type == type));
+            (identical(other.type, type) || other.type == type) &&
+            (identical(other.timestamp, timestamp) ||
+                other.timestamp == timestamp));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, content, senderIdentity, receiverIdentity, tag, type);
+  int get hashCode => Object.hash(runtimeType, content, senderIdentity,
+      receiverIdentity, tag, type, timestamp);
 
   @JsonKey(ignore: true)
   @override
@@ -1462,44 +2054,90 @@ class _$_PeerMessageAddTransaction implements _PeerMessageAddTransaction {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)
+            String tag, PeerMessageType type, dynamic content, int timestamp)
         peerTypeRequest,
-    required TResult Function(PeerType content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            PeerType content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         peerTypeResponse,
-    required TResult Function(Transaction content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            Transaction content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         addTransaction,
-    required TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         blockHeadersRequest,
     required TResult Function(
             BlockHeadersResponseContent content,
             String senderIdentity,
             String receiverIdentity,
             String tag,
-            PeerMessageType type)
+            PeerMessageType type,
+            int timestamp)
         blockHeadersResponse,
-    required TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         blockRequest,
-    required TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         blockResponse,
-    required TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         blockNotFoundResponse,
     required TResult Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)
+            String tag, PeerMessageType type, dynamic content, int timestamp)
         peerStateRequest,
-    required TResult Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         peerStateResponse,
-    required TResult Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         peerStateUpdate,
-    required TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         addBlock,
     required TResult Function(
             BlockHeader header,
@@ -1507,70 +2145,129 @@ class _$_PeerMessageAddTransaction implements _PeerMessageAddTransaction {
             String receiverIdentity,
             String tag,
             PeerMessageType type,
-            dynamic content)
+            dynamic content,
+            int timestamp)
         blockRejected,
-    required TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         blockAccepted,
     required TResult Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)
+            String tag, PeerMessageType type, dynamic content, int timestamp)
         getLastBlockRequest,
-    required TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         getLastBlockResponse,
     required TResult Function(
             SetTransactionStatusContent content,
             String senderIdentity,
             String receiverIdentity,
             String tag,
-            PeerMessageType type)
+            PeerMessageType type,
+            int timestamp)
         setTransactionStatus,
   }) {
-    return addTransaction(content, senderIdentity, receiverIdentity, tag, type);
+    return addTransaction(
+        content, senderIdentity, receiverIdentity, tag, type, timestamp);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)?
+            String tag, PeerMessageType type, dynamic content, int timestamp)?
         peerTypeRequest,
-    TResult? Function(PeerType content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            PeerType content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerTypeResponse,
-    TResult? Function(Transaction content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            Transaction content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         addTransaction,
-    TResult? Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockHeadersRequest,
     TResult? Function(
             BlockHeadersResponseContent content,
             String senderIdentity,
             String receiverIdentity,
             String tag,
-            PeerMessageType type)?
+            PeerMessageType type,
+            int timestamp)?
         blockHeadersResponse,
-    TResult? Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockRequest,
-    TResult? Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockResponse,
-    TResult? Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockNotFoundResponse,
     TResult? Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)?
+            String tag, PeerMessageType type, dynamic content, int timestamp)?
         peerStateRequest,
-    TResult? Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerStateResponse,
-    TResult? Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerStateUpdate,
-    TResult? Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         addBlock,
     TResult? Function(
             BlockHeader header,
@@ -1578,67 +2275,129 @@ class _$_PeerMessageAddTransaction implements _PeerMessageAddTransaction {
             String receiverIdentity,
             String tag,
             PeerMessageType type,
-            dynamic content)?
+            dynamic content,
+            int timestamp)?
         blockRejected,
-    TResult? Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockAccepted,
     TResult? Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)?
+            String tag, PeerMessageType type, dynamic content, int timestamp)?
         getLastBlockRequest,
-    TResult? Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         getLastBlockResponse,
     TResult? Function(
             SetTransactionStatusContent content,
             String senderIdentity,
             String receiverIdentity,
             String tag,
-            PeerMessageType type)?
+            PeerMessageType type,
+            int timestamp)?
         setTransactionStatus,
   }) {
     return addTransaction?.call(
-        content, senderIdentity, receiverIdentity, tag, type);
+        content, senderIdentity, receiverIdentity, tag, type, timestamp);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String senderIdentity, String receiverIdentity, String tag,
-            PeerMessageType type, dynamic content)?
+            PeerMessageType type, dynamic content, int timestamp)?
         peerTypeRequest,
-    TResult Function(PeerType content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            PeerType content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerTypeResponse,
-    TResult Function(Transaction content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            Transaction content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         addTransaction,
-    TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockHeadersRequest,
-    TResult Function(BlockHeadersResponseContent content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeadersResponseContent content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockHeadersResponse,
-    TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockRequest,
-    TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockResponse,
-    TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockNotFoundResponse,
     TResult Function(String senderIdentity, String receiverIdentity, String tag,
-            PeerMessageType type, dynamic content)?
+            PeerMessageType type, dynamic content, int timestamp)?
         peerStateRequest,
-    TResult Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerStateResponse,
-    TResult Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerStateUpdate,
-    TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         addBlock,
     TResult Function(
             BlockHeader header,
@@ -1646,25 +2405,41 @@ class _$_PeerMessageAddTransaction implements _PeerMessageAddTransaction {
             String receiverIdentity,
             String tag,
             PeerMessageType type,
-            dynamic content)?
+            dynamic content,
+            int timestamp)?
         blockRejected,
-    TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockAccepted,
     TResult Function(String senderIdentity, String receiverIdentity, String tag,
-            PeerMessageType type, dynamic content)?
+            PeerMessageType type, dynamic content, int timestamp)?
         getLastBlockRequest,
-    TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         getLastBlockResponse,
-    TResult Function(SetTransactionStatusContent content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            SetTransactionStatusContent content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         setTransactionStatus,
     required TResult orElse(),
   }) {
     if (addTransaction != null) {
       return addTransaction(
-          content, senderIdentity, receiverIdentity, tag, type);
+          content, senderIdentity, receiverIdentity, tag, type, timestamp);
     }
     return orElse();
   }
@@ -1783,7 +2558,8 @@ abstract class _PeerMessageAddTransaction
       required final String senderIdentity,
       required final String receiverIdentity,
       required final String tag,
-      final PeerMessageType type}) = _$_PeerMessageAddTransaction;
+      final PeerMessageType type,
+      required final int timestamp}) = _$_PeerMessageAddTransaction;
 
   factory _PeerMessageAddTransaction.fromJson(Map<String, dynamic> json) =
       _$_PeerMessageAddTransaction.fromJson;
@@ -1798,6 +2574,8 @@ abstract class _PeerMessageAddTransaction
   String get tag;
   @override
   PeerMessageType get type;
+  @override
+  int get timestamp;
   @override
   @JsonKey(ignore: true)
   _$$_PeerMessageAddTransactionCopyWith<_$_PeerMessageAddTransaction>
@@ -1818,7 +2596,8 @@ abstract class _$$_PeerMessageBlockHeadersRequestCopyWith<$Res>
       String senderIdentity,
       String receiverIdentity,
       String tag,
-      PeerMessageType type});
+      PeerMessageType type,
+      int timestamp});
 
   $BlockHeaderCopyWith<$Res> get content;
 }
@@ -1840,6 +2619,7 @@ class __$$_PeerMessageBlockHeadersRequestCopyWithImpl<$Res>
     Object? receiverIdentity = null,
     Object? tag = null,
     Object? type = null,
+    Object? timestamp = null,
   }) {
     return _then(_$_PeerMessageBlockHeadersRequest(
       content: null == content
@@ -1862,6 +2642,10 @@ class __$$_PeerMessageBlockHeadersRequestCopyWithImpl<$Res>
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as PeerMessageType,
+      timestamp: null == timestamp
+          ? _value.timestamp
+          : timestamp // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 
@@ -1883,7 +2667,8 @@ class _$_PeerMessageBlockHeadersRequest
       required this.senderIdentity,
       required this.receiverIdentity,
       required this.tag,
-      this.type = PeerMessageType.blockHeadersRequest});
+      this.type = PeerMessageType.blockHeadersRequest,
+      required this.timestamp});
 
   factory _$_PeerMessageBlockHeadersRequest.fromJson(
           Map<String, dynamic> json) =>
@@ -1900,10 +2685,12 @@ class _$_PeerMessageBlockHeadersRequest
   @override
   @JsonKey()
   final PeerMessageType type;
+  @override
+  final int timestamp;
 
   @override
   String toString() {
-    return 'PeerMessage.blockHeadersRequest(content: $content, senderIdentity: $senderIdentity, receiverIdentity: $receiverIdentity, tag: $tag, type: $type)';
+    return 'PeerMessage.blockHeadersRequest(content: $content, senderIdentity: $senderIdentity, receiverIdentity: $receiverIdentity, tag: $tag, type: $type, timestamp: $timestamp)';
   }
 
   @override
@@ -1917,13 +2704,15 @@ class _$_PeerMessageBlockHeadersRequest
             (identical(other.receiverIdentity, receiverIdentity) ||
                 other.receiverIdentity == receiverIdentity) &&
             (identical(other.tag, tag) || other.tag == tag) &&
-            (identical(other.type, type) || other.type == type));
+            (identical(other.type, type) || other.type == type) &&
+            (identical(other.timestamp, timestamp) ||
+                other.timestamp == timestamp));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, content, senderIdentity, receiverIdentity, tag, type);
+  int get hashCode => Object.hash(runtimeType, content, senderIdentity,
+      receiverIdentity, tag, type, timestamp);
 
   @JsonKey(ignore: true)
   @override
@@ -1936,44 +2725,90 @@ class _$_PeerMessageBlockHeadersRequest
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)
+            String tag, PeerMessageType type, dynamic content, int timestamp)
         peerTypeRequest,
-    required TResult Function(PeerType content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            PeerType content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         peerTypeResponse,
-    required TResult Function(Transaction content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            Transaction content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         addTransaction,
-    required TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         blockHeadersRequest,
     required TResult Function(
             BlockHeadersResponseContent content,
             String senderIdentity,
             String receiverIdentity,
             String tag,
-            PeerMessageType type)
+            PeerMessageType type,
+            int timestamp)
         blockHeadersResponse,
-    required TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         blockRequest,
-    required TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         blockResponse,
-    required TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         blockNotFoundResponse,
     required TResult Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)
+            String tag, PeerMessageType type, dynamic content, int timestamp)
         peerStateRequest,
-    required TResult Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         peerStateResponse,
-    required TResult Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         peerStateUpdate,
-    required TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         addBlock,
     required TResult Function(
             BlockHeader header,
@@ -1981,71 +2816,129 @@ class _$_PeerMessageBlockHeadersRequest
             String receiverIdentity,
             String tag,
             PeerMessageType type,
-            dynamic content)
+            dynamic content,
+            int timestamp)
         blockRejected,
-    required TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         blockAccepted,
     required TResult Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)
+            String tag, PeerMessageType type, dynamic content, int timestamp)
         getLastBlockRequest,
-    required TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         getLastBlockResponse,
     required TResult Function(
             SetTransactionStatusContent content,
             String senderIdentity,
             String receiverIdentity,
             String tag,
-            PeerMessageType type)
+            PeerMessageType type,
+            int timestamp)
         setTransactionStatus,
   }) {
     return blockHeadersRequest(
-        content, senderIdentity, receiverIdentity, tag, type);
+        content, senderIdentity, receiverIdentity, tag, type, timestamp);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)?
+            String tag, PeerMessageType type, dynamic content, int timestamp)?
         peerTypeRequest,
-    TResult? Function(PeerType content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            PeerType content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerTypeResponse,
-    TResult? Function(Transaction content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            Transaction content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         addTransaction,
-    TResult? Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockHeadersRequest,
     TResult? Function(
             BlockHeadersResponseContent content,
             String senderIdentity,
             String receiverIdentity,
             String tag,
-            PeerMessageType type)?
+            PeerMessageType type,
+            int timestamp)?
         blockHeadersResponse,
-    TResult? Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockRequest,
-    TResult? Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockResponse,
-    TResult? Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockNotFoundResponse,
     TResult? Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)?
+            String tag, PeerMessageType type, dynamic content, int timestamp)?
         peerStateRequest,
-    TResult? Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerStateResponse,
-    TResult? Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerStateUpdate,
-    TResult? Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         addBlock,
     TResult? Function(
             BlockHeader header,
@@ -2053,67 +2946,129 @@ class _$_PeerMessageBlockHeadersRequest
             String receiverIdentity,
             String tag,
             PeerMessageType type,
-            dynamic content)?
+            dynamic content,
+            int timestamp)?
         blockRejected,
-    TResult? Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockAccepted,
     TResult? Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)?
+            String tag, PeerMessageType type, dynamic content, int timestamp)?
         getLastBlockRequest,
-    TResult? Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         getLastBlockResponse,
     TResult? Function(
             SetTransactionStatusContent content,
             String senderIdentity,
             String receiverIdentity,
             String tag,
-            PeerMessageType type)?
+            PeerMessageType type,
+            int timestamp)?
         setTransactionStatus,
   }) {
     return blockHeadersRequest?.call(
-        content, senderIdentity, receiverIdentity, tag, type);
+        content, senderIdentity, receiverIdentity, tag, type, timestamp);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String senderIdentity, String receiverIdentity, String tag,
-            PeerMessageType type, dynamic content)?
+            PeerMessageType type, dynamic content, int timestamp)?
         peerTypeRequest,
-    TResult Function(PeerType content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            PeerType content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerTypeResponse,
-    TResult Function(Transaction content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            Transaction content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         addTransaction,
-    TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockHeadersRequest,
-    TResult Function(BlockHeadersResponseContent content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeadersResponseContent content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockHeadersResponse,
-    TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockRequest,
-    TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockResponse,
-    TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockNotFoundResponse,
     TResult Function(String senderIdentity, String receiverIdentity, String tag,
-            PeerMessageType type, dynamic content)?
+            PeerMessageType type, dynamic content, int timestamp)?
         peerStateRequest,
-    TResult Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerStateResponse,
-    TResult Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerStateUpdate,
-    TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         addBlock,
     TResult Function(
             BlockHeader header,
@@ -2121,25 +3076,41 @@ class _$_PeerMessageBlockHeadersRequest
             String receiverIdentity,
             String tag,
             PeerMessageType type,
-            dynamic content)?
+            dynamic content,
+            int timestamp)?
         blockRejected,
-    TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockAccepted,
     TResult Function(String senderIdentity, String receiverIdentity, String tag,
-            PeerMessageType type, dynamic content)?
+            PeerMessageType type, dynamic content, int timestamp)?
         getLastBlockRequest,
-    TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         getLastBlockResponse,
-    TResult Function(SetTransactionStatusContent content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            SetTransactionStatusContent content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         setTransactionStatus,
     required TResult orElse(),
   }) {
     if (blockHeadersRequest != null) {
       return blockHeadersRequest(
-          content, senderIdentity, receiverIdentity, tag, type);
+          content, senderIdentity, receiverIdentity, tag, type, timestamp);
     }
     return orElse();
   }
@@ -2258,7 +3229,8 @@ abstract class _PeerMessageBlockHeadersRequest
       required final String senderIdentity,
       required final String receiverIdentity,
       required final String tag,
-      final PeerMessageType type}) = _$_PeerMessageBlockHeadersRequest;
+      final PeerMessageType type,
+      required final int timestamp}) = _$_PeerMessageBlockHeadersRequest;
 
   factory _PeerMessageBlockHeadersRequest.fromJson(Map<String, dynamic> json) =
       _$_PeerMessageBlockHeadersRequest.fromJson;
@@ -2273,6 +3245,8 @@ abstract class _PeerMessageBlockHeadersRequest
   String get tag;
   @override
   PeerMessageType get type;
+  @override
+  int get timestamp;
   @override
   @JsonKey(ignore: true)
   _$$_PeerMessageBlockHeadersRequestCopyWith<_$_PeerMessageBlockHeadersRequest>
@@ -2293,7 +3267,8 @@ abstract class _$$_PeerMessageBlockHeadersResponseCopyWith<$Res>
       String senderIdentity,
       String receiverIdentity,
       String tag,
-      PeerMessageType type});
+      PeerMessageType type,
+      int timestamp});
 
   $BlockHeadersResponseContentCopyWith<$Res> get content;
 }
@@ -2315,6 +3290,7 @@ class __$$_PeerMessageBlockHeadersResponseCopyWithImpl<$Res>
     Object? receiverIdentity = null,
     Object? tag = null,
     Object? type = null,
+    Object? timestamp = null,
   }) {
     return _then(_$_PeerMessageBlockHeadersResponse(
       content: null == content
@@ -2337,6 +3313,10 @@ class __$$_PeerMessageBlockHeadersResponseCopyWithImpl<$Res>
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as PeerMessageType,
+      timestamp: null == timestamp
+          ? _value.timestamp
+          : timestamp // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 
@@ -2358,7 +3338,8 @@ class _$_PeerMessageBlockHeadersResponse
       required this.senderIdentity,
       required this.receiverIdentity,
       required this.tag,
-      this.type = PeerMessageType.blockHeadersResponse});
+      this.type = PeerMessageType.blockHeadersResponse,
+      required this.timestamp});
 
   factory _$_PeerMessageBlockHeadersResponse.fromJson(
           Map<String, dynamic> json) =>
@@ -2375,10 +3356,12 @@ class _$_PeerMessageBlockHeadersResponse
   @override
   @JsonKey()
   final PeerMessageType type;
+  @override
+  final int timestamp;
 
   @override
   String toString() {
-    return 'PeerMessage.blockHeadersResponse(content: $content, senderIdentity: $senderIdentity, receiverIdentity: $receiverIdentity, tag: $tag, type: $type)';
+    return 'PeerMessage.blockHeadersResponse(content: $content, senderIdentity: $senderIdentity, receiverIdentity: $receiverIdentity, tag: $tag, type: $type, timestamp: $timestamp)';
   }
 
   @override
@@ -2392,13 +3375,15 @@ class _$_PeerMessageBlockHeadersResponse
             (identical(other.receiverIdentity, receiverIdentity) ||
                 other.receiverIdentity == receiverIdentity) &&
             (identical(other.tag, tag) || other.tag == tag) &&
-            (identical(other.type, type) || other.type == type));
+            (identical(other.type, type) || other.type == type) &&
+            (identical(other.timestamp, timestamp) ||
+                other.timestamp == timestamp));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, content, senderIdentity, receiverIdentity, tag, type);
+  int get hashCode => Object.hash(runtimeType, content, senderIdentity,
+      receiverIdentity, tag, type, timestamp);
 
   @JsonKey(ignore: true)
   @override
@@ -2412,44 +3397,90 @@ class _$_PeerMessageBlockHeadersResponse
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)
+            String tag, PeerMessageType type, dynamic content, int timestamp)
         peerTypeRequest,
-    required TResult Function(PeerType content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            PeerType content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         peerTypeResponse,
-    required TResult Function(Transaction content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            Transaction content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         addTransaction,
-    required TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         blockHeadersRequest,
     required TResult Function(
             BlockHeadersResponseContent content,
             String senderIdentity,
             String receiverIdentity,
             String tag,
-            PeerMessageType type)
+            PeerMessageType type,
+            int timestamp)
         blockHeadersResponse,
-    required TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         blockRequest,
-    required TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         blockResponse,
-    required TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         blockNotFoundResponse,
     required TResult Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)
+            String tag, PeerMessageType type, dynamic content, int timestamp)
         peerStateRequest,
-    required TResult Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         peerStateResponse,
-    required TResult Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         peerStateUpdate,
-    required TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         addBlock,
     required TResult Function(
             BlockHeader header,
@@ -2457,71 +3488,129 @@ class _$_PeerMessageBlockHeadersResponse
             String receiverIdentity,
             String tag,
             PeerMessageType type,
-            dynamic content)
+            dynamic content,
+            int timestamp)
         blockRejected,
-    required TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         blockAccepted,
     required TResult Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)
+            String tag, PeerMessageType type, dynamic content, int timestamp)
         getLastBlockRequest,
-    required TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         getLastBlockResponse,
     required TResult Function(
             SetTransactionStatusContent content,
             String senderIdentity,
             String receiverIdentity,
             String tag,
-            PeerMessageType type)
+            PeerMessageType type,
+            int timestamp)
         setTransactionStatus,
   }) {
     return blockHeadersResponse(
-        content, senderIdentity, receiverIdentity, tag, type);
+        content, senderIdentity, receiverIdentity, tag, type, timestamp);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)?
+            String tag, PeerMessageType type, dynamic content, int timestamp)?
         peerTypeRequest,
-    TResult? Function(PeerType content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            PeerType content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerTypeResponse,
-    TResult? Function(Transaction content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            Transaction content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         addTransaction,
-    TResult? Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockHeadersRequest,
     TResult? Function(
             BlockHeadersResponseContent content,
             String senderIdentity,
             String receiverIdentity,
             String tag,
-            PeerMessageType type)?
+            PeerMessageType type,
+            int timestamp)?
         blockHeadersResponse,
-    TResult? Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockRequest,
-    TResult? Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockResponse,
-    TResult? Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockNotFoundResponse,
     TResult? Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)?
+            String tag, PeerMessageType type, dynamic content, int timestamp)?
         peerStateRequest,
-    TResult? Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerStateResponse,
-    TResult? Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerStateUpdate,
-    TResult? Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         addBlock,
     TResult? Function(
             BlockHeader header,
@@ -2529,67 +3618,129 @@ class _$_PeerMessageBlockHeadersResponse
             String receiverIdentity,
             String tag,
             PeerMessageType type,
-            dynamic content)?
+            dynamic content,
+            int timestamp)?
         blockRejected,
-    TResult? Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockAccepted,
     TResult? Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)?
+            String tag, PeerMessageType type, dynamic content, int timestamp)?
         getLastBlockRequest,
-    TResult? Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         getLastBlockResponse,
     TResult? Function(
             SetTransactionStatusContent content,
             String senderIdentity,
             String receiverIdentity,
             String tag,
-            PeerMessageType type)?
+            PeerMessageType type,
+            int timestamp)?
         setTransactionStatus,
   }) {
     return blockHeadersResponse?.call(
-        content, senderIdentity, receiverIdentity, tag, type);
+        content, senderIdentity, receiverIdentity, tag, type, timestamp);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String senderIdentity, String receiverIdentity, String tag,
-            PeerMessageType type, dynamic content)?
+            PeerMessageType type, dynamic content, int timestamp)?
         peerTypeRequest,
-    TResult Function(PeerType content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            PeerType content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerTypeResponse,
-    TResult Function(Transaction content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            Transaction content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         addTransaction,
-    TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockHeadersRequest,
-    TResult Function(BlockHeadersResponseContent content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeadersResponseContent content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockHeadersResponse,
-    TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockRequest,
-    TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockResponse,
-    TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockNotFoundResponse,
     TResult Function(String senderIdentity, String receiverIdentity, String tag,
-            PeerMessageType type, dynamic content)?
+            PeerMessageType type, dynamic content, int timestamp)?
         peerStateRequest,
-    TResult Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerStateResponse,
-    TResult Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerStateUpdate,
-    TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         addBlock,
     TResult Function(
             BlockHeader header,
@@ -2597,25 +3748,41 @@ class _$_PeerMessageBlockHeadersResponse
             String receiverIdentity,
             String tag,
             PeerMessageType type,
-            dynamic content)?
+            dynamic content,
+            int timestamp)?
         blockRejected,
-    TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockAccepted,
     TResult Function(String senderIdentity, String receiverIdentity, String tag,
-            PeerMessageType type, dynamic content)?
+            PeerMessageType type, dynamic content, int timestamp)?
         getLastBlockRequest,
-    TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         getLastBlockResponse,
-    TResult Function(SetTransactionStatusContent content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            SetTransactionStatusContent content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         setTransactionStatus,
     required TResult orElse(),
   }) {
     if (blockHeadersResponse != null) {
       return blockHeadersResponse(
-          content, senderIdentity, receiverIdentity, tag, type);
+          content, senderIdentity, receiverIdentity, tag, type, timestamp);
     }
     return orElse();
   }
@@ -2734,7 +3901,8 @@ abstract class _PeerMessageBlockHeadersResponse
       required final String senderIdentity,
       required final String receiverIdentity,
       required final String tag,
-      final PeerMessageType type}) = _$_PeerMessageBlockHeadersResponse;
+      final PeerMessageType type,
+      required final int timestamp}) = _$_PeerMessageBlockHeadersResponse;
 
   factory _PeerMessageBlockHeadersResponse.fromJson(Map<String, dynamic> json) =
       _$_PeerMessageBlockHeadersResponse.fromJson;
@@ -2749,6 +3917,8 @@ abstract class _PeerMessageBlockHeadersResponse
   String get tag;
   @override
   PeerMessageType get type;
+  @override
+  int get timestamp;
   @override
   @JsonKey(ignore: true)
   _$$_PeerMessageBlockHeadersResponseCopyWith<
@@ -2769,7 +3939,8 @@ abstract class _$$_PeerMessageBlockRequestCopyWith<$Res>
       String senderIdentity,
       String receiverIdentity,
       String tag,
-      PeerMessageType type});
+      PeerMessageType type,
+      int timestamp});
 
   $BlockHeaderCopyWith<$Res> get content;
 }
@@ -2790,6 +3961,7 @@ class __$$_PeerMessageBlockRequestCopyWithImpl<$Res>
     Object? receiverIdentity = null,
     Object? tag = null,
     Object? type = null,
+    Object? timestamp = null,
   }) {
     return _then(_$_PeerMessageBlockRequest(
       content: null == content
@@ -2812,6 +3984,10 @@ class __$$_PeerMessageBlockRequestCopyWithImpl<$Res>
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as PeerMessageType,
+      timestamp: null == timestamp
+          ? _value.timestamp
+          : timestamp // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 
@@ -2832,7 +4008,8 @@ class _$_PeerMessageBlockRequest implements _PeerMessageBlockRequest {
       required this.senderIdentity,
       required this.receiverIdentity,
       required this.tag,
-      this.type = PeerMessageType.blockRequest});
+      this.type = PeerMessageType.blockRequest,
+      required this.timestamp});
 
   factory _$_PeerMessageBlockRequest.fromJson(Map<String, dynamic> json) =>
       _$$_PeerMessageBlockRequestFromJson(json);
@@ -2848,10 +4025,12 @@ class _$_PeerMessageBlockRequest implements _PeerMessageBlockRequest {
   @override
   @JsonKey()
   final PeerMessageType type;
+  @override
+  final int timestamp;
 
   @override
   String toString() {
-    return 'PeerMessage.blockRequest(content: $content, senderIdentity: $senderIdentity, receiverIdentity: $receiverIdentity, tag: $tag, type: $type)';
+    return 'PeerMessage.blockRequest(content: $content, senderIdentity: $senderIdentity, receiverIdentity: $receiverIdentity, tag: $tag, type: $type, timestamp: $timestamp)';
   }
 
   @override
@@ -2865,13 +4044,15 @@ class _$_PeerMessageBlockRequest implements _PeerMessageBlockRequest {
             (identical(other.receiverIdentity, receiverIdentity) ||
                 other.receiverIdentity == receiverIdentity) &&
             (identical(other.tag, tag) || other.tag == tag) &&
-            (identical(other.type, type) || other.type == type));
+            (identical(other.type, type) || other.type == type) &&
+            (identical(other.timestamp, timestamp) ||
+                other.timestamp == timestamp));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, content, senderIdentity, receiverIdentity, tag, type);
+  int get hashCode => Object.hash(runtimeType, content, senderIdentity,
+      receiverIdentity, tag, type, timestamp);
 
   @JsonKey(ignore: true)
   @override
@@ -2885,44 +4066,90 @@ class _$_PeerMessageBlockRequest implements _PeerMessageBlockRequest {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)
+            String tag, PeerMessageType type, dynamic content, int timestamp)
         peerTypeRequest,
-    required TResult Function(PeerType content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            PeerType content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         peerTypeResponse,
-    required TResult Function(Transaction content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            Transaction content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         addTransaction,
-    required TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         blockHeadersRequest,
     required TResult Function(
             BlockHeadersResponseContent content,
             String senderIdentity,
             String receiverIdentity,
             String tag,
-            PeerMessageType type)
+            PeerMessageType type,
+            int timestamp)
         blockHeadersResponse,
-    required TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         blockRequest,
-    required TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         blockResponse,
-    required TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         blockNotFoundResponse,
     required TResult Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)
+            String tag, PeerMessageType type, dynamic content, int timestamp)
         peerStateRequest,
-    required TResult Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         peerStateResponse,
-    required TResult Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         peerStateUpdate,
-    required TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         addBlock,
     required TResult Function(
             BlockHeader header,
@@ -2930,70 +4157,129 @@ class _$_PeerMessageBlockRequest implements _PeerMessageBlockRequest {
             String receiverIdentity,
             String tag,
             PeerMessageType type,
-            dynamic content)
+            dynamic content,
+            int timestamp)
         blockRejected,
-    required TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         blockAccepted,
     required TResult Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)
+            String tag, PeerMessageType type, dynamic content, int timestamp)
         getLastBlockRequest,
-    required TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         getLastBlockResponse,
     required TResult Function(
             SetTransactionStatusContent content,
             String senderIdentity,
             String receiverIdentity,
             String tag,
-            PeerMessageType type)
+            PeerMessageType type,
+            int timestamp)
         setTransactionStatus,
   }) {
-    return blockRequest(content, senderIdentity, receiverIdentity, tag, type);
+    return blockRequest(
+        content, senderIdentity, receiverIdentity, tag, type, timestamp);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)?
+            String tag, PeerMessageType type, dynamic content, int timestamp)?
         peerTypeRequest,
-    TResult? Function(PeerType content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            PeerType content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerTypeResponse,
-    TResult? Function(Transaction content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            Transaction content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         addTransaction,
-    TResult? Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockHeadersRequest,
     TResult? Function(
             BlockHeadersResponseContent content,
             String senderIdentity,
             String receiverIdentity,
             String tag,
-            PeerMessageType type)?
+            PeerMessageType type,
+            int timestamp)?
         blockHeadersResponse,
-    TResult? Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockRequest,
-    TResult? Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockResponse,
-    TResult? Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockNotFoundResponse,
     TResult? Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)?
+            String tag, PeerMessageType type, dynamic content, int timestamp)?
         peerStateRequest,
-    TResult? Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerStateResponse,
-    TResult? Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerStateUpdate,
-    TResult? Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         addBlock,
     TResult? Function(
             BlockHeader header,
@@ -3001,67 +4287,129 @@ class _$_PeerMessageBlockRequest implements _PeerMessageBlockRequest {
             String receiverIdentity,
             String tag,
             PeerMessageType type,
-            dynamic content)?
+            dynamic content,
+            int timestamp)?
         blockRejected,
-    TResult? Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockAccepted,
     TResult? Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)?
+            String tag, PeerMessageType type, dynamic content, int timestamp)?
         getLastBlockRequest,
-    TResult? Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         getLastBlockResponse,
     TResult? Function(
             SetTransactionStatusContent content,
             String senderIdentity,
             String receiverIdentity,
             String tag,
-            PeerMessageType type)?
+            PeerMessageType type,
+            int timestamp)?
         setTransactionStatus,
   }) {
     return blockRequest?.call(
-        content, senderIdentity, receiverIdentity, tag, type);
+        content, senderIdentity, receiverIdentity, tag, type, timestamp);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String senderIdentity, String receiverIdentity, String tag,
-            PeerMessageType type, dynamic content)?
+            PeerMessageType type, dynamic content, int timestamp)?
         peerTypeRequest,
-    TResult Function(PeerType content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            PeerType content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerTypeResponse,
-    TResult Function(Transaction content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            Transaction content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         addTransaction,
-    TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockHeadersRequest,
-    TResult Function(BlockHeadersResponseContent content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeadersResponseContent content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockHeadersResponse,
-    TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockRequest,
-    TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockResponse,
-    TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockNotFoundResponse,
     TResult Function(String senderIdentity, String receiverIdentity, String tag,
-            PeerMessageType type, dynamic content)?
+            PeerMessageType type, dynamic content, int timestamp)?
         peerStateRequest,
-    TResult Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerStateResponse,
-    TResult Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerStateUpdate,
-    TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         addBlock,
     TResult Function(
             BlockHeader header,
@@ -3069,24 +4417,41 @@ class _$_PeerMessageBlockRequest implements _PeerMessageBlockRequest {
             String receiverIdentity,
             String tag,
             PeerMessageType type,
-            dynamic content)?
+            dynamic content,
+            int timestamp)?
         blockRejected,
-    TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockAccepted,
     TResult Function(String senderIdentity, String receiverIdentity, String tag,
-            PeerMessageType type, dynamic content)?
+            PeerMessageType type, dynamic content, int timestamp)?
         getLastBlockRequest,
-    TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         getLastBlockResponse,
-    TResult Function(SetTransactionStatusContent content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            SetTransactionStatusContent content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         setTransactionStatus,
     required TResult orElse(),
   }) {
     if (blockRequest != null) {
-      return blockRequest(content, senderIdentity, receiverIdentity, tag, type);
+      return blockRequest(
+          content, senderIdentity, receiverIdentity, tag, type, timestamp);
     }
     return orElse();
   }
@@ -3205,7 +4570,8 @@ abstract class _PeerMessageBlockRequest
       required final String senderIdentity,
       required final String receiverIdentity,
       required final String tag,
-      final PeerMessageType type}) = _$_PeerMessageBlockRequest;
+      final PeerMessageType type,
+      required final int timestamp}) = _$_PeerMessageBlockRequest;
 
   factory _PeerMessageBlockRequest.fromJson(Map<String, dynamic> json) =
       _$_PeerMessageBlockRequest.fromJson;
@@ -3220,6 +4586,8 @@ abstract class _PeerMessageBlockRequest
   String get tag;
   @override
   PeerMessageType get type;
+  @override
+  int get timestamp;
   @override
   @JsonKey(ignore: true)
   _$$_PeerMessageBlockRequestCopyWith<_$_PeerMessageBlockRequest>
@@ -3240,7 +4608,8 @@ abstract class _$$_PeerMessageBlockResponseCopyWith<$Res>
       String senderIdentity,
       String receiverIdentity,
       String tag,
-      PeerMessageType type});
+      PeerMessageType type,
+      int timestamp});
 
   $BlockCopyWith<$Res> get content;
 }
@@ -3261,6 +4630,7 @@ class __$$_PeerMessageBlockResponseCopyWithImpl<$Res>
     Object? receiverIdentity = null,
     Object? tag = null,
     Object? type = null,
+    Object? timestamp = null,
   }) {
     return _then(_$_PeerMessageBlockResponse(
       content: null == content
@@ -3283,6 +4653,10 @@ class __$$_PeerMessageBlockResponseCopyWithImpl<$Res>
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as PeerMessageType,
+      timestamp: null == timestamp
+          ? _value.timestamp
+          : timestamp // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 
@@ -3303,7 +4677,8 @@ class _$_PeerMessageBlockResponse implements _PeerMessageBlockResponse {
       required this.senderIdentity,
       required this.receiverIdentity,
       required this.tag,
-      this.type = PeerMessageType.blockResponse});
+      this.type = PeerMessageType.blockResponse,
+      required this.timestamp});
 
   factory _$_PeerMessageBlockResponse.fromJson(Map<String, dynamic> json) =>
       _$$_PeerMessageBlockResponseFromJson(json);
@@ -3319,10 +4694,12 @@ class _$_PeerMessageBlockResponse implements _PeerMessageBlockResponse {
   @override
   @JsonKey()
   final PeerMessageType type;
+  @override
+  final int timestamp;
 
   @override
   String toString() {
-    return 'PeerMessage.blockResponse(content: $content, senderIdentity: $senderIdentity, receiverIdentity: $receiverIdentity, tag: $tag, type: $type)';
+    return 'PeerMessage.blockResponse(content: $content, senderIdentity: $senderIdentity, receiverIdentity: $receiverIdentity, tag: $tag, type: $type, timestamp: $timestamp)';
   }
 
   @override
@@ -3336,13 +4713,15 @@ class _$_PeerMessageBlockResponse implements _PeerMessageBlockResponse {
             (identical(other.receiverIdentity, receiverIdentity) ||
                 other.receiverIdentity == receiverIdentity) &&
             (identical(other.tag, tag) || other.tag == tag) &&
-            (identical(other.type, type) || other.type == type));
+            (identical(other.type, type) || other.type == type) &&
+            (identical(other.timestamp, timestamp) ||
+                other.timestamp == timestamp));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, content, senderIdentity, receiverIdentity, tag, type);
+  int get hashCode => Object.hash(runtimeType, content, senderIdentity,
+      receiverIdentity, tag, type, timestamp);
 
   @JsonKey(ignore: true)
   @override
@@ -3355,44 +4734,90 @@ class _$_PeerMessageBlockResponse implements _PeerMessageBlockResponse {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)
+            String tag, PeerMessageType type, dynamic content, int timestamp)
         peerTypeRequest,
-    required TResult Function(PeerType content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            PeerType content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         peerTypeResponse,
-    required TResult Function(Transaction content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            Transaction content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         addTransaction,
-    required TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         blockHeadersRequest,
     required TResult Function(
             BlockHeadersResponseContent content,
             String senderIdentity,
             String receiverIdentity,
             String tag,
-            PeerMessageType type)
+            PeerMessageType type,
+            int timestamp)
         blockHeadersResponse,
-    required TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         blockRequest,
-    required TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         blockResponse,
-    required TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         blockNotFoundResponse,
     required TResult Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)
+            String tag, PeerMessageType type, dynamic content, int timestamp)
         peerStateRequest,
-    required TResult Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         peerStateResponse,
-    required TResult Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         peerStateUpdate,
-    required TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         addBlock,
     required TResult Function(
             BlockHeader header,
@@ -3400,70 +4825,129 @@ class _$_PeerMessageBlockResponse implements _PeerMessageBlockResponse {
             String receiverIdentity,
             String tag,
             PeerMessageType type,
-            dynamic content)
+            dynamic content,
+            int timestamp)
         blockRejected,
-    required TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         blockAccepted,
     required TResult Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)
+            String tag, PeerMessageType type, dynamic content, int timestamp)
         getLastBlockRequest,
-    required TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         getLastBlockResponse,
     required TResult Function(
             SetTransactionStatusContent content,
             String senderIdentity,
             String receiverIdentity,
             String tag,
-            PeerMessageType type)
+            PeerMessageType type,
+            int timestamp)
         setTransactionStatus,
   }) {
-    return blockResponse(content, senderIdentity, receiverIdentity, tag, type);
+    return blockResponse(
+        content, senderIdentity, receiverIdentity, tag, type, timestamp);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)?
+            String tag, PeerMessageType type, dynamic content, int timestamp)?
         peerTypeRequest,
-    TResult? Function(PeerType content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            PeerType content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerTypeResponse,
-    TResult? Function(Transaction content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            Transaction content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         addTransaction,
-    TResult? Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockHeadersRequest,
     TResult? Function(
             BlockHeadersResponseContent content,
             String senderIdentity,
             String receiverIdentity,
             String tag,
-            PeerMessageType type)?
+            PeerMessageType type,
+            int timestamp)?
         blockHeadersResponse,
-    TResult? Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockRequest,
-    TResult? Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockResponse,
-    TResult? Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockNotFoundResponse,
     TResult? Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)?
+            String tag, PeerMessageType type, dynamic content, int timestamp)?
         peerStateRequest,
-    TResult? Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerStateResponse,
-    TResult? Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerStateUpdate,
-    TResult? Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         addBlock,
     TResult? Function(
             BlockHeader header,
@@ -3471,67 +4955,129 @@ class _$_PeerMessageBlockResponse implements _PeerMessageBlockResponse {
             String receiverIdentity,
             String tag,
             PeerMessageType type,
-            dynamic content)?
+            dynamic content,
+            int timestamp)?
         blockRejected,
-    TResult? Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockAccepted,
     TResult? Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)?
+            String tag, PeerMessageType type, dynamic content, int timestamp)?
         getLastBlockRequest,
-    TResult? Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         getLastBlockResponse,
     TResult? Function(
             SetTransactionStatusContent content,
             String senderIdentity,
             String receiverIdentity,
             String tag,
-            PeerMessageType type)?
+            PeerMessageType type,
+            int timestamp)?
         setTransactionStatus,
   }) {
     return blockResponse?.call(
-        content, senderIdentity, receiverIdentity, tag, type);
+        content, senderIdentity, receiverIdentity, tag, type, timestamp);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String senderIdentity, String receiverIdentity, String tag,
-            PeerMessageType type, dynamic content)?
+            PeerMessageType type, dynamic content, int timestamp)?
         peerTypeRequest,
-    TResult Function(PeerType content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            PeerType content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerTypeResponse,
-    TResult Function(Transaction content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            Transaction content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         addTransaction,
-    TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockHeadersRequest,
-    TResult Function(BlockHeadersResponseContent content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeadersResponseContent content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockHeadersResponse,
-    TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockRequest,
-    TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockResponse,
-    TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockNotFoundResponse,
     TResult Function(String senderIdentity, String receiverIdentity, String tag,
-            PeerMessageType type, dynamic content)?
+            PeerMessageType type, dynamic content, int timestamp)?
         peerStateRequest,
-    TResult Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerStateResponse,
-    TResult Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerStateUpdate,
-    TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         addBlock,
     TResult Function(
             BlockHeader header,
@@ -3539,25 +5085,41 @@ class _$_PeerMessageBlockResponse implements _PeerMessageBlockResponse {
             String receiverIdentity,
             String tag,
             PeerMessageType type,
-            dynamic content)?
+            dynamic content,
+            int timestamp)?
         blockRejected,
-    TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockAccepted,
     TResult Function(String senderIdentity, String receiverIdentity, String tag,
-            PeerMessageType type, dynamic content)?
+            PeerMessageType type, dynamic content, int timestamp)?
         getLastBlockRequest,
-    TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         getLastBlockResponse,
-    TResult Function(SetTransactionStatusContent content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            SetTransactionStatusContent content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         setTransactionStatus,
     required TResult orElse(),
   }) {
     if (blockResponse != null) {
       return blockResponse(
-          content, senderIdentity, receiverIdentity, tag, type);
+          content, senderIdentity, receiverIdentity, tag, type, timestamp);
     }
     return orElse();
   }
@@ -3676,7 +5238,8 @@ abstract class _PeerMessageBlockResponse
       required final String senderIdentity,
       required final String receiverIdentity,
       required final String tag,
-      final PeerMessageType type}) = _$_PeerMessageBlockResponse;
+      final PeerMessageType type,
+      required final int timestamp}) = _$_PeerMessageBlockResponse;
 
   factory _PeerMessageBlockResponse.fromJson(Map<String, dynamic> json) =
       _$_PeerMessageBlockResponse.fromJson;
@@ -3691,6 +5254,8 @@ abstract class _PeerMessageBlockResponse
   String get tag;
   @override
   PeerMessageType get type;
+  @override
+  int get timestamp;
   @override
   @JsonKey(ignore: true)
   _$$_PeerMessageBlockResponseCopyWith<_$_PeerMessageBlockResponse>
@@ -3711,7 +5276,8 @@ abstract class _$$_PeerMessageBlockNotFoundResponseCopyWith<$Res>
       String senderIdentity,
       String receiverIdentity,
       String tag,
-      PeerMessageType type});
+      PeerMessageType type,
+      int timestamp});
 
   $BlockHeaderCopyWith<$Res> get content;
 }
@@ -3733,6 +5299,7 @@ class __$$_PeerMessageBlockNotFoundResponseCopyWithImpl<$Res>
     Object? receiverIdentity = null,
     Object? tag = null,
     Object? type = null,
+    Object? timestamp = null,
   }) {
     return _then(_$_PeerMessageBlockNotFoundResponse(
       content: null == content
@@ -3755,6 +5322,10 @@ class __$$_PeerMessageBlockNotFoundResponseCopyWithImpl<$Res>
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as PeerMessageType,
+      timestamp: null == timestamp
+          ? _value.timestamp
+          : timestamp // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 
@@ -3776,7 +5347,8 @@ class _$_PeerMessageBlockNotFoundResponse
       required this.senderIdentity,
       required this.receiverIdentity,
       required this.tag,
-      this.type = PeerMessageType.blockNotFoundResponse});
+      this.type = PeerMessageType.blockNotFoundResponse,
+      required this.timestamp});
 
   factory _$_PeerMessageBlockNotFoundResponse.fromJson(
           Map<String, dynamic> json) =>
@@ -3793,10 +5365,12 @@ class _$_PeerMessageBlockNotFoundResponse
   @override
   @JsonKey()
   final PeerMessageType type;
+  @override
+  final int timestamp;
 
   @override
   String toString() {
-    return 'PeerMessage.blockNotFoundResponse(content: $content, senderIdentity: $senderIdentity, receiverIdentity: $receiverIdentity, tag: $tag, type: $type)';
+    return 'PeerMessage.blockNotFoundResponse(content: $content, senderIdentity: $senderIdentity, receiverIdentity: $receiverIdentity, tag: $tag, type: $type, timestamp: $timestamp)';
   }
 
   @override
@@ -3810,13 +5384,15 @@ class _$_PeerMessageBlockNotFoundResponse
             (identical(other.receiverIdentity, receiverIdentity) ||
                 other.receiverIdentity == receiverIdentity) &&
             (identical(other.tag, tag) || other.tag == tag) &&
-            (identical(other.type, type) || other.type == type));
+            (identical(other.type, type) || other.type == type) &&
+            (identical(other.timestamp, timestamp) ||
+                other.timestamp == timestamp));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, content, senderIdentity, receiverIdentity, tag, type);
+  int get hashCode => Object.hash(runtimeType, content, senderIdentity,
+      receiverIdentity, tag, type, timestamp);
 
   @JsonKey(ignore: true)
   @override
@@ -3830,44 +5406,90 @@ class _$_PeerMessageBlockNotFoundResponse
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)
+            String tag, PeerMessageType type, dynamic content, int timestamp)
         peerTypeRequest,
-    required TResult Function(PeerType content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            PeerType content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         peerTypeResponse,
-    required TResult Function(Transaction content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            Transaction content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         addTransaction,
-    required TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         blockHeadersRequest,
     required TResult Function(
             BlockHeadersResponseContent content,
             String senderIdentity,
             String receiverIdentity,
             String tag,
-            PeerMessageType type)
+            PeerMessageType type,
+            int timestamp)
         blockHeadersResponse,
-    required TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         blockRequest,
-    required TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         blockResponse,
-    required TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         blockNotFoundResponse,
     required TResult Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)
+            String tag, PeerMessageType type, dynamic content, int timestamp)
         peerStateRequest,
-    required TResult Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         peerStateResponse,
-    required TResult Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         peerStateUpdate,
-    required TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         addBlock,
     required TResult Function(
             BlockHeader header,
@@ -3875,71 +5497,129 @@ class _$_PeerMessageBlockNotFoundResponse
             String receiverIdentity,
             String tag,
             PeerMessageType type,
-            dynamic content)
+            dynamic content,
+            int timestamp)
         blockRejected,
-    required TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         blockAccepted,
     required TResult Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)
+            String tag, PeerMessageType type, dynamic content, int timestamp)
         getLastBlockRequest,
-    required TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         getLastBlockResponse,
     required TResult Function(
             SetTransactionStatusContent content,
             String senderIdentity,
             String receiverIdentity,
             String tag,
-            PeerMessageType type)
+            PeerMessageType type,
+            int timestamp)
         setTransactionStatus,
   }) {
     return blockNotFoundResponse(
-        content, senderIdentity, receiverIdentity, tag, type);
+        content, senderIdentity, receiverIdentity, tag, type, timestamp);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)?
+            String tag, PeerMessageType type, dynamic content, int timestamp)?
         peerTypeRequest,
-    TResult? Function(PeerType content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            PeerType content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerTypeResponse,
-    TResult? Function(Transaction content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            Transaction content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         addTransaction,
-    TResult? Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockHeadersRequest,
     TResult? Function(
             BlockHeadersResponseContent content,
             String senderIdentity,
             String receiverIdentity,
             String tag,
-            PeerMessageType type)?
+            PeerMessageType type,
+            int timestamp)?
         blockHeadersResponse,
-    TResult? Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockRequest,
-    TResult? Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockResponse,
-    TResult? Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockNotFoundResponse,
     TResult? Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)?
+            String tag, PeerMessageType type, dynamic content, int timestamp)?
         peerStateRequest,
-    TResult? Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerStateResponse,
-    TResult? Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerStateUpdate,
-    TResult? Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         addBlock,
     TResult? Function(
             BlockHeader header,
@@ -3947,67 +5627,129 @@ class _$_PeerMessageBlockNotFoundResponse
             String receiverIdentity,
             String tag,
             PeerMessageType type,
-            dynamic content)?
+            dynamic content,
+            int timestamp)?
         blockRejected,
-    TResult? Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockAccepted,
     TResult? Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)?
+            String tag, PeerMessageType type, dynamic content, int timestamp)?
         getLastBlockRequest,
-    TResult? Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         getLastBlockResponse,
     TResult? Function(
             SetTransactionStatusContent content,
             String senderIdentity,
             String receiverIdentity,
             String tag,
-            PeerMessageType type)?
+            PeerMessageType type,
+            int timestamp)?
         setTransactionStatus,
   }) {
     return blockNotFoundResponse?.call(
-        content, senderIdentity, receiverIdentity, tag, type);
+        content, senderIdentity, receiverIdentity, tag, type, timestamp);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String senderIdentity, String receiverIdentity, String tag,
-            PeerMessageType type, dynamic content)?
+            PeerMessageType type, dynamic content, int timestamp)?
         peerTypeRequest,
-    TResult Function(PeerType content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            PeerType content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerTypeResponse,
-    TResult Function(Transaction content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            Transaction content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         addTransaction,
-    TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockHeadersRequest,
-    TResult Function(BlockHeadersResponseContent content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeadersResponseContent content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockHeadersResponse,
-    TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockRequest,
-    TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockResponse,
-    TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockNotFoundResponse,
     TResult Function(String senderIdentity, String receiverIdentity, String tag,
-            PeerMessageType type, dynamic content)?
+            PeerMessageType type, dynamic content, int timestamp)?
         peerStateRequest,
-    TResult Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerStateResponse,
-    TResult Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerStateUpdate,
-    TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         addBlock,
     TResult Function(
             BlockHeader header,
@@ -4015,25 +5757,41 @@ class _$_PeerMessageBlockNotFoundResponse
             String receiverIdentity,
             String tag,
             PeerMessageType type,
-            dynamic content)?
+            dynamic content,
+            int timestamp)?
         blockRejected,
-    TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockAccepted,
     TResult Function(String senderIdentity, String receiverIdentity, String tag,
-            PeerMessageType type, dynamic content)?
+            PeerMessageType type, dynamic content, int timestamp)?
         getLastBlockRequest,
-    TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         getLastBlockResponse,
-    TResult Function(SetTransactionStatusContent content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            SetTransactionStatusContent content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         setTransactionStatus,
     required TResult orElse(),
   }) {
     if (blockNotFoundResponse != null) {
       return blockNotFoundResponse(
-          content, senderIdentity, receiverIdentity, tag, type);
+          content, senderIdentity, receiverIdentity, tag, type, timestamp);
     }
     return orElse();
   }
@@ -4152,7 +5910,8 @@ abstract class _PeerMessageBlockNotFoundResponse
       required final String senderIdentity,
       required final String receiverIdentity,
       required final String tag,
-      final PeerMessageType type}) = _$_PeerMessageBlockNotFoundResponse;
+      final PeerMessageType type,
+      required final int timestamp}) = _$_PeerMessageBlockNotFoundResponse;
 
   factory _PeerMessageBlockNotFoundResponse.fromJson(
       Map<String, dynamic> json) = _$_PeerMessageBlockNotFoundResponse.fromJson;
@@ -4167,6 +5926,8 @@ abstract class _PeerMessageBlockNotFoundResponse
   String get tag;
   @override
   PeerMessageType get type;
+  @override
+  int get timestamp;
   @override
   @JsonKey(ignore: true)
   _$$_PeerMessageBlockNotFoundResponseCopyWith<
@@ -4188,7 +5949,8 @@ abstract class _$$_PeerMessagePeerStateRequestCopyWith<$Res>
       String receiverIdentity,
       String tag,
       PeerMessageType type,
-      dynamic content});
+      dynamic content,
+      int timestamp});
 }
 
 /// @nodoc
@@ -4208,6 +5970,7 @@ class __$$_PeerMessagePeerStateRequestCopyWithImpl<$Res>
     Object? tag = null,
     Object? type = null,
     Object? content = freezed,
+    Object? timestamp = null,
   }) {
     return _then(_$_PeerMessagePeerStateRequest(
       senderIdentity: null == senderIdentity
@@ -4230,6 +5993,10 @@ class __$$_PeerMessagePeerStateRequestCopyWithImpl<$Res>
           ? _value.content
           : content // ignore: cast_nullable_to_non_nullable
               as dynamic,
+      timestamp: null == timestamp
+          ? _value.timestamp
+          : timestamp // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -4242,7 +6009,8 @@ class _$_PeerMessagePeerStateRequest implements _PeerMessagePeerStateRequest {
       required this.receiverIdentity,
       required this.tag,
       this.type = PeerMessageType.peerStateRequest,
-      this.content});
+      this.content,
+      required this.timestamp});
 
   factory _$_PeerMessagePeerStateRequest.fromJson(Map<String, dynamic> json) =>
       _$$_PeerMessagePeerStateRequestFromJson(json);
@@ -4258,10 +6026,12 @@ class _$_PeerMessagePeerStateRequest implements _PeerMessagePeerStateRequest {
   final PeerMessageType type;
   @override
   final dynamic content;
+  @override
+  final int timestamp;
 
   @override
   String toString() {
-    return 'PeerMessage.peerStateRequest(senderIdentity: $senderIdentity, receiverIdentity: $receiverIdentity, tag: $tag, type: $type, content: $content)';
+    return 'PeerMessage.peerStateRequest(senderIdentity: $senderIdentity, receiverIdentity: $receiverIdentity, tag: $tag, type: $type, content: $content, timestamp: $timestamp)';
   }
 
   @override
@@ -4275,13 +6045,15 @@ class _$_PeerMessagePeerStateRequest implements _PeerMessagePeerStateRequest {
                 other.receiverIdentity == receiverIdentity) &&
             (identical(other.tag, tag) || other.tag == tag) &&
             (identical(other.type, type) || other.type == type) &&
-            const DeepCollectionEquality().equals(other.content, content));
+            const DeepCollectionEquality().equals(other.content, content) &&
+            (identical(other.timestamp, timestamp) ||
+                other.timestamp == timestamp));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, senderIdentity, receiverIdentity,
-      tag, type, const DeepCollectionEquality().hash(content));
+      tag, type, const DeepCollectionEquality().hash(content), timestamp);
 
   @JsonKey(ignore: true)
   @override
@@ -4294,44 +6066,90 @@ class _$_PeerMessagePeerStateRequest implements _PeerMessagePeerStateRequest {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)
+            String tag, PeerMessageType type, dynamic content, int timestamp)
         peerTypeRequest,
-    required TResult Function(PeerType content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            PeerType content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         peerTypeResponse,
-    required TResult Function(Transaction content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            Transaction content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         addTransaction,
-    required TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         blockHeadersRequest,
     required TResult Function(
             BlockHeadersResponseContent content,
             String senderIdentity,
             String receiverIdentity,
             String tag,
-            PeerMessageType type)
+            PeerMessageType type,
+            int timestamp)
         blockHeadersResponse,
-    required TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         blockRequest,
-    required TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         blockResponse,
-    required TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         blockNotFoundResponse,
     required TResult Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)
+            String tag, PeerMessageType type, dynamic content, int timestamp)
         peerStateRequest,
-    required TResult Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         peerStateResponse,
-    required TResult Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         peerStateUpdate,
-    required TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         addBlock,
     required TResult Function(
             BlockHeader header,
@@ -4339,71 +6157,129 @@ class _$_PeerMessagePeerStateRequest implements _PeerMessagePeerStateRequest {
             String receiverIdentity,
             String tag,
             PeerMessageType type,
-            dynamic content)
+            dynamic content,
+            int timestamp)
         blockRejected,
-    required TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         blockAccepted,
     required TResult Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)
+            String tag, PeerMessageType type, dynamic content, int timestamp)
         getLastBlockRequest,
-    required TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         getLastBlockResponse,
     required TResult Function(
             SetTransactionStatusContent content,
             String senderIdentity,
             String receiverIdentity,
             String tag,
-            PeerMessageType type)
+            PeerMessageType type,
+            int timestamp)
         setTransactionStatus,
   }) {
     return peerStateRequest(
-        senderIdentity, receiverIdentity, tag, type, content);
+        senderIdentity, receiverIdentity, tag, type, content, timestamp);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)?
+            String tag, PeerMessageType type, dynamic content, int timestamp)?
         peerTypeRequest,
-    TResult? Function(PeerType content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            PeerType content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerTypeResponse,
-    TResult? Function(Transaction content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            Transaction content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         addTransaction,
-    TResult? Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockHeadersRequest,
     TResult? Function(
             BlockHeadersResponseContent content,
             String senderIdentity,
             String receiverIdentity,
             String tag,
-            PeerMessageType type)?
+            PeerMessageType type,
+            int timestamp)?
         blockHeadersResponse,
-    TResult? Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockRequest,
-    TResult? Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockResponse,
-    TResult? Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockNotFoundResponse,
     TResult? Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)?
+            String tag, PeerMessageType type, dynamic content, int timestamp)?
         peerStateRequest,
-    TResult? Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerStateResponse,
-    TResult? Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerStateUpdate,
-    TResult? Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         addBlock,
     TResult? Function(
             BlockHeader header,
@@ -4411,67 +6287,129 @@ class _$_PeerMessagePeerStateRequest implements _PeerMessagePeerStateRequest {
             String receiverIdentity,
             String tag,
             PeerMessageType type,
-            dynamic content)?
+            dynamic content,
+            int timestamp)?
         blockRejected,
-    TResult? Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockAccepted,
     TResult? Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)?
+            String tag, PeerMessageType type, dynamic content, int timestamp)?
         getLastBlockRequest,
-    TResult? Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         getLastBlockResponse,
     TResult? Function(
             SetTransactionStatusContent content,
             String senderIdentity,
             String receiverIdentity,
             String tag,
-            PeerMessageType type)?
+            PeerMessageType type,
+            int timestamp)?
         setTransactionStatus,
   }) {
     return peerStateRequest?.call(
-        senderIdentity, receiverIdentity, tag, type, content);
+        senderIdentity, receiverIdentity, tag, type, content, timestamp);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String senderIdentity, String receiverIdentity, String tag,
-            PeerMessageType type, dynamic content)?
+            PeerMessageType type, dynamic content, int timestamp)?
         peerTypeRequest,
-    TResult Function(PeerType content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            PeerType content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerTypeResponse,
-    TResult Function(Transaction content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            Transaction content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         addTransaction,
-    TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockHeadersRequest,
-    TResult Function(BlockHeadersResponseContent content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeadersResponseContent content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockHeadersResponse,
-    TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockRequest,
-    TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockResponse,
-    TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockNotFoundResponse,
     TResult Function(String senderIdentity, String receiverIdentity, String tag,
-            PeerMessageType type, dynamic content)?
+            PeerMessageType type, dynamic content, int timestamp)?
         peerStateRequest,
-    TResult Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerStateResponse,
-    TResult Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerStateUpdate,
-    TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         addBlock,
     TResult Function(
             BlockHeader header,
@@ -4479,25 +6417,41 @@ class _$_PeerMessagePeerStateRequest implements _PeerMessagePeerStateRequest {
             String receiverIdentity,
             String tag,
             PeerMessageType type,
-            dynamic content)?
+            dynamic content,
+            int timestamp)?
         blockRejected,
-    TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockAccepted,
     TResult Function(String senderIdentity, String receiverIdentity, String tag,
-            PeerMessageType type, dynamic content)?
+            PeerMessageType type, dynamic content, int timestamp)?
         getLastBlockRequest,
-    TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         getLastBlockResponse,
-    TResult Function(SetTransactionStatusContent content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            SetTransactionStatusContent content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         setTransactionStatus,
     required TResult orElse(),
   }) {
     if (peerStateRequest != null) {
       return peerStateRequest(
-          senderIdentity, receiverIdentity, tag, type, content);
+          senderIdentity, receiverIdentity, tag, type, content, timestamp);
     }
     return orElse();
   }
@@ -4616,7 +6570,8 @@ abstract class _PeerMessagePeerStateRequest
       required final String receiverIdentity,
       required final String tag,
       final PeerMessageType type,
-      final dynamic content}) = _$_PeerMessagePeerStateRequest;
+      final dynamic content,
+      required final int timestamp}) = _$_PeerMessagePeerStateRequest;
 
   factory _PeerMessagePeerStateRequest.fromJson(Map<String, dynamic> json) =
       _$_PeerMessagePeerStateRequest.fromJson;
@@ -4631,6 +6586,8 @@ abstract class _PeerMessagePeerStateRequest
   PeerMessageType get type;
   @override
   dynamic get content;
+  @override
+  int get timestamp;
   @override
   @JsonKey(ignore: true)
   _$$_PeerMessagePeerStateRequestCopyWith<_$_PeerMessagePeerStateRequest>
@@ -4651,7 +6608,8 @@ abstract class _$$_PeerMessagePeerStateResponseCopyWith<$Res>
       String senderIdentity,
       String receiverIdentity,
       String tag,
-      PeerMessageType type});
+      PeerMessageType type,
+      int timestamp});
 }
 
 /// @nodoc
@@ -4671,6 +6629,7 @@ class __$$_PeerMessagePeerStateResponseCopyWithImpl<$Res>
     Object? receiverIdentity = null,
     Object? tag = null,
     Object? type = null,
+    Object? timestamp = null,
   }) {
     return _then(_$_PeerMessagePeerStateResponse(
       content: null == content
@@ -4693,6 +6652,10 @@ class __$$_PeerMessagePeerStateResponseCopyWithImpl<$Res>
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as PeerMessageType,
+      timestamp: null == timestamp
+          ? _value.timestamp
+          : timestamp // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -4705,7 +6668,8 @@ class _$_PeerMessagePeerStateResponse implements _PeerMessagePeerStateResponse {
       required this.senderIdentity,
       required this.receiverIdentity,
       required this.tag,
-      this.type = PeerMessageType.peerStateResponse});
+      this.type = PeerMessageType.peerStateResponse,
+      required this.timestamp});
 
   factory _$_PeerMessagePeerStateResponse.fromJson(Map<String, dynamic> json) =>
       _$$_PeerMessagePeerStateResponseFromJson(json);
@@ -4721,10 +6685,12 @@ class _$_PeerMessagePeerStateResponse implements _PeerMessagePeerStateResponse {
   @override
   @JsonKey()
   final PeerMessageType type;
+  @override
+  final int timestamp;
 
   @override
   String toString() {
-    return 'PeerMessage.peerStateResponse(content: $content, senderIdentity: $senderIdentity, receiverIdentity: $receiverIdentity, tag: $tag, type: $type)';
+    return 'PeerMessage.peerStateResponse(content: $content, senderIdentity: $senderIdentity, receiverIdentity: $receiverIdentity, tag: $tag, type: $type, timestamp: $timestamp)';
   }
 
   @override
@@ -4738,13 +6704,15 @@ class _$_PeerMessagePeerStateResponse implements _PeerMessagePeerStateResponse {
             (identical(other.receiverIdentity, receiverIdentity) ||
                 other.receiverIdentity == receiverIdentity) &&
             (identical(other.tag, tag) || other.tag == tag) &&
-            (identical(other.type, type) || other.type == type));
+            (identical(other.type, type) || other.type == type) &&
+            (identical(other.timestamp, timestamp) ||
+                other.timestamp == timestamp));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, content, senderIdentity, receiverIdentity, tag, type);
+  int get hashCode => Object.hash(runtimeType, content, senderIdentity,
+      receiverIdentity, tag, type, timestamp);
 
   @JsonKey(ignore: true)
   @override
@@ -4757,44 +6725,90 @@ class _$_PeerMessagePeerStateResponse implements _PeerMessagePeerStateResponse {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)
+            String tag, PeerMessageType type, dynamic content, int timestamp)
         peerTypeRequest,
-    required TResult Function(PeerType content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            PeerType content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         peerTypeResponse,
-    required TResult Function(Transaction content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            Transaction content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         addTransaction,
-    required TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         blockHeadersRequest,
     required TResult Function(
             BlockHeadersResponseContent content,
             String senderIdentity,
             String receiverIdentity,
             String tag,
-            PeerMessageType type)
+            PeerMessageType type,
+            int timestamp)
         blockHeadersResponse,
-    required TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         blockRequest,
-    required TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         blockResponse,
-    required TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         blockNotFoundResponse,
     required TResult Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)
+            String tag, PeerMessageType type, dynamic content, int timestamp)
         peerStateRequest,
-    required TResult Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         peerStateResponse,
-    required TResult Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         peerStateUpdate,
-    required TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         addBlock,
     required TResult Function(
             BlockHeader header,
@@ -4802,71 +6816,129 @@ class _$_PeerMessagePeerStateResponse implements _PeerMessagePeerStateResponse {
             String receiverIdentity,
             String tag,
             PeerMessageType type,
-            dynamic content)
+            dynamic content,
+            int timestamp)
         blockRejected,
-    required TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         blockAccepted,
     required TResult Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)
+            String tag, PeerMessageType type, dynamic content, int timestamp)
         getLastBlockRequest,
-    required TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         getLastBlockResponse,
     required TResult Function(
             SetTransactionStatusContent content,
             String senderIdentity,
             String receiverIdentity,
             String tag,
-            PeerMessageType type)
+            PeerMessageType type,
+            int timestamp)
         setTransactionStatus,
   }) {
     return peerStateResponse(
-        content, senderIdentity, receiverIdentity, tag, type);
+        content, senderIdentity, receiverIdentity, tag, type, timestamp);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)?
+            String tag, PeerMessageType type, dynamic content, int timestamp)?
         peerTypeRequest,
-    TResult? Function(PeerType content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            PeerType content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerTypeResponse,
-    TResult? Function(Transaction content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            Transaction content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         addTransaction,
-    TResult? Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockHeadersRequest,
     TResult? Function(
             BlockHeadersResponseContent content,
             String senderIdentity,
             String receiverIdentity,
             String tag,
-            PeerMessageType type)?
+            PeerMessageType type,
+            int timestamp)?
         blockHeadersResponse,
-    TResult? Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockRequest,
-    TResult? Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockResponse,
-    TResult? Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockNotFoundResponse,
     TResult? Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)?
+            String tag, PeerMessageType type, dynamic content, int timestamp)?
         peerStateRequest,
-    TResult? Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerStateResponse,
-    TResult? Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerStateUpdate,
-    TResult? Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         addBlock,
     TResult? Function(
             BlockHeader header,
@@ -4874,67 +6946,129 @@ class _$_PeerMessagePeerStateResponse implements _PeerMessagePeerStateResponse {
             String receiverIdentity,
             String tag,
             PeerMessageType type,
-            dynamic content)?
+            dynamic content,
+            int timestamp)?
         blockRejected,
-    TResult? Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockAccepted,
     TResult? Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)?
+            String tag, PeerMessageType type, dynamic content, int timestamp)?
         getLastBlockRequest,
-    TResult? Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         getLastBlockResponse,
     TResult? Function(
             SetTransactionStatusContent content,
             String senderIdentity,
             String receiverIdentity,
             String tag,
-            PeerMessageType type)?
+            PeerMessageType type,
+            int timestamp)?
         setTransactionStatus,
   }) {
     return peerStateResponse?.call(
-        content, senderIdentity, receiverIdentity, tag, type);
+        content, senderIdentity, receiverIdentity, tag, type, timestamp);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String senderIdentity, String receiverIdentity, String tag,
-            PeerMessageType type, dynamic content)?
+            PeerMessageType type, dynamic content, int timestamp)?
         peerTypeRequest,
-    TResult Function(PeerType content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            PeerType content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerTypeResponse,
-    TResult Function(Transaction content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            Transaction content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         addTransaction,
-    TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockHeadersRequest,
-    TResult Function(BlockHeadersResponseContent content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeadersResponseContent content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockHeadersResponse,
-    TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockRequest,
-    TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockResponse,
-    TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockNotFoundResponse,
     TResult Function(String senderIdentity, String receiverIdentity, String tag,
-            PeerMessageType type, dynamic content)?
+            PeerMessageType type, dynamic content, int timestamp)?
         peerStateRequest,
-    TResult Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerStateResponse,
-    TResult Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerStateUpdate,
-    TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         addBlock,
     TResult Function(
             BlockHeader header,
@@ -4942,25 +7076,41 @@ class _$_PeerMessagePeerStateResponse implements _PeerMessagePeerStateResponse {
             String receiverIdentity,
             String tag,
             PeerMessageType type,
-            dynamic content)?
+            dynamic content,
+            int timestamp)?
         blockRejected,
-    TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockAccepted,
     TResult Function(String senderIdentity, String receiverIdentity, String tag,
-            PeerMessageType type, dynamic content)?
+            PeerMessageType type, dynamic content, int timestamp)?
         getLastBlockRequest,
-    TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         getLastBlockResponse,
-    TResult Function(SetTransactionStatusContent content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            SetTransactionStatusContent content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         setTransactionStatus,
     required TResult orElse(),
   }) {
     if (peerStateResponse != null) {
       return peerStateResponse(
-          content, senderIdentity, receiverIdentity, tag, type);
+          content, senderIdentity, receiverIdentity, tag, type, timestamp);
     }
     return orElse();
   }
@@ -5079,7 +7229,8 @@ abstract class _PeerMessagePeerStateResponse
       required final String senderIdentity,
       required final String receiverIdentity,
       required final String tag,
-      final PeerMessageType type}) = _$_PeerMessagePeerStateResponse;
+      final PeerMessageType type,
+      required final int timestamp}) = _$_PeerMessagePeerStateResponse;
 
   factory _PeerMessagePeerStateResponse.fromJson(Map<String, dynamic> json) =
       _$_PeerMessagePeerStateResponse.fromJson;
@@ -5094,6 +7245,8 @@ abstract class _PeerMessagePeerStateResponse
   String get tag;
   @override
   PeerMessageType get type;
+  @override
+  int get timestamp;
   @override
   @JsonKey(ignore: true)
   _$$_PeerMessagePeerStateResponseCopyWith<_$_PeerMessagePeerStateResponse>
@@ -5114,7 +7267,8 @@ abstract class _$$_PeerMessagePeerStateUpdateCopyWith<$Res>
       String senderIdentity,
       String receiverIdentity,
       String tag,
-      PeerMessageType type});
+      PeerMessageType type,
+      int timestamp});
 }
 
 /// @nodoc
@@ -5134,6 +7288,7 @@ class __$$_PeerMessagePeerStateUpdateCopyWithImpl<$Res>
     Object? receiverIdentity = null,
     Object? tag = null,
     Object? type = null,
+    Object? timestamp = null,
   }) {
     return _then(_$_PeerMessagePeerStateUpdate(
       content: null == content
@@ -5156,6 +7311,10 @@ class __$$_PeerMessagePeerStateUpdateCopyWithImpl<$Res>
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as PeerMessageType,
+      timestamp: null == timestamp
+          ? _value.timestamp
+          : timestamp // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -5168,7 +7327,8 @@ class _$_PeerMessagePeerStateUpdate implements _PeerMessagePeerStateUpdate {
       required this.senderIdentity,
       required this.receiverIdentity,
       required this.tag,
-      this.type = PeerMessageType.peerStateUpdate});
+      this.type = PeerMessageType.peerStateUpdate,
+      required this.timestamp});
 
   factory _$_PeerMessagePeerStateUpdate.fromJson(Map<String, dynamic> json) =>
       _$$_PeerMessagePeerStateUpdateFromJson(json);
@@ -5184,10 +7344,12 @@ class _$_PeerMessagePeerStateUpdate implements _PeerMessagePeerStateUpdate {
   @override
   @JsonKey()
   final PeerMessageType type;
+  @override
+  final int timestamp;
 
   @override
   String toString() {
-    return 'PeerMessage.peerStateUpdate(content: $content, senderIdentity: $senderIdentity, receiverIdentity: $receiverIdentity, tag: $tag, type: $type)';
+    return 'PeerMessage.peerStateUpdate(content: $content, senderIdentity: $senderIdentity, receiverIdentity: $receiverIdentity, tag: $tag, type: $type, timestamp: $timestamp)';
   }
 
   @override
@@ -5201,13 +7363,15 @@ class _$_PeerMessagePeerStateUpdate implements _PeerMessagePeerStateUpdate {
             (identical(other.receiverIdentity, receiverIdentity) ||
                 other.receiverIdentity == receiverIdentity) &&
             (identical(other.tag, tag) || other.tag == tag) &&
-            (identical(other.type, type) || other.type == type));
+            (identical(other.type, type) || other.type == type) &&
+            (identical(other.timestamp, timestamp) ||
+                other.timestamp == timestamp));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, content, senderIdentity, receiverIdentity, tag, type);
+  int get hashCode => Object.hash(runtimeType, content, senderIdentity,
+      receiverIdentity, tag, type, timestamp);
 
   @JsonKey(ignore: true)
   @override
@@ -5220,44 +7384,90 @@ class _$_PeerMessagePeerStateUpdate implements _PeerMessagePeerStateUpdate {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)
+            String tag, PeerMessageType type, dynamic content, int timestamp)
         peerTypeRequest,
-    required TResult Function(PeerType content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            PeerType content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         peerTypeResponse,
-    required TResult Function(Transaction content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            Transaction content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         addTransaction,
-    required TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         blockHeadersRequest,
     required TResult Function(
             BlockHeadersResponseContent content,
             String senderIdentity,
             String receiverIdentity,
             String tag,
-            PeerMessageType type)
+            PeerMessageType type,
+            int timestamp)
         blockHeadersResponse,
-    required TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         blockRequest,
-    required TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         blockResponse,
-    required TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         blockNotFoundResponse,
     required TResult Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)
+            String tag, PeerMessageType type, dynamic content, int timestamp)
         peerStateRequest,
-    required TResult Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         peerStateResponse,
-    required TResult Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         peerStateUpdate,
-    required TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         addBlock,
     required TResult Function(
             BlockHeader header,
@@ -5265,71 +7475,129 @@ class _$_PeerMessagePeerStateUpdate implements _PeerMessagePeerStateUpdate {
             String receiverIdentity,
             String tag,
             PeerMessageType type,
-            dynamic content)
+            dynamic content,
+            int timestamp)
         blockRejected,
-    required TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         blockAccepted,
     required TResult Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)
+            String tag, PeerMessageType type, dynamic content, int timestamp)
         getLastBlockRequest,
-    required TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         getLastBlockResponse,
     required TResult Function(
             SetTransactionStatusContent content,
             String senderIdentity,
             String receiverIdentity,
             String tag,
-            PeerMessageType type)
+            PeerMessageType type,
+            int timestamp)
         setTransactionStatus,
   }) {
     return peerStateUpdate(
-        content, senderIdentity, receiverIdentity, tag, type);
+        content, senderIdentity, receiverIdentity, tag, type, timestamp);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)?
+            String tag, PeerMessageType type, dynamic content, int timestamp)?
         peerTypeRequest,
-    TResult? Function(PeerType content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            PeerType content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerTypeResponse,
-    TResult? Function(Transaction content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            Transaction content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         addTransaction,
-    TResult? Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockHeadersRequest,
     TResult? Function(
             BlockHeadersResponseContent content,
             String senderIdentity,
             String receiverIdentity,
             String tag,
-            PeerMessageType type)?
+            PeerMessageType type,
+            int timestamp)?
         blockHeadersResponse,
-    TResult? Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockRequest,
-    TResult? Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockResponse,
-    TResult? Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockNotFoundResponse,
     TResult? Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)?
+            String tag, PeerMessageType type, dynamic content, int timestamp)?
         peerStateRequest,
-    TResult? Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerStateResponse,
-    TResult? Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerStateUpdate,
-    TResult? Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         addBlock,
     TResult? Function(
             BlockHeader header,
@@ -5337,67 +7605,129 @@ class _$_PeerMessagePeerStateUpdate implements _PeerMessagePeerStateUpdate {
             String receiverIdentity,
             String tag,
             PeerMessageType type,
-            dynamic content)?
+            dynamic content,
+            int timestamp)?
         blockRejected,
-    TResult? Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockAccepted,
     TResult? Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)?
+            String tag, PeerMessageType type, dynamic content, int timestamp)?
         getLastBlockRequest,
-    TResult? Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         getLastBlockResponse,
     TResult? Function(
             SetTransactionStatusContent content,
             String senderIdentity,
             String receiverIdentity,
             String tag,
-            PeerMessageType type)?
+            PeerMessageType type,
+            int timestamp)?
         setTransactionStatus,
   }) {
     return peerStateUpdate?.call(
-        content, senderIdentity, receiverIdentity, tag, type);
+        content, senderIdentity, receiverIdentity, tag, type, timestamp);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String senderIdentity, String receiverIdentity, String tag,
-            PeerMessageType type, dynamic content)?
+            PeerMessageType type, dynamic content, int timestamp)?
         peerTypeRequest,
-    TResult Function(PeerType content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            PeerType content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerTypeResponse,
-    TResult Function(Transaction content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            Transaction content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         addTransaction,
-    TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockHeadersRequest,
-    TResult Function(BlockHeadersResponseContent content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeadersResponseContent content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockHeadersResponse,
-    TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockRequest,
-    TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockResponse,
-    TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockNotFoundResponse,
     TResult Function(String senderIdentity, String receiverIdentity, String tag,
-            PeerMessageType type, dynamic content)?
+            PeerMessageType type, dynamic content, int timestamp)?
         peerStateRequest,
-    TResult Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerStateResponse,
-    TResult Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerStateUpdate,
-    TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         addBlock,
     TResult Function(
             BlockHeader header,
@@ -5405,25 +7735,41 @@ class _$_PeerMessagePeerStateUpdate implements _PeerMessagePeerStateUpdate {
             String receiverIdentity,
             String tag,
             PeerMessageType type,
-            dynamic content)?
+            dynamic content,
+            int timestamp)?
         blockRejected,
-    TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockAccepted,
     TResult Function(String senderIdentity, String receiverIdentity, String tag,
-            PeerMessageType type, dynamic content)?
+            PeerMessageType type, dynamic content, int timestamp)?
         getLastBlockRequest,
-    TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         getLastBlockResponse,
-    TResult Function(SetTransactionStatusContent content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            SetTransactionStatusContent content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         setTransactionStatus,
     required TResult orElse(),
   }) {
     if (peerStateUpdate != null) {
       return peerStateUpdate(
-          content, senderIdentity, receiverIdentity, tag, type);
+          content, senderIdentity, receiverIdentity, tag, type, timestamp);
     }
     return orElse();
   }
@@ -5542,7 +7888,8 @@ abstract class _PeerMessagePeerStateUpdate
       required final String senderIdentity,
       required final String receiverIdentity,
       required final String tag,
-      final PeerMessageType type}) = _$_PeerMessagePeerStateUpdate;
+      final PeerMessageType type,
+      required final int timestamp}) = _$_PeerMessagePeerStateUpdate;
 
   factory _PeerMessagePeerStateUpdate.fromJson(Map<String, dynamic> json) =
       _$_PeerMessagePeerStateUpdate.fromJson;
@@ -5557,6 +7904,8 @@ abstract class _PeerMessagePeerStateUpdate
   String get tag;
   @override
   PeerMessageType get type;
+  @override
+  int get timestamp;
   @override
   @JsonKey(ignore: true)
   _$$_PeerMessagePeerStateUpdateCopyWith<_$_PeerMessagePeerStateUpdate>
@@ -5576,7 +7925,8 @@ abstract class _$$_PeerMessageAddBlockCopyWith<$Res>
       String senderIdentity,
       String receiverIdentity,
       String tag,
-      PeerMessageType type});
+      PeerMessageType type,
+      int timestamp});
 
   $BlockCopyWith<$Res> get content;
 }
@@ -5597,6 +7947,7 @@ class __$$_PeerMessageAddBlockCopyWithImpl<$Res>
     Object? receiverIdentity = null,
     Object? tag = null,
     Object? type = null,
+    Object? timestamp = null,
   }) {
     return _then(_$_PeerMessageAddBlock(
       content: null == content
@@ -5619,6 +7970,10 @@ class __$$_PeerMessageAddBlockCopyWithImpl<$Res>
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as PeerMessageType,
+      timestamp: null == timestamp
+          ? _value.timestamp
+          : timestamp // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 
@@ -5639,7 +7994,8 @@ class _$_PeerMessageAddBlock implements _PeerMessageAddBlock {
       required this.senderIdentity,
       required this.receiverIdentity,
       required this.tag,
-      this.type = PeerMessageType.addBlock});
+      this.type = PeerMessageType.addBlock,
+      required this.timestamp});
 
   factory _$_PeerMessageAddBlock.fromJson(Map<String, dynamic> json) =>
       _$$_PeerMessageAddBlockFromJson(json);
@@ -5655,10 +8011,12 @@ class _$_PeerMessageAddBlock implements _PeerMessageAddBlock {
   @override
   @JsonKey()
   final PeerMessageType type;
+  @override
+  final int timestamp;
 
   @override
   String toString() {
-    return 'PeerMessage.addBlock(content: $content, senderIdentity: $senderIdentity, receiverIdentity: $receiverIdentity, tag: $tag, type: $type)';
+    return 'PeerMessage.addBlock(content: $content, senderIdentity: $senderIdentity, receiverIdentity: $receiverIdentity, tag: $tag, type: $type, timestamp: $timestamp)';
   }
 
   @override
@@ -5672,13 +8030,15 @@ class _$_PeerMessageAddBlock implements _PeerMessageAddBlock {
             (identical(other.receiverIdentity, receiverIdentity) ||
                 other.receiverIdentity == receiverIdentity) &&
             (identical(other.tag, tag) || other.tag == tag) &&
-            (identical(other.type, type) || other.type == type));
+            (identical(other.type, type) || other.type == type) &&
+            (identical(other.timestamp, timestamp) ||
+                other.timestamp == timestamp));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, content, senderIdentity, receiverIdentity, tag, type);
+  int get hashCode => Object.hash(runtimeType, content, senderIdentity,
+      receiverIdentity, tag, type, timestamp);
 
   @JsonKey(ignore: true)
   @override
@@ -5691,44 +8051,90 @@ class _$_PeerMessageAddBlock implements _PeerMessageAddBlock {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)
+            String tag, PeerMessageType type, dynamic content, int timestamp)
         peerTypeRequest,
-    required TResult Function(PeerType content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            PeerType content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         peerTypeResponse,
-    required TResult Function(Transaction content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            Transaction content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         addTransaction,
-    required TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         blockHeadersRequest,
     required TResult Function(
             BlockHeadersResponseContent content,
             String senderIdentity,
             String receiverIdentity,
             String tag,
-            PeerMessageType type)
+            PeerMessageType type,
+            int timestamp)
         blockHeadersResponse,
-    required TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         blockRequest,
-    required TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         blockResponse,
-    required TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         blockNotFoundResponse,
     required TResult Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)
+            String tag, PeerMessageType type, dynamic content, int timestamp)
         peerStateRequest,
-    required TResult Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         peerStateResponse,
-    required TResult Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         peerStateUpdate,
-    required TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         addBlock,
     required TResult Function(
             BlockHeader header,
@@ -5736,70 +8142,129 @@ class _$_PeerMessageAddBlock implements _PeerMessageAddBlock {
             String receiverIdentity,
             String tag,
             PeerMessageType type,
-            dynamic content)
+            dynamic content,
+            int timestamp)
         blockRejected,
-    required TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         blockAccepted,
     required TResult Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)
+            String tag, PeerMessageType type, dynamic content, int timestamp)
         getLastBlockRequest,
-    required TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         getLastBlockResponse,
     required TResult Function(
             SetTransactionStatusContent content,
             String senderIdentity,
             String receiverIdentity,
             String tag,
-            PeerMessageType type)
+            PeerMessageType type,
+            int timestamp)
         setTransactionStatus,
   }) {
-    return addBlock(content, senderIdentity, receiverIdentity, tag, type);
+    return addBlock(
+        content, senderIdentity, receiverIdentity, tag, type, timestamp);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)?
+            String tag, PeerMessageType type, dynamic content, int timestamp)?
         peerTypeRequest,
-    TResult? Function(PeerType content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            PeerType content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerTypeResponse,
-    TResult? Function(Transaction content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            Transaction content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         addTransaction,
-    TResult? Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockHeadersRequest,
     TResult? Function(
             BlockHeadersResponseContent content,
             String senderIdentity,
             String receiverIdentity,
             String tag,
-            PeerMessageType type)?
+            PeerMessageType type,
+            int timestamp)?
         blockHeadersResponse,
-    TResult? Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockRequest,
-    TResult? Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockResponse,
-    TResult? Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockNotFoundResponse,
     TResult? Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)?
+            String tag, PeerMessageType type, dynamic content, int timestamp)?
         peerStateRequest,
-    TResult? Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerStateResponse,
-    TResult? Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerStateUpdate,
-    TResult? Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         addBlock,
     TResult? Function(
             BlockHeader header,
@@ -5807,66 +8272,129 @@ class _$_PeerMessageAddBlock implements _PeerMessageAddBlock {
             String receiverIdentity,
             String tag,
             PeerMessageType type,
-            dynamic content)?
+            dynamic content,
+            int timestamp)?
         blockRejected,
-    TResult? Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockAccepted,
     TResult? Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)?
+            String tag, PeerMessageType type, dynamic content, int timestamp)?
         getLastBlockRequest,
-    TResult? Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         getLastBlockResponse,
     TResult? Function(
             SetTransactionStatusContent content,
             String senderIdentity,
             String receiverIdentity,
             String tag,
-            PeerMessageType type)?
+            PeerMessageType type,
+            int timestamp)?
         setTransactionStatus,
   }) {
-    return addBlock?.call(content, senderIdentity, receiverIdentity, tag, type);
+    return addBlock?.call(
+        content, senderIdentity, receiverIdentity, tag, type, timestamp);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String senderIdentity, String receiverIdentity, String tag,
-            PeerMessageType type, dynamic content)?
+            PeerMessageType type, dynamic content, int timestamp)?
         peerTypeRequest,
-    TResult Function(PeerType content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            PeerType content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerTypeResponse,
-    TResult Function(Transaction content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            Transaction content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         addTransaction,
-    TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockHeadersRequest,
-    TResult Function(BlockHeadersResponseContent content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeadersResponseContent content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockHeadersResponse,
-    TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockRequest,
-    TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockResponse,
-    TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockNotFoundResponse,
     TResult Function(String senderIdentity, String receiverIdentity, String tag,
-            PeerMessageType type, dynamic content)?
+            PeerMessageType type, dynamic content, int timestamp)?
         peerStateRequest,
-    TResult Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerStateResponse,
-    TResult Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerStateUpdate,
-    TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         addBlock,
     TResult Function(
             BlockHeader header,
@@ -5874,24 +8402,41 @@ class _$_PeerMessageAddBlock implements _PeerMessageAddBlock {
             String receiverIdentity,
             String tag,
             PeerMessageType type,
-            dynamic content)?
+            dynamic content,
+            int timestamp)?
         blockRejected,
-    TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockAccepted,
     TResult Function(String senderIdentity, String receiverIdentity, String tag,
-            PeerMessageType type, dynamic content)?
+            PeerMessageType type, dynamic content, int timestamp)?
         getLastBlockRequest,
-    TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         getLastBlockResponse,
-    TResult Function(SetTransactionStatusContent content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            SetTransactionStatusContent content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         setTransactionStatus,
     required TResult orElse(),
   }) {
     if (addBlock != null) {
-      return addBlock(content, senderIdentity, receiverIdentity, tag, type);
+      return addBlock(
+          content, senderIdentity, receiverIdentity, tag, type, timestamp);
     }
     return orElse();
   }
@@ -6010,7 +8555,8 @@ abstract class _PeerMessageAddBlock
       required final String senderIdentity,
       required final String receiverIdentity,
       required final String tag,
-      final PeerMessageType type}) = _$_PeerMessageAddBlock;
+      final PeerMessageType type,
+      required final int timestamp}) = _$_PeerMessageAddBlock;
 
   factory _PeerMessageAddBlock.fromJson(Map<String, dynamic> json) =
       _$_PeerMessageAddBlock.fromJson;
@@ -6025,6 +8571,8 @@ abstract class _PeerMessageAddBlock
   String get tag;
   @override
   PeerMessageType get type;
+  @override
+  int get timestamp;
   @override
   @JsonKey(ignore: true)
   _$$_PeerMessageAddBlockCopyWith<_$_PeerMessageAddBlock> get copyWith =>
@@ -6046,7 +8594,8 @@ abstract class _$$_PeerMessageBlockRejectedCopyWith<$Res>
       String receiverIdentity,
       String tag,
       PeerMessageType type,
-      dynamic content});
+      dynamic content,
+      int timestamp});
 
   $BlockHeaderCopyWith<$Res> get header;
 }
@@ -6068,6 +8617,7 @@ class __$$_PeerMessageBlockRejectedCopyWithImpl<$Res>
     Object? tag = null,
     Object? type = null,
     Object? content = freezed,
+    Object? timestamp = null,
   }) {
     return _then(_$_PeerMessageBlockRejected(
       null == header
@@ -6094,6 +8644,10 @@ class __$$_PeerMessageBlockRejectedCopyWithImpl<$Res>
           ? _value.content
           : content // ignore: cast_nullable_to_non_nullable
               as dynamic,
+      timestamp: null == timestamp
+          ? _value.timestamp
+          : timestamp // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 
@@ -6114,7 +8668,8 @@ class _$_PeerMessageBlockRejected implements _PeerMessageBlockRejected {
       required this.receiverIdentity,
       required this.tag,
       this.type = PeerMessageType.blockRejected,
-      this.content});
+      this.content,
+      required this.timestamp});
 
   factory _$_PeerMessageBlockRejected.fromJson(Map<String, dynamic> json) =>
       _$$_PeerMessageBlockRejectedFromJson(json);
@@ -6132,10 +8687,12 @@ class _$_PeerMessageBlockRejected implements _PeerMessageBlockRejected {
   final PeerMessageType type;
   @override
   final dynamic content;
+  @override
+  final int timestamp;
 
   @override
   String toString() {
-    return 'PeerMessage.blockRejected(header: $header, senderIdentity: $senderIdentity, receiverIdentity: $receiverIdentity, tag: $tag, type: $type, content: $content)';
+    return 'PeerMessage.blockRejected(header: $header, senderIdentity: $senderIdentity, receiverIdentity: $receiverIdentity, tag: $tag, type: $type, content: $content, timestamp: $timestamp)';
   }
 
   @override
@@ -6150,7 +8707,9 @@ class _$_PeerMessageBlockRejected implements _PeerMessageBlockRejected {
                 other.receiverIdentity == receiverIdentity) &&
             (identical(other.tag, tag) || other.tag == tag) &&
             (identical(other.type, type) || other.type == type) &&
-            const DeepCollectionEquality().equals(other.content, content));
+            const DeepCollectionEquality().equals(other.content, content) &&
+            (identical(other.timestamp, timestamp) ||
+                other.timestamp == timestamp));
   }
 
   @JsonKey(ignore: true)
@@ -6162,7 +8721,8 @@ class _$_PeerMessageBlockRejected implements _PeerMessageBlockRejected {
       receiverIdentity,
       tag,
       type,
-      const DeepCollectionEquality().hash(content));
+      const DeepCollectionEquality().hash(content),
+      timestamp);
 
   @JsonKey(ignore: true)
   @override
@@ -6175,44 +8735,90 @@ class _$_PeerMessageBlockRejected implements _PeerMessageBlockRejected {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)
+            String tag, PeerMessageType type, dynamic content, int timestamp)
         peerTypeRequest,
-    required TResult Function(PeerType content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            PeerType content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         peerTypeResponse,
-    required TResult Function(Transaction content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            Transaction content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         addTransaction,
-    required TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         blockHeadersRequest,
     required TResult Function(
             BlockHeadersResponseContent content,
             String senderIdentity,
             String receiverIdentity,
             String tag,
-            PeerMessageType type)
+            PeerMessageType type,
+            int timestamp)
         blockHeadersResponse,
-    required TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         blockRequest,
-    required TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         blockResponse,
-    required TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         blockNotFoundResponse,
     required TResult Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)
+            String tag, PeerMessageType type, dynamic content, int timestamp)
         peerStateRequest,
-    required TResult Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         peerStateResponse,
-    required TResult Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         peerStateUpdate,
-    required TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         addBlock,
     required TResult Function(
             BlockHeader header,
@@ -6220,71 +8826,129 @@ class _$_PeerMessageBlockRejected implements _PeerMessageBlockRejected {
             String receiverIdentity,
             String tag,
             PeerMessageType type,
-            dynamic content)
+            dynamic content,
+            int timestamp)
         blockRejected,
-    required TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         blockAccepted,
     required TResult Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)
+            String tag, PeerMessageType type, dynamic content, int timestamp)
         getLastBlockRequest,
-    required TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         getLastBlockResponse,
     required TResult Function(
             SetTransactionStatusContent content,
             String senderIdentity,
             String receiverIdentity,
             String tag,
-            PeerMessageType type)
+            PeerMessageType type,
+            int timestamp)
         setTransactionStatus,
   }) {
-    return blockRejected(
-        header, senderIdentity, receiverIdentity, tag, type, content);
+    return blockRejected(header, senderIdentity, receiverIdentity, tag, type,
+        content, timestamp);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)?
+            String tag, PeerMessageType type, dynamic content, int timestamp)?
         peerTypeRequest,
-    TResult? Function(PeerType content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            PeerType content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerTypeResponse,
-    TResult? Function(Transaction content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            Transaction content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         addTransaction,
-    TResult? Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockHeadersRequest,
     TResult? Function(
             BlockHeadersResponseContent content,
             String senderIdentity,
             String receiverIdentity,
             String tag,
-            PeerMessageType type)?
+            PeerMessageType type,
+            int timestamp)?
         blockHeadersResponse,
-    TResult? Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockRequest,
-    TResult? Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockResponse,
-    TResult? Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockNotFoundResponse,
     TResult? Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)?
+            String tag, PeerMessageType type, dynamic content, int timestamp)?
         peerStateRequest,
-    TResult? Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerStateResponse,
-    TResult? Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerStateUpdate,
-    TResult? Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         addBlock,
     TResult? Function(
             BlockHeader header,
@@ -6292,67 +8956,129 @@ class _$_PeerMessageBlockRejected implements _PeerMessageBlockRejected {
             String receiverIdentity,
             String tag,
             PeerMessageType type,
-            dynamic content)?
+            dynamic content,
+            int timestamp)?
         blockRejected,
-    TResult? Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockAccepted,
     TResult? Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)?
+            String tag, PeerMessageType type, dynamic content, int timestamp)?
         getLastBlockRequest,
-    TResult? Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         getLastBlockResponse,
     TResult? Function(
             SetTransactionStatusContent content,
             String senderIdentity,
             String receiverIdentity,
             String tag,
-            PeerMessageType type)?
+            PeerMessageType type,
+            int timestamp)?
         setTransactionStatus,
   }) {
-    return blockRejected?.call(
-        header, senderIdentity, receiverIdentity, tag, type, content);
+    return blockRejected?.call(header, senderIdentity, receiverIdentity, tag,
+        type, content, timestamp);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String senderIdentity, String receiverIdentity, String tag,
-            PeerMessageType type, dynamic content)?
+            PeerMessageType type, dynamic content, int timestamp)?
         peerTypeRequest,
-    TResult Function(PeerType content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            PeerType content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerTypeResponse,
-    TResult Function(Transaction content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            Transaction content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         addTransaction,
-    TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockHeadersRequest,
-    TResult Function(BlockHeadersResponseContent content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeadersResponseContent content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockHeadersResponse,
-    TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockRequest,
-    TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockResponse,
-    TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockNotFoundResponse,
     TResult Function(String senderIdentity, String receiverIdentity, String tag,
-            PeerMessageType type, dynamic content)?
+            PeerMessageType type, dynamic content, int timestamp)?
         peerStateRequest,
-    TResult Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerStateResponse,
-    TResult Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerStateUpdate,
-    TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         addBlock,
     TResult Function(
             BlockHeader header,
@@ -6360,25 +9086,41 @@ class _$_PeerMessageBlockRejected implements _PeerMessageBlockRejected {
             String receiverIdentity,
             String tag,
             PeerMessageType type,
-            dynamic content)?
+            dynamic content,
+            int timestamp)?
         blockRejected,
-    TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockAccepted,
     TResult Function(String senderIdentity, String receiverIdentity, String tag,
-            PeerMessageType type, dynamic content)?
+            PeerMessageType type, dynamic content, int timestamp)?
         getLastBlockRequest,
-    TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         getLastBlockResponse,
-    TResult Function(SetTransactionStatusContent content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            SetTransactionStatusContent content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         setTransactionStatus,
     required TResult orElse(),
   }) {
     if (blockRejected != null) {
-      return blockRejected(
-          header, senderIdentity, receiverIdentity, tag, type, content);
+      return blockRejected(header, senderIdentity, receiverIdentity, tag, type,
+          content, timestamp);
     }
     return orElse();
   }
@@ -6497,7 +9239,8 @@ abstract class _PeerMessageBlockRejected
       required final String receiverIdentity,
       required final String tag,
       final PeerMessageType type,
-      final dynamic content}) = _$_PeerMessageBlockRejected;
+      final dynamic content,
+      required final int timestamp}) = _$_PeerMessageBlockRejected;
 
   factory _PeerMessageBlockRejected.fromJson(Map<String, dynamic> json) =
       _$_PeerMessageBlockRejected.fromJson;
@@ -6513,6 +9256,8 @@ abstract class _PeerMessageBlockRejected
   PeerMessageType get type;
   @override
   dynamic get content;
+  @override
+  int get timestamp;
   @override
   @JsonKey(ignore: true)
   _$$_PeerMessageBlockRejectedCopyWith<_$_PeerMessageBlockRejected>
@@ -6533,7 +9278,8 @@ abstract class _$$_PeerMessageBlockAcceptedCopyWith<$Res>
       String senderIdentity,
       String receiverIdentity,
       String tag,
-      PeerMessageType type});
+      PeerMessageType type,
+      int timestamp});
 
   $BlockHeaderCopyWith<$Res> get content;
 }
@@ -6554,6 +9300,7 @@ class __$$_PeerMessageBlockAcceptedCopyWithImpl<$Res>
     Object? receiverIdentity = null,
     Object? tag = null,
     Object? type = null,
+    Object? timestamp = null,
   }) {
     return _then(_$_PeerMessageBlockAccepted(
       content: null == content
@@ -6576,6 +9323,10 @@ class __$$_PeerMessageBlockAcceptedCopyWithImpl<$Res>
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as PeerMessageType,
+      timestamp: null == timestamp
+          ? _value.timestamp
+          : timestamp // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 
@@ -6596,7 +9347,8 @@ class _$_PeerMessageBlockAccepted implements _PeerMessageBlockAccepted {
       required this.senderIdentity,
       required this.receiverIdentity,
       required this.tag,
-      this.type = PeerMessageType.blockAccepted});
+      this.type = PeerMessageType.blockAccepted,
+      required this.timestamp});
 
   factory _$_PeerMessageBlockAccepted.fromJson(Map<String, dynamic> json) =>
       _$$_PeerMessageBlockAcceptedFromJson(json);
@@ -6612,10 +9364,12 @@ class _$_PeerMessageBlockAccepted implements _PeerMessageBlockAccepted {
   @override
   @JsonKey()
   final PeerMessageType type;
+  @override
+  final int timestamp;
 
   @override
   String toString() {
-    return 'PeerMessage.blockAccepted(content: $content, senderIdentity: $senderIdentity, receiverIdentity: $receiverIdentity, tag: $tag, type: $type)';
+    return 'PeerMessage.blockAccepted(content: $content, senderIdentity: $senderIdentity, receiverIdentity: $receiverIdentity, tag: $tag, type: $type, timestamp: $timestamp)';
   }
 
   @override
@@ -6629,13 +9383,15 @@ class _$_PeerMessageBlockAccepted implements _PeerMessageBlockAccepted {
             (identical(other.receiverIdentity, receiverIdentity) ||
                 other.receiverIdentity == receiverIdentity) &&
             (identical(other.tag, tag) || other.tag == tag) &&
-            (identical(other.type, type) || other.type == type));
+            (identical(other.type, type) || other.type == type) &&
+            (identical(other.timestamp, timestamp) ||
+                other.timestamp == timestamp));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, content, senderIdentity, receiverIdentity, tag, type);
+  int get hashCode => Object.hash(runtimeType, content, senderIdentity,
+      receiverIdentity, tag, type, timestamp);
 
   @JsonKey(ignore: true)
   @override
@@ -6648,44 +9404,90 @@ class _$_PeerMessageBlockAccepted implements _PeerMessageBlockAccepted {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)
+            String tag, PeerMessageType type, dynamic content, int timestamp)
         peerTypeRequest,
-    required TResult Function(PeerType content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            PeerType content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         peerTypeResponse,
-    required TResult Function(Transaction content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            Transaction content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         addTransaction,
-    required TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         blockHeadersRequest,
     required TResult Function(
             BlockHeadersResponseContent content,
             String senderIdentity,
             String receiverIdentity,
             String tag,
-            PeerMessageType type)
+            PeerMessageType type,
+            int timestamp)
         blockHeadersResponse,
-    required TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         blockRequest,
-    required TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         blockResponse,
-    required TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         blockNotFoundResponse,
     required TResult Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)
+            String tag, PeerMessageType type, dynamic content, int timestamp)
         peerStateRequest,
-    required TResult Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         peerStateResponse,
-    required TResult Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         peerStateUpdate,
-    required TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         addBlock,
     required TResult Function(
             BlockHeader header,
@@ -6693,70 +9495,129 @@ class _$_PeerMessageBlockAccepted implements _PeerMessageBlockAccepted {
             String receiverIdentity,
             String tag,
             PeerMessageType type,
-            dynamic content)
+            dynamic content,
+            int timestamp)
         blockRejected,
-    required TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         blockAccepted,
     required TResult Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)
+            String tag, PeerMessageType type, dynamic content, int timestamp)
         getLastBlockRequest,
-    required TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         getLastBlockResponse,
     required TResult Function(
             SetTransactionStatusContent content,
             String senderIdentity,
             String receiverIdentity,
             String tag,
-            PeerMessageType type)
+            PeerMessageType type,
+            int timestamp)
         setTransactionStatus,
   }) {
-    return blockAccepted(content, senderIdentity, receiverIdentity, tag, type);
+    return blockAccepted(
+        content, senderIdentity, receiverIdentity, tag, type, timestamp);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)?
+            String tag, PeerMessageType type, dynamic content, int timestamp)?
         peerTypeRequest,
-    TResult? Function(PeerType content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            PeerType content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerTypeResponse,
-    TResult? Function(Transaction content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            Transaction content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         addTransaction,
-    TResult? Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockHeadersRequest,
     TResult? Function(
             BlockHeadersResponseContent content,
             String senderIdentity,
             String receiverIdentity,
             String tag,
-            PeerMessageType type)?
+            PeerMessageType type,
+            int timestamp)?
         blockHeadersResponse,
-    TResult? Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockRequest,
-    TResult? Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockResponse,
-    TResult? Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockNotFoundResponse,
     TResult? Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)?
+            String tag, PeerMessageType type, dynamic content, int timestamp)?
         peerStateRequest,
-    TResult? Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerStateResponse,
-    TResult? Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerStateUpdate,
-    TResult? Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         addBlock,
     TResult? Function(
             BlockHeader header,
@@ -6764,67 +9625,129 @@ class _$_PeerMessageBlockAccepted implements _PeerMessageBlockAccepted {
             String receiverIdentity,
             String tag,
             PeerMessageType type,
-            dynamic content)?
+            dynamic content,
+            int timestamp)?
         blockRejected,
-    TResult? Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockAccepted,
     TResult? Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)?
+            String tag, PeerMessageType type, dynamic content, int timestamp)?
         getLastBlockRequest,
-    TResult? Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         getLastBlockResponse,
     TResult? Function(
             SetTransactionStatusContent content,
             String senderIdentity,
             String receiverIdentity,
             String tag,
-            PeerMessageType type)?
+            PeerMessageType type,
+            int timestamp)?
         setTransactionStatus,
   }) {
     return blockAccepted?.call(
-        content, senderIdentity, receiverIdentity, tag, type);
+        content, senderIdentity, receiverIdentity, tag, type, timestamp);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String senderIdentity, String receiverIdentity, String tag,
-            PeerMessageType type, dynamic content)?
+            PeerMessageType type, dynamic content, int timestamp)?
         peerTypeRequest,
-    TResult Function(PeerType content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            PeerType content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerTypeResponse,
-    TResult Function(Transaction content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            Transaction content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         addTransaction,
-    TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockHeadersRequest,
-    TResult Function(BlockHeadersResponseContent content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeadersResponseContent content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockHeadersResponse,
-    TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockRequest,
-    TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockResponse,
-    TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockNotFoundResponse,
     TResult Function(String senderIdentity, String receiverIdentity, String tag,
-            PeerMessageType type, dynamic content)?
+            PeerMessageType type, dynamic content, int timestamp)?
         peerStateRequest,
-    TResult Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerStateResponse,
-    TResult Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerStateUpdate,
-    TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         addBlock,
     TResult Function(
             BlockHeader header,
@@ -6832,25 +9755,41 @@ class _$_PeerMessageBlockAccepted implements _PeerMessageBlockAccepted {
             String receiverIdentity,
             String tag,
             PeerMessageType type,
-            dynamic content)?
+            dynamic content,
+            int timestamp)?
         blockRejected,
-    TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockAccepted,
     TResult Function(String senderIdentity, String receiverIdentity, String tag,
-            PeerMessageType type, dynamic content)?
+            PeerMessageType type, dynamic content, int timestamp)?
         getLastBlockRequest,
-    TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         getLastBlockResponse,
-    TResult Function(SetTransactionStatusContent content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            SetTransactionStatusContent content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         setTransactionStatus,
     required TResult orElse(),
   }) {
     if (blockAccepted != null) {
       return blockAccepted(
-          content, senderIdentity, receiverIdentity, tag, type);
+          content, senderIdentity, receiverIdentity, tag, type, timestamp);
     }
     return orElse();
   }
@@ -6969,7 +9908,8 @@ abstract class _PeerMessageBlockAccepted
       required final String senderIdentity,
       required final String receiverIdentity,
       required final String tag,
-      final PeerMessageType type}) = _$_PeerMessageBlockAccepted;
+      final PeerMessageType type,
+      required final int timestamp}) = _$_PeerMessageBlockAccepted;
 
   factory _PeerMessageBlockAccepted.fromJson(Map<String, dynamic> json) =
       _$_PeerMessageBlockAccepted.fromJson;
@@ -6984,6 +9924,8 @@ abstract class _PeerMessageBlockAccepted
   String get tag;
   @override
   PeerMessageType get type;
+  @override
+  int get timestamp;
   @override
   @JsonKey(ignore: true)
   _$$_PeerMessageBlockAcceptedCopyWith<_$_PeerMessageBlockAccepted>
@@ -7004,7 +9946,8 @@ abstract class _$$_PeerMessageGetLastBlockRequestCopyWith<$Res>
       String receiverIdentity,
       String tag,
       PeerMessageType type,
-      dynamic content});
+      dynamic content,
+      int timestamp});
 }
 
 /// @nodoc
@@ -7024,6 +9967,7 @@ class __$$_PeerMessageGetLastBlockRequestCopyWithImpl<$Res>
     Object? tag = null,
     Object? type = null,
     Object? content = freezed,
+    Object? timestamp = null,
   }) {
     return _then(_$_PeerMessageGetLastBlockRequest(
       senderIdentity: null == senderIdentity
@@ -7046,6 +9990,10 @@ class __$$_PeerMessageGetLastBlockRequestCopyWithImpl<$Res>
           ? _value.content
           : content // ignore: cast_nullable_to_non_nullable
               as dynamic,
+      timestamp: null == timestamp
+          ? _value.timestamp
+          : timestamp // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -7059,7 +10007,8 @@ class _$_PeerMessageGetLastBlockRequest
       required this.receiverIdentity,
       required this.tag,
       this.type = PeerMessageType.getLastBlockRequest,
-      this.content});
+      this.content,
+      required this.timestamp});
 
   factory _$_PeerMessageGetLastBlockRequest.fromJson(
           Map<String, dynamic> json) =>
@@ -7076,10 +10025,12 @@ class _$_PeerMessageGetLastBlockRequest
   final PeerMessageType type;
   @override
   final dynamic content;
+  @override
+  final int timestamp;
 
   @override
   String toString() {
-    return 'PeerMessage.getLastBlockRequest(senderIdentity: $senderIdentity, receiverIdentity: $receiverIdentity, tag: $tag, type: $type, content: $content)';
+    return 'PeerMessage.getLastBlockRequest(senderIdentity: $senderIdentity, receiverIdentity: $receiverIdentity, tag: $tag, type: $type, content: $content, timestamp: $timestamp)';
   }
 
   @override
@@ -7093,13 +10044,15 @@ class _$_PeerMessageGetLastBlockRequest
                 other.receiverIdentity == receiverIdentity) &&
             (identical(other.tag, tag) || other.tag == tag) &&
             (identical(other.type, type) || other.type == type) &&
-            const DeepCollectionEquality().equals(other.content, content));
+            const DeepCollectionEquality().equals(other.content, content) &&
+            (identical(other.timestamp, timestamp) ||
+                other.timestamp == timestamp));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, senderIdentity, receiverIdentity,
-      tag, type, const DeepCollectionEquality().hash(content));
+      tag, type, const DeepCollectionEquality().hash(content), timestamp);
 
   @JsonKey(ignore: true)
   @override
@@ -7112,44 +10065,90 @@ class _$_PeerMessageGetLastBlockRequest
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)
+            String tag, PeerMessageType type, dynamic content, int timestamp)
         peerTypeRequest,
-    required TResult Function(PeerType content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            PeerType content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         peerTypeResponse,
-    required TResult Function(Transaction content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            Transaction content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         addTransaction,
-    required TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         blockHeadersRequest,
     required TResult Function(
             BlockHeadersResponseContent content,
             String senderIdentity,
             String receiverIdentity,
             String tag,
-            PeerMessageType type)
+            PeerMessageType type,
+            int timestamp)
         blockHeadersResponse,
-    required TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         blockRequest,
-    required TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         blockResponse,
-    required TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         blockNotFoundResponse,
     required TResult Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)
+            String tag, PeerMessageType type, dynamic content, int timestamp)
         peerStateRequest,
-    required TResult Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         peerStateResponse,
-    required TResult Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         peerStateUpdate,
-    required TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         addBlock,
     required TResult Function(
             BlockHeader header,
@@ -7157,71 +10156,129 @@ class _$_PeerMessageGetLastBlockRequest
             String receiverIdentity,
             String tag,
             PeerMessageType type,
-            dynamic content)
+            dynamic content,
+            int timestamp)
         blockRejected,
-    required TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         blockAccepted,
     required TResult Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)
+            String tag, PeerMessageType type, dynamic content, int timestamp)
         getLastBlockRequest,
-    required TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         getLastBlockResponse,
     required TResult Function(
             SetTransactionStatusContent content,
             String senderIdentity,
             String receiverIdentity,
             String tag,
-            PeerMessageType type)
+            PeerMessageType type,
+            int timestamp)
         setTransactionStatus,
   }) {
     return getLastBlockRequest(
-        senderIdentity, receiverIdentity, tag, type, content);
+        senderIdentity, receiverIdentity, tag, type, content, timestamp);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)?
+            String tag, PeerMessageType type, dynamic content, int timestamp)?
         peerTypeRequest,
-    TResult? Function(PeerType content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            PeerType content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerTypeResponse,
-    TResult? Function(Transaction content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            Transaction content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         addTransaction,
-    TResult? Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockHeadersRequest,
     TResult? Function(
             BlockHeadersResponseContent content,
             String senderIdentity,
             String receiverIdentity,
             String tag,
-            PeerMessageType type)?
+            PeerMessageType type,
+            int timestamp)?
         blockHeadersResponse,
-    TResult? Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockRequest,
-    TResult? Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockResponse,
-    TResult? Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockNotFoundResponse,
     TResult? Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)?
+            String tag, PeerMessageType type, dynamic content, int timestamp)?
         peerStateRequest,
-    TResult? Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerStateResponse,
-    TResult? Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerStateUpdate,
-    TResult? Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         addBlock,
     TResult? Function(
             BlockHeader header,
@@ -7229,67 +10286,129 @@ class _$_PeerMessageGetLastBlockRequest
             String receiverIdentity,
             String tag,
             PeerMessageType type,
-            dynamic content)?
+            dynamic content,
+            int timestamp)?
         blockRejected,
-    TResult? Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockAccepted,
     TResult? Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)?
+            String tag, PeerMessageType type, dynamic content, int timestamp)?
         getLastBlockRequest,
-    TResult? Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         getLastBlockResponse,
     TResult? Function(
             SetTransactionStatusContent content,
             String senderIdentity,
             String receiverIdentity,
             String tag,
-            PeerMessageType type)?
+            PeerMessageType type,
+            int timestamp)?
         setTransactionStatus,
   }) {
     return getLastBlockRequest?.call(
-        senderIdentity, receiverIdentity, tag, type, content);
+        senderIdentity, receiverIdentity, tag, type, content, timestamp);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String senderIdentity, String receiverIdentity, String tag,
-            PeerMessageType type, dynamic content)?
+            PeerMessageType type, dynamic content, int timestamp)?
         peerTypeRequest,
-    TResult Function(PeerType content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            PeerType content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerTypeResponse,
-    TResult Function(Transaction content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            Transaction content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         addTransaction,
-    TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockHeadersRequest,
-    TResult Function(BlockHeadersResponseContent content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeadersResponseContent content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockHeadersResponse,
-    TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockRequest,
-    TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockResponse,
-    TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockNotFoundResponse,
     TResult Function(String senderIdentity, String receiverIdentity, String tag,
-            PeerMessageType type, dynamic content)?
+            PeerMessageType type, dynamic content, int timestamp)?
         peerStateRequest,
-    TResult Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerStateResponse,
-    TResult Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerStateUpdate,
-    TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         addBlock,
     TResult Function(
             BlockHeader header,
@@ -7297,25 +10416,41 @@ class _$_PeerMessageGetLastBlockRequest
             String receiverIdentity,
             String tag,
             PeerMessageType type,
-            dynamic content)?
+            dynamic content,
+            int timestamp)?
         blockRejected,
-    TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockAccepted,
     TResult Function(String senderIdentity, String receiverIdentity, String tag,
-            PeerMessageType type, dynamic content)?
+            PeerMessageType type, dynamic content, int timestamp)?
         getLastBlockRequest,
-    TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         getLastBlockResponse,
-    TResult Function(SetTransactionStatusContent content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            SetTransactionStatusContent content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         setTransactionStatus,
     required TResult orElse(),
   }) {
     if (getLastBlockRequest != null) {
       return getLastBlockRequest(
-          senderIdentity, receiverIdentity, tag, type, content);
+          senderIdentity, receiverIdentity, tag, type, content, timestamp);
     }
     return orElse();
   }
@@ -7434,7 +10569,8 @@ abstract class _PeerMessageGetLastBlockRequest
       required final String receiverIdentity,
       required final String tag,
       final PeerMessageType type,
-      final dynamic content}) = _$_PeerMessageGetLastBlockRequest;
+      final dynamic content,
+      required final int timestamp}) = _$_PeerMessageGetLastBlockRequest;
 
   factory _PeerMessageGetLastBlockRequest.fromJson(Map<String, dynamic> json) =
       _$_PeerMessageGetLastBlockRequest.fromJson;
@@ -7449,6 +10585,8 @@ abstract class _PeerMessageGetLastBlockRequest
   PeerMessageType get type;
   @override
   dynamic get content;
+  @override
+  int get timestamp;
   @override
   @JsonKey(ignore: true)
   _$$_PeerMessageGetLastBlockRequestCopyWith<_$_PeerMessageGetLastBlockRequest>
@@ -7469,7 +10607,8 @@ abstract class _$$_PeerMessageGetLastBlockResponseCopyWith<$Res>
       String senderIdentity,
       String receiverIdentity,
       String tag,
-      PeerMessageType type});
+      PeerMessageType type,
+      int timestamp});
 
   $BlockCopyWith<$Res> get content;
 }
@@ -7491,6 +10630,7 @@ class __$$_PeerMessageGetLastBlockResponseCopyWithImpl<$Res>
     Object? receiverIdentity = null,
     Object? tag = null,
     Object? type = null,
+    Object? timestamp = null,
   }) {
     return _then(_$_PeerMessageGetLastBlockResponse(
       content: null == content
@@ -7513,6 +10653,10 @@ class __$$_PeerMessageGetLastBlockResponseCopyWithImpl<$Res>
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as PeerMessageType,
+      timestamp: null == timestamp
+          ? _value.timestamp
+          : timestamp // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 
@@ -7534,7 +10678,8 @@ class _$_PeerMessageGetLastBlockResponse
       required this.senderIdentity,
       required this.receiverIdentity,
       required this.tag,
-      this.type = PeerMessageType.getLastBlockResponse});
+      this.type = PeerMessageType.getLastBlockResponse,
+      required this.timestamp});
 
   factory _$_PeerMessageGetLastBlockResponse.fromJson(
           Map<String, dynamic> json) =>
@@ -7551,10 +10696,12 @@ class _$_PeerMessageGetLastBlockResponse
   @override
   @JsonKey()
   final PeerMessageType type;
+  @override
+  final int timestamp;
 
   @override
   String toString() {
-    return 'PeerMessage.getLastBlockResponse(content: $content, senderIdentity: $senderIdentity, receiverIdentity: $receiverIdentity, tag: $tag, type: $type)';
+    return 'PeerMessage.getLastBlockResponse(content: $content, senderIdentity: $senderIdentity, receiverIdentity: $receiverIdentity, tag: $tag, type: $type, timestamp: $timestamp)';
   }
 
   @override
@@ -7568,13 +10715,15 @@ class _$_PeerMessageGetLastBlockResponse
             (identical(other.receiverIdentity, receiverIdentity) ||
                 other.receiverIdentity == receiverIdentity) &&
             (identical(other.tag, tag) || other.tag == tag) &&
-            (identical(other.type, type) || other.type == type));
+            (identical(other.type, type) || other.type == type) &&
+            (identical(other.timestamp, timestamp) ||
+                other.timestamp == timestamp));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, content, senderIdentity, receiverIdentity, tag, type);
+  int get hashCode => Object.hash(runtimeType, content, senderIdentity,
+      receiverIdentity, tag, type, timestamp);
 
   @JsonKey(ignore: true)
   @override
@@ -7588,44 +10737,90 @@ class _$_PeerMessageGetLastBlockResponse
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)
+            String tag, PeerMessageType type, dynamic content, int timestamp)
         peerTypeRequest,
-    required TResult Function(PeerType content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            PeerType content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         peerTypeResponse,
-    required TResult Function(Transaction content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            Transaction content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         addTransaction,
-    required TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         blockHeadersRequest,
     required TResult Function(
             BlockHeadersResponseContent content,
             String senderIdentity,
             String receiverIdentity,
             String tag,
-            PeerMessageType type)
+            PeerMessageType type,
+            int timestamp)
         blockHeadersResponse,
-    required TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         blockRequest,
-    required TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         blockResponse,
-    required TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         blockNotFoundResponse,
     required TResult Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)
+            String tag, PeerMessageType type, dynamic content, int timestamp)
         peerStateRequest,
-    required TResult Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         peerStateResponse,
-    required TResult Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         peerStateUpdate,
-    required TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         addBlock,
     required TResult Function(
             BlockHeader header,
@@ -7633,71 +10828,129 @@ class _$_PeerMessageGetLastBlockResponse
             String receiverIdentity,
             String tag,
             PeerMessageType type,
-            dynamic content)
+            dynamic content,
+            int timestamp)
         blockRejected,
-    required TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         blockAccepted,
     required TResult Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)
+            String tag, PeerMessageType type, dynamic content, int timestamp)
         getLastBlockRequest,
-    required TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         getLastBlockResponse,
     required TResult Function(
             SetTransactionStatusContent content,
             String senderIdentity,
             String receiverIdentity,
             String tag,
-            PeerMessageType type)
+            PeerMessageType type,
+            int timestamp)
         setTransactionStatus,
   }) {
     return getLastBlockResponse(
-        content, senderIdentity, receiverIdentity, tag, type);
+        content, senderIdentity, receiverIdentity, tag, type, timestamp);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)?
+            String tag, PeerMessageType type, dynamic content, int timestamp)?
         peerTypeRequest,
-    TResult? Function(PeerType content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            PeerType content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerTypeResponse,
-    TResult? Function(Transaction content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            Transaction content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         addTransaction,
-    TResult? Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockHeadersRequest,
     TResult? Function(
             BlockHeadersResponseContent content,
             String senderIdentity,
             String receiverIdentity,
             String tag,
-            PeerMessageType type)?
+            PeerMessageType type,
+            int timestamp)?
         blockHeadersResponse,
-    TResult? Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockRequest,
-    TResult? Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockResponse,
-    TResult? Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockNotFoundResponse,
     TResult? Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)?
+            String tag, PeerMessageType type, dynamic content, int timestamp)?
         peerStateRequest,
-    TResult? Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerStateResponse,
-    TResult? Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerStateUpdate,
-    TResult? Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         addBlock,
     TResult? Function(
             BlockHeader header,
@@ -7705,67 +10958,129 @@ class _$_PeerMessageGetLastBlockResponse
             String receiverIdentity,
             String tag,
             PeerMessageType type,
-            dynamic content)?
+            dynamic content,
+            int timestamp)?
         blockRejected,
-    TResult? Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockAccepted,
     TResult? Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)?
+            String tag, PeerMessageType type, dynamic content, int timestamp)?
         getLastBlockRequest,
-    TResult? Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         getLastBlockResponse,
     TResult? Function(
             SetTransactionStatusContent content,
             String senderIdentity,
             String receiverIdentity,
             String tag,
-            PeerMessageType type)?
+            PeerMessageType type,
+            int timestamp)?
         setTransactionStatus,
   }) {
     return getLastBlockResponse?.call(
-        content, senderIdentity, receiverIdentity, tag, type);
+        content, senderIdentity, receiverIdentity, tag, type, timestamp);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String senderIdentity, String receiverIdentity, String tag,
-            PeerMessageType type, dynamic content)?
+            PeerMessageType type, dynamic content, int timestamp)?
         peerTypeRequest,
-    TResult Function(PeerType content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            PeerType content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerTypeResponse,
-    TResult Function(Transaction content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            Transaction content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         addTransaction,
-    TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockHeadersRequest,
-    TResult Function(BlockHeadersResponseContent content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeadersResponseContent content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockHeadersResponse,
-    TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockRequest,
-    TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockResponse,
-    TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockNotFoundResponse,
     TResult Function(String senderIdentity, String receiverIdentity, String tag,
-            PeerMessageType type, dynamic content)?
+            PeerMessageType type, dynamic content, int timestamp)?
         peerStateRequest,
-    TResult Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerStateResponse,
-    TResult Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerStateUpdate,
-    TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         addBlock,
     TResult Function(
             BlockHeader header,
@@ -7773,25 +11088,41 @@ class _$_PeerMessageGetLastBlockResponse
             String receiverIdentity,
             String tag,
             PeerMessageType type,
-            dynamic content)?
+            dynamic content,
+            int timestamp)?
         blockRejected,
-    TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockAccepted,
     TResult Function(String senderIdentity, String receiverIdentity, String tag,
-            PeerMessageType type, dynamic content)?
+            PeerMessageType type, dynamic content, int timestamp)?
         getLastBlockRequest,
-    TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         getLastBlockResponse,
-    TResult Function(SetTransactionStatusContent content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            SetTransactionStatusContent content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         setTransactionStatus,
     required TResult orElse(),
   }) {
     if (getLastBlockResponse != null) {
       return getLastBlockResponse(
-          content, senderIdentity, receiverIdentity, tag, type);
+          content, senderIdentity, receiverIdentity, tag, type, timestamp);
     }
     return orElse();
   }
@@ -7910,7 +11241,8 @@ abstract class _PeerMessageGetLastBlockResponse
       required final String senderIdentity,
       required final String receiverIdentity,
       required final String tag,
-      final PeerMessageType type}) = _$_PeerMessageGetLastBlockResponse;
+      final PeerMessageType type,
+      required final int timestamp}) = _$_PeerMessageGetLastBlockResponse;
 
   factory _PeerMessageGetLastBlockResponse.fromJson(Map<String, dynamic> json) =
       _$_PeerMessageGetLastBlockResponse.fromJson;
@@ -7925,6 +11257,8 @@ abstract class _PeerMessageGetLastBlockResponse
   String get tag;
   @override
   PeerMessageType get type;
+  @override
+  int get timestamp;
   @override
   @JsonKey(ignore: true)
   _$$_PeerMessageGetLastBlockResponseCopyWith<
@@ -7946,7 +11280,8 @@ abstract class _$$_PeerMessageSetTransactionStatusCopyWith<$Res>
       String senderIdentity,
       String receiverIdentity,
       String tag,
-      PeerMessageType type});
+      PeerMessageType type,
+      int timestamp});
 
   $SetTransactionStatusContentCopyWith<$Res> get content;
 }
@@ -7968,6 +11303,7 @@ class __$$_PeerMessageSetTransactionStatusCopyWithImpl<$Res>
     Object? receiverIdentity = null,
     Object? tag = null,
     Object? type = null,
+    Object? timestamp = null,
   }) {
     return _then(_$_PeerMessageSetTransactionStatus(
       content: null == content
@@ -7990,6 +11326,10 @@ class __$$_PeerMessageSetTransactionStatusCopyWithImpl<$Res>
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as PeerMessageType,
+      timestamp: null == timestamp
+          ? _value.timestamp
+          : timestamp // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 
@@ -8011,7 +11351,8 @@ class _$_PeerMessageSetTransactionStatus
       required this.senderIdentity,
       required this.receiverIdentity,
       required this.tag,
-      this.type = PeerMessageType.setTransactionStatus});
+      this.type = PeerMessageType.setTransactionStatus,
+      required this.timestamp});
 
   factory _$_PeerMessageSetTransactionStatus.fromJson(
           Map<String, dynamic> json) =>
@@ -8028,10 +11369,12 @@ class _$_PeerMessageSetTransactionStatus
   @override
   @JsonKey()
   final PeerMessageType type;
+  @override
+  final int timestamp;
 
   @override
   String toString() {
-    return 'PeerMessage.setTransactionStatus(content: $content, senderIdentity: $senderIdentity, receiverIdentity: $receiverIdentity, tag: $tag, type: $type)';
+    return 'PeerMessage.setTransactionStatus(content: $content, senderIdentity: $senderIdentity, receiverIdentity: $receiverIdentity, tag: $tag, type: $type, timestamp: $timestamp)';
   }
 
   @override
@@ -8045,13 +11388,15 @@ class _$_PeerMessageSetTransactionStatus
             (identical(other.receiverIdentity, receiverIdentity) ||
                 other.receiverIdentity == receiverIdentity) &&
             (identical(other.tag, tag) || other.tag == tag) &&
-            (identical(other.type, type) || other.type == type));
+            (identical(other.type, type) || other.type == type) &&
+            (identical(other.timestamp, timestamp) ||
+                other.timestamp == timestamp));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, content, senderIdentity, receiverIdentity, tag, type);
+  int get hashCode => Object.hash(runtimeType, content, senderIdentity,
+      receiverIdentity, tag, type, timestamp);
 
   @JsonKey(ignore: true)
   @override
@@ -8065,44 +11410,90 @@ class _$_PeerMessageSetTransactionStatus
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)
+            String tag, PeerMessageType type, dynamic content, int timestamp)
         peerTypeRequest,
-    required TResult Function(PeerType content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            PeerType content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         peerTypeResponse,
-    required TResult Function(Transaction content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            Transaction content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         addTransaction,
-    required TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         blockHeadersRequest,
     required TResult Function(
             BlockHeadersResponseContent content,
             String senderIdentity,
             String receiverIdentity,
             String tag,
-            PeerMessageType type)
+            PeerMessageType type,
+            int timestamp)
         blockHeadersResponse,
-    required TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         blockRequest,
-    required TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         blockResponse,
-    required TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         blockNotFoundResponse,
     required TResult Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)
+            String tag, PeerMessageType type, dynamic content, int timestamp)
         peerStateRequest,
-    required TResult Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         peerStateResponse,
-    required TResult Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         peerStateUpdate,
-    required TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         addBlock,
     required TResult Function(
             BlockHeader header,
@@ -8110,71 +11501,129 @@ class _$_PeerMessageSetTransactionStatus
             String receiverIdentity,
             String tag,
             PeerMessageType type,
-            dynamic content)
+            dynamic content,
+            int timestamp)
         blockRejected,
-    required TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         blockAccepted,
     required TResult Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)
+            String tag, PeerMessageType type, dynamic content, int timestamp)
         getLastBlockRequest,
-    required TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)
+    required TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)
         getLastBlockResponse,
     required TResult Function(
             SetTransactionStatusContent content,
             String senderIdentity,
             String receiverIdentity,
             String tag,
-            PeerMessageType type)
+            PeerMessageType type,
+            int timestamp)
         setTransactionStatus,
   }) {
     return setTransactionStatus(
-        content, senderIdentity, receiverIdentity, tag, type);
+        content, senderIdentity, receiverIdentity, tag, type, timestamp);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)?
+            String tag, PeerMessageType type, dynamic content, int timestamp)?
         peerTypeRequest,
-    TResult? Function(PeerType content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            PeerType content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerTypeResponse,
-    TResult? Function(Transaction content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            Transaction content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         addTransaction,
-    TResult? Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockHeadersRequest,
     TResult? Function(
             BlockHeadersResponseContent content,
             String senderIdentity,
             String receiverIdentity,
             String tag,
-            PeerMessageType type)?
+            PeerMessageType type,
+            int timestamp)?
         blockHeadersResponse,
-    TResult? Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockRequest,
-    TResult? Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockResponse,
-    TResult? Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockNotFoundResponse,
     TResult? Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)?
+            String tag, PeerMessageType type, dynamic content, int timestamp)?
         peerStateRequest,
-    TResult? Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerStateResponse,
-    TResult? Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerStateUpdate,
-    TResult? Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         addBlock,
     TResult? Function(
             BlockHeader header,
@@ -8182,67 +11631,129 @@ class _$_PeerMessageSetTransactionStatus
             String receiverIdentity,
             String tag,
             PeerMessageType type,
-            dynamic content)?
+            dynamic content,
+            int timestamp)?
         blockRejected,
-    TResult? Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockAccepted,
     TResult? Function(String senderIdentity, String receiverIdentity,
-            String tag, PeerMessageType type, dynamic content)?
+            String tag, PeerMessageType type, dynamic content, int timestamp)?
         getLastBlockRequest,
-    TResult? Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult? Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         getLastBlockResponse,
     TResult? Function(
             SetTransactionStatusContent content,
             String senderIdentity,
             String receiverIdentity,
             String tag,
-            PeerMessageType type)?
+            PeerMessageType type,
+            int timestamp)?
         setTransactionStatus,
   }) {
     return setTransactionStatus?.call(
-        content, senderIdentity, receiverIdentity, tag, type);
+        content, senderIdentity, receiverIdentity, tag, type, timestamp);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String senderIdentity, String receiverIdentity, String tag,
-            PeerMessageType type, dynamic content)?
+            PeerMessageType type, dynamic content, int timestamp)?
         peerTypeRequest,
-    TResult Function(PeerType content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            PeerType content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerTypeResponse,
-    TResult Function(Transaction content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            Transaction content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         addTransaction,
-    TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockHeadersRequest,
-    TResult Function(BlockHeadersResponseContent content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeadersResponseContent content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockHeadersResponse,
-    TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockRequest,
-    TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockResponse,
-    TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockNotFoundResponse,
     TResult Function(String senderIdentity, String receiverIdentity, String tag,
-            PeerMessageType type, dynamic content)?
+            PeerMessageType type, dynamic content, int timestamp)?
         peerStateRequest,
-    TResult Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerStateResponse,
-    TResult Function(PeerState content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            PeerState content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         peerStateUpdate,
-    TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         addBlock,
     TResult Function(
             BlockHeader header,
@@ -8250,25 +11761,41 @@ class _$_PeerMessageSetTransactionStatus
             String receiverIdentity,
             String tag,
             PeerMessageType type,
-            dynamic content)?
+            dynamic content,
+            int timestamp)?
         blockRejected,
-    TResult Function(BlockHeader content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            BlockHeader content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         blockAccepted,
     TResult Function(String senderIdentity, String receiverIdentity, String tag,
-            PeerMessageType type, dynamic content)?
+            PeerMessageType type, dynamic content, int timestamp)?
         getLastBlockRequest,
-    TResult Function(Block content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            Block content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         getLastBlockResponse,
-    TResult Function(SetTransactionStatusContent content, String senderIdentity,
-            String receiverIdentity, String tag, PeerMessageType type)?
+    TResult Function(
+            SetTransactionStatusContent content,
+            String senderIdentity,
+            String receiverIdentity,
+            String tag,
+            PeerMessageType type,
+            int timestamp)?
         setTransactionStatus,
     required TResult orElse(),
   }) {
     if (setTransactionStatus != null) {
       return setTransactionStatus(
-          content, senderIdentity, receiverIdentity, tag, type);
+          content, senderIdentity, receiverIdentity, tag, type, timestamp);
     }
     return orElse();
   }
@@ -8386,7 +11913,8 @@ abstract class _PeerMessageSetTransactionStatus implements PeerMessage {
       required final String senderIdentity,
       required final String receiverIdentity,
       required final String tag,
-      final PeerMessageType type}) = _$_PeerMessageSetTransactionStatus;
+      final PeerMessageType type,
+      required final int timestamp}) = _$_PeerMessageSetTransactionStatus;
 
   factory _PeerMessageSetTransactionStatus.fromJson(Map<String, dynamic> json) =
       _$_PeerMessageSetTransactionStatus.fromJson;
@@ -8401,6 +11929,8 @@ abstract class _PeerMessageSetTransactionStatus implements PeerMessage {
   String get tag;
   @override
   PeerMessageType get type;
+  @override
+  int get timestamp;
   @override
   @JsonKey(ignore: true)
   _$$_PeerMessageSetTransactionStatusCopyWith<

@@ -68,22 +68,22 @@ class Peer {
   void onPeerTypeRequest(PeerMessage msg) {
     send(
       PeerMessage.peerTypeResponse(
-        senderIdentity: msg.receiverIdentity,
-        receiverIdentity: msg.senderIdentity,
-        tag: msg.tag,
-        content: localType,
-      ),
+          senderIdentity: msg.receiverIdentity,
+          receiverIdentity: msg.senderIdentity,
+          tag: msg.tag,
+          content: localType,
+          timestamp: DateTime.now().millisecondsSinceEpoch),
     );
   }
 
   void onPeerStateRequest(PeerMessage msg) {
     send(
       PeerMessage.peerStateResponse(
-        senderIdentity: msg.receiverIdentity,
-        receiverIdentity: msg.senderIdentity,
-        tag: msg.tag,
-        content: PeerState.open,
-      ),
+          senderIdentity: msg.receiverIdentity,
+          receiverIdentity: msg.senderIdentity,
+          tag: msg.tag,
+          content: PeerState.open,
+          timestamp: DateTime.now().millisecondsSinceEpoch),
     );
   }
 
@@ -249,10 +249,10 @@ class Peer {
     if (currentType == PeerType.unknown) {
       final response = await submit(
         PeerMessage.peerTypeRequest(
-          senderIdentity: signalingClient.identity,
-          receiverIdentity: remoteIdentity,
-          tag: const Uuid().v4(),
-        ),
+            senderIdentity: signalingClient.identity,
+            receiverIdentity: remoteIdentity,
+            tag: const Uuid().v4(),
+            timestamp: DateTime.now().millisecondsSinceEpoch),
       );
       _type.add(response.content as PeerType);
       return Future.value(response.content as PeerType);
@@ -269,6 +269,7 @@ class Peer {
           senderIdentity: signalingClient.identity,
           receiverIdentity: remoteIdentity,
           tag: const Uuid().v4(),
+          timestamp: DateTime.now().millisecondsSinceEpoch,
         ),
       );
       _state.add(response.content as PeerState);

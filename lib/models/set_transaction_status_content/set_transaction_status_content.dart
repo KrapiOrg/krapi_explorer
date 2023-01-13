@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:krapi_explorer/models/blockchain/transaction/transaction.dart';
+import 'package:krapi_explorer/blockchain/models/transaction/transaction.dart';
 
 part 'set_transaction_status_content.freezed.dart';
 part 'set_transaction_status_content.g.dart';

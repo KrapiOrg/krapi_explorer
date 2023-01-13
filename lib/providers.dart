@@ -34,7 +34,9 @@ final headersFromPeerProvider = FutureProvider.autoDispose.family<List<BlockHead
     );
 
     return headersResponse.maybeMap(
-      blockHeadersResponse: (state) => [_genesisHeader, ...state.content.headers],
+      blockHeadersResponse: (state) => [_genesisHeader, ...state.content.headers]..sort(
+          (a, b) => b.hash.compareTo(a.hash),
+        ),
       orElse: () => const <BlockHeader>[],
     );
   },
@@ -75,7 +77,7 @@ final blockProvider = FutureProvider.autoDispose.family<Block, BlockProviderFami
           timestamp: DateTime.now().millisecondsSinceEpoch),
     );
     return blockResponse.maybeMap(
-      blockResponse: (state) => state.content,
+      blockResponse: (state) async => state.content,
       orElse: () => const Block(_genesisHeader, []),
     );
   },

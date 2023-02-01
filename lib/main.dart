@@ -9,7 +9,14 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   PeerManager.localType = PeerType.observer;
 
-  runApp(const ProviderScope(child: MyApp()));
+  runApp(
+    ProviderScope(
+      overrides: [
+        identityProvider.overrideWithValue('explorer'),
+      ],
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
